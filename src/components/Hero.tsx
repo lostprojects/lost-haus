@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
@@ -43,8 +44,8 @@ const Hero = () => {
               texts={["Event", "Wedding", "Meeting", "Shower", "Party", "Dinner"]}
               morphTime={2}
               cooldownTime={1.5}
-              className="h-[80px] md:h-[100px]"
-              textClassName="text-white font-header"
+              className="h-[80px] md:h-[100px] flex items-center justify-center"
+              textClassName="text-white font-header text-4xl md:text-6xl"
             />
             <span>Space</span>
           </div>

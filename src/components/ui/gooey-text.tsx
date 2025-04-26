@@ -28,11 +28,19 @@ export function GooeyText({
     let morph = 0;
     let cooldown = cooldownTime;
 
+    // Initialize the text content
+    if (text1Ref.current && text2Ref.current) {
+      text1Ref.current.textContent = texts[textIndex % texts.length];
+      text2Ref.current.textContent = texts[(textIndex + 1) % texts.length];
+    }
+
     const setMorph = (fraction: number) => {
       if (text1Ref.current && text2Ref.current) {
+        // Apply blur and opacity to the second text (coming in)
         text2Ref.current.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
         text2Ref.current.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
 
+        // Apply inverse effects to the first text (going out)
         fraction = 1 - fraction;
         text1Ref.current.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
         text1Ref.current.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
@@ -85,15 +93,15 @@ export function GooeyText({
       }
     }
 
-    animate();
-
+    const animationFrame = requestAnimationFrame(animate);
+    
     return () => {
-      // Cleanup function if needed
+      cancelAnimationFrame(animationFrame);
     };
   }, [texts, morphTime, cooldownTime]);
 
   return (
-    <div className={cn("relative", className)}>
+    <div className={cn("relative inline-block", className)}>
       <svg className="absolute h-0 w-0" aria-hidden="true" focusable="false">
         <defs>
           <filter id="threshold">
@@ -116,16 +124,14 @@ export function GooeyText({
         <span
           ref={text1Ref}
           className={cn(
-            "absolute inline-block select-none text-center text-6xl md:text-[60pt]",
-            "text-foreground",
+            "absolute inline-block select-none text-center",
             textClassName
           )}
         />
         <span
           ref={text2Ref}
           className={cn(
-            "absolute inline-block select-none text-center text-6xl md:text-[60pt]",
-            "text-foreground",
+            "absolute inline-block select-none text-center",
             textClassName
           )}
         />
