@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
@@ -39,17 +38,17 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative h-full flex flex-col items-center justify-center text-white px-4 md:px-8 max-w-7xl mx-auto">
-        <h1 className="text-4xl md:text-6xl font-bold text-center mb-4">
+        <h1 className="text-4xl md:text-6xl font-bold text-center mb-4 font-header">
           Cincinnati's Most Enchanting Event Space
         </h1>
         
-        <p className="text-xl md:text-2xl text-center mb-6 max-w-2xl">
+        <p className="text-xl md:text-2xl text-center mb-6 max-w-2xl font-body">
           Transform your special moments into magical memories in our ivy-covered, 
           historic venue. Limited dates available for 2024.
         </p>
 
         {/* Social Proof */}
-        <div className="flex items-center gap-2 mb-8">
+        <div className="flex items-center gap-2 mb-8 font-body">
           <div className="flex">
             {[...Array(5)].map((_, i) => (
               <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
@@ -62,14 +61,14 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4">
           <Button 
             size="lg" 
-            className="bg-white text-black hover:bg-white/90 text-lg px-8 py-6"
+            className="bg-white text-black hover:bg-white/90 text-lg px-8 py-6 font-body"
           >
             Check Available Dates
           </Button>
           <Button 
             variant="outline" 
             size="lg" 
-            className="border-white text-white hover:bg-white/20 text-lg px-8 py-6"
+            className="border-white text-white hover:bg-white/20 text-lg px-8 py-6 font-body"
           >
             Schedule a Tour
           </Button>
