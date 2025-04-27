@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
@@ -20,6 +19,7 @@ const Header = () => {
     { name: 'Features', href: '#features' },
     { name: 'Pricing', href: '#pricing' },
     { name: 'Gallery', href: '#gallery' },
+    { name: 'Weddings', href: '/wedding' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '#contact' },
   ];
