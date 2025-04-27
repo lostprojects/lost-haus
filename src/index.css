@@ -88,6 +88,14 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  .gradient-button {
+    background: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 100%);
+  }
+
+  .gradient-button-variant {
+    background: linear-gradient(90deg, #8B5CF6 0%, #EC4899 100%);
+  }
 }
 
 @layer base {
