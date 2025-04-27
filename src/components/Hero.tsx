@@ -11,14 +11,17 @@ interface HeroImage {
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images: HeroImage[] = [{
-    url: "/lovable-uploads/54dee81d-d7ea-49c7-8588-03e5db9ec8bd.png",
+    url: "/lovable-uploads/f8a14efe-117f-4fea-8c12-b9371b4d3825.png",
+    alt: "Somerhaus wedding ceremony celebration"
+  }, {
+    url: "/lovable-uploads/5681976d-8810-4ced-9f69-628ef625593f.png",
+    alt: "Somerhaus dance party"
+  }, {
+    url: "/lovable-uploads/de58a57e-3411-4a58-9d1a-64324adbb089.png",
+    alt: "Somerhaus event panel discussion"
+  }, {
+    url: "/lovable-uploads/9af23dea-0956-4cc4-a1c8-f2cee31084b2.png",
     alt: "Somerhaus wedding ceremony setup"
-  }, {
-    url: "/placeholder.svg",
-    alt: "Somerhaus evening ambiance"
-  }, {
-    url: "/placeholder.svg",
-    alt: "Somerhaus dining setup"
   }];
 
   useEffect(() => {
@@ -29,7 +32,7 @@ const Hero = () => {
   }, []);
 
   return <div className="relative h-screen w-full overflow-hidden">
-      <div className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000" style={{
+      <div className="absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-in-out" style={{
       backgroundImage: `url(${images[currentImageIndex].url})`
     }}>
         <div className="absolute inset-0 bg-black/40" />
