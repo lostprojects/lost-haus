@@ -1,14 +1,18 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { CalendarCheck, ArrowRight } from "lucide-react";
 import useEmblaCarousel from 'embla-carousel-react';
-import AutoScroll from 'embla-carousel-auto-scroll';
+import Autoplay from 'embla-carousel-autoplay';
 
 const WeddingHero = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
-    AutoScroll({ playOnInit: true, stopOnInteraction: false, delay: 4000 })
+    Autoplay({ 
+      playOnInit: true, 
+      stopOnInteraction: false, 
+      interval: 4000 
+    })
   ]);
 
   const heroImages = [
