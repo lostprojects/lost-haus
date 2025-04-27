@@ -101,11 +101,7 @@ const Hero = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4">
-          <GradientButton 
-            className="text-lg px-8 py-6 font-body"
-          >
-            Book Now
-          </GradientButton>
+          <GradientButton>Book Now</GradientButton>
         </div>
       </div>
 
