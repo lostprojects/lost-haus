@@ -6,6 +6,7 @@ import { FeaturesSectionWithBentoGrid } from '@/components/blocks/feature-sectio
 import { Footerdemo } from '@/components/ui/footer-section';
 import { Logos3 } from '@/components/blocks/logos3';
 import { RevealImageListDemo } from '@/components/ui/reveal-images/demo';
+import { CTADemo } from '@/components/ui/call-to-action/demo';
 
 const logos = [
   {
@@ -44,6 +45,7 @@ const Index = () => {
       <FeaturesSectionWithBentoGrid />
       <TestimonialsDemo />
       <FeatureStepsDemo />
+      <CTADemo />
       <Footerdemo />
     </main>
   );
