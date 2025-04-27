@@ -1,8 +1,9 @@
+
 import React from 'react';
 
 const AvatarGroup = () => {
   return (
-    <div className="flex items-center rounded-full border border-border bg-background/50 backdrop-blur-sm p-1 shadow shadow-black/5 -mt-2.5">
+    <div className="flex items-center rounded-full border border-border bg-black/40 backdrop-blur-sm p-1 shadow shadow-black/5 -mt-4">
       <div className="flex -space-x-1.5">
         <img
           className="rounded-full ring-1 ring-background"
