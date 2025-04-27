@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
-import { GooeyText } from "@/components/ui/gooey-text";
 
 interface HeroImage {
   url: string;
@@ -38,7 +37,17 @@ const Hero = () => {
 
       <div className="relative h-full flex flex-col items-center justify-center text-white px-4 md:px-8 max-w-7xl mx-auto">
         <h1 className="text-4xl md:text-6xl font-bold text-center mb-4 font-header flex flex-col items-center gap-2">
-          Cincinnati's Most Enchanting Event Space
+          Cincinnati's Most Enchanting
+          <div className="flex items-center gap-2">
+            <GooeyText
+              texts={["Event", "Wedding", "Meeting", "Shower", "Party", "Dinner"]}
+              morphTime={2}
+              cooldownTime={1.5}
+              className="h-[80px] md:h-[100px] flex items-center justify-center"
+              textClassName="text-white font-header text-4xl md:text-6xl"
+            />
+            <span>Space</span>
+          </div>
         </h1>
         
         <p className="text-xl text-center mb-6 max-w-2xl font-body font-thin md:text-lg">
