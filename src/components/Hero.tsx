@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Star } from "lucide-react";
-import { ButtonColorful } from "@/components/ui/button-colorful";
+import { GradientButton } from "@/components/ui/gradient-button";
 
 interface HeroImage {
   url: string;
@@ -99,7 +99,12 @@ const Hero = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4">
-          <ButtonColorful label="Book Now" className="text-lg px-8 py-6 font-body" />
+          <GradientButton 
+            label="Book Now" 
+            className="text-lg px-8 py-6 font-body" 
+          >
+            Book Now
+          </GradientButton>
         </div>
       </div>
 
