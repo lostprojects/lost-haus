@@ -9,6 +9,7 @@ import Wedding from "./pages/Wedding";
 import FAQ from "./pages/Faq";
 import NotFound from "./pages/NotFound";
 import Corporate from "./pages/Corporate";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/wedding" element={<Wedding />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/corporate" element={<Corporate />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </TooltipProvider>
