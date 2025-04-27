@@ -1,0 +1,116 @@
+
+import React from 'react';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { MapPin, Phone, Mail, Send } from "lucide-react";
+import { useToast } from '@/components/ui/use-toast';
+
+const WeddingContact = () => {
+  const { toast } = useToast();
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    toast({
+      title: "Message sent!",
+      description: "We'll respond to your inquiry within 24 hours.",
+    });
+  };
+
+  return (
+    <section id="contact" className="py-16 md:py-24 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-header tracking-tight mb-4">Contact Us</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body">
+            Ready to start planning your dream wedding? Reach out to our team today.
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="bg-gray-50 p-8 rounded-lg">
+            <h3 className="text-xl font-semibold mb-6">Venue Information</h3>
+            
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <MapPin className="w-5 h-5 text-primary mt-1" />
+                <div>
+                  <p className="font-medium">Location</p>
+                  <p className="text-muted-foreground">123 Main Street</p>
+                  <p className="text-muted-foreground">Over-the-Rhine, Cincinnati, OH 45202</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-4">
+                <Phone className="w-5 h-5 text-primary mt-1" />
+                <div>
+                  <p className="font-medium">Phone</p>
+                  <p className="text-muted-foreground">(513) 555-1234</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-4">
+                <Mail className="w-5 h-5 text-primary mt-1" />
+                <div>
+                  <p className="font-medium">Email</p>
+                  <p className="text-muted-foreground">weddings@somerhaus.com</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mt-8">
+              <h4 className="font-medium mb-2">Hours of Operation</h4>
+              <p className="text-muted-foreground">Monday - Friday: 10am - 6pm</p>
+              <p className="text-muted-foreground">Saturday: By appointment only</p>
+              <p className="text-muted-foreground">Sunday: Closed</p>
+            </div>
+          </div>
+          
+          <div className="bg-white p-8 rounded-lg shadow-sm border">
+            <h3 className="text-xl font-semibold mb-6">Send Us a Message</h3>
+            
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium mb-1">Name</label>
+                  <Input id="name" placeholder="Your name" required />
+                </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-1">Email</label>
+                  <Input id="email" type="email" placeholder="Your email" required />
+                </div>
+              </div>
+              
+              <div>
+                <label htmlFor="phone" className="block text-sm font-medium mb-1">Phone Number</label>
+                <Input id="phone" type="tel" placeholder="Your phone number" />
+              </div>
+              
+              <div>
+                <label htmlFor="wedding-date" className="block text-sm font-medium mb-1">Preferred Wedding Date</label>
+                <Input id="wedding-date" type="date" />
+              </div>
+              
+              <div>
+                <label htmlFor="guest-count" className="block text-sm font-medium mb-1">Estimated Guest Count</label>
+                <Input id="guest-count" type="number" placeholder="Number of guests" />
+              </div>
+              
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium mb-1">Your Message</label>
+                <Textarea id="message" placeholder="Tell us about your wedding vision..." className="min-h-[120px]" />
+              </div>
+              
+              <Button type="submit" className="w-full gap-2">
+                Send Message <Send className="w-4 h-4" />
+              </Button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default WeddingContact;
