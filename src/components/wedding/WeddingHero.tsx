@@ -9,9 +9,9 @@ import Autoplay from 'embla-carousel-autoplay';
 const WeddingHero = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
     Autoplay({ 
-      playOnInit: true, 
-      stopOnInteraction: false, 
-      interval: 4000 
+      delay: 4000,
+      stopOnInteraction: false,
+      stopOnMouseEnter: false
     })
   ]);
 
