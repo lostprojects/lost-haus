@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Star } from "lucide-react";
 import { ButtonColorful } from "@/components/ui/button-colorful";
@@ -10,6 +9,9 @@ interface HeroImage {
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState<boolean[]>([]);
+  const [allImagesLoaded, setAllImagesLoaded] = useState(false);
+  
   const images: HeroImage[] = [{
     url: "/lovable-uploads/f8a14efe-117f-4fea-8c12-b9371b4d3825.png",
     alt: "Somerhaus wedding ceremony celebration"
@@ -25,16 +27,53 @@ const Hero = () => {
   }];
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentImageIndex(prevIndex => prevIndex === images.length - 1 ? 0 : prevIndex + 1);
-    }, 5000);
-    return () => clearInterval(timer);
+    const loadImage = (url: string, index: number) => {
+      const img = new Image();
+      img.src = url;
+      img.onload = () => {
+        setImagesLoaded(prev => {
+          const newLoaded = [...prev];
+          newLoaded[index] = true;
+          return newLoaded;
+        });
+      };
+    };
+
+    setImagesLoaded(new Array(images.length).fill(false));
+    
+    loadImage(images[0].url, 0);
+    
+    images.slice(1).forEach((image, index) => {
+      loadImage(image.url, index + 1);
+    });
   }, []);
 
-  return <div className="relative h-screen w-full overflow-hidden">
-      <div className="absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-in-out" style={{
-      backgroundImage: `url(${images[currentImageIndex].url})`
-    }}>
+  useEffect(() => {
+    if (imagesLoaded.length > 0 && imagesLoaded.every(loaded => loaded)) {
+      setAllImagesLoaded(true);
+    }
+  }, [imagesLoaded]);
+
+  useEffect(() => {
+    if (!allImagesLoaded) return;
+
+    const timer = setInterval(() => {
+      setCurrentImageIndex(prevIndex => 
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000);
+    
+    return () => clearInterval(timer);
+  }, [allImagesLoaded]);
+
+  return (
+    <div className="relative h-screen w-full overflow-hidden">
+      <div 
+        className="absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-in-out" 
+        style={{
+          backgroundImage: `url(${images[currentImageIndex].url})`
+        }}
+      >
         <div className="absolute inset-0 bg-black/40" />
       </div>
 
@@ -64,10 +103,20 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2">
-        {images.map((_, index) => <div key={index} className={`w-2 h-2 rounded-full transition-all duration-300 ${currentImageIndex === index ? "bg-white w-8" : "bg-white/50"}`} />)}
-      </div>
-    </div>;
+      {allImagesLoaded && (
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2">
+          {images.map((_, index) => (
+            <div
+              key={index}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                currentImageIndex === index ? "bg-white w-8" : "bg-white/50"
+              }`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default Hero;
