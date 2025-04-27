@@ -241,22 +241,6 @@
       --stop-5 0.5s;
   }
 
-  .gradient-button::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(
-      var(--border-angle),
-      var(--border-color-1),
-      var(--border-color-2)
-    );
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    pointer-events: none;
-  }
-
   .gradient-button:hover {
     --pos-x: 0%;
     --pos-y: 91.51%;
