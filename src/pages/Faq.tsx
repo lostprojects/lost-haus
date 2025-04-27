@@ -1,7 +1,6 @@
 
 import Header from '@/components/ui/header';
 import { Footerdemo } from '@/components/ui/footer-section';
-import { Faq3 } from '@/components/blocks/faq3';
 import { FaqCategories } from '@/components/faq/FaqCategories';
 
 const FAQ = () => {
