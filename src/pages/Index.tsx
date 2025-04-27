@@ -4,6 +4,7 @@ import Header from '@/components/ui/header';
 import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
 import { FeatureStepsDemo } from '@/components/blocks/feature-section-demo';
 import { FeaturesSectionWithBentoGrid } from '@/components/blocks/feature-section-with-bento-grid';
+import { Footerdemo } from '@/components/ui/footer-section';
 
 const Index = () => {
   return (
@@ -13,6 +14,7 @@ const Index = () => {
       <FeaturesSectionWithBentoGrid />
       <TestimonialsDemo />
       <FeatureStepsDemo />
+      <Footerdemo />
     </main>
   );
 };
