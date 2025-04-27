@@ -198,21 +198,7 @@
   }
 
   .gradient-button {
-    background: linear-gradient(-45deg, #3B82F6, #8B5CF6, #4F46E5, #3B82F6);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-  }
-
-  .gradient-button-variant {
-    background: linear-gradient(-45deg, #8B5CF6, #EC4899, #D946EF, #8B5CF6);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-  }
-}
-
-@layer components {
-  .gradient-button {
-    @apply relative appearance-none cursor-pointer shadow-[0_20px_32px_-8px_rgba(0,0,0,0.3)];
+    @apply relative appearance-none cursor-pointer shadow-[0_20px_32px_-8px_rgba(0,0,0,0.5)] z-10;
     background: radial-gradient(
       var(--spread-x) var(--spread-y) at var(--pos-x) var(--pos-y),
       var(--color-1) var(--stop-1),
@@ -245,7 +231,9 @@
       --stop-2 0.5s,
       --stop-3 0.5s,
       --stop-4 0.5s,
-      --stop-5 0.5s;
+      --stop-5 0.5s,
+      transform 0.3s,
+      box-shadow 0.3s;
   }
 
   .gradient-button:hover {
@@ -266,17 +254,46 @@
     --border-angle: 210deg;
     --border-color-1: transparent;
     --border-color-2: transparent;
-    @apply shadow-[0_25px_44px_-10px_rgba(0,0,0,0.45)] transform translate-y-[-2px];
+    @apply shadow-[0_30px_60px_-12px_rgba(0,0,0,0.6)] transform translate-y-[-4px];
   }
 
   .gradient-button-variant {
+    @apply relative appearance-none cursor-pointer shadow-[0_20px_32px_-8px_rgba(0,0,0,0.5)] z-10;
+    background: radial-gradient(
+      var(--spread-x) var(--spread-y) at var(--pos-x) var(--pos-y),
+      var(--color-1) var(--stop-1),
+      var(--color-2) var(--stop-2),
+      var(--color-3) var(--stop-3),
+      var(--color-4) var(--stop-4),
+      var(--color-5) var(--stop-5)
+    );
     --color-1: #000022;
     --color-2: #1f3f6d;
     --color-3: #469396;
     --color-4: #f1ffa5;
     --border-angle: 200deg;
-    --border-color-1: hsla(320, 75%, 90%, 0.6);
-    --border-color-2: hsla(320, 50%, 90%, 0.15);
+    --border-color-1: transparent;
+    --border-color-2: transparent;
+    transition:
+      --pos-x 0.5s,
+      --pos-y 0.5s,
+      --spread-x 0.5s,
+      --spread-y 0.5s,
+      --color-1 0.5s,
+      --color-2 0.5s,
+      --color-3 0.5s,
+      --color-4 0.5s,
+      --color-5 0.5s,
+      --border-angle 0.5s,
+      --border-color-1 0.5s,
+      --border-color-2 0.5s,
+      --stop-1 0.5s,
+      --stop-2 0.5s,
+      --stop-3 0.5s,
+      --stop-4 0.5s,
+      --stop-5 0.5s,
+      transform 0.3s,
+      box-shadow 0.3s;
   }
 
   .gradient-button-variant:hover {
@@ -295,8 +312,9 @@
     --stop-4: 71.34%;
     --stop-5: 90.76%;
     --border-angle: 210deg;
-    --border-color-1: hsla(320, 75%, 90%, 0.2);
-    --border-color-2: hsla(320, 50%, 90%, 0.75);
+    --border-color-1: transparent;
+    --border-color-2: transparent;
+    @apply shadow-[0_30px_60px_-12px_rgba(0,0,0,0.6)] transform translate-y-[-4px];
   }
 }
 
