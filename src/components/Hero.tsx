@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
-import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
+import { ButtonColorful } from "@/components/ui/button-colorful";
 
 interface HeroImage {
   url: string;
@@ -63,7 +62,7 @@ const Hero = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4">
-          <Button size="lg" className="text-black text-lg px-8 py-6 font-body bg-lime-300 hover:bg-lime-200">Start Your Event</Button>
+          <ButtonColorful label="Book Now" className="text-lg px-8 py-6 font-body" />
         </div>
       </div>
 
