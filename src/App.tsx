@@ -10,6 +10,7 @@ import FAQ from "./pages/Faq";
 import NotFound from "./pages/NotFound";
 import Corporate from "./pages/Corporate";
 import Contact from "./pages/Contact";
+import Showers from "./pages/Showers";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/wedding" element={<Wedding />} />
+          <Route path="/showers" element={<Showers />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/corporate" element={<Corporate />} />
           <Route path="/contact" element={<Contact />} />
