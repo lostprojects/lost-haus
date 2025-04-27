@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Star } from "lucide-react";
 import { ButtonColorful } from "@/components/ui/button-colorful";
@@ -38,13 +39,7 @@ const Hero = () => {
         <h1 className="text-4xl md:text-6xl font-bold text-center mb-4 font-header flex flex-col items-center gap-2">
           Cincinnati's Most Enchanting
           <div className="flex items-center gap-2">
-            <GooeyText
-              texts={["Event", "Wedding", "Meeting", "Shower", "Party", "Dinner"]}
-              morphTime={2}
-              cooldownTime={1.5}
-              className="h-[80px] md:h-[100px] flex items-center justify-center"
-              textClassName="text-white font-header text-4xl md:text-6xl"
-            />
+            <span className="text-white font-header text-4xl md:text-6xl">Event</span>
             <span>Space</span>
           </div>
         </h1>
