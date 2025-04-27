@@ -47,6 +47,7 @@
     "cobe": "^0.6.3",
     "date-fns": "^3.6.0",
     "embla-carousel-auto-scroll": "^8.0.0",
+    "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.3.0",
     "framer-motion": "^12.9.2",
     "input-otp": "^1.2.4",
