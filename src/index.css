@@ -212,7 +212,7 @@
 
 @layer components {
   .gradient-button {
-    @apply relative appearance-none cursor-pointer;
+    @apply relative appearance-none cursor-pointer shadow-[0_20px_32px_-8px_rgba(0,0,0,0.3)];
     background: radial-gradient(
       var(--spread-x) var(--spread-y) at var(--pos-x) var(--pos-y),
       var(--color-1) var(--stop-1),
@@ -266,6 +266,7 @@
     --border-angle: 210deg;
     --border-color-1: transparent;
     --border-color-2: transparent;
+    @apply shadow-[0_25px_44px_-10px_rgba(0,0,0,0.45)] transform translate-y-[-2px];
   }
 
   .gradient-button-variant {
