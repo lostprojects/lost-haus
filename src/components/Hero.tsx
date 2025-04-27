@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Star } from "lucide-react";
 import { GradientButton } from "@/components/ui/gradient-button";
+import AvatarGroup from './AvatarGroup';
 
 interface HeroImage {
   url: string;
@@ -78,6 +79,7 @@ const Hero = () => {
       </div>
 
       <div className="relative h-full flex flex-col items-center justify-center text-white px-4 md:px-8 max-w-7xl mx-auto">
+        <AvatarGroup />
         <h1 className="text-4xl md:text-6xl font-bold text-center mb-4 font-header flex flex-col items-center gap-2">
           Cincinnati's Most Enchanting
           <div className="flex items-center gap-2">
