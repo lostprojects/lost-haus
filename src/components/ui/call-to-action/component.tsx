@@ -5,7 +5,7 @@ import { GradientButton } from "@/components/ui/gradient-button";
 
 function CTA() {
   return (
-    <div className="w-full py-20 lg:py-32">
+    <div className="w-full py-10 lg:py-16">
       <div className="container mx-auto">
         <div className="flex flex-col text-center bg-gradient-to-br from-[#FDE1D3] to-[#FEC6A1] rounded-md p-4 lg:p-14 gap-8 items-center">
           <div>
