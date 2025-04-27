@@ -5,7 +5,7 @@ const features = [
   { 
     step: 'Step 1', 
     title: 'Your Vision',
-    content: 'Share your dream event with us. Whether it's an intimate wedding, corporate gathering, or special celebration, we'll help bring your vision to life.', 
+    content: 'Share your dream event with us. Whether it\'s an intimate wedding, corporate gathering, or special celebration, we\'ll help bring your vision to life.', 
     image: "/lovable-uploads/f8a14efe-117f-4fea-8c12-b9371b4d3825.png"
   },
   { 
