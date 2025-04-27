@@ -1,4 +1,3 @@
-
 import Hero from '@/components/Hero';
 import Header from '@/components/ui/header';
 import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
@@ -6,6 +5,7 @@ import { FeatureStepsDemo } from '@/components/blocks/feature-section-demo';
 import { FeaturesSectionWithBentoGrid } from '@/components/blocks/feature-section-with-bento-grid';
 import { Footerdemo } from '@/components/ui/footer-section';
 import { Logos3 } from '@/components/blocks/logos3';
+import { RevealImageListDemo } from '@/components/ui/reveal-images/demo';
 
 const logos = [
   {
@@ -40,6 +40,7 @@ const Index = () => {
       <Header />
       <Hero />
       <Logos3 heading="Cincinnati's Most Notable Event Planners Trust Us" logos={logos} />
+      <RevealImageListDemo />
       <FeaturesSectionWithBentoGrid />
       <TestimonialsDemo />
       <FeatureStepsDemo />
