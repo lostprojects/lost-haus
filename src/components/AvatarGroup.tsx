@@ -3,7 +3,7 @@ import React from 'react';
 
 const AvatarGroup = () => {
   return (
-    <div className="flex items-center rounded-full bg-black/40 backdrop-blur-sm p-1 shadow shadow-black/5 -mt-6">
+    <div className="flex items-center rounded-full bg-black/40 backdrop-blur-sm p-1 shadow shadow-black/5 -mt-2">
       <div className="flex -space-x-1.5">
         <img
           className="rounded-full ring-1 ring-background"
