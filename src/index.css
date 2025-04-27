@@ -60,19 +60,19 @@
   @property --border-angle {
     syntax: '<angle>';
     initial-value: 20deg;
-    inherits: true;
+    inherits: false;
   }
 
   @property --border-color-1 {
     syntax: '<color>';
-    initial-value: hsla(340, 75%, 60%, 0.2);
-    inherits: true;
+    initial-value: transparent;
+    inherits: false;
   }
 
   @property --border-color-2 {
     syntax: '<color>';
-    initial-value: hsla(340, 75%, 40%, 0.75);
-    inherits: true;
+    initial-value: transparent;
+    inherits: false;
   }
 
   @property --stop-1 {
