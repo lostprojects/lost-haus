@@ -8,7 +8,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import { User, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 function Testimonials() {
@@ -45,7 +45,6 @@ function Testimonials() {
               {Array.from({ length: 4 }).map((_, index) => (
                 <CarouselItem className="lg:basis-1/2" key={index}>
                   <div className="bg-muted rounded-md h-full lg:col-span-2 p-6 aspect-video flex justify-between flex-col">
-                    <User className="w-8 h-8 stroke-1" />
                     <div className="flex flex-col gap-4">
                       <div className="flex flex-col">
                         <h3 className="text-xl tracking-tight font-header">
@@ -82,3 +81,4 @@ function Testimonials() {
 }
 
 export { Testimonials };
+
