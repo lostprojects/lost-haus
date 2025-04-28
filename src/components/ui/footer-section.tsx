@@ -1,4 +1,3 @@
-
 import * as React from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -9,7 +8,34 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { Link } from "react-router-dom"
-import { Facebook, Instagram, Linkedin, Send, Twitter } from "lucide-react"
+import { Send } from "lucide-react"
+
+const socialIcons = [
+  {
+    name: "LinkedIn",
+    image: "/lovable-uploads/31c22bc4-b41f-4ea7-84ca-97efc98eaef1.png",
+    link: "https://linkedin.com",
+    tooltip: "Connect with us on LinkedIn"
+  },
+  {
+    name: "Instagram",
+    image: "/lovable-uploads/c7a03617-c05f-49b7-8f75-c54010643961.png",
+    link: "https://instagram.com",
+    tooltip: "Follow us on Instagram"
+  },
+  {
+    name: "X (Twitter)",
+    image: "/lovable-uploads/8eb7ab37-08dc-43b9-9f7a-fa74ac9b112d.png",
+    link: "https://twitter.com",
+    tooltip: "Follow us on X (Twitter)"
+  },
+  {
+    name: "Facebook",
+    image: "/lovable-uploads/db22bf39-d1f0-4405-9204-bff18b3eb5b1.png",
+    link: "https://facebook.com",
+    tooltip: "Follow us on Facebook"
+  }
+];
 
 function Footerdemo() {
   return (
@@ -72,58 +98,29 @@ function Footerdemo() {
           <div className="relative">
             <h3 className="mb-4 text-lg font-header font-semibold">Follow Us</h3>
             <div className="mb-6 flex space-x-4">
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="rounded-full border-white/20 hover:bg-[#9b87f5]/20 hover:border-[#9b87f5]">
-                      <Facebook className="h-4 w-4" />
-                      <span className="sr-only">Facebook</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Follow us on Facebook</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="rounded-full border-white/20 hover:bg-[#9b87f5]/20 hover:border-[#9b87f5]">
-                      <Twitter className="h-4 w-4" />
-                      <span className="sr-only">Twitter</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Follow us on Twitter</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="rounded-full border-white/20 hover:bg-[#9b87f5]/20 hover:border-[#9b87f5]">
-                      <Instagram className="h-4 w-4" />
-                      <span className="sr-only">Instagram</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Follow us on Instagram</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="rounded-full border-white/20 hover:bg-[#9b87f5]/20 hover:border-[#9b87f5]">
-                      <Linkedin className="h-4 w-4" />
-                      <span className="sr-only">LinkedIn</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Connect with us on LinkedIn</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
+              {socialIcons.map((social) => (
+                <TooltipProvider key={social.name}>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <a 
+                        href={social.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block transition-transform hover:scale-110"
+                      >
+                        <img 
+                          src={social.image} 
+                          alt={social.name}
+                          className="h-10 w-10"
+                        />
+                      </a>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>{social.tooltip}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              ))}
             </div>
           </div>
         </div>
