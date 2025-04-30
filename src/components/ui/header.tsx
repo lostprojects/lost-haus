@@ -1,8 +1,8 @@
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
-import { Menu } from 'lucide-react';
+import { Menu, ChevronDown } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,13 +17,19 @@ const Header = () => {
   }, []);
 
   const menuItems = [
-    { name: 'Features', href: '#features' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'Gallery', href: '#gallery' },
     { name: 'Weddings', href: '/wedding' },
-    { name: 'Corporate', href: '/corporate' },
+    { name: 'Corporate Events', href: '/corporate' },
+    { name: 'Somerset', href: 'https://somersetotr.com', external: true },
+  ];
+
+  const infoItems = [
+    { name: 'Gallery', href: '#gallery' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '/contact' },
+    { name: 'About', href: '/about' },
+    { name: 'Bar Packages', href: '/bar-packages' },
+    { name: 'Vendors', href: '/vendors' },
+    { name: 'Layout', href: '/layout' },
   ];
 
   return (
@@ -45,12 +51,39 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-body transition-colors ${isScrolled ? 'text-white hover:text-gray-300' : 'text-white hover:text-gray-200'}`}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
+                className="text-sm font-body transition-colors text-white hover:text-[#9b87f5]"
               >
                 {item.name}
               </a>
             ))}
-            <Button 
+            
+            {/* Custom Info Dropdown Menu */}
+            <div className="relative group">
+              <button
+                className={`flex items-center text-sm font-body transition-colors ${isScrolled ? 'text-white hover:text-[#9b87f5]' : 'text-white hover:text-[#9b87f5]'}`}
+              >
+                Info
+                <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
+              </button>
+              
+              <div className="absolute left-0 mt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="py-2 bg-black/90 backdrop-blur-sm rounded-md">
+                  {infoItems.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="block px-4 py-2 text-sm font-body text-white transition-colors hover:text-[#9b87f5]"
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
+            <Button
               className={`font-body ${isScrolled ? 'bg-white text-black hover:bg-gray-200' : 'bg-white/10 text-white hover:bg-white/20'}`}
             >
               Book Now
@@ -85,6 +118,23 @@ const Header = () => {
                       {item.name}
                     </a>
                   ))}
+                  
+                  {/* Info Section in Mobile Menu */}
+                  <div className="mt-2 mb-2">
+                    <h3 className="text-lg font-body font-medium mb-2">Info</h3>
+                    <div className="pl-2 border-l-2 border-gray-700">
+                      {infoItems.map((item) => (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          className="block text-lg font-body py-2 hover:text-[#9b87f5] transition-colors"
+                        >
+                          {item.name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                  
                   <Button className="mt-4 w-full font-body">Book Now</Button>
                 </div>
               </SheetContent>

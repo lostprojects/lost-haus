@@ -22,33 +22,86 @@ export const FaqCategories = () => {
   const [searchQuery, setSearchQuery] = useState('');
   
   const faqItems: FaqItem[] = [
-    // About Somerhaus
+    // Venue & Space
     {
       question: "What makes Somerhaus unique compared to other Cincinnati venues?",
       answer: "Somerhaus offers a distinctive blend of industrial-chic aesthetics in a converted warehouse with modern amenities. Our 3,080 sq ft dedicated events space features unique architectural elements, interesting furnishings and art from around the world, and plenty of greenery, creating an atmosphere that's both sophisticated and warm—perfect for events that stand out from the ordinary.",
-      category: "about",
+      category: "venue",
       tags: ["unique", "features", "space"]
     },
     {
       question: "What's the history of the Somerhaus building?",
       answer: "Somerhaus is housed in a beautifully converted warehouse building on Republic Street in Cincinnati's historic Over-the-Rhine neighborhood. The building retains many of its original industrial features while being thoughtfully renovated to create a versatile, modern event space that honors its architectural heritage.",
-      category: "about",
+      category: "venue",
       tags: ["history", "building", "warehouse", "OTR"]
     },
     {
       question: "How would you describe the aesthetic and atmosphere?",
       answer: "Somerhaus features an industrial-chic aesthetic with a warm, inviting atmosphere. The space combines exposed brick, original hardwood floors, and large windows with contemporary furnishings, lush greenery, and curated art pieces. This creates a sophisticated yet comfortable environment that can be easily personalized for any event style.",
-      category: "about",
+      category: "venue",
       tags: ["style", "design", "atmosphere"]
     },
     {
       question: "Is the full venue the only rental option, or can parts be rented separately?",
       answer: "Somerhaus is typically rented as a complete venue to ensure exclusive use and privacy for your event. This gives you access to all amenities and spaces, including the main hall, kitchen facilities, and any breakout areas. For smaller corporate functions, we may be able to accommodate partial venue rentals during weekdays—please contact us to discuss your specific needs.",
-      category: "about",
+      category: "venue",
       tags: ["rental", "options", "space"]
     },
+    {
+      question: "What's the maximum capacity?",
+      answer: "Somerhaus can accommodate up to 130 guests for a cocktail-style reception where most guests are standing. For seated events with tables and chairs provided by us, we can comfortably accommodate up to 80 guests. For a ceremony-style seating arrangement, we can fit up to 100 guests. These capacities ensure comfortable movement throughout the space while maintaining safety standards.",
+      category: "venue",
+      tags: ["capacity", "guests", "maximum"]
+    },
+    {
+      question: "Can you share floor plans and dimensions?",
+      answer: "Yes, we provide detailed floor plans with exact dimensions to all booked clients, and we're happy to share basic layout options with prospective clients during tours. Our main space is approximately 3,080 square feet with an open concept design that can be configured in multiple ways. We can provide digital CAD files of the space for your planner or designer to work with for custom layouts.",
+      category: "venue",
+      tags: ["floor plan", "dimensions", "layout"]
+    },
+    {
+      question: "What furniture is included and how can it be arranged?",
+      answer: (
+        <div>
+          <p>Our venue includes the following furniture at no additional cost:</p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li>80 wooden cross-back chairs</li>
+            <li>10 round tables (60" diameter, seat 8 each)</li>
+            <li>6 rectangular tables (6' length)</li>
+            <li>4 high-top cocktail tables</li>
+            <li>Lounge furniture set (2 sofas, 4 armchairs, coffee table)</li>
+            <li>Additional 70 folding chairs available for ceremonies and meetings</li>
+          </ul>
+          <p className="mt-2">These can be arranged in various configurations—banquet, theater, classroom, cocktail, etc.—based on your event needs. Additional furniture can be rented through our preferred vendors if needed.</p>
+        </div>
+      ),
+      category: "venue",
+      tags: ["furniture", "tables", "chairs", "setup"]
+    },
+    {
+      question: "What types of events can be hosted at Somerhaus?",
+      answer: (
+        <div>
+          <p>Somerhaus accommodates a wide variety of events, including:</p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li>Weddings and receptions</li>
+            <li>Corporate meetings and team days</li>
+            <li>Art and fashion shows</li>
+            <li>Brunch parties and large dinner gatherings (up to 80 people seated)</li>
+            <li>Cocktail parties and social events</li>
+            <li>Community events and fundraisers</li>
+            <li>Photoshoots and media production</li>
+            <li>Baby and bridal showers</li>
+            <li>Non-profit meetings and events</li>
+          </ul>
+          <p className="mt-2">Our versatile space can be customized to suit almost any event type with proper planning.</p>
+        </div>
+      ),
+      category: "venue",
+      tags: ["events", "types", "versatility"]
+    },
     
-    // Location & Accessibility
+    // Location & Logistics
     {
       question: "Where exactly is Somerhaus located in OTR?",
       answer: "Somerhaus is located on Republic Street in the heart of Cincinnati's historic Over-the-Rhine neighborhood, just steps away from Washington Park and a short walk from Findlay Market. Our central location offers easy access to downtown Cincinnati while being surrounded by the vibrant culture and distinctive architecture of OTR.",
@@ -85,7 +138,7 @@ export const FaqCategories = () => {
       tags: ["hotels", "accommodations", "guests"]
     },
     
-    // Booking & Pricing
+    // Planning & Booking
     {
       question: "What are your standard pricing packages?",
       answer: (
@@ -96,11 +149,12 @@ export const FaqCategories = () => {
             <li><strong>Friday-Saturday Evening Events:</strong> $3,000 with a $1,000 beverage minimum</li>
             <li><strong>Corporate Half-Day Rental (Mon-Fri):</strong> $750</li>
             <li><strong>Corporate Full-Day Rental (Mon-Fri):</strong> $1,200</li>
+            <li><strong>Non-Profit Events:</strong> Custom pricing available - please inquire</li>
           </ul>
           <p className="mt-2">All packages include basic setup and teardown assistance, tables and chairs for up to 80 guests, basic lighting, and use of our sound system. Custom packages are available for unique event needs.</p>
         </div>
       ),
-      category: "booking",
+      category: "planning",
       tags: ["pricing", "costs", "packages"]
     },
     {
@@ -112,64 +166,57 @@ export const FaqCategories = () => {
             <li>Exclusive use of the entire venue for your event duration</li>
             <li>Tables and chairs for up to 80 seated guests</li>
             <li>Basic ambient lighting package</li>
-            <li>Sound system with wireless microphone</li>
+            <li>Sound system with wireless microphones</li>
             <li>Setup and tear-down assistance</li>
             <li>Access to non-commercial kitchen facilities</li>
             <li>On-site event manager during your event</li>
             <li>Access to getting-ready spaces</li>
             <li>Cleaning fee (standard cleaning, not excessive)</li>
+            <li>WiFi access throughout the venue</li>
           </ul>
         </div>
       ),
-      category: "booking",
+      category: "planning",
       tags: ["included", "amenities", "services"]
     },
     {
       question: "How far in advance should I book?",
       answer: "For peak season dates (April-October and December), we recommend booking 12-18 months in advance, especially for weekend events. Off-peak dates can sometimes be booked with 3-6 months' notice. Corporate events typically require 1-3 months' advance booking, depending on the size and complexity. We do occasionally have last-minute availability, so don't hesitate to inquire about your preferred date even if it's approaching soon.",
-      category: "booking",
+      category: "planning",
       tags: ["timeline", "reservation", "availability"]
     },
     {
       question: "What's your cancellation/postponement policy?",
       answer: "Our standard policy includes a non-refundable booking deposit to secure your date. For cancellations more than 6 months before the event, you forfeit only the initial deposit. Cancellations 3-6 months prior result in 50% of the total fee due. Cancellations less than 3 months prior require full payment. For postponements due to unforeseen circumstances, we work with you to find a new date within 12 months with no additional fees when possible. All policies are detailed in our contract for your review before booking.",
-      category: "booking",
+      category: "planning",
       tags: ["cancellation", "refund", "postponement"]
     },
-    
-    // Venue Capacity & Layout
     {
-      question: "What's the maximum capacity?",
-      answer: "Somerhaus can accommodate up to 130 guests for a cocktail-style reception where most guests are standing. For seated events with tables and chairs provided by us, we can comfortably accommodate up to 80 guests. For a ceremony-style seating arrangement, we can fit up to 100 guests. These capacities ensure comfortable movement throughout the space while maintaining safety standards.",
-      category: "capacity",
-      tags: ["capacity", "guests", "maximum"]
+      question: "Do you provide event coordination?",
+      answer: "We provide day-of venue coordination that focuses on facility operations, vendor arrivals, and general timeline execution as it relates to the venue. This is not full-service event planning or design. For comprehensive planning services, we recommend hiring a professional event planner, and we're happy to provide recommendations. For corporate events, our team can provide more extensive coordination services upon request.",
+      category: "planning",
+      tags: ["coordination", "planning", "day-of"]
     },
     {
-      question: "Can you share floor plans and dimensions?",
-      answer: "Yes, we provide detailed floor plans with exact dimensions to all booked clients, and we're happy to share basic layout options with prospective clients during tours. Our main space is approximately 3,080 square feet with an open concept design that can be configured in multiple ways. We can provide digital CAD files of the space for your planner or designer to work with for custom layouts.",
-      category: "capacity",
-      tags: ["floor plan", "dimensions", "layout"]
+      question: "How much time is included for setup and teardown?",
+      answer: "Our standard rental includes 2 hours of setup time before your event and 1 hour for teardown afterward. These times are built into your rental period. Additional setup or teardown time can be purchased at an hourly rate if needed and if the schedule permits. All vendors and personal items must be removed by the end of your contracted teardown period unless special arrangements have been made in advance.",
+      category: "planning",
+      tags: ["setup", "teardown", "timing"]
     },
     {
-      question: "What furniture is included and how can it be arranged?",
-      answer: (
-        <div>
-          <p>Our venue includes the following furniture at no additional cost:</p>
-          <ul className="list-disc pl-6 mt-2 space-y-1">
-            <li>80 wooden cross-back chairs</li>
-            <li>10 round tables (60" diameter, seat 8 each)</li>
-            <li>6 rectangular tables (6' length)</li>
-            <li>4 high-top cocktail tables</li>
-            <li>Lounge furniture set (2 sofas, 4 armchairs, coffee table)</li>
-          </ul>
-          <p className="mt-2">These can be arranged in various configurations—banquet, theater, classroom, cocktail, etc.—based on your event needs. Additional furniture can be rented through our preferred vendors if needed.</p>
-        </div>
-      ),
-      category: "capacity",
-      tags: ["furniture", "tables", "chairs", "setup"]
+      question: "When can vendors arrive for setup?",
+      answer: "Vendors typically have access 2-3 hours before the event start time for standard setup needs. For more elaborate setups requiring additional time, we offer early access packages at an hourly rate. All setup timing must be confirmed at least two weeks before your event. For multi-day installations, special arrangements can be made at additional cost, subject to venue availability.",
+      category: "planning",
+      tags: ["setup", "vendors", "access"]
+    },
+    {
+      question: "Do you have a list of preferred vendors?",
+      answer: "Yes, we maintain a curated list of trusted professionals who are familiar with our space and consistently deliver excellent service. While we highly recommend these partners, you're welcome to work with any licensed and insured vendors of your choice. Our preferred vendors include caterers, photographers, DJs, florists, rental companies, and more. Using our preferred vendors often results in smoother planning and execution as they already know our policies and space characteristics.",
+      category: "planning",
+      tags: ["preferred vendors", "recommendations"]
     },
     
-    // Amenities & Equipment
+    // Amenities & Services
     {
       question: "What AV equipment is available?",
       answer: (
@@ -208,7 +255,7 @@ export const FaqCategories = () => {
       tags: ["bridal suite", "changing room", "preparations"]
     },
     
-    // Food & Beverages
+    // Food & Bar
     {
       question: "Do you provide catering or do we need to hire a caterer?",
       answer: "Somerhaus does not provide in-house catering services. You are welcome to work with any licensed and insured caterer of your choice, though we do maintain a list of preferred caterers who are familiar with our space and policies. All caterers must review our facilities and guidelines prior to the event. For more casual events, we also accommodate food truck options, with convenient setup locations near our entrance.",
@@ -240,7 +287,7 @@ export const FaqCategories = () => {
       tags: ["alcohol", "byob", "drinks"]
     },
     
-    // Decor & Setup
+    // Amenities & Services
     {
       question: "What decorations are permitted/not permitted?",
       answer: (
@@ -264,43 +311,18 @@ export const FaqCategories = () => {
           </ul>
         </div>
       ),
-      category: "decor",
+      category: "amenities",
       tags: ["decorations", "restrictions", "setup"]
     },
-    {
-      question: "When can vendors arrive for setup?",
-      answer: "Vendors typically have access 2-3 hours before the event start time for standard setup needs. For more elaborate setups requiring additional time, we offer early access packages at an hourly rate. All setup timing must be confirmed at least two weeks before your event. For multi-day installations, special arrangements can be made at additional cost, subject to venue availability.",
-      category: "decor",
-      tags: ["setup", "vendors", "access"]
-    },
-    {
-      question: "How much time is included for setup and teardown?",
-      answer: "Our standard rental includes 2 hours of setup time before your event and 1 hour for teardown afterward. These times are built into your rental period. Additional setup or teardown time can be purchased at an hourly rate if needed and if the schedule permits. All vendors and personal items must be removed by the end of your contracted teardown period unless special arrangements have been made in advance.",
-      category: "decor",
-      tags: ["setup", "teardown", "timing"]
-    },
     
-    // Vendors & Coordination
-    {
-      question: "Do you provide event coordination?",
-      answer: "We provide day-of venue coordination that focuses on facility operations, vendor arrivals, and general timeline execution as it relates to the venue. This is not full-service event planning or design. For comprehensive planning services, we recommend hiring a professional event planner, and we're happy to provide recommendations. For corporate events, our team can provide more extensive coordination services upon request.",
-      category: "vendors",
-      tags: ["coordination", "planning", "day-of"]
-    },
-    {
-      question: "Do you have a list of preferred vendors?",
-      answer: "Yes, we maintain a curated list of trusted professionals who are familiar with our space and consistently deliver excellent service. While we highly recommend these partners, you're welcome to work with any licensed and insured vendors of your choice. Our preferred vendors include caterers, photographers, DJs, florists, rental companies, and more. Using our preferred vendors often results in smoother planning and execution as they already know our policies and space characteristics.",
-      category: "vendors",
-      tags: ["preferred vendors", "recommendations"]
-    },
     {
       question: "Will a venue representative be on-site during the event?",
       answer: "Yes, a dedicated venue manager will be on-site throughout your entire event, from setup through conclusion. This staff member handles facility operations, assists with basic needs, coordinates with your vendors, and ensures venue policies are followed. They are not a replacement for an event planner but work alongside your team to ensure the venue aspects of your event run smoothly.",
-      category: "vendors",
+      category: "planning",
       tags: ["staff", "management", "support"]
     },
     
-    // Logistics & Policies
+    // Location & Logistics
     {
       question: "What are your event hours?",
       answer: (
@@ -314,48 +336,41 @@ export const FaqCategories = () => {
           <p className="mt-2">Additional hours can be added for an hourly fee. All music must end by 11:00 PM per city ordinances, and all events must conclude by midnight. Setup and teardown time is included in these windows.</p>
         </div>
       ),
-      category: "logistics",
+      category: "location",
       tags: ["hours", "timing", "schedule"]
     },
     {
       question: "Is there a noise curfew?",
       answer: "Yes, in compliance with Cincinnati noise ordinances, all amplified music must end by 11:00 PM. After this time, background music at a conversational level is permitted until the end of your event. Our sound system includes limiters to help keep volume at appropriate levels. For daytime events, we still maintain reasonable volume restrictions to respect neighboring businesses.",
-      category: "logistics",
+      category: "location",
       tags: ["noise", "music", "restrictions"]
     },
     {
       question: "What's your policy on children at events?",
       answer: "Children are welcome at Somerhaus events when supervised by adults. For safety, children under 18 must remain under parent or guardian supervision at all times. We recommend providing age-appropriate activities or entertainment for younger guests. For weddings and formal events with many children, we suggest hiring dedicated childcare professionals to oversee a kids' area.",
-      category: "logistics",
+      category: "location",
       tags: ["children", "kids", "family"]
     },
-    
-    // Weather & Contingency
     {
       question: "Is Somerhaus suitable for all seasons?",
       answer: "Yes, our venue is fully climate-controlled with efficient heating and cooling systems that keep the space comfortable year-round. Our large windows provide beautiful natural light while maintaining temperature control. We have appropriate coverings for entrances during inclement weather and can adjust our ambient lighting to create warm, inviting atmospheres during darker winter months or cooler effects during summer.",
-      category: "weather",
+      category: "location",
       tags: ["seasons", "climate", "year-round"]
     },
     {
       question: "What happens if there's inclement weather on the day?",
       answer: "As an indoor venue, Somerhaus events proceed regardless of weather conditions. Our climate-controlled environment ensures guest comfort year-round. We do have protocols for severe weather that might affect travel, including flexible start time adjustments when possible and coordination with vendors for delivery modifications. For any concerns about extreme weather conditions, we recommend obtaining event insurance that covers weather-related disruptions.",
-      category: "weather",
+      category: "location",
       tags: ["weather", "rain", "snow", "contingency"]
     }
   ];
   
   const categories = [
-    { id: "about", label: "About Somerhaus" },
-    { id: "location", label: "Location & Accessibility" },
-    { id: "booking", label: "Booking & Pricing" },
-    { id: "capacity", label: "Capacity & Layout" },
-    { id: "amenities", label: "Amenities & Equipment" },
-    { id: "food", label: "Food & Beverages" },
-    { id: "decor", label: "Decor & Setup" },
-    { id: "vendors", label: "Vendors & Coordination" },
-    { id: "logistics", label: "Logistics & Policies" },
-    { id: "weather", label: "Weather & Contingency" },
+    { id: "venue", label: "Venue & Space" },
+    { id: "planning", label: "Planning & Booking" },
+    { id: "amenities", label: "Amenities & Services" },
+    { id: "food", label: "Food & Bar" },
+    { id: "location", label: "Location & Logistics" }
   ];
 
   const filteredItems = searchQuery
@@ -413,14 +428,14 @@ export const FaqCategories = () => {
             )}
           </div>
         ) : (
-          <Tabs defaultValue="about" className="max-w-4xl mx-auto">
-            <div className="mb-8 overflow-x-auto">
-              <TabsList className="h-auto flex flex-nowrap p-1 w-max">
+          <Tabs defaultValue="venue" className="max-w-4xl mx-auto">
+            <div className="mb-8">
+              <TabsList className="h-auto flex flex-wrap justify-center gap-2 p-2 w-full">
                 {categories.map(category => (
-                  <TabsTrigger 
-                    key={category.id} 
+                  <TabsTrigger
+                    key={category.id}
                     value={category.id}
-                    className="px-4 py-2 whitespace-nowrap"
+                    className="px-5 py-3 text-sm md:text-base flex-1 max-w-[200px]"
                   >
                     {category.label}
                   </TabsTrigger>

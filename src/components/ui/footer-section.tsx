@@ -84,13 +84,16 @@ function Footerdemo() {
               <Link to="/contact" className="block transition-colors hover:text-[#9b87f5]">
                 Contact Us
               </Link>
+              <Link to="/event-inquiry" className="block transition-colors hover:text-[#9b87f5]">
+                Event Inquiry
+              </Link>
               <Link to="/faq" className="block transition-colors hover:text-[#9b87f5]">
                 FAQ
               </Link>
               <address className="mt-4 not-italic text-gray-300">
-                <p>123 Innovation Street</p>
-                <p>Tech City, TC 12345</p>
-                <p>Phone: (123) 456-7890</p>
+                <p>1415 Republic St</p>
+                <p>Cincinnati, OH 45202</p>
+                <p>Phone: (513) 902-1415</p>
                 <p>Email: hello@example.com</p>
               </address>
             </nav>

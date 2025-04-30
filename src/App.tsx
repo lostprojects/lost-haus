@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import Corporate from "./pages/Corporate";
 import Contact from "./pages/Contact";
 import Showers from "./pages/Showers";
+import EventInquiry from "./pages/EventInquiry";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/faq" element={<FAQ />} />
           <Route path="/corporate" element={<Corporate />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/event-inquiry" element={<EventInquiry />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </TooltipProvider>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Star } from "lucide-react";
-import { GradientButton } from "@/components/ui/gradient-button";
+import { TiltCard } from "@/components/ui/tilt-card";
 import AvatarGroup from './AvatarGroup';
 
 interface HeroImage {
@@ -89,7 +89,7 @@ const Hero = () => {
         </h1>
         
         <p className="text-xl text-center mb-6 max-w-2xl font-body font-thin md:text-lg">
-          Transform your special moments into magical memories in our ivy-covered, 
+          Transform your special moments into magical memories in our ivy-covered,
           historic venue. Limited dates available for 2024.
         </p>
 
@@ -99,10 +99,18 @@ const Hero = () => {
           </div>
           <span className="text-lg font-normal">100% 5-Star Google Reviews</span>
         </div>
+      </div>
 
-        <div className="flex flex-col sm:flex-row gap-4">
-          <GradientButton className="font-body">Reserve Your Event</GradientButton>
-        </div>
+      {/* Arrow positioned exactly halfway between the main hero content and the button */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[24.5%]">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 4L12 20M12 20L18 14M12 20L6 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
+
+      {/* Button positioned 2/3 of the way between the bottom of main content and bottom of hero */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[16%]">
+        <TiltCard title="Reserve Your Event" hoverColor="hover:bg-blue-500" />
       </div>
 
       {allImagesLoaded && (
