@@ -374,5 +374,6 @@
   body {
     @apply bg-background text-foreground;
     font-family: "Nebulica", sans-serif;
+    font-weight: 200;
   }
 }
