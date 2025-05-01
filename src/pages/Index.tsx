@@ -1,3 +1,4 @@
+
 import Hero from '@/components/Hero';
 import Header from '@/components/ui/header';
 import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
@@ -48,8 +49,10 @@ const Index = () => {
       <FeaturesSectionWithBentoGrid />
       <TestimonialsDemo />
       {/* White container for FeatureStepsDemo section */}
-      <div className="bg-white rounded-lg p-4 my-8">
-        <FeatureStepsDemo />
+      <div className="bg-white w-full py-8">
+        <div className="container mx-auto">
+          <FeatureStepsDemo />
+        </div>
       </div>
       <CTADemo />
       <Footerdemo />
