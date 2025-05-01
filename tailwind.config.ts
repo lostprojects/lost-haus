@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -92,7 +93,7 @@ export default {
       },
       fontFamily: {
         'header': ['Playfair Display', 'serif'],
-        'body': ['Roboto Mono', 'monospace'],
+        'body': ['Inconsolata', 'monospace'],
       }
     }
   },
