@@ -36,7 +36,7 @@ export function FeaturesSectionWithBentoGrid() {
           Cincinnati's premier event venue.
         </p>
         
-        <p className="text-sm lg:text-base max-w-2xl mb-6 mx-auto text-neutral-500 text-center font-body">
+        <p className="text-sm lg:text-base max-w-2xl mb-6 mx-auto text-neutral-500 text-center font-body font-light">
           With our five-star track record on Google and Yelp, you can be confident your event will exceed expectations and leave your guests with lasting memories.
         </p>
       </div>
