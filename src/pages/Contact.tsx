@@ -103,11 +103,11 @@ const ContactPage = () => {
   return <div className="min-h-screen flex flex-col">
       <Header />
       
-      {/* Hero Section */}
+      {/* Hero Section with updated background image */}
       <section className="relative w-full h-[60vh] min-h-[400px] overflow-hidden">
         <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="absolute inset-0 bg-cover bg-center" style={{
-        backgroundImage: "url('https://images.unsplash.com/photo-1517252962841-9bf2188be09c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80')"
+        backgroundImage: "url('/lovable-uploads/5bc412c9-8530-43fc-8266-371fd01df196.png')"
       }} />
         <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-header tracking-tight mb-4 text-white">
