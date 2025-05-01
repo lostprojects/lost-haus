@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Star } from "lucide-react";
 import { TiltCard } from "@/components/ui/tilt-card";
@@ -7,7 +6,6 @@ import AvatarGroup from './AvatarGroup';
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const images = [
-    '/lovable-uploads/5bc412c9-8530-43fc-8266-371fd01df196.png',
     '/lovable-uploads/54dee81d-d7ea-49c7-8588-03e5db9ec8bd.png',
     '/lovable-uploads/41b903d4-d950-4e6e-839a-07c706d701b0.png',
     '/lovable-uploads/9af23dea-0956-4cc4-a1c8-f2cee31084b2.png'
