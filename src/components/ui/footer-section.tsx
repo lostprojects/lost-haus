@@ -26,12 +26,8 @@ function Footerdemo() {
             <Link to="/contact" className="mb-6 flex items-center text-white hover:text-[#9b87f5] transition-colors text-sm">
               Contact Us <ArrowUpRight className="ml-1 h-4 w-4" />
             </Link>
-            <Link to="/event-inquiry" className="mb-6 flex items-center text-white hover:text-[#9b87f5] transition-colors text-sm">
-              Event Inquiry <ArrowUpRight className="ml-1 h-4 w-4" />
-            </Link>
-            <Link to="#" className="mb-6 flex items-center text-white hover:text-[#9b87f5] transition-colors text-sm">
-              Guest Login <ArrowUpRight className="ml-1 h-4 w-4" />
-            </Link>
+            
+            
             <address className="mt-6 not-italic text-sm text-gray-300">
               <p>Somerhaus Event Space</p>
               <p>1415 Republic St</p>
