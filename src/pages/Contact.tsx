@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { MapPin, Phone, CalendarDays } from 'lucide-react';
 import Header from '@/components/ui/header';
@@ -5,6 +6,9 @@ import { Footerdemo } from '@/components/ui/footer-section';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+
 // Add type declaration for Honeybook
 declare global {
   interface Window {
@@ -13,6 +17,7 @@ declare global {
     };
   }
 }
+
 const ContactPage = () => {
   // Honeybook form integration
   useEffect(() => {
@@ -37,19 +42,22 @@ const ContactPage = () => {
       }
     };
   }, []);
-  const teamMembers = [{
-    name: "Emma Robinson",
-    role: "Events Director",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop"
-  }, {
-    name: "Michael Chen",
-    role: "Venue Manager",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop"
-  }, {
-    name: "Sarah Johnson",
-    role: "Client Experience",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop"
-  }];
+
+  const teamMembers = [
+    {
+      name: "Beth Smiley",
+      role: "General Manager",
+      image: "/lovable-uploads/412228bd-5454-4f8e-8f8a-bee8380ea2ce.png",
+      bio: "Beth brings over 15 years of hospitality and event management experience to Somerhaus. With her keen eye for detail and passion for creating memorable experiences, she ensures every event runs flawlessly."
+    }, 
+    {
+      name: "Sara Hutslar",
+      role: "Events Director",
+      image: "/lovable-uploads/f86e016f-2c41-4435-a165-edbc5f730d4b.png",
+      bio: "As our creative force, Sara transforms client visions into reality. Her background in design and event planning helps create unique, personalized experiences for every occasion at Somerhaus."
+    }
+  ];
+  
   const faqs = [{
     question: "What is your availability for 2025?",
     answer: "We're currently booking for 2025 with some limited weekend dates still available. Weekdays offer more flexibility, especially for corporate events."
@@ -66,6 +74,7 @@ const ContactPage = () => {
     question: "Is parking available?",
     answer: "There are several public parking options within a 2-block radius. We can arrange valet service for an additional fee, and there's a loading zone directly in front of the building for vendors."
   }];
+  
   const businessHours = [{
     day: "Note",
     hours: "By Appointment/Booking Only"
@@ -73,6 +82,7 @@ const ContactPage = () => {
     day: "Event Venue",
     hours: "No Regular Business Hours"
   }];
+  
   const testimonials = [{
     name: "Jennifer & David",
     event: "Wedding",
@@ -86,8 +96,10 @@ const ContactPage = () => {
     event: "Birthday Celebration",
     text: "I couldn't have chosen a better venue for my milestone birthday. The industrial-chic vibe created the perfect backdrop for an unforgettable night."
   }];
+  
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const currentTestimonial = testimonials[currentTestimonialIndex];
+  
   return <div className="min-h-screen flex flex-col">
       <Header />
       
@@ -311,18 +323,45 @@ const ContactPage = () => {
           
           {/* Value-Add Elements */}
           <div className="space-y-16">
-            {/* Meet the Team Section */}
+            {/* Meet the Team Section - Redesigned with the real team members */}
             <div>
-              <h2 className="text-2xl md:text-3xl font-header text-center mb-8">Meet Our Team</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center mb-12">
+                <Badge variant="outline" className="mb-3">The People Behind Your Events</Badge>
+                <h2 className="text-3xl md:text-5xl font-header mb-4">Meet Our Team</h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto font-mono">
+                  Our dedicated professionals work tirelessly to ensure your event exceeds expectations.
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
                 {teamMembers.map((member, index) => (
-                  <div key={index} className="text-center">
-                    <div className="w-40 h-40 mx-auto mb-4 rounded-full overflow-hidden">
-                      <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                  <Card key={index} className="overflow-hidden transition-all hover:shadow-md">
+                    <div className="grid md:grid-cols-5 gap-4 p-0">
+                      <div className="md:col-span-2 h-full">
+                        <div className="h-full w-full relative overflow-hidden aspect-[3/4] md:aspect-auto">
+                          <img 
+                            src={member.image} 
+                            alt={member.name} 
+                            className="object-cover object-center w-full h-full transition-transform hover:scale-105 duration-700"
+                          />
+                        </div>
+                      </div>
+                      <div className="md:col-span-3 p-6">
+                        <div className="flex flex-col h-full justify-between">
+                          <div>
+                            <h3 className="text-2xl font-header mb-1">{member.name}</h3>
+                            <p className="text-primary font-medium mb-4">{member.role}</p>
+                            <p className="text-gray-600 font-mono">{member.bio}</p>
+                          </div>
+                          <div className="flex mt-6">
+                            <a href="#contact" className="text-primary hover:text-primary/80 font-medium">
+                              Contact →
+                            </a>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <h3 className="font-medium text-xl mb-1">{member.name}</h3>
-                    <p className="text-gray-500 font-mono">{member.role}</p>
-                  </div>
+                  </Card>
                 ))}
               </div>
             </div>
@@ -333,4 +372,5 @@ const ContactPage = () => {
       <Footerdemo />
     </div>;
 };
+
 export default ContactPage;
