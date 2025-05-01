@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { MapPin, Phone, CalendarDays } from 'lucide-react';
 import Header from '@/components/ui/header';
@@ -112,8 +111,6 @@ const ContactPage = () => {
         <div className="container mx-auto px-4 py-16">
           
           {/* Added items-start for top alignment */}
-          {/* Removed items-start */}
-          {/* Re-added items-start for top alignment */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 mb-16 items-start">
             
             {/* NEW: Container for left two columns (Find Us + Honeybook) */}
@@ -137,7 +134,7 @@ const ContactPage = () => {
                       </a>
                     </div>
                     <div className="md:col-span-2 rounded-lg overflow-hidden shadow-sm border border-gray-200">
-                      <iframe title="Somerhaus Location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3095.5335635388787!2d-84.51802772412837!3d39.11347593370424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841b3addfdf5775%3A0x850f5a834ff19779!2sSomerhaus%20Events%20Venue!5e0!3m2!1sen!2sus!4v1714444288981!5m2!1sen!2sus" width="100%" height="300" style={{
+                      <iframe title="Somerhaus Location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3095.5335635388787!2d-84.51802772412837!3d39.11347593370424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841b3addfdf5775%3A0x850f5a834ff19779!2sSomerhaus%20Events%20Venue!5e0!3m2!1sen!2sus!4v1714444288981!5m2!1sen!2sus!4v1714444288981!5m2!1sen!2sus" width="100%" height="300" style={{
                       border: 0
                     }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                     </div>
@@ -314,20 +311,19 @@ const ContactPage = () => {
           
           {/* Value-Add Elements */}
           <div className="space-y-16">
-            {/* FAQ Section */}
-            
-            
-            {/* Meet the Team */}
+            {/* Meet the Team Section */}
             <div>
               <h2 className="text-2xl md:text-3xl font-header text-center mb-8">Meet Our Team</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {teamMembers.map((member, index) => <div key={index} className="text-center">
+                {teamMembers.map((member, index) => (
+                  <div key={index} className="text-center">
                     <div className="w-40 h-40 mx-auto mb-4 rounded-full overflow-hidden">
                       <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                     </div>
                     <h3 className="font-medium text-xl mb-1">{member.name}</h3>
                     <p className="text-gray-500 font-mono">{member.role}</p>
-                  </div>)}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
