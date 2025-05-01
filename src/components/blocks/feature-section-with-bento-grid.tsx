@@ -27,7 +27,7 @@ export function FeaturesSectionWithBentoGrid() {
   }];
   return <div className="relative z-20 py-6 lg:py-16 max-w-7xl mx-auto">
       <div className="px-8 text-center">
-        <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto tracking-tight font-header">
+        <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto tracking-tight font-brogsway">
           A Venue Like No Other
         </h4>
 

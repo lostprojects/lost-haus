@@ -94,6 +94,7 @@ export default {
       fontFamily: {
         'header': ['Playfair Display', 'serif'],
         'body': ['Space Mono', 'monospace'],
+        'brogsway': ['Brogsway', 'serif'],
       }
     }
   },
