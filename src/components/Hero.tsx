@@ -1,17 +1,22 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Star } from "lucide-react";
 import { TiltCard } from "@/components/ui/tilt-card";
 import AvatarGroup from './AvatarGroup';
 
 const Hero = () => {
-  // Image is now a static background, so we don't need the state and effects for image carousel
-  return <div className="relative h-screen w-full overflow-hidden">
-      <div className="absolute inset-0 bg-cover bg-center"
+  return (
+    <div className="relative h-screen w-full overflow-hidden">
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url('/lovable-uploads/5bc412c9-8530-43fc-8266-371fd01df196.png')`
-        }}>
-        <div className="absolute inset-0 bg-black/20" />
+          backgroundImage: `url('/lovable-uploads/5bc412c9-8530-43fc-8266-371fd01df196.png')`,
+          backgroundPosition: 'center center',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover'
+        }}
+      >
+        <div className="absolute inset-0 bg-black/30" />
       </div>
 
       <div className="relative h-full flex flex-col items-center justify-center text-white px-4 md:px-8 max-w-7xl mx-auto">
@@ -35,7 +40,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Arrow positioned exactly halfway between the main hero content and the button */}
       <div className="absolute left-[49.5%] transform -translate-x-1/2 bottom-[24.5%]" style={{
         animation: 'bounce 3.5s infinite'
       }}>
@@ -44,13 +48,13 @@ const Hero = () => {
         </svg>
       </div>
 
-      {/* Button positioned 2/3 of the way between the bottom of main content and bottom of hero */}
       <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[16%]">
         <TiltCard href="/event-inquiry" className="group max-h-fit rounded-full bg-black p-2 px-6 shadow-[0_20px_50px_rgba(0,0,0,0.8)] hover:bg-[#D9FF8A]">
           <span className="text-xl text-white group-hover:text-black font-body">Reserve Your Event</span>
         </TiltCard>
       </div>
-    </div>;
+    </div>
+  );
 };
 
 export default Hero;
