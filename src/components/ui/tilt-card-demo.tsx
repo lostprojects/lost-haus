@@ -1,3 +1,4 @@
+
 "use client"
 
 import { TiltCard } from "@/components/ui/tilt-card"
@@ -5,10 +6,18 @@ import { TiltCard } from "@/components/ui/tilt-card"
 function Demo() {
   return (
     <div className="flex flex-wrap gap-4">
-      <TiltCard title="Default" />
-      <TiltCard title="Primary" hoverColor="hover:bg-primary" />
-      <TiltCard title="Secondary" hoverColor="hover:bg-secondary" />
-      <TiltCard title="Destructive" hoverColor="hover:bg-destructive" />
+      <TiltCard href="#">
+        <div className="p-4">Default</div>
+      </TiltCard>
+      <TiltCard href="#" className="hover:bg-primary">
+        <div className="p-4">Primary</div>
+      </TiltCard>
+      <TiltCard href="#" className="hover:bg-secondary">
+        <div className="p-4">Secondary</div>
+      </TiltCard>
+      <TiltCard href="#" className="hover:bg-destructive">
+        <div className="p-4">Destructive</div>
+      </TiltCard>
     </div>
   )
 }
