@@ -71,10 +71,10 @@ const Hero = () => {
 
       <div className="relative h-full flex flex-col items-center justify-center text-white px-4 md:px-8 max-w-7xl mx-auto">
         <AvatarGroup />
-        <h1 className="text-5xl text-center mb-4 font-brogsway flex flex-col items-center gap-2 md:text-8xl">
+        <h1 className="text-5xl text-center mb-4 font-header flex flex-col items-center gap-2 md:text-8xl">
           Cincinnati's Most Enchanting
           <div className="flex items-center gap-2">
-            <span className="text-white font-brogsway text-5xl md:text-7xl">Event</span>
+            <span className="text-white font-header text-5xl md:text-7xl">Event</span>
             <span>Space</span>
           </div>
         </h1>
