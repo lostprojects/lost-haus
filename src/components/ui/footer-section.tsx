@@ -37,8 +37,8 @@ function Footerdemo() {
               Contact Us <ArrowUpRight className="ml-1 h-4 w-4" />
             </Link>
             <address className="mt-6 not-italic text-sm text-gray-300">
-              <p className="mb-2">Somerhaus Event Space</p>
-              <p className="mb-2">1415 Republic St</p>
+              <p>Somerhaus Event Space</p>
+              <p>1415 Republic St</p>
               <p>Cincinnati, OH 45202</p>
             </address>
             <div className="mt-6 flex space-x-4">
