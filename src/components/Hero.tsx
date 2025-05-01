@@ -2,33 +2,27 @@ import React, { useState, useEffect } from 'react';
 import { Star } from "lucide-react";
 import { TiltCard } from "@/components/ui/tilt-card";
 import AvatarGroup from './AvatarGroup';
-
 interface HeroImage {
   url: string;
   alt: string;
 }
-
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState<boolean[]>([]);
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
-
-  const images: HeroImage[] = [
-    {
-      url: "/lovable-uploads/f8a14efe-117f-4fea-8c12-b9371b4d3825.png",
-      alt: "Somerhaus wedding ceremony celebration"
-    }, {
-      url: "/lovable-uploads/5681976d-8810-4ced-9f69-628ef625593f.png",
-      alt: "Somerhaus dance party"
-    }, {
-      url: "/lovable-uploads/de58a57e-3411-4a58-9d1a-64324adbb089.png",
-      alt: "Somerhaus event panel discussion"
-    }, {
-      url: "/lovable-uploads/9af23dea-0956-4cc4-a1c8-f2cee31084b2.png",
-      alt: "Somerhaus wedding ceremony setup"
-    }
-  ];
-
+  const images: HeroImage[] = [{
+    url: "/lovable-uploads/f8a14efe-117f-4fea-8c12-b9371b4d3825.png",
+    alt: "Somerhaus wedding ceremony celebration"
+  }, {
+    url: "/lovable-uploads/5681976d-8810-4ced-9f69-628ef625593f.png",
+    alt: "Somerhaus dance party"
+  }, {
+    url: "/lovable-uploads/de58a57e-3411-4a58-9d1a-64324adbb089.png",
+    alt: "Somerhaus event panel discussion"
+  }, {
+    url: "/lovable-uploads/9af23dea-0956-4cc4-a1c8-f2cee31084b2.png",
+    alt: "Somerhaus wedding ceremony setup"
+  }];
   useEffect(() => {
     const loadImage = (url: string, index: number) => {
       const img = new Image();
@@ -47,13 +41,11 @@ const Hero = () => {
       loadImage(image.url, index + 1);
     });
   }, []);
-
   useEffect(() => {
     if (imagesLoaded.length > 0 && imagesLoaded.every(loaded => loaded)) {
       setAllImagesLoaded(true);
     }
   }, [imagesLoaded]);
-
   useEffect(() => {
     if (!allImagesLoaded) return;
     const timer = setInterval(() => {
@@ -61,7 +53,6 @@ const Hero = () => {
     }, 5000);
     return () => clearInterval(timer);
   }, [allImagesLoaded]);
-
   return <div className="relative h-screen w-full overflow-hidden">
       <div className="absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-in-out" style={{
       backgroundImage: `url(${images[currentImageIndex].url})`
@@ -71,7 +62,7 @@ const Hero = () => {
 
       <div className="relative h-full flex flex-col items-center justify-center text-white px-4 md:px-8 max-w-7xl mx-auto">
         <AvatarGroup />
-        <h1 className="text-5xl text-center mb-4 font-header flex flex-col items-center gap-2 md:text-8xl">
+        <h1 className="text-5xl text-center mb-4 font-header flex flex-col items-center gap-2 md:text-6xl">
           Cincinnati's Most Enchanting
           <span>Event Space</span>
         </h1>
@@ -111,5 +102,4 @@ const Hero = () => {
         </div>}
     </div>;
 };
-
 export default Hero;
