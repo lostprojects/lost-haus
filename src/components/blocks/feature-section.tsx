@@ -43,7 +43,7 @@ export function FeatureSteps({
   }, [progress, features.length, autoPlayInterval]);
 
   return (
-    <div className={cn("py-8 md:py-12", className)}>
+    <div className={cn("py-0", className)}>
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-header mb-10 text-center">
         {title}
       </h2>
