@@ -73,10 +73,7 @@ const Hero = () => {
         <AvatarGroup />
         <h1 className="text-5xl text-center mb-4 font-header flex flex-col items-center gap-2 md:text-8xl">
           Cincinnati's Most Enchanting
-          <div className="flex items-center gap-2">
-            <span className="text-white font-header text-5xl md:text-7xl">Event</span>
-            <span>Space</span>
-          </div>
+          <span>Event Space</span>
         </h1>
         
         <p className="text-xl text-center mb-6 max-w-2xl font-body font-thin md:text-lg">
