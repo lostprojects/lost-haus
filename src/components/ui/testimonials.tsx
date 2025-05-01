@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -39,7 +40,7 @@ function Testimonials() {
                         <h3 className="text-xl tracking-tight font-header">
                           Absolutely Perfect
                         </h3>
-                        <p className="text-muted-foreground max-w-xs text-base font-body font-thin">
+                        <p className="text-muted-foreground max-w-xs text-base font-body font-light">
                           Somerhaus exceeded all our expectations. The venue is stunning, 
                           and the staff went above and beyond to make our day special.
                         </p>
