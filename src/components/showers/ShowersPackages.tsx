@@ -1,15 +1,17 @@
 
 import React from 'react';
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
+import PricingSection from '@/components/shared/PricingSection'; // Import shared section
+import { PricingCardProps } from '@/components/shared/PricingCard'; // Import card props type
+import { Badge } from "@/components/ui/badge"; // Keep Badge import
+import { Check } from "lucide-react"; // Keep Check import
 
 const ShowersPackages = () => {
-  const packages = [
+  // Define package data conforming to PricingCardProps
+  const packagesData: PricingCardProps[] = [
     {
       name: "Essential",
       price: "$1,500",
+      priceSuffix: "base package",
       description: "Perfect for intimate baby or bridal showers.",
       features: [
         "4 hours of venue access",
@@ -18,11 +20,16 @@ const ShowersPackages = () => {
         "Sound system access",
         "Tables and chairs included",
         "On-site coordinator"
-      ]
+      ],
+      buttonText: "Choose Essential",
+      buttonProps: { variant: "outline", className: "font-body" },
+      popular: false, // Use 'popular' prop, map 'highlighted' to it
+      cardClassName: "font-body", // Apply font-body to card if needed, or adjust PricingCard
     },
     {
       name: "Premium",
       price: "$2,800",
+      priceSuffix: "base package",
       description: "Our most popular package for memorable celebrations.",
       features: [
         "6 hours of venue access",
@@ -34,11 +41,16 @@ const ShowersPackages = () => {
         "Beverage station setup",
         "Photo backdrop area"
       ],
-      highlighted: true
+      buttonText: "Choose Premium",
+      buttonProps: { variant: "default", className: "font-body" },
+      popular: true, // Map 'highlighted' to 'popular'
+      popularText: "Most Popular", // Or keep original badge text if different
+      cardClassName: "scale-105 font-body", // Apply scale and font
     },
     {
       name: "Luxe",
       price: "$3,900",
+      priceSuffix: "base package",
       description: "The ultimate all-inclusive shower celebration.",
       features: [
         "8 hours of venue access",
@@ -50,61 +62,38 @@ const ShowersPackages = () => {
         "Custom beverage package",
         "Photo booth with props",
         "Floral centerpieces"
-      ]
+      ],
+      buttonText: "Choose Luxe",
+      buttonProps: { variant: "outline", className: "font-body" },
+      popular: false,
+      cardClassName: "font-body",
     }
   ];
 
-  return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <Badge className="mb-4 font-body">Celebration Packages</Badge>
-          <h2 className="text-3xl md:text-5xl font-header tracking-tight mb-4">Shower Packages</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body">
-            Thoughtfully designed packages to make your special celebration unforgettable.
-          </p>
-        </div>
+  // Define footer content
+  const footer = (
+    <p className="font-body"> {/* Apply font-body here */}
+      All packages can be customized to suit your specific shower needs. Contact us for custom quotes.
+    </p>
+  );
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {packages.map((pkg, index) => (
-            <Card key={index} className={`border ${pkg.highlighted ? 'border-primary shadow-lg scale-105' : 'border-gray-200'}`}>
-              <CardHeader>
-                <CardTitle className="text-2xl font-header">{pkg.name}</CardTitle>
-                <CardDescription className="font-body">{pkg.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="mb-6">
-                  <p className="text-3xl font-bold font-header">{pkg.price}</p>
-                  <p className="text-sm text-muted-foreground font-body">base package</p>
-                </div>
-                <ul className="space-y-2 mb-6">
-                  {pkg.features.map((feature, i) => (
-                    <li key={i} className="flex items-center gap-2 font-body">
-                      <Check className="w-5 h-5 text-primary" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Button 
-                  variant={pkg.highlighted ? "default" : "outline"} 
-                  className="w-full font-body"
-                >
-                  Choose {pkg.name}
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
-        
-        <div className="text-center mt-10">
-          <p className="text-muted-foreground font-body">
-            All packages can be customized to suit your specific shower needs. Contact us for custom quotes.
-          </p>
-        </div>
-      </div>
-    </section>
+  // Define pre-title content (the badge)
+  const preTitle = (
+    <Badge className="mb-4 font-body">Celebration Packages</Badge>
+  );
+
+  return (
+    <PricingSection
+      title="Shower Packages"
+      description="Thoughtfully designed packages to make your special celebration unforgettable."
+      packages={packagesData}
+      preTitleContent={preTitle} // Pass the badge content here
+      footerContent={footer}
+      sectionClassName="py-16 bg-white" // Override section background
+      titleClassName="text-3xl md:text-5xl font-header tracking-tight mb-4" // Override title style
+      gridClassName="grid grid-cols-1 md:grid-cols-3 gap-8" // Override grid layout
+      footerClassName="text-center mt-10 text-muted-foreground" // Keep default footer style
+    />
   );
 };
 

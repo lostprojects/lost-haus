@@ -38,7 +38,7 @@ const logos = [
 
 const Index = () => {
   return (
-    <main className="min-h-screen relative">
+    <main className="min-h-screen relative" style={{ backgroundColor: '#F5F3F1' }}>
       <Header />
       <div className="relative">
         <Hero />
@@ -48,7 +48,10 @@ const Index = () => {
       <RevealImageListDemo />
       <FeaturesSectionWithBentoGrid />
       <TestimonialsDemo />
-      <FeatureStepsDemo />
+      {/* White container for FeatureStepsDemo section */}
+      <div className="bg-white max-w-[1336px] mx-auto rounded-lg p-4 my-8">
+        <FeatureStepsDemo />
+      </div>
       <CTADemo />
       <Footerdemo />
     </main>

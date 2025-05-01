@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
+import FAQSection from '@/components/shared/FAQSection'; // Import shared component
+import { Button } from "@/components/ui/button"; // Keep Button import
 
 const CorporateFAQ = () => {
   const faqs = [
@@ -32,30 +32,16 @@ const CorporateFAQ = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-header mb-4">Frequently Asked Questions</h2>
-          <p className="max-w-2xl mx-auto text-lg text-gray-600 font-body">
-            Find answers to common questions about hosting your corporate event at Somerhaus.
-          </p>
-        </div>
-        
-        <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-lg font-body text-left">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="font-body text-gray-700">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-        
+    <FAQSection
+      title="Frequently Asked Questions"
+      description="Find answers to common questions about hosting your corporate event at Somerhaus."
+      faqs={faqs}
+      sectionClassName="py-20 bg-gray-50" // Override section style
+      titleClassName="text-3xl md:text-4xl font-header mb-4" // Override title style
+      descriptionClassName="max-w-2xl mx-auto text-lg text-gray-600 font-body" // Override description style
+      accordionTriggerClassName="text-lg font-body text-left" // Override trigger style
+      accordionContentClassName="font-body text-gray-700" // Override content style
+      postAccordionContent={ // Add the contact section after the accordion
         <div className="mt-12 text-center">
           <p className="mb-4 font-body">
             Have a question that's not answered here?
@@ -64,8 +50,8 @@ const CorporateFAQ = () => {
             Contact Us
           </Button>
         </div>
-      </div>
-    </section>
+      }
+    />
   );
 };
 

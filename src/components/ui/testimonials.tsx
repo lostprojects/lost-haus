@@ -43,8 +43,8 @@ function Testimonials() {
           <Carousel setApi={setApi} className="w-full">
             <CarouselContent>
               {Array.from({ length: 4 }).map((_, index) => (
-                <CarouselItem className="lg:basis-1/2" key={index}>
-                  <div className="bg-muted rounded-md h-full lg:col-span-2 p-6 aspect-video flex justify-between flex-col">
+                <CarouselItem className="lg:basis-1/3" key={index}>
+                  <div className="bg-white rounded-md h-full lg:col-span-2 p-4 aspect-video flex justify-between flex-col">
                     <div className="flex flex-col gap-4">
                       <div className="flex flex-col">
                         <h3 className="text-xl tracking-tight font-header">

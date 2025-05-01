@@ -39,12 +39,12 @@ const socialIcons = [
 
 function Footerdemo() {
   return (
-    <footer className="relative border-t bg-[#1A1F2C] text-white">
+    <footer className="relative border-t bg-[#1A1F2C] text-white font-mono">
       <div className="container mx-auto px-4 py-16 md:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="relative">
             <h2 className="mb-4 text-3xl font-header font-bold tracking-tight">Stay Connected</h2>
-            <p className="mb-6 text-gray-300 font-body">
+            <p className="mb-6 text-gray-300 font-mono">
               Join our newsletter for exclusive updates and offers.
             </p>
             <form className="relative">
@@ -66,7 +66,7 @@ function Footerdemo() {
           </div>
           <div>
             <h3 className="mb-4 text-lg font-header font-semibold">Event Spaces</h3>
-            <nav className="space-y-2 text-sm font-body">
+            <nav className="space-y-2 text-sm font-mono">
               <Link to="/wedding" className="block transition-colors hover:text-[#9b87f5]">
                 Weddings
               </Link>
@@ -80,7 +80,7 @@ function Footerdemo() {
           </div>
           <div>
             <h3 className="mb-4 text-lg font-header font-semibold">Contact & Support</h3>
-            <nav className="space-y-2 text-sm font-body">
+            <nav className="space-y-2 text-sm font-mono">
               <Link to="/contact" className="block transition-colors hover:text-[#9b87f5]">
                 Contact Us
               </Link>
@@ -93,8 +93,6 @@ function Footerdemo() {
               <address className="mt-4 not-italic text-gray-300">
                 <p>1415 Republic St</p>
                 <p>Cincinnati, OH 45202</p>
-                <p>Phone: (513) 902-1415</p>
-                <p>Email: hello@example.com</p>
               </address>
             </nav>
           </div>
@@ -127,20 +125,28 @@ function Footerdemo() {
             </div>
           </div>
         </div>
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-center md:flex-row">
-          <p className="text-sm text-gray-300 font-body">
-            © 2024 Somerhaus. All rights reserved.
-          </p>
-          <nav className="flex gap-4 text-sm font-body">
-            <Link to="/" className="transition-colors hover:text-[#9b87f5] text-gray-300">
-              Privacy Policy
-            </Link>
-            <Link to="/" className="transition-colors hover:text-[#9b87f5] text-gray-300">
-              Terms of Service
-            </Link>
-            <Link to="/" className="transition-colors hover:text-[#9b87f5] text-gray-300">
-              Cookie Settings
-            </Link>
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm font-mono md:flex-row">
+          {/* Left side: Copyright and Policy Links */}
+          <div className="flex flex-col items-center gap-2 md:flex-row md:items-center md:gap-4">
+            <p className="text-gray-300">
+              © 2024 Somerhaus. All rights reserved.
+            </p>
+            <div className="flex gap-2 text-gray-300">
+              <Link to="/privacy" className="transition-colors hover:text-[#9b87f5]">Privacy</Link>
+              <span>|</span>
+              <Link to="/terms" className="transition-colors hover:text-[#9b87f5]">Terms</Link>
+              <span>|</span>
+              <Link to="/cookies" className="transition-colors hover:text-[#9b87f5]">Cookies</Link> {/* Assuming /cookies exists or will be added */}
+            </div>
+          </div>
+
+          {/* Right side: New Links */}
+          <nav className="flex flex-wrap justify-center gap-4 md:justify-end">
+            <a href="#" className="transition-colors hover:text-[#9b87f5] text-gray-300">Somerset</a>
+            <a href="#" className="transition-colors hover:text-[#9b87f5] text-gray-300">Alice</a>
+            <a href="#" className="transition-colors hover:text-[#9b87f5] text-gray-300">Somerhaus</a>
+            <a href="#" className="transition-colors hover:text-[#9b87f5] text-gray-300">Second Story</a>
+            <a href="#" className="transition-colors hover:text-[#9b87f5] text-gray-300">The Muse</a>
           </nav>
         </div>
       </div>

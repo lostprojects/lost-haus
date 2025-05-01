@@ -1,44 +1,45 @@
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
-import { CalendarCheck, Download } from 'lucide-react';
+import HeroSection from '@/components/shared/HeroSection'; // Import shared component
+import { Button } from '@/components/ui/button'; // Keep Button import if needed elsewhere, or remove if only used via HeroSection
+import { CalendarCheck, Download } from 'lucide-react'; // Keep icon imports
 
 const CorporateHero = () => {
+  const heroImage = [
+    {
+      src: "https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80",
+      alt: "Corporate event setup at Somerhaus" // Added alt text
+    }
+  ];
+
+  const buttons = [
+    {
+      text: "Request Corporate Proposal",
+      icon: <CalendarCheck className="w-5 h-5" />,
+      size: "lg" as const,
+      // Add href if needed, e.g., href: "/corporate-proposal"
+    },
+    {
+      text: "Download Info Package",
+      icon: <Download className="w-5 h-5" />,
+      size: "lg" as const,
+      variant: "outline" as const,
+      className: "bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 hover:text-white",
+      // Add href if needed, e.g., href: "/downloads/corporate-package.pdf", download: true
+    }
+  ];
+
   return (
-    <section className="relative w-full h-[90vh] min-h-[600px] overflow-hidden">
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40 z-10" />
-      
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ 
-          backgroundImage: "url('https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80')"
-        }}
-      />
-      
-      {/* Hero Content */}
-      <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-header tracking-tight mb-4 text-white">
-          Elevate Your Business Gatherings
-        </h1>
-        <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-white/90 font-body">
-          A unique 3,080 sq ft industrial-chic space in Over-the-Rhine, designed for productive and memorable corporate events.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="font-body gap-2">
-            Request Corporate Proposal <CalendarCheck className="w-5 h-5" />
-          </Button>
-          <Button 
-            size="lg" 
-            variant="outline" 
-            className="bg-white/10 backdrop-blur-sm border-white/30 text-white font-body gap-2"
-          >
-            Download Info Package <Download className="w-5 h-5" />
-          </Button>
-        </div>
-      </div>
-    </section>
+    <HeroSection
+      backgroundType="static"
+      backgroundSources={heroImage}
+      overlayClassName="absolute inset-0 bg-black/40 z-10" // Specific overlay
+      title="Elevate Your Business Gatherings"
+      subtitle="A unique 3,080 sq ft industrial-chic space in Over-the-Rhine, designed for productive and memorable corporate events."
+      buttons={buttons}
+      // Use default section, title, subtitle classes as they match
+      contentContainerClassName="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center" // Specific content layout
+    />
   );
 };
 

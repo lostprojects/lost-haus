@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import FAQSection from '@/components/shared/FAQSection'; // Import the new component
 
 const WeddingFAQ = () => {
   const faqs = [
@@ -31,31 +31,12 @@ const WeddingFAQ = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-header tracking-tight mb-4">Frequently Asked Questions</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body">
-            Find answers to common questions about hosting your wedding at Somerhaus.
-          </p>
-        </div>
-        
-        <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left font-medium">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </div>
-    </section>
+    <FAQSection
+      title="Frequently Asked Questions"
+      description="Find answers to common questions about hosting your wedding at Somerhaus."
+      faqs={faqs}
+      // The default class names in FAQSection match the original styling, so no need to override them here.
+    />
   );
 };
 

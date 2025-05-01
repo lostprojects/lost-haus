@@ -23,7 +23,7 @@ const FAQ = () => {
             <h1 className="text-5xl font-bold text-white mb-6 font-header">
               Frequently Asked Questions
             </h1>
-            <p className="text-xl text-white/90 max-w-2xl mx-auto font-body">
+            <p className="text-xl text-white/90 max-w-2xl mx-auto font-mono">
               Find answers to common questions about Somerhaus. We're here to help make your event planning smooth and stress-free.
             </p>
           </div>

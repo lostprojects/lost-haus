@@ -12,6 +12,7 @@ declare global {
 }
 
 const EventInquiry = () => {
+
   useEffect(() => {
     // Create script element for Honeybook
     const script = document.createElement('script');
@@ -22,7 +23,7 @@ const EventInquiry = () => {
     // Initialize Honeybook
     window._HB_ = window._HB_ || {};
     // Type assertion to avoid TypeScript errors
-    (window._HB_ as any).pid = '61a840e6341fbd00074ed82a';
+    window._HB_.pid = '61a840e6341fbd00074ed82a';
     
     // Append script to document
     document.body.appendChild(script);
@@ -52,7 +53,7 @@ const EventInquiry = () => {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-header tracking-tight mb-4 text-white">
             Event Inquiry Form
           </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-white/90 font-body">
+          <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-white/90 font-mono">
             Tell us about your event and we'll help bring your vision to life.
           </p>
         </div>

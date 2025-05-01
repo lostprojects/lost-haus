@@ -1,12 +1,7 @@
 
 import React from 'react';
-import { Badge } from "@/components/ui/badge";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import FAQSection from '@/components/shared/FAQSection'; // Import the shared component
+import { Badge } from "@/components/ui/badge"; // Keep Badge import
 
 const ShowersFAQ = () => {
   const faqs = [
@@ -41,38 +36,25 @@ const ShowersFAQ = () => {
   ];
 
   return (
-    <section className="py-16 bg-[#FCF8F5]">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <Badge className="mb-4 font-body">Questions & Answers</Badge>
-          <h2 className="text-3xl md:text-5xl font-header tracking-tight mb-4">Frequently Asked Questions</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body">
-            Find answers to common questions about hosting your shower or celebration at Somerhaus.
-          </p>
-        </div>
-
-        <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left font-header text-lg">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="font-body text-muted-foreground">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-
+    <FAQSection
+      title="Frequently Asked Questions"
+      description="Find answers to common questions about hosting your shower or celebration at Somerhaus."
+      faqs={faqs}
+      sectionClassName="py-16 bg-[#FCF8F5]" // Override section background
+      preTitleContent={ // Add the badge before the title
+        <Badge className="mb-4 font-body">Questions & Answers</Badge>
+      }
+      titleClassName="text-3xl md:text-5xl font-header tracking-tight mb-4" // Override title style
+      accordionTriggerClassName="text-left font-header text-lg" // Override trigger style
+      accordionContentClassName="font-body text-muted-foreground" // Override content style
+      postAccordionContent={ // Add the contact link after the accordion
         <div className="text-center mt-12">
           <p className="font-body text-muted-foreground">
             Have more questions? Don't hesitate to <a href="#contact" className="text-primary underline hover:text-primary/80">contact us</a>.
           </p>
         </div>
-      </div>
-    </section>
+      }
+    />
   );
 };
 
