@@ -9,6 +9,7 @@ import { Logos3 } from '@/components/blocks/logos3';
 import { RevealImageListDemo } from '@/components/ui/reveal-images/demo';
 import { CTADemo } from '@/components/ui/call-to-action/demo';
 import { EventSpinner } from '@/components/ui/spinning-text/EventSpinner';
+
 const logos = [
   {
     id: "logo-1",
@@ -35,6 +36,7 @@ const logos = [
     className: "h-12 w-auto"
   }
 ];
+
 const Index = () => {
   return <main className="min-h-screen relative" style={{
     backgroundColor: '#F5F3F1'
@@ -49,7 +51,7 @@ const Index = () => {
       <FeaturesSectionWithBentoGrid />
       <TestimonialsDemo />
       {/* White container for FeatureStepsDemo section */}
-      <div className="bg-white w-full py-8">
+      <div className="bg-white w-full py-8 my-8">
         <div className="container mx-auto">
           <FeatureStepsDemo />
         </div>
@@ -58,4 +60,5 @@ const Index = () => {
       <Footerdemo />
     </main>;
 };
+
 export default Index;
