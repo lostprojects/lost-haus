@@ -1,4 +1,3 @@
-
 import * as React from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -34,7 +33,7 @@ function Footerdemo() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="relative">
             <h2 className="mb-4 text-3xl font-header font-bold tracking-tight">Say Hello</h2>
-            <Link to="/contact" className="mb-6 flex items-center text-[#9b87f5] hover:text-[#7E69AB] transition-colors">
+            <Link to="/contact" className="mb-6 flex items-center text-white hover:text-[#9b87f5] transition-colors text-sm">
               Contact Us <ArrowUpRight className="ml-1 h-4 w-4" />
             </Link>
             <address className="mt-6 not-italic text-sm text-gray-300">
