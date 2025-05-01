@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -37,7 +38,7 @@ export function FeatureSteps({
     return () => clearInterval(timer);
   }, [progress, features.length, autoPlayInterval]);
   return <div className={cn("p-8 md:p-12", className)}>
-      <div className="max-w-7xl mx-auto w-full">
+      <div className="container">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-header mb-10 text-center">
           {title}
         </h2>
