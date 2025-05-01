@@ -107,7 +107,7 @@ const ContactPage = () => {
       <section className="relative w-full h-[60vh] min-h-[400px] overflow-hidden">
         <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="absolute inset-0 bg-cover bg-center" style={{
-        backgroundImage: "url('/lovable-uploads/5dd50071-9ff7-4f7a-8b66-8e17c46ece3c.png')"
+        backgroundImage: "url('/lovable-uploads/3f1f8719-45bb-4740-b9d0-c55fe3e170ad.png')"
       }} />
         <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-header tracking-tight mb-4 text-white">
