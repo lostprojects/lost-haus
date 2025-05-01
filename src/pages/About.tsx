@@ -1,9 +1,11 @@
+
 import React, { useEffect } from 'react';
 import Header from '@/components/ui/header';
 import { Footerdemo } from '@/components/ui/footer-section';
 // Removed HeroSection import as we'll create a simpler header structure
 import { Separator } from '@/components/ui/separator';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from "@/components/ui/badge";
 
 // Add type declaration for Honeybook
 declare global {
@@ -37,6 +39,21 @@ const About: React.FC = () => {
     };
   }, []);
 
+  const teamMembers = [
+    {
+      name: "Beth Smiley",
+      role: "General Manager",
+      image: "/lovable-uploads/412228bd-5454-4f8e-8f8a-bee8380ea2ce.png",
+      bio: "Beth brings over 15 years of hospitality and event management experience to Somerhaus. With her keen eye for detail and passion for creating memorable experiences, she ensures every event runs flawlessly."
+    }, 
+    {
+      name: "Sara Hutslar",
+      role: "Events Director",
+      image: "/lovable-uploads/f86e016f-2c41-4435-a165-edbc5f730d4b.png",
+      bio: "As our creative force, Sara transforms client visions into reality. Her background in design and event planning helps create unique, personalized experiences for every occasion at Somerhaus."
+    }
+  ];
+
   return (
     <div className="flex flex-col min-h-screen bg-background"> {/* Added bg-background */}
       <Header />
@@ -65,7 +82,7 @@ const About: React.FC = () => {
                 Somerhaus was born from the same spirit of adventure that powers our sister venue, Somerset Bar—an indoor/outdoor oasis pieced together from eight shipping containers and treasures collected on global expeditions, opened in 2021 to instant acclaim. Guests loved Somerset so much they kept asking to rent it for private events. Rather than close the bar, we transformed a nearby 1880s industrial loft at 1415 Republic Street into a purpose-built event space, keeping the maximalist, globally-sourced design language people fell for.
               </p>
               <p>
-                Walk inside and you’ll see the details: a 200-year-old Japanese fishing boat suspended beneath a soaring skylight, antique village gates shipped home from India, and layered textures that feel more curated than “decorated.” The result is a venue that sparks conversation the moment your guests walk through the door.
+                Walk inside and you'll see the details: a 200-year-old Japanese fishing boat suspended beneath a soaring skylight, antique village gates shipped home from India, and layered textures that feel more curated than "decorated." The result is a venue that sparks conversation the moment your guests walk through the door.
               </p>
             </div>
           </div>
@@ -94,15 +111,62 @@ const About: React.FC = () => {
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="text-3xl md:text-4xl font-header font-semibold mb-6 text-center text-foreground">Events We Host</h2>
             <p className="text-lg text-muted-foreground text-center font-mono">
-              From weddings and showers to product launches, off-sites, art shows, and film shoots—if you can dream it, chances are we’ve flipped the room for it already. Our only hard rule: celebrations should elevate the people and the neighborhood we love.
+              From weddings and showers to product launches, off-sites, art shows, and film shoots—if you can dream it, chances are we've flipped the room for it already. Our only hard rule: celebrations should elevate the people and the neighborhood we love.
             </p>
           </div>
         </section>
 
         <Separator className="my-0" />
 
-        {/* The Team Section */}
+        {/* Meet the Team Section - Added from Contact page */}
         <section className="py-12 md:py-16 bg-muted/40">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <Badge variant="outline" className="mb-3">The People Behind Your Events</Badge>
+              <h2 className="text-3xl md:text-5xl font-header mb-4">Meet Our Team</h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto font-mono">
+                Our dedicated professionals work tirelessly to ensure your event exceeds expectations.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
+              {teamMembers.map((member, index) => (
+                <Card key={index} className="overflow-hidden transition-all hover:shadow-md">
+                  <div className="grid md:grid-cols-5 gap-4 p-0">
+                    <div className="md:col-span-2 h-full">
+                      <div className="h-full w-full relative overflow-hidden aspect-[3/4] md:aspect-auto">
+                        <img 
+                          src={member.image} 
+                          alt={member.name} 
+                          className="object-cover object-center w-full h-full transition-transform hover:scale-105 duration-700"
+                        />
+                      </div>
+                    </div>
+                    <div className="md:col-span-3 p-6">
+                      <div className="flex flex-col h-full justify-between">
+                        <div>
+                          <h3 className="text-2xl font-header mb-1">{member.name}</h3>
+                          <p className="text-primary font-medium mb-4">{member.role}</p>
+                          <p className="text-gray-600 font-mono">{member.bio}</p>
+                        </div>
+                        <div className="flex mt-6">
+                          <a href="/contact" className="text-primary hover:text-primary/80 font-medium">
+                            Contact →
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <Separator className="my-0" />
+
+        {/* The Team Section */}
+        <section className="py-12 md:py-16">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="text-3xl md:text-4xl font-header font-semibold mb-6 text-center text-foreground">The Team</h2>
             <p className="text-lg text-muted-foreground text-center font-mono">
@@ -113,10 +177,10 @@ const About: React.FC = () => {
 
         <Separator className="my-0" />
 
-        {/* Why We’re Different Section */}
+        {/* Why We're Different Section */}
         <section className="py-12 md:py-16">
           <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-header font-semibold mb-6 text-center text-foreground">Why We’re Different</h2>
+            <h2 className="text-3xl md:text-4xl font-header font-semibold mb-6 text-center text-foreground">Why We're Different</h2>
             <ul className="list-disc list-inside space-y-3 text-lg text-muted-foreground font-mono marker:text-primary">
               <li>Design without the white-box blandness. Your photos pop because the space already tells a story—yours just becomes the next chapter.</li>
               <li>Hospitality, not just venue rental. We cap events per week so our team can focus on service instead of churn.</li>
