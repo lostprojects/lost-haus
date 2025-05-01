@@ -70,9 +70,11 @@ function Footerdemo() {
           <div>
             <h3 className="mb-4 text-lg font-header font-semibold">Tools & Info</h3>
             <nav className="space-y-2 text-sm font-mono">
-              
-              <Link to="/event-inquiry" className="block transition-colors hover:text-[#9b87f5]">
-                Event Inquiry
+              <Link to="/event-inquiry" className="flex items-center transition-colors hover:text-[#9b87f5]">
+                Event Inquiry <ArrowUpRight className="ml-1 h-4 w-4" />
+              </Link>
+              <Link to="#" className="flex items-center transition-colors hover:text-[#9b87f5]">
+                Guest Login <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
               <Link to="/faq" className="block transition-colors hover:text-[#9b87f5]">
                 FAQ
