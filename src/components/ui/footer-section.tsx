@@ -1,34 +1,24 @@
-import * as React from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
-import { Link } from "react-router-dom"
-import { ArrowUpRight, Send } from "lucide-react"
+import * as React from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Link } from "react-router-dom";
+import { ArrowUpRight, Send } from "lucide-react";
 
 // Updated social icons array - keeping only Instagram and Facebook
-const socialIcons = [
-  {
-    name: "Instagram",
-    image: "/lovable-uploads/c7a03617-c05f-49b7-8f75-c54010643961.png",
-    link: "https://www.instagram.com/somerhaus.space/?hl=en",
-    tooltip: "Follow us on Instagram"
-  },
-  {
-    name: "Facebook",
-    image: "/lovable-uploads/db22bf39-d1f0-4405-9204-bff18b3eb5b1.png",
-    link: "https://www.facebook.com/Somerhaus.otr/",
-    tooltip: "Follow us on Facebook"
-  }
-];
-
+const socialIcons = [{
+  name: "Instagram",
+  image: "/lovable-uploads/c7a03617-c05f-49b7-8f75-c54010643961.png",
+  link: "https://www.instagram.com/somerhaus.space/?hl=en",
+  tooltip: "Follow us on Instagram"
+}, {
+  name: "Facebook",
+  image: "/lovable-uploads/db22bf39-d1f0-4405-9204-bff18b3eb5b1.png",
+  link: "https://www.facebook.com/Somerhaus.otr/",
+  tooltip: "Follow us on Facebook"
+}];
 function Footerdemo() {
-  return (
-    <footer className="relative border-t bg-[#1A1F2C] text-white font-mono">
+  return <footer className="relative border-t bg-[#1A1F2C] text-white font-mono">
       <div className="container mx-auto px-4 py-16 md:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="relative">
@@ -42,34 +32,23 @@ function Footerdemo() {
               <p>Cincinnati, OH 45202</p>
             </address>
             <div className="mt-6 flex space-x-4">
-              {socialIcons.map((social) => (
-                <TooltipProvider key={social.name}>
+              {socialIcons.map(social => <TooltipProvider key={social.name}>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <a 
-                        href={social.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block transition-transform hover:scale-110"
-                      >
-                        <img 
-                          src={social.image} 
-                          alt={social.name}
-                          className="h-10 w-10"
-                        />
+                      <a href={social.link} target="_blank" rel="noopener noreferrer" className="block transition-transform hover:scale-110">
+                        <img src={social.image} alt={social.name} className="h-10 w-10" />
                       </a>
                     </TooltipTrigger>
                     <TooltipContent>
                       <p>{social.tooltip}</p>
                     </TooltipContent>
                   </Tooltip>
-                </TooltipProvider>
-              ))}
+                </TooltipProvider>)}
             </div>
             <div className="absolute -right-4 top-0 h-24 w-24 rounded-full bg-[#9b87f5]/10 blur-2xl" />
           </div>
           <div>
-            <h3 className="mb-4 text-lg font-header font-semibold">Event Spaces</h3>
+            <h3 className="mb-4 text-lg font-header font-semibold">Event Types</h3>
             <nav className="space-y-2 text-sm font-mono">
               <Link to="/wedding" className="block transition-colors hover:text-[#9b87f5]">
                 Weddings
@@ -83,11 +62,9 @@ function Footerdemo() {
             </nav>
           </div>
           <div>
-            <h3 className="mb-4 text-lg font-header font-semibold">Contact & Support</h3>
+            <h3 className="mb-4 text-lg font-header font-semibold">Tools & Info</h3>
             <nav className="space-y-2 text-sm font-mono">
-              <Link to="/contact" className="block transition-colors hover:text-[#9b87f5]">
-                Contact Us
-              </Link>
+              
               <Link to="/event-inquiry" className="block transition-colors hover:text-[#9b87f5]">
                 Event Inquiry
               </Link>
@@ -102,16 +79,8 @@ function Footerdemo() {
               Join our newsletter for exclusive updates and offers.
             </p>
             <form className="relative">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="pr-12 bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-              />
-              <Button
-                type="submit"
-                size="icon"
-                className="absolute right-1 top-1 h-8 w-8 rounded-full bg-[#9b87f5] hover:bg-[#7E69AB] text-white transition-all duration-300 hover:scale-105"
-              >
+              <Input type="email" placeholder="Enter your email" className="pr-12 bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
+              <Button type="submit" size="icon" className="absolute right-1 top-1 h-8 w-8 rounded-full bg-[#9b87f5] hover:bg-[#7E69AB] text-white transition-all duration-300 hover:scale-105">
                 <Send className="h-4 w-4" />
                 <span className="sr-only">Subscribe</span>
               </Button>
@@ -141,8 +110,6 @@ function Footerdemo() {
           </nav>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 }
-
-export { Footerdemo }
+export { Footerdemo };
