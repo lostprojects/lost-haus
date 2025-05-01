@@ -93,7 +93,7 @@ export default {
       },
       fontFamily: {
         'header': ['Playfair Display', 'serif'],
-        'body': ['Inconsolata', 'monospace'],
+        'body': ['Space Mono', 'monospace'],
       }
     }
   },
