@@ -52,14 +52,14 @@ function Footerdemo() {
           <div>
             <h3 className="mb-4 text-lg font-header font-semibold">Event Types</h3>
             <nav className="space-y-2 text-sm font-mono">
-              <Link to="/wedding" className="block transition-colors hover:text-[#9b87f5]">
-                Weddings
+              <Link to="/wedding" className="flex items-center transition-colors hover:text-[#9b87f5]">
+                Weddings <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
-              <Link to="/showers" className="block transition-colors hover:text-[#9b87f5]">
-                Showers
+              <Link to="/showers" className="flex items-center transition-colors hover:text-[#9b87f5]">
+                Showers <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
-              <Link to="/corporate" className="block transition-colors hover:text-[#9b87f5]">
-                Corporate Events
+              <Link to="/corporate" className="flex items-center transition-colors hover:text-[#9b87f5]">
+                Corporate Events <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
             </nav>
           </div>
