@@ -33,7 +33,7 @@ const socialIcons = [
   {
     name: "Facebook",
     image: "/lovable-uploads/db22bf39-d1f0-4405-9204-bff18b3eb5b1.png",
-    link: "https://facebook.com",
+    link: "https://www.facebook.com/Somerhaus.otr/",
     tooltip: "Follow us on Facebook"
   }
 ];
