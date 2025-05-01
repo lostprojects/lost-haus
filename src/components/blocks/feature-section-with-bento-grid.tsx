@@ -41,14 +41,18 @@ export function FeaturesSectionWithBentoGrid() {
 
   return (
     <div className="relative z-20 py-6 lg:py-16 max-w-7xl mx-auto">
-      <div className="px-8">
-        <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-header">
+      <div className="px-8 text-center">
+        <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto tracking-tight font-header">
           A Venue Like No Other
         </h4>
 
         <p className="text-sm lg:text-base max-w-2xl my-4 mx-auto text-neutral-500 text-center font-body">
           Discover the perfect blend of historic charm and modern amenities at Somerhaus,
           Cincinnati's premier event venue.
+        </p>
+        
+        <p className="text-sm lg:text-base max-w-2xl mb-6 mx-auto text-neutral-500 text-center font-body">
+          With our five-star track record on Google and Yelp, you can be confident your event will exceed expectations and leave your guests with lasting memories.
         </p>
       </div>
 
