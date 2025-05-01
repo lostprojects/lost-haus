@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { MapPin, Phone, CalendarDays } from 'lucide-react';
 import Header from '@/components/ui/header';
@@ -107,7 +106,7 @@ const ContactPage = () => {
       <section className="relative w-full h-[60vh] min-h-[400px] overflow-hidden">
         <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="absolute inset-0 bg-cover bg-center" style={{
-        backgroundImage: "url('/lovable-uploads/5bc412c9-8530-43fc-8266-371fd01df196.png')"
+        backgroundImage: "url('/lovable-uploads/deb2fade-546f-47b1-8a95-10ae696bb78c.png')"
       }} />
         <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-header tracking-tight mb-4 text-white">
@@ -146,7 +145,7 @@ const ContactPage = () => {
                       </a>
                     </div>
                     <div className="md:col-span-2 rounded-lg overflow-hidden shadow-sm border border-gray-200">
-                      <iframe title="Somerhaus Location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3095.5335635388787!2d-84.51802772412837!3d39.11347593370424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841b3addfdf5775%3A0x850f5a834ff19779!2sSomerhaus%20Events%20Venue!5e0!3m2!1sen!2sus!4v1714444288981!5m2!1sen!2sus!4v1714444288981!5m2!1sen!2sus" width="100%" height="300" style={{
+                      <iframe title="Somerhaus Location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3095.5335635388787!2d-84.51802772412837!3d39.11347593370424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841b3addfdf5775:0x850f5a834ff19779!2sSomerhaus%20Events%20Venue!5e0!3m2!1sen!2sus!4v1714444288981!5m2!1sen!2sus!4v1714444288981!5m2!1sen!2sus" width="100%" height="300" style={{
                       border: 0
                     }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                     </div>
