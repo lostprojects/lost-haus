@@ -38,7 +38,7 @@ function Footerdemo() {
             </Link>
             <address className="mt-6 not-italic text-sm text-gray-300">
               <p className="mb-2">Somerhaus Event Space</p>
-              <p>1415 Republic St</p>
+              <p className="mb-2">1415 Republic St</p>
               <p>Cincinnati, OH 45202</p>
             </address>
             <div className="mt-6 flex space-x-4">
