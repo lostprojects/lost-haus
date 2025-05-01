@@ -93,7 +93,7 @@ export default {
       },
       fontFamily: {
         'header': ['FreshMango', 'serif'],
-        'body': ['Space Mono', 'monospace'],
+        'body': ['Nebulica', 'sans-serif'],
       }
     }
   },

@@ -2,14 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Star } from "lucide-react";
 import { TiltCard } from "@/components/ui/tilt-card";
 import AvatarGroup from './AvatarGroup';
+
 interface HeroImage {
   url: string;
   alt: string;
 }
+
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState<boolean[]>([]);
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
+
   const images: HeroImage[] = [{
     url: "/lovable-uploads/f8a14efe-117f-4fea-8c12-b9371b4d3825.png",
     alt: "Somerhaus wedding ceremony celebration"
@@ -23,6 +26,7 @@ const Hero = () => {
     url: "/lovable-uploads/9af23dea-0956-4cc4-a1c8-f2cee31084b2.png",
     alt: "Somerhaus wedding ceremony setup"
   }];
+
   useEffect(() => {
     const loadImage = (url: string, index: number) => {
       const img = new Image();
@@ -93,7 +97,7 @@ const Hero = () => {
       {/* Button positioned 2/3 of the way between the bottom of main content and bottom of hero */}
       <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[16%]">
         <TiltCard href="/event-inquiry" className="group max-h-fit rounded-full bg-black p-2 px-6 shadow-[0_20px_50px_rgba(0,0,0,0.8)] hover:bg-[#D9FF8A]">
-          <span className="text-xl text-white group-hover:text-black font-mono">Reserve Your Event</span>
+          <span className="text-xl text-white group-hover:text-black font-body">Reserve Your Event</span>
         </TiltCard>
       </div>
 
@@ -102,4 +106,5 @@ const Hero = () => {
         </div>}
     </div>;
 };
+
 export default Hero;
