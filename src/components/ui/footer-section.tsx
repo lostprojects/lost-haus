@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -20,7 +21,7 @@ const socialIcons = [
   {
     name: "Instagram",
     image: "/lovable-uploads/c7a03617-c05f-49b7-8f75-c54010643961.png",
-    link: "https://instagram.com",
+    link: "https://www.instagram.com/somerhaus.space/?hl=en",
     tooltip: "Follow us on Instagram"
   },
   {
