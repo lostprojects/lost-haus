@@ -67,7 +67,7 @@ const Hero = () => {
           <span>Event Space</span>
         </h1>
         
-        <p className="text-xl text-center mb-6 max-w-2xl font-body font-thin md:text-lg font-extralight">
+        <p className="text-xl text-center mb-6 max-w-2xl font-body font-extralight md:text-lg">
           Transform your special moments into magical memories in our ivy-covered,
           historic venue.<br />
           <span className="italic">*Limited dates available for 2025*</span>
