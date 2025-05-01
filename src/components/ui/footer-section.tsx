@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -36,11 +37,36 @@ function Footerdemo() {
             <Link to="/contact" className="mb-6 flex items-center text-[#9b87f5] hover:text-[#7E69AB] transition-colors">
               Contact Us <ArrowUpRight className="ml-1 h-4 w-4" />
             </Link>
-            <address className="mt-6 not-italic text-gray-300">
+            <address className="mt-6 not-italic text-sm text-gray-300">
               <p className="mb-2">Somerhaus Event Space</p>
               <p>1415 Republic St</p>
               <p>Cincinnati, OH 45202</p>
             </address>
+            <div className="mt-6 flex space-x-4">
+              {socialIcons.map((social) => (
+                <TooltipProvider key={social.name}>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <a 
+                        href={social.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block transition-transform hover:scale-110"
+                      >
+                        <img 
+                          src={social.image} 
+                          alt={social.name}
+                          className="h-10 w-10"
+                        />
+                      </a>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>{social.tooltip}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              ))}
+            </div>
             <div className="absolute -right-4 top-0 h-24 w-24 rounded-full bg-[#9b87f5]/10 blur-2xl" />
           </div>
           <div>
@@ -73,7 +99,7 @@ function Footerdemo() {
           </div>
           <div className="relative">
             <h3 className="mb-4 text-lg font-header font-semibold">Newsletter</h3>
-            <p className="mb-6 text-gray-300 font-mono">
+            <p className="mb-6 text-sm text-gray-300 font-mono">
               Join our newsletter for exclusive updates and offers.
             </p>
             <form className="relative">
@@ -91,31 +117,6 @@ function Footerdemo() {
                 <span className="sr-only">Subscribe</span>
               </Button>
             </form>
-            <div className="mt-6 flex space-x-4">
-              {socialIcons.map((social) => (
-                <TooltipProvider key={social.name}>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <a 
-                        href={social.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block transition-transform hover:scale-110"
-                      >
-                        <img 
-                          src={social.image} 
-                          alt={social.name}
-                          className="h-10 w-10"
-                        />
-                      </a>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>{social.tooltip}</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              ))}
-            </div>
           </div>
         </div>
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm font-mono md:flex-row">
