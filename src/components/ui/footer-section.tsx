@@ -72,8 +72,8 @@ function Footerdemo() {
               <Link to="#" className="flex items-center transition-colors hover:text-[#9b87f5]">
                 Guest Login <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
-              <Link to="/faq" className="block transition-colors hover:text-[#9b87f5]">
-                FAQ
+              <Link to="/faq" className="flex items-center transition-colors hover:text-[#9b87f5]">
+                FAQ <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
             </nav>
           </div>
