@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -91,7 +92,7 @@ export default {
         'accordion-up': 'accordion-up 0.2s ease-out'
       },
       fontFamily: {
-        'header': ['Brogsway', 'serif'],
+        'header': ['FreshMango', 'serif'],
         'body': ['Space Mono', 'monospace'],
       }
     }
