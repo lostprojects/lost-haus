@@ -51,9 +51,11 @@ const Index = () => {
       <FeaturesSectionWithBentoGrid />
       <TestimonialsDemo />
       {/* White container for FeatureStepsDemo section */}
-      <div className="bg-white w-full py-8 my-8">
-        <div className="container mx-auto">
-          <FeatureStepsDemo />
+      <div className="w-full py-10 lg:py-16">
+        <div className="container">
+          <div className="bg-white rounded-md p-4 lg:p-14">
+            <FeatureStepsDemo />
+          </div>
         </div>
       </div>
       <CTADemo />
