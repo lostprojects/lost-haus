@@ -46,7 +46,7 @@ const Index = () => {
         <Hero />
         <EventSpinner />
       </div>
-      <Logos3 heading="Cincinnati's Most Notable Event Planners Trust Us" logos={logos} />
+      <Logos3 heading="Cincinnati's Best Event Planners Trust Us" logos={logos} />
       <RevealImageListDemo />
       <FeaturesSectionWithBentoGrid />
       <TestimonialsDemo />
