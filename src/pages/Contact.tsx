@@ -29,8 +29,7 @@ const ContactPage = () => {
 
     // Initialize Honeybook
     window._HB_ = window._HB_ || {};
-    // Type assertion to avoid TypeScript errors
-    (window._HB_ as any).pid = '61a840e6341fbd00074ed82a';
+    window._HB_!.pid = '61a840e6341fbd00074ed82a';
 
     // Append script to document
     document.body.appendChild(script);
