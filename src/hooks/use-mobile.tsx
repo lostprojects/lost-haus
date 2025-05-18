@@ -1,5 +1,6 @@
 import * as React from "react"
 
+// Pixel width threshold for mobile devices
 const MOBILE_BREAKPOINT = 768
 
 export function useIsMobile() {
