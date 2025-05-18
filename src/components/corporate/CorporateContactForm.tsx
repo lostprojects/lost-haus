@@ -36,8 +36,7 @@ const CorporateContactForm = () => {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
-    // Here you would handle the form submission
+    // TODO: submit data
   };
 
   return (
