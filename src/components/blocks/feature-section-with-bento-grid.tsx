@@ -8,12 +8,12 @@ export function FeaturesSectionWithBentoGrid() {
     title: "Historic Charm",
     description: "Experience our ivy-covered walls and timeless architecture that has been part of Cincinnati's heritage.",
     skeleton: <SkeletonOne />,
-    className: "col-span-1 md:col-span-4 lg:col-span-4 border-b md:border-r dark:border-neutral-800"
+    className: "col-span-1 md:col-span-2 lg:col-span-2 border-b md:border-r dark:border-neutral-800"
   }, {
     title: "Versatile Spaces",
     description: "From intimate gatherings to grand celebrations, our flexible spaces adapt to your vision.",
     skeleton: <SkeletonTwo />,
-    className: "col-span-1 md:col-span-2 lg:col-span-2 border-b dark:border-neutral-800"
+    className: "col-span-1 md:col-span-4 lg:col-span-4 border-b dark:border-neutral-800"
   }, {
     title: "Virtual Tours Available",
     description: "Take a virtual walk through our stunning venue from the comfort of your home.",
