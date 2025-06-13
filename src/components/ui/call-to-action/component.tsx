@@ -2,7 +2,7 @@ import { CalendarCheck, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 function CTA() {
-  return <div className="w-full py-10 lg:py-16">
+  return <div className="w-full py-10 lg:py-[40px]">
       <div className="container">
         <div className="flex flex-col text-center rounded-md p-4 lg:p-14 gap-8 items-center bg-orange-600">
           <div>
