@@ -9,30 +9,36 @@ import { Logos3 } from '@/components/blocks/logos3';
 import { RevealImageListDemo } from '@/components/ui/reveal-images/demo';
 import { CTADemo } from '@/components/ui/call-to-action/demo';
 
-const logos = [
+const pressLogos = [
   {
-    id: "logo-1",
-    description: "Photography",
-    image: "/lovable-uploads/54dee81d-d7ea-49c7-8588-03e5db9ec8bd.png",
-    className: "h-12 w-auto"
+    id: "press-1",
+    description: "TechCrunch",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=200&h=100&fit=crop",
+    className: "h-8 w-auto grayscale hover:grayscale-0 transition-all"
   },
   {
-    id: "logo-2",
-    description: "Events",
-    image: "/lovable-uploads/41b903d4-d950-4e6e-839a-07c706d701b0.png",
-    className: "h-12 w-auto"
+    id: "press-2", 
+    description: "Forbes",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=200&h=100&fit=crop",
+    className: "h-8 w-auto grayscale hover:grayscale-0 transition-all"
   },
   {
-    id: "logo-3",
-    description: "Catering",
-    image: "/lovable-uploads/54dee81d-d7ea-49c7-8588-03e5db9ec8bd.png",
-    className: "h-12 w-auto"
+    id: "press-3",
+    description: "Wall Street Journal",
+    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop",
+    className: "h-8 w-auto grayscale hover:grayscale-0 transition-all"
   },
   {
-    id: "logo-4",
-    description: "Weddings",
-    image: "/lovable-uploads/41b903d4-d950-4e6e-839a-07c706d701b0.png",
-    className: "h-12 w-auto"
+    id: "press-4",
+    description: "New York Times",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200&h=100&fit=crop",
+    className: "h-8 w-auto grayscale hover:grayscale-0 transition-all"
+  },
+  {
+    id: "press-5",
+    description: "Bloomberg",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=200&h=100&fit=crop",
+    className: "h-8 w-auto grayscale hover:grayscale-0 transition-all"
   }
 ];
 
@@ -42,7 +48,7 @@ const Index = () => {
   }}>
       <Header />
       <Hero />
-      <Logos3 heading="Cincinnati's Best Event Planners Trust Us" logos={logos} />
+      <Logos3 heading="Featured In" logos={pressLogos} />
       <RevealImageListDemo />
       <FeaturesSectionWithBentoGrid />
       <TestimonialsDemo />
