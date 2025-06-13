@@ -8,7 +8,6 @@ import { Footerdemo } from '@/components/ui/footer-section';
 import { Logos3 } from '@/components/blocks/logos3';
 import { RevealImageListDemo } from '@/components/ui/reveal-images/demo';
 import { CTADemo } from '@/components/ui/call-to-action/demo';
-import { EventSpinner } from '@/components/ui/spinning-text/EventSpinner';
 
 const logos = [
   {
@@ -42,10 +41,7 @@ const Index = () => {
     backgroundColor: '#F5F3F1'
   }}>
       <Header />
-      <div className="relative">
-        <Hero />
-        <EventSpinner />
-      </div>
+      <Hero />
       <Logos3 heading="Cincinnati's Best Event Planners Trust Us" logos={logos} />
       <RevealImageListDemo />
       <FeaturesSectionWithBentoGrid />
