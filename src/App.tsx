@@ -12,7 +12,8 @@ import Corporate from "./pages/Corporate";
 import Contact from "./pages/Contact";
 import Showers from "./pages/Showers";
 import EventInquiry from "./pages/EventInquiry";
-import About from "./pages/About"; // Import the new About page
+import About from "./pages/About";
+import SpecialEvents from "./pages/SpecialEvents";
 
 const queryClient = new QueryClient();
 
@@ -30,7 +31,8 @@ const App = () => (
           <Route path="/corporate" element={<Corporate />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/event-inquiry" element={<EventInquiry />} />
-          <Route path="/about" element={<About />} /> {/* Add the route for About page */}
+          <Route path="/about" element={<About />} />
+          <Route path="/special-events" element={<SpecialEvents />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </TooltipProvider>
