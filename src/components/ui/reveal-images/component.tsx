@@ -77,7 +77,7 @@ function RevealImageList() {
     }]
   }];
   return <div className="flex flex-col gap-1 rounded-sm bg-background px-4 md:px-8 py-4 max-w-7xl mx-auto">
-      <h3 className="text-sm font-black uppercase font-body mb-4 text-orange-600">Our Event Types</h3>
+      <h3 className="text-5xl font-bold md:text-5xl text-orange-600 font-header text-center">Our Event Types</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {items.map((item, index) => <RevealImageListItem key={index} text={item.text} images={item.images} />)}
       </div>
