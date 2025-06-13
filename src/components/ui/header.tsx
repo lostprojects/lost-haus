@@ -35,7 +35,7 @@ const Header = () => {
   ];
 
   const infoItems = [
-    { name: 'Gallery', href: '#gallery' },
+    { name: 'Gallery', href: '/gallery' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '/contact' },
     { name: 'About', href: '/about' },
