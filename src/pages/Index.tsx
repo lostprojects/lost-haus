@@ -48,7 +48,7 @@ const Index = () => {
   }}>
       <Header />
       <Hero />
-      <Logos3 heading="Featured In" logos={pressLogos} />
+      <Logos3 logos={pressLogos} />
       <RevealImageListDemo />
       <FeaturesSectionWithBentoGrid />
       <TestimonialsDemo />
