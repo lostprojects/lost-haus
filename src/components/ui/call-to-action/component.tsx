@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 function CTA() {
   return <div className="w-full py-10 lg:py-16">
       <div className="container">
-        <div className="flex flex-col text-center bg-gradient-to-br from-[#FDE1D3] to-[#FEC6A1] rounded-md p-4 lg:p-14 gap-8 items-center bg-orange-600">
+        <div className="flex flex-col text-center rounded-md p-4 lg:p-14 gap-8 items-center bg-orange-600">
           <div>
             <Badge className="font-body">Limited Dates Available</Badge>
           </div>
