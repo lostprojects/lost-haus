@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/ui/header';
 import { Footerdemo } from '@/components/ui/footer-section';
@@ -24,7 +23,8 @@ const SpecialEvents = () => {
         "Bridal suite access",
         "Event coordination"
       ],
-      popular: false
+      popular: false,
+      buttonText: "Book This Package"
     },
     {
       name: "Celebration Package",
@@ -41,7 +41,8 @@ const SpecialEvents = () => {
         "Bar service available",
         "Vendor coordination"
       ],
-      popular: true
+      popular: true,
+      buttonText: "Book This Package"
     },
     {
       name: "Grand Celebration",
@@ -59,7 +60,8 @@ const SpecialEvents = () => {
         "Photography coordination",
         "Day-of event management"
       ],
-      popular: false
+      popular: false,
+      buttonText: "Book This Package"
     }
   ];
 
