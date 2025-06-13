@@ -1,40 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Header from '@/components/ui/header';
 import { Footerdemo } from '@/components/ui/footer-section';
-
-// Add type declaration for Honeybook
-declare global {
-  interface Window {
-    _HB_?: {
-      pid?: string;
-    };
-  }
-}
+import { useHoneyBook } from '@/hooks/use-honeybook';
+import HoneyBookForm from '@/components/honeybook/HoneyBookForm';
 
 const EventInquiry = () => {
-
-  useEffect(() => {
-    // Create script element for Honeybook
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.async = true;
-    script.src = 'https://widget.honeybook.com/assets_users_production/websiteplacements/placement-controller.min.js';
-    
-    // Initialize Honeybook
-    window._HB_ = window._HB_ || {};
-    // Type assertion to avoid TypeScript errors
-    window._HB_.pid = '61a840e6341fbd00074ed82a';
-    
-    // Append script to document
-    document.body.appendChild(script);
-    
-    // Cleanup function to remove script when component unmounts
-    return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
+  useHoneyBook();
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -71,14 +42,7 @@ const EventInquiry = () => {
               
               {/* Honeybook Embed */}
               <div className="mt-8">
-                <div className="hb-p-61a840e6341fbd00074ed82a-5"></div>
-                <img 
-                  height="1" 
-                  width="1" 
-                  style={{ display: 'none' }} 
-                  src="https://www.honeybook.com/p.png?pid=61a840e6341fbd00074ed82a" 
-                  alt=""
-                />
+                <HoneyBookForm placementId="5" />
               </div>
             </div>
           </div>

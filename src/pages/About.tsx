@@ -1,43 +1,16 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import Header from '@/components/ui/header';
 import { Footerdemo } from '@/components/ui/footer-section';
 // Removed HeroSection import as we'll create a simpler header structure
 import { Separator } from '@/components/ui/separator';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from "@/components/ui/badge";
-
-// Add type declaration for Honeybook
-declare global {
-  interface Window {
-    _HB_?: {
-      pid?: string;
-    };
-  }
-}
+import { useHoneyBook } from '@/hooks/use-honeybook';
+import HoneyBookForm from '@/components/honeybook/HoneyBookForm';
 
 const About: React.FC = () => {
-  useEffect(() => {
-    // Create script element for Honeybook
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.async = true;
-    script.src = 'https://widget.honeybook.com/assets_users_production/websiteplacements/placement-controller.min.js';
-
-    // Initialize Honeybook safely
-    window._HB_ = window._HB_ ?? {}; // Ensure _HB_ exists using nullish coalescing
-    window._HB_.pid = '61a840e6341fbd00074ed82a'; // Assign pid using defined type
-
-    // Append script to document
-    document.body.appendChild(script);
-
-    // Cleanup function to remove script when component unmounts
-    return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
+  useHoneyBook();
 
   const teamMembers = [
     {
@@ -203,14 +176,7 @@ const About: React.FC = () => {
                 </p>
                 {/* HoneyBook Embed Code */}
                 <div className="mt-6">
-                  <div className="hb-p-61a840e6341fbd00074ed82a-5"></div>
-                  <img
-                    height="1"
-                    width="1"
-                    style={{ display: 'none' }}
-                    src="https://www.honeybook.com/p.png?pid=61a840e6341fbd00074ed82a"
-                    alt=""
-                  />
+                  <HoneyBookForm placementId="5" />
                 </div>
               </CardContent>
             </Card>
