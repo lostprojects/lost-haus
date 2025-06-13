@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Carousel, CarouselApi, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Star } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 function Testimonials() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
@@ -45,10 +46,18 @@ function Testimonials() {
                           and the staff went above and beyond to make our day special.
                         </p>
                       </div>
-                      <div className="flex items-center gap-1">
-                        {Array.from({
-                      length: 5
-                    }).map((_, starIndex) => <Star key={starIndex} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
+                      <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-1">
+                          {Array.from({
+                        length: 5
+                      }).map((_, starIndex) => <Star key={starIndex} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
+                        </div>
+                        <img 
+                          src="/lovable-uploads/eeb6f2f8-930d-4ae6-bc37-7ae77543d2fe.png" 
+                          alt="Google" 
+                          className="w-4 h-4"
+                        />
+                        <span className="text-sm font-body">5-Stars on Google Reviews</span>
                       </div>
                       <p className="flex flex-row gap-2 text-sm items-center font-body">
                         <span className="text-muted-foreground">By</span>{" "}
