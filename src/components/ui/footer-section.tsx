@@ -50,7 +50,7 @@ function Footerdemo() {
             <div className="absolute -right-4 top-0 h-24 w-24 rounded-full bg-[#9b87f5]/10 blur-2xl" />
           </div>
           <div>
-            <h3 className="mb-4 text-lg font-header font-semibold">Event Types</h3>
+            <h3 className="mb-4 font-header font-semibold text-2xl">Event Types</h3>
             <nav className="space-y-2 text-sm font-mono">
               <Link to="/wedding" className="flex items-center transition-colors hover:text-[#9b87f5]">
                 Weddings <ArrowUpRight className="ml-1 h-4 w-4" />
@@ -64,7 +64,7 @@ function Footerdemo() {
             </nav>
           </div>
           <div>
-            <h3 className="mb-4 text-lg font-header font-semibold">Tools & Info</h3>
+            <h3 className="mb-4 font-header font-semibold text-2xl">Tools & Info</h3>
             <nav className="space-y-2 text-sm font-mono">
               <Link to="/event-inquiry" className="flex items-center transition-colors hover:text-[#9b87f5]">
                 Event Inquiry <ArrowUpRight className="ml-1 h-4 w-4" />
@@ -78,7 +78,7 @@ function Footerdemo() {
             </nav>
           </div>
           <div className="relative">
-            <h3 className="mb-4 text-lg font-header font-semibold">Newsletter</h3>
+            <h3 className="mb-4 font-header font-semibold text-2xl">Newsletter</h3>
             <p className="mb-6 text-sm text-gray-300 font-mono">
               Join our newsletter for exclusive updates and offers.
             </p>
