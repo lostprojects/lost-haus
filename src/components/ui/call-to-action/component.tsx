@@ -9,10 +9,10 @@ function CTA() {
             <Badge className="font-body">Limited Dates Available</Badge>
           </div>
           <div className="flex flex-col gap-2">
-            <h3 className="text-3xl md:text-5xl tracking-tighter max-w-xl font-header">
+            <h3 className="text-5xl md:text-5xl tracking-tighter max-w-xl font-header text-white">
               Create Your Perfect Event
             </h3>
-            <p className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-xl font-body">
+            <p className="text-lg leading-relaxed tracking-tight max-w-xl font-body text-slate-950">
               Reserve your date at Cincinnati's most enchanting event space. 
               Our 3,080 sq ft industrial-chic venue in Over-the-Rhine is perfect 
               for weddings, showers, and corporate events.
