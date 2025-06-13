@@ -14,6 +14,7 @@ import Showers from "./pages/Showers";
 import EventInquiry from "./pages/EventInquiry";
 import About from "./pages/About";
 import SpecialEvents from "./pages/SpecialEvents";
+import Dinners from "./pages/Dinners";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/event-inquiry" element={<EventInquiry />} />
           <Route path="/about" element={<About />} />
           <Route path="/special-events" element={<SpecialEvents />} />
+          <Route path="/dinners" element={<Dinners />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </TooltipProvider>
