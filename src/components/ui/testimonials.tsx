@@ -22,7 +22,7 @@ function Testimonials() {
     }, 4000);
     return () => clearTimeout(timer);
   }, [api, current]);
-  return <div className="w-full py-20 lg:py-40">
+  return <div className="w-full py-20 lg:py-[50px]">
       <div className="container mx-auto">
         <div className="flex flex-col gap-10">
           <h2 className="text-5xl font-bold md:text-5xl text-orange-600 font-header text-center">
