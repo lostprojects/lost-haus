@@ -2,9 +2,9 @@
 import React from 'react';
 import Header from '@/components/ui/header';
 import { Footerdemo } from '@/components/ui/footer-section';
-import { HeroSection } from '@/components/shared/HeroSection';
-import { PricingSection } from '@/components/shared/PricingSection';
-import { FAQSection } from '@/components/shared/FAQSection';
+import HeroSection from '@/components/shared/HeroSection';
+import PricingSection from '@/components/shared/PricingSection';
+import FAQSection from '@/components/shared/FAQSection';
 import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
 import { CTA } from '@/components/ui/call-to-action/component';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
