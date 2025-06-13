@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { MapPin, Phone, CalendarDays } from 'lucide-react';
 import Header from '@/components/ui/header';
 import { Footerdemo } from '@/components/ui/footer-section';
@@ -8,39 +8,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-
-// Add type declaration for Honeybook
-declare global {
-  interface Window {
-    _HB_?: {
-      pid?: string;
-    };
-  }
-}
+import { useHoneyBook } from '@/hooks/use-honeybook';
+import HoneyBookForm from '@/components/honeybook/HoneyBookForm';
 
 const ContactPage = () => {
-  // Honeybook form integration
-  useEffect(() => {
-    // Create script element for Honeybook
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.async = true;
-    script.src = 'https://widget.honeybook.com/assets_users_production/websiteplacements/placement-controller.min.js';
-
-    // Initialize Honeybook
-    window._HB_ = window._HB_ || {};
-    window._HB_!.pid = '61a840e6341fbd00074ed82a';
-
-    // Append script to document
-    document.body.appendChild(script);
-
-    // Cleanup function to remove script when component unmounts
-    return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
+  useHoneyBook();
 
   const teamMembers = [
     {
@@ -161,10 +133,7 @@ const ContactPage = () => {
                   <p className="text-gray-600 mb-8 font-mono">
                     Use this form to get in touch with us about general inquiries.
                   </p>
-                  <div className="hb-p-61a840e6341fbd00074ed82a-2"></div>
-                  <img height="1" width="1" style={{
-                  display: 'none'
-                }} src="https://www.honeybook.com/p.png?pid=61a840e6341fbd00074ed82a" alt="" />
+                  <HoneyBookForm placementId="2" />
                 </div>
                 
                 {/* Event Inquiry Link */}
