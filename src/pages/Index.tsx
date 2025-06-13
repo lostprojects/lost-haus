@@ -7,6 +7,8 @@ import { Footerdemo } from '@/components/ui/footer-section';
 import { Logos3 } from '@/components/blocks/logos3';
 import { RevealImageListDemo } from '@/components/ui/reveal-images/demo';
 import { CTADemo } from '@/components/ui/call-to-action/demo';
+import { ImageGallerySection } from '@/components/ui/image-gallery-section';
+
 const pressLogos = [{
   id: "press-1",
   description: "TechCrunch",
@@ -33,15 +35,18 @@ const pressLogos = [{
   image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=200&h=100&fit=crop",
   className: "h-8 w-auto grayscale hover:grayscale-0 transition-all"
 }];
+
 const Index = () => {
-  return <main className="min-h-screen relative" style={{
-    backgroundColor: '#F5F3F1'
-  }}>
+  return (
+    <main className="min-h-screen relative" style={{
+      backgroundColor: '#F5F3F1'
+    }}>
       <Header />
       <Hero />
       <Logos3 heading="Featured In" logos={pressLogos} />
       <RevealImageListDemo />
       <FeaturesSectionWithBentoGrid />
+      <ImageGallerySection />
       <TestimonialsDemo />
       {/* White container for FeatureStepsDemo section */}
       <div className="w-full py-10 lg:py-16">
@@ -53,6 +58,8 @@ const Index = () => {
       </div>
       <CTADemo />
       <Footerdemo />
-    </main>;
+    </main>
+  );
 };
+
 export default Index;
