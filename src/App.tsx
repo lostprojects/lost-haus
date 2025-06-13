@@ -17,6 +17,7 @@ import SpecialEvents from "./pages/SpecialEvents";
 import Dinners from "./pages/Dinners";
 import Brunches from "./pages/Brunches";
 import HappyHours from "./pages/HappyHours";
+import Rehearsals from "./pages/Rehearsals";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/dinners" element={<Dinners />} />
           <Route path="/brunches" element={<Brunches />} />
           <Route path="/happy-hours" element={<HappyHours />} />
+          <Route path="/rehearsals" element={<Rehearsals />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </TooltipProvider>
