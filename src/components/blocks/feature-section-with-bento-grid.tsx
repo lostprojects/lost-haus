@@ -42,13 +42,7 @@ export function FeaturesSectionWithBentoGrid() {
       </div>
 
       <div className="relative">
-        <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-6 mt-12 xl:border rounded-md dark:border-neutral-800 bg-white">
-          {features.map(feature => <FeatureCard key={feature.title} className={feature.className}>
-              <FeatureTitle>{feature.title}</FeatureTitle>
-              <FeatureDescription>{feature.description}</FeatureDescription>
-              <div className="h-full w-full">{feature.skeleton}</div>
-            </FeatureCard>)}
-        </div>
+        
       </div>
     </div>;
 }
@@ -59,9 +53,7 @@ const FeatureCard = ({
   children?: React.ReactNode;
   className?: string;
 }) => {
-  return <div className={cn(`p-4 sm:p-8 relative overflow-hidden`, className)}>
-      {children}
-    </div>;
+  return;
 };
 const FeatureTitle = ({
   children
