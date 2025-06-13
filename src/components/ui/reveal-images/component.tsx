@@ -1,3 +1,4 @@
+
 import { cn } from "@/lib/utils";
 interface ImageSource {
   src: string;
@@ -75,10 +76,19 @@ function RevealImageList() {
       src: "/lovable-uploads/de58a57e-3411-4a58-9d1a-64324adbb089.png",
       alt: "Event setup"
     }]
+  }, {
+    text: "Receptions",
+    images: [{
+      src: "/lovable-uploads/9af23dea-0956-4cc4-a1c8-f2cee31084b2.png",
+      alt: "Reception setup"
+    }, {
+      src: "/lovable-uploads/f8a14efe-117f-4fea-8c12-b9371b4d3825.png",
+      alt: "Reception space"
+    }]
   }];
   return <div className="flex flex-col gap-1 rounded-sm bg-background px-4 md:px-8 py-4 max-w-7xl mx-auto">
       <h3 className="text-5xl font-bold md:text-5xl text-orange-600 font-header text-center">Event Types</h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
         {items.map((item, index) => <RevealImageListItem key={index} text={item.text} images={item.images} />)}
       </div>
     </div>;
