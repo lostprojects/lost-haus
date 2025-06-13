@@ -25,9 +25,7 @@ function Testimonials() {
   return <div className="w-full py-20 lg:py-[50px]">
       <div className="container mx-auto">
         <div className="flex flex-col gap-10">
-          <h2 className="text-5xl font-bold md:text-5xl text-orange-600 font-header text-center">
-            Create Your Perfect Moment
-          </h2>
+          <h2 className="text-5xl font-bold md:text-5xl text-orange-600 font-header text-center py-[19px]">Hundreds of Perfect Moments</h2>
           <Carousel setApi={setApi} className="w-full">
             <CarouselContent>
               {Array.from({
