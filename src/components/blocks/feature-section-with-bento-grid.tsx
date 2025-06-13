@@ -82,7 +82,7 @@ const FeatureDescription = ({
     </p>;
 };
 export const SkeletonOne = () => {
-  return <div className="relative flex py-8 px-2 gap-10 h-full">
+  return <div className="relative flex gap-10 h-full py-0 px-0">
       <div className="w-full p-5 mx-auto bg-white dark:bg-neutral-900 shadow-2xl group h-full">
         <div className="flex flex-1 w-full h-full flex-col space-y-2">
           <img src="/lovable-uploads/f8a14efe-117f-4fea-8c12-b9371b4d3825.png" alt="Somerhaus wedding ceremony" className="h-full w-full aspect-square object-cover object-left-top rounded-sm" />
