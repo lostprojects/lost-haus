@@ -44,7 +44,7 @@ const Logos3 = ({
 }: Logos3Props) => {
   return <section className="py-0 my-[13px]">
       
-      <div className="pt-10 md:pt-16 lg:pt-20 py-[36px]">
+      <div className="pt-10 md:pt-16 lg:pt-20 py-[55px]">
         <div className="relative mx-auto flex items-center justify-center lg:max-w-5xl">
           <Carousel opts={{
           loop: true
