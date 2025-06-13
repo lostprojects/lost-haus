@@ -10,15 +10,6 @@ import { CTA } from '@/components/ui/call-to-action/component';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
 
 const SpecialEvents = () => {
-  const heroContent = {
-    title: "Special Events at Somerhaus",
-    subtitle: "Creating Unforgettable Moments in Cincinnati's Most Enchanting Venue",
-    description: "From milestone celebrations to intimate gatherings, our 3,080 sq ft industrial-chic space in Over-the-Rhine provides the perfect backdrop for your special event. Let us help you create memories that will last a lifetime.",
-    primaryButton: "Book Your Event",
-    secondaryButton: "Schedule Tour",
-    backgroundImage: "/lovable-uploads/9af23dea-0956-4cc4-a1c8-f2cee31084b2.png"
-  };
-
   const pricingPlans = [
     {
       name: "Intimate Gathering",
@@ -104,27 +95,28 @@ const SpecialEvents = () => {
       <Header />
       
       <HeroSection 
-        title={heroContent.title}
-        subtitle={heroContent.subtitle}
-        description={heroContent.description}
-        primaryButton={heroContent.primaryButton}
-        secondaryButton={heroContent.secondaryButton}
-        backgroundImage={heroContent.backgroundImage}
+        backgroundType="static"
+        backgroundSources={[{
+          src: "/lovable-uploads/9af23dea-0956-4cc4-a1c8-f2cee31084b2.png",
+          alt: "Special Events at Somerhaus"
+        }]}
+        title="Special Events at Somerhaus"
+        subtitle="Creating Unforgettable Moments in Cincinnati's Most Enchanting Venue. From milestone celebrations to intimate gatherings, our 3,080 sq ft industrial-chic space in Over-the-Rhine provides the perfect backdrop for your special event."
       />
 
       <ImageGallerySection />
 
       <PricingSection 
         title="Special Event Packages"
-        subtitle="Choose the perfect package for your celebration"
-        plans={pricingPlans}
+        description="Choose the perfect package for your celebration"
+        packages={pricingPlans}
       />
 
       <TestimonialsDemo />
 
       <FAQSection 
         title="Special Events FAQ"
-        subtitle="Everything you need to know about hosting your special event at Somerhaus"
+        description="Everything you need to know about hosting your special event at Somerhaus"
         faqs={faqData}
       />
 
