@@ -75,6 +75,9 @@ function Footerdemo() {
               <Link to="/faq" className="flex items-center transition-colors hover:text-[#9b87f5]">
                 FAQ <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
+              <Link to="/blog" className="flex items-center transition-colors hover:text-[#9b87f5]">
+                Blog <ArrowUpRight className="ml-1 h-4 w-4" />
+              </Link>
             </nav>
           </div>
           <div className="relative">

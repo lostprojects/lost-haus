@@ -46,9 +46,16 @@ const CorporateFAQ = () => {
           <p className="mb-4 font-body">
             Have a question that's not answered here?
           </p>
-          <Button variant="outline" className="font-body">
-            Contact Us
+          <Button variant="outline" className="font-body" asChild>
+            <a href="/contact">Contact Us</a>
           </Button>
+          <p className="mt-4 font-body text-muted-foreground">
+            Or see our{' '}
+            <a href="/faq" className="text-primary underline hover:text-primary/80">
+              full FAQ page
+            </a>
+            .
+          </p>
         </div>
       }
     />

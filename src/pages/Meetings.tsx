@@ -8,6 +8,23 @@ import FAQSection from '@/components/shared/FAQSection';
 import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
 import { CTA } from '@/components/ui/call-to-action/component';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
+import Seo from '@/components/seo/Seo';
+
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "EventVenue",
+  name: "Somerhaus",
+  url: "https://somerhaus.com",
+  telephone: "513-902-1415",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "1415 Republic St",
+    addressLocality: "Cincinnati",
+    addressRegion: "OH",
+    postalCode: "45202",
+    addressCountry: "US",
+  },
+};
 
 const Meetings = () => {
   const pricingPlans = [
@@ -99,8 +116,23 @@ const Meetings = () => {
     }
   ];
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map(faq => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
+
   return (
     <main className="min-h-screen relative" style={{ backgroundColor: '#F5F3F1' }}>
+      <Seo
+        title="Meeting Venue | Somerhaus"
+        description="Hold productive corporate gatherings in our flexible Over-the-Rhine space."
+        schema={[businessSchema, faqSchema]}
+      />
       <Header />
       
       <HeroSection 
@@ -110,7 +142,7 @@ const Meetings = () => {
           alt: "Business Meetings at Somerhaus"
         }]}
         title="Business Meetings at Somerhaus"
-        subtitle="Inspire Innovation & Drive Results in Cincinnati's Premier Meeting Space. From team meetings to corporate summits, our 3,080 sq ft industrial-chic venue in Over-the-Rhine provides the perfect environment for productive business gatherings."
+        subtitle="Inspire innovation and drive results in Cincinnati's premier meeting space. From team sessions to corporate summits, our 3,080 sq ft venue fuels productivity—contact us to plan yours."
       />
 
       <ImageGallerySection />
@@ -123,10 +155,19 @@ const Meetings = () => {
 
       <TestimonialsDemo />
 
-      <FAQSection 
+      <FAQSection
         title="Business Meetings FAQ"
         description="Everything you need to know about hosting your business meeting at Somerhaus"
         faqs={faqData}
+        postAccordionContent={
+          <p className="text-center mt-8 font-body text-muted-foreground">
+            Need more answers? Visit our{' '}
+            <a href="/faq" className="text-primary underline hover:text-primary/80">
+              full FAQ page
+            </a>
+            .
+          </p>
+        }
       />
 
       <CTA />

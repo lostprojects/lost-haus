@@ -39,7 +39,7 @@ const ShowersHero = () => {
       backgroundType="carousel"
       backgroundSources={heroImages}
       title="Celebrate Life's Special Moments"
-      subtitle="Host your perfect baby shower, bridal shower, or celebration in our enchanting 3,080 sq ft industrial-chic venue in Over-the-Rhine."
+      subtitle="Host your perfect baby or bridal shower in our enchanting 3,080 sq ft venue—book your tour today."
       buttons={buttons}
       // Default class names and carousel options match
       // Add contentContainerClassName="animate-fade-in" if animation is desired

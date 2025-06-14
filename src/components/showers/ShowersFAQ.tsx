@@ -51,6 +51,11 @@ const ShowersFAQ = () => {
         <div className="text-center mt-12">
           <p className="font-body text-muted-foreground">
             Have more questions? Don't hesitate to <a href="#contact" className="text-primary underline hover:text-primary/80">contact us</a>.
+            {' '}You can also browse our{' '}
+            <a href="/faq" className="text-primary underline hover:text-primary/80">
+              full FAQ page
+            </a>
+            .
           </p>
         </div>
       }

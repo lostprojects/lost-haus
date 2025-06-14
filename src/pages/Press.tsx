@@ -6,12 +6,34 @@ import { Separator } from '@/components/ui/separator';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import Seo from '@/components/seo/Seo';
+
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "EventVenue",
+  name: "Somerhaus",
+  url: "https://somerhaus.com",
+  telephone: "513-902-1415",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "1415 Republic St",
+    addressLocality: "Cincinnati",
+    addressRegion: "OH",
+    postalCode: "45202",
+    addressCountry: "US"
+  }
+};
 
 const PressPage = () => {
   const heroImages = [{ src: '/lovable-uploads/8eb7ab37-08dc-43b9-9f7a-fa74ac9b112d.png', alt: 'Event at Somerhaus' }];
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
+      <Seo
+        title="Somerhaus Press"
+        description="News articles and media resources about Cincinnati's most enchanting event venue."
+        schema={businessSchema}
+      />
       <Header />
       <HeroSection
         backgroundType="static"

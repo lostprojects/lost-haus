@@ -7,6 +7,23 @@ import FAQSection from '@/components/shared/FAQSection';
 import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
 import { CTA } from '@/components/ui/call-to-action/component';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
+import Seo from '@/components/seo/Seo';
+
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "EventVenue",
+  name: "Somerhaus",
+  url: "https://somerhaus.com",
+  telephone: "513-902-1415",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "1415 Republic St",
+    addressLocality: "Cincinnati",
+    addressRegion: "OH",
+    postalCode: "45202",
+    addressCountry: "US",
+  },
+};
 
 const SpecialEvents = () => {
   const pricingPlans = [
@@ -92,8 +109,23 @@ const SpecialEvents = () => {
     }
   ];
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map(faq => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
+
   return (
     <main className="min-h-screen relative" style={{ backgroundColor: '#F5F3F1' }}>
+      <Seo
+        title="Special Event Venue | Somerhaus"
+        description="Host milestone celebrations in our character-rich Cincinnati venue."
+        schema={[businessSchema, faqSchema]}
+      />
       <Header />
       
       <HeroSection 
@@ -103,7 +135,7 @@ const SpecialEvents = () => {
           alt: "Special Events at Somerhaus"
         }]}
         title="Special Events at Somerhaus"
-        subtitle="Creating Unforgettable Moments in Cincinnati's Most Enchanting Venue. From milestone celebrations to intimate gatherings, our 3,080 sq ft industrial-chic space in Over-the-Rhine provides the perfect backdrop for your special event."
+        subtitle="Create unforgettable moments in Cincinnati's most enchanting venue. From milestone celebrations to intimate gatherings, our 3,080 sq ft space sets the stage—let us craft your unique event."
       />
 
       <ImageGallerySection />
@@ -116,10 +148,19 @@ const SpecialEvents = () => {
 
       <TestimonialsDemo />
 
-      <FAQSection 
+      <FAQSection
         title="Special Events FAQ"
         description="Everything you need to know about hosting your special event at Somerhaus"
         faqs={faqData}
+        postAccordionContent={
+          <p className="text-center mt-8 font-body text-muted-foreground">
+            Need more answers? Visit our{' '}
+            <a href="/faq" className="text-primary underline hover:text-primary/80">
+              full FAQ page
+            </a>
+            .
+          </p>
+        }
       />
 
       <CTA />

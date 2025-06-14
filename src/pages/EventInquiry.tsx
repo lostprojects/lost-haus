@@ -3,12 +3,34 @@ import Header from '@/components/ui/header';
 import { Footerdemo } from '@/components/ui/footer-section';
 import { useHoneyBook } from '@/hooks/use-honeybook';
 import HoneyBookForm from '@/components/honeybook/HoneyBookForm';
+import Seo from '@/components/seo/Seo';
+
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "EventVenue",
+  name: "Somerhaus",
+  url: "https://somerhaus.com",
+  telephone: "513-902-1415",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "1415 Republic St",
+    addressLocality: "Cincinnati",
+    addressRegion: "OH",
+    postalCode: "45202",
+    addressCountry: "US"
+  }
+};
 
 const EventInquiry = () => {
   useHoneyBook();
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Seo
+        title="Event Inquiry | Somerhaus"
+        description="Tell us about your upcoming event and we'll craft a personalized proposal."
+        schema={businessSchema}
+      />
       <Header />
       
       {/* Hero Section */}

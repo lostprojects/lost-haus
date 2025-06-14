@@ -60,8 +60,10 @@ const WeddingPlanning = () => {
         </div>
         
         <div className="text-center mt-16">
-          <Button size="lg" className="gap-2">
-            Begin Your Journey <ArrowRight className="w-5 h-5" />
+          <Button size="lg" className="gap-2" asChild>
+            <a href="/event-inquiry">
+              Begin Your Journey <ArrowRight className="w-5 h-5" />
+            </a>
           </Button>
         </div>
       </div>

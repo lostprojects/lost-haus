@@ -8,6 +8,23 @@ import FAQSection from '@/components/shared/FAQSection';
 import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
 import { CTA } from '@/components/ui/call-to-action/component';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
+import Seo from '@/components/seo/Seo';
+
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "EventVenue",
+  name: "Somerhaus",
+  url: "https://somerhaus.com",
+  telephone: "513-902-1415",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "1415 Republic St",
+    addressLocality: "Cincinnati",
+    addressRegion: "OH",
+    postalCode: "45202",
+    addressCountry: "US",
+  },
+};
 
 const Parties = () => {
   const pricingPlans = [
@@ -99,8 +116,23 @@ const Parties = () => {
     }
   ];
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map(faq => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
+
   return (
     <main className="min-h-screen relative" style={{ backgroundColor: '#F5F3F1' }}>
+      <Seo
+        title="Party Venue | Somerhaus"
+        description="Throw unforgettable celebrations in our one-of-a-kind Cincinnati venue."
+        schema={[businessSchema, faqSchema]}
+      />
       <Header />
       
       <HeroSection 
@@ -110,7 +142,7 @@ const Parties = () => {
           alt: "Party Events at Somerhaus"
         }]}
         title="Party Events at Somerhaus"
-        subtitle="Celebrate Life's Special Moments in Cincinnati's Premier Event Space. From birthday celebrations to milestone parties, our 3,080 sq ft industrial-chic venue in Over-the-Rhine provides the perfect atmosphere for unforgettable celebrations."
+        subtitle="Celebrate life's biggest moments in Cincinnati's premier event space. From birthdays to anniversaries, our 3,080 sq ft venue delivers unforgettable parties—start planning yours today."
       />
 
       <ImageGallerySection />
@@ -123,10 +155,19 @@ const Parties = () => {
 
       <TestimonialsDemo />
 
-      <FAQSection 
+      <FAQSection
         title="Party Events FAQ"
         description="Everything you need to know about hosting your party at Somerhaus"
         faqs={faqData}
+        postAccordionContent={
+          <p className="text-center mt-8 font-body text-muted-foreground">
+            Need more answers? Visit our{' '}
+            <a href="/faq" className="text-primary underline hover:text-primary/80">
+              full FAQ page
+            </a>
+            .
+          </p>
+        }
       />
 
       <CTA />

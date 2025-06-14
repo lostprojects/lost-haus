@@ -8,6 +8,23 @@ import FAQSection from '@/components/shared/FAQSection';
 import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
 import { CTA } from '@/components/ui/call-to-action/component';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
+import Seo from '@/components/seo/Seo';
+
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "EventVenue",
+  name: "Somerhaus",
+  url: "https://somerhaus.com",
+  telephone: "513-902-1415",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "1415 Republic St",
+    addressLocality: "Cincinnati",
+    addressRegion: "OH",
+    postalCode: "45202",
+    addressCountry: "US",
+  },
+};
 
 const Brunches = () => {
   const pricingPlans = [
@@ -96,8 +113,23 @@ const Brunches = () => {
     }
   ];
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map(faq => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
+
   return (
     <main className="min-h-screen relative" style={{ backgroundColor: '#F5F3F1' }}>
+      <Seo
+        title="Brunch Event Venue | Somerhaus"
+        description="Host stylish brunch celebrations in our light-filled Cincinnati space."
+        schema={[businessSchema, faqSchema]}
+      />
       <Header />
       
       <HeroSection 
@@ -107,7 +139,7 @@ const Brunches = () => {
           alt: "Brunch Events at Somerhaus"
         }]}
         title="Brunch Events at Somerhaus"
-        subtitle="Elegant Morning & Afternoon Celebrations in Cincinnati's Premier Venue. From baby showers to birthday brunches, our 3,080 sq ft industrial-chic space in Over-the-Rhine provides the perfect setting for memorable brunch gatherings."
+        subtitle="Elegant morning and afternoon celebrations in Cincinnati's premier venue. From showers to birthday brunches, our 3,080 sq ft space is made for unforgettable gatherings—reserve your date now."
       />
 
       <ImageGallerySection />
@@ -120,10 +152,19 @@ const Brunches = () => {
 
       <TestimonialsDemo />
 
-      <FAQSection 
+      <FAQSection
         title="Brunch Events FAQ"
         description="Everything you need to know about hosting your brunch event at Somerhaus"
         faqs={faqData}
+        postAccordionContent={
+          <p className="text-center mt-8 font-body text-muted-foreground">
+            Need more answers? Visit our{' '}
+            <a href="/faq" className="text-primary underline hover:text-primary/80">
+              full FAQ page
+            </a>
+            .
+          </p>
+        }
       />
 
       <CTA />

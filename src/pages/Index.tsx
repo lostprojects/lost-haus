@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero';
 import Header from '@/components/ui/header';
+import Seo from '@/components/seo/Seo';
 import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
 import { FeatureStepsDemo } from '@/components/blocks/feature-section-demo';
 import { FeaturesSectionWithBentoGrid } from '@/components/blocks/feature-section-with-bento-grid';
@@ -8,6 +9,22 @@ import { Logos3 } from '@/components/blocks/logos3';
 import { RevealImageListDemo } from '@/components/ui/reveal-images/demo';
 import { CTADemo } from '@/components/ui/call-to-action/demo';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
+
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "EventVenue",
+  name: "Somerhaus",
+  url: "https://somerhaus.com",
+  telephone: "513-902-1415",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "1415 Republic St",
+    addressLocality: "Cincinnati",
+    addressRegion: "OH",
+    postalCode: "45202",
+    addressCountry: "US"
+  }
+};
 const pressLogos = [{
   id: "press-1",
   description: "TechCrunch",
@@ -35,7 +52,13 @@ const pressLogos = [{
   className: "h-8 w-auto grayscale hover:grayscale-0 transition-all"
 }];
 const Index = () => {
-  return <main className="min-h-screen relative" style={{
+  return <>
+    <Seo
+      title="Somerhaus | Cincinnati Event Venue"
+      description="Host weddings, corporate events, and celebrations at Cincinnati's most enchanting event space."
+      schema={businessSchema}
+    />
+    <main className="min-h-screen relative" style={{
     backgroundColor: '#F5F3F1'
   }}>
       <Header />
@@ -55,6 +78,7 @@ const Index = () => {
       </div>
       <CTADemo />
       <Footerdemo />
-    </main>;
+    </main>
+  </>;
 };
 export default Index;

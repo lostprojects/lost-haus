@@ -21,11 +21,15 @@ function ShowersCTA() {
             </p>
           </div>
           <div className="flex flex-row gap-4">
-            <Button className="gap-4">
-              Reserve Your Date <ArrowRight className="w-4 h-4" />
+            <Button className="gap-4" asChild>
+              <a href="/event-inquiry">
+                Reserve Your Date <ArrowRight className="w-4 h-4" />
+              </a>
             </Button>
-            <Button variant="outline" className="gap-4">
-              Schedule a Tour <CalendarCheck className="w-4 h-4" />
+            <Button variant="outline" className="gap-4" asChild>
+              <a href="/contact">
+                Schedule a Tour <CalendarCheck className="w-4 h-4" />
+              </a>
             </Button>
           </div>
         </div>

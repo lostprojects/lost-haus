@@ -12,10 +12,32 @@ import PreferredVendors from '@/components/showers/PreferredVendors';
 import ShowersFAQ from '@/components/showers/ShowersFAQ';
 import { ShowersCTA } from '@/components/showers/ShowersCTA';
 import ShowersContact from '@/components/showers/ShowersContact';
+import Seo from '@/components/seo/Seo';
+
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "EventVenue",
+  name: "Somerhaus",
+  url: "https://somerhaus.com",
+  telephone: "513-902-1415",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "1415 Republic St",
+    addressLocality: "Cincinnati",
+    addressRegion: "OH",
+    postalCode: "45202",
+    addressCountry: "US",
+  },
+};
 
 const Showers = () => {
   return (
     <main className="min-h-screen">
+      <Seo
+        title="Showers Venue | Somerhaus"
+        description="Celebrate bridal and baby showers in our stylish Over-the-Rhine space."
+        schema={businessSchema}
+      />
       <Header />
       <ShowersHero />
       <VenueHighlights />

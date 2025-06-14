@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Header from '@/components/ui/header';
+import Seo from '@/components/seo/Seo';
 import { Footerdemo } from '@/components/ui/footer-section';
 // Removed HeroSection import as we'll create a simpler header structure
 import { Separator } from '@/components/ui/separator';
@@ -29,6 +30,7 @@ const About: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-background"> {/* Added bg-background */}
+      <Seo title="About Somerhaus | Event Space in Cincinnati" description="Learn the story behind Somerhaus and meet the team that makes every event memorable." />
       <Header />
       <main className="flex-grow"> {/* Removed container/padding from main */}
 
