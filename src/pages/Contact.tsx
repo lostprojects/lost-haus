@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, CalendarDays } from 'lucide-react';
 import Header from '@/components/ui/header';
+import Seo from '@/components/seo/Seo';
 import { Footerdemo } from '@/components/ui/footer-section';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -10,6 +11,22 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { useHoneyBook } from '@/hooks/use-honeybook';
 import HoneyBookForm from '@/components/honeybook/HoneyBookForm';
+
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "EventVenue",
+  name: "Somerhaus",
+  url: "https://somerhaus.com",
+  telephone: "513-902-1415",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "1415 Republic St",
+    addressLocality: "Cincinnati",
+    addressRegion: "OH",
+    postalCode: "45202",
+    addressCountry: "US"
+  }
+};
 
 const ContactPage = () => {
   useHoneyBook();
@@ -72,6 +89,11 @@ const ContactPage = () => {
   const currentTestimonial = testimonials[currentTestimonialIndex];
   
   return <div className="min-h-screen flex flex-col">
+      <Seo
+        title="Contact Somerhaus"
+        description="Get in touch with our team to book your event or schedule a tour at Cincinnati's most enchanting venue."
+        schema={businessSchema}
+      />
       <Header />
       
       {/* Hero Section with updated background image */}

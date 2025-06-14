@@ -35,7 +35,7 @@ const CorporateHero = () => {
       backgroundSources={heroImage}
       overlayClassName="absolute inset-0 bg-black/40 z-10" // Specific overlay
       title="Elevate Your Business Gatherings"
-      subtitle="A unique 3,080 sq ft industrial-chic space in Over-the-Rhine, designed for productive and memorable corporate events."
+      subtitle="Book Somerhaus for meetings and celebrations that impress clients and inspire teams."
       buttons={buttons}
       // Use default section, title, subtitle classes as they match
       contentContainerClassName="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center" // Specific content layout

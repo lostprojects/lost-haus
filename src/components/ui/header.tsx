@@ -42,6 +42,7 @@ const Header = () => {
     { name: 'Bar Packages', href: '/bar-packages' },
     { name: 'Vendors', href: '/vendors' },
     { name: 'Layout', href: '/layout' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Press', href: '/press' },
   ];
 

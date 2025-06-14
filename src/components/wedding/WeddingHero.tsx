@@ -41,7 +41,7 @@ const WeddingHero = () => {
       backgroundType="carousel"
       backgroundSources={heroImages}
       title="Where Cincinnati Love Stories Begin"
-      subtitle="An enchanting 3,080 sq ft industrial-chic venue in the heart of Over-the-Rhine, perfect for creating unforgettable wedding memories."
+      subtitle="Tour our 3,080 sq ft industrial-chic venue and discover the perfect backdrop for your dream wedding."
       buttons={buttons}
       // Default class names and carousel options in HeroSection match the original component
       // Add contentContainerClassName="animate-fade-in" if animation is desired

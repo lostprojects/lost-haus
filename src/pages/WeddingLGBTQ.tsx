@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/ui/header';
 import { Footerdemo } from '@/components/ui/footer-section';
@@ -33,24 +32,21 @@ const businessSchema = {
   }
 };
 
-const Wedding = () => {
+const WeddingLGBTQ = () => {
   useHoneyBook();
 
   return (
     <main className="min-h-screen">
       <Seo
-        title="Cincinnati Wedding Venue | Somerhaus"
-        description="Plan your dream wedding at our industrial-chic event space in Over-the-Rhine."
+        title="LGBTQ+ Wedding Venue | Somerhaus"
+        description="Celebrate your love at our inclusive Cincinnati venue, perfect for LGBTQ weddings."
         schema={businessSchema}
       />
       <Header />
       <WeddingHero />
       <section className="py-8 text-center bg-white">
         <p className="font-body text-muted-foreground max-w-2xl mx-auto">
-          Explore our tailored options for{' '}
-          <a href="/lgbtq-weddings" className="text-primary underline hover:text-primary/80">LGBTQ weddings</a>,{' '}
-          <a href="/micro-weddings" className="text-primary underline hover:text-primary/80">micro weddings</a>, and{' '}
-          <a href="/elopements" className="text-primary underline hover:text-primary/80">elopements</a>.
+          We proudly host LGBTQ weddings and welcome couples of all identities. Our team ensures your celebration reflects your love story.
         </p>
       </section>
       <WeddingPackages />
@@ -60,24 +56,22 @@ const Wedding = () => {
       <PreferredVendors />
       <WeddingFAQ />
       {/* HoneyBook Inquiry Form Section */}
-      <section className="py-12 md:py-16"> {/* Added padding */}
-        <div className="container mx-auto px-4"> {/* Added container */}
-          <Card className="shadow-md"> {/* Added shadow like other cards */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4">
+          <Card className="shadow-md">
             <CardHeader>
-              <CardTitle className="text-2xl md:text-3xl font-header text-center">Wedding Inquiry</CardTitle> {/* Centered title */}
+              <CardTitle className="text-2xl md:text-3xl font-header text-center">Wedding Inquiry</CardTitle>
             </CardHeader>
             <CardContent>
               <HoneyBookForm placementId="6" />
-              {/* Script is loaded via useHoneyBook */}
             </CardContent>
           </Card>
         </div>
       </section>
-
       <WeddingCTA />
       <Footerdemo />
     </main>
   );
 };
 
-export default Wedding;
+export default WeddingLGBTQ;

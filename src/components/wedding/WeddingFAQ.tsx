@@ -36,6 +36,15 @@ const WeddingFAQ = () => {
       description="Find answers to common questions about hosting your wedding at Somerhaus."
       faqs={faqs}
       // The default class names in FAQSection match the original styling, so no need to override them here.
+      postAccordionContent={
+        <p className="text-center mt-8 font-body text-muted-foreground">
+          Need more answers? Visit our{' '}
+          <a href="/faq" className="text-primary underline hover:text-primary/80">
+            full FAQ page
+          </a>
+          .
+        </p>
+      }
     />
   );
 };

@@ -39,13 +39,12 @@ const Hero = () => {
       <div className="relative h-full flex flex-col items-center justify-center text-white px-4 md:px-8 max-w-7xl mx-auto">
         <AvatarGroup />
         <h1 className="text-5xl text-center mb-4 font-header flex flex-col items-center gap-2 md:text-6xl">
-          Cincinnati's Most Enchanting
-          <span>Event Space</span>
+          Somerhaus:
+          <span>Cincinnati's Most Enchanting Event Space</span>
         </h1>
-        
+
         <p className="text-xl text-center mb-6 max-w-2xl font-body font-extralight md:text-lg">
-          Transform your special moments into magical memories in our ivy-covered,
-          historic venue.<br />
+          Book your tour today and see how our ivy-covered historic venue turns special moments into lasting memories.<br />
           <span className="italic">*Limited dates available for 2025*</span>
         </p>
 
@@ -67,7 +66,7 @@ const Hero = () => {
 
       <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[16%]">
         <TiltCard href="/event-inquiry" className="group max-h-fit rounded-full bg-black p-2 px-6 shadow-[0_20px_50px_rgba(0,0,0,0.8)] hover:bg-[#D9FF8A]">
-          <span className="text-xl text-white group-hover:text-black font-body">Reserve Your Event</span>
+          <span className="text-xl text-white group-hover:text-black font-body">Book Your Tour</span>
         </TiltCard>
       </div>
     </div>

@@ -8,6 +8,23 @@ import FAQSection from '@/components/shared/FAQSection';
 import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
 import { CTA } from '@/components/ui/call-to-action/component';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
+import Seo from '@/components/seo/Seo';
+
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "EventVenue",
+  name: "Somerhaus",
+  url: "https://somerhaus.com",
+  telephone: "513-902-1415",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "1415 Republic St",
+    addressLocality: "Cincinnati",
+    addressRegion: "OH",
+    postalCode: "45202",
+    addressCountry: "US",
+  },
+};
 
 const HappyHours = () => {
   const pricingPlans = [
@@ -96,8 +113,23 @@ const HappyHours = () => {
     }
   ];
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map(faq => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
+
   return (
     <main className="min-h-screen relative" style={{ backgroundColor: '#F5F3F1' }}>
+      <Seo
+        title="Happy Hour Venue | Somerhaus"
+        description="Plan networking mixers and team gatherings at our OTR event space."
+        schema={[businessSchema, faqSchema]}
+      />
       <Header />
       
       <HeroSection 
@@ -107,7 +139,7 @@ const HappyHours = () => {
           alt: "Happy Hour Events at Somerhaus"
         }]}
         title="Happy Hour Events at Somerhaus"
-        subtitle="Unwind & Connect in Cincinnati's Premier Event Space. From corporate networking to casual team gatherings, our 3,080 sq ft industrial-chic venue in Over-the-Rhine provides the perfect atmosphere for memorable happy hour experiences."
+        subtitle="Unwind and connect in Cincinnati's premier event space. From networking to casual team gatherings, our 3,080 sq ft venue sets the mood for memorable happy hours—reserve your time today."
       />
 
       <ImageGallerySection />
@@ -120,10 +152,19 @@ const HappyHours = () => {
 
       <TestimonialsDemo />
 
-      <FAQSection 
+      <FAQSection
         title="Happy Hour Events FAQ"
         description="Everything you need to know about hosting your happy hour event at Somerhaus"
         faqs={faqData}
+        postAccordionContent={
+          <p className="text-center mt-8 font-body text-muted-foreground">
+            Need more answers? Visit our{' '}
+            <a href="/faq" className="text-primary underline hover:text-primary/80">
+              full FAQ page
+            </a>
+            .
+          </p>
+        }
       />
 
       <CTA />

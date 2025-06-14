@@ -11,17 +11,14 @@ import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
-type FaqItem = {
+export type FaqItem = {
   question: string;
   answer: React.ReactNode;
   category: string;
   tags?: string[];
 };
 
-export const FaqCategories = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  
-  const faqItems: FaqItem[] = [
+export const faqItems: FaqItem[] = [
     // Venue & Space
     {
       question: "What makes Somerhaus unique compared to other Cincinnati venues?",
@@ -364,7 +361,10 @@ export const FaqCategories = () => {
       tags: ["weather", "rain", "snow", "contingency"]
     }
   ];
-  
+
+export const FaqCategories = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+
   const categories = [
     { id: "venue", label: "Venue & Space" },
     { id: "planning", label: "Planning & Booking" },
@@ -469,3 +469,5 @@ export const FaqCategories = () => {
     </section>
   );
 };
+
+export default FaqCategories;

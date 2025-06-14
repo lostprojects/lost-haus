@@ -6,6 +6,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Wedding from "./pages/Wedding";
+import WeddingLGBTQ from "./pages/WeddingLGBTQ";
+import MicroWeddings from "./pages/MicroWeddings";
+import Elopements from "./pages/Elopements";
 import FAQ from "./pages/Faq";
 import NotFound from "./pages/NotFound";
 import Corporate from "./pages/Corporate";
@@ -25,6 +28,9 @@ import BarPackages from "./pages/BarPackages";
 import Vendors from "./pages/Vendors";
 import LayoutPage from "./pages/Layout";
 import PressPage from "./pages/Press";
+import Blog from "./pages/Blog";
+import WeddingChecklist from "./pages/blog/WeddingChecklist";
+import CorporateEventTips from "./pages/blog/CorporateEventTips";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +43,9 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/wedding" element={<Wedding />} />
+          <Route path="/lgbtq-weddings" element={<WeddingLGBTQ />} />
+          <Route path="/micro-weddings" element={<MicroWeddings />} />
+          <Route path="/elopements" element={<Elopements />} />
           <Route path="/showers" element={<Showers />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/corporate" element={<Corporate />} />
@@ -55,6 +64,9 @@ const App = () => (
           <Route path="/vendors" element={<Vendors />} />
           <Route path="/layout" element={<LayoutPage />} />
           <Route path="/press" element={<PressPage />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/wedding-checklist" element={<WeddingChecklist />} />
+          <Route path="/blog/corporate-event-tips" element={<CorporateEventTips />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </TooltipProvider>

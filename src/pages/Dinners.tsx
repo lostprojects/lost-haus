@@ -8,6 +8,23 @@ import FAQSection from '@/components/shared/FAQSection';
 import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
 import { CTA } from '@/components/ui/call-to-action/component';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
+import Seo from '@/components/seo/Seo';
+
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "EventVenue",
+  name: "Somerhaus",
+  url: "https://somerhaus.com",
+  telephone: "513-902-1415",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "1415 Republic St",
+    addressLocality: "Cincinnati",
+    addressRegion: "OH",
+    postalCode: "45202",
+    addressCountry: "US",
+  },
+};
 
 const Dinners = () => {
   const pricingPlans = [
@@ -96,8 +113,26 @@ const Dinners = () => {
     }
   ];
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map(faq => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <main className="min-h-screen relative" style={{ backgroundColor: '#F5F3F1' }}>
+      <Seo
+        title="Dinner Event Venue | Somerhaus"
+        description="Host rehearsal dinners and celebrations in our industrial-chic Cincinnati venue."
+        schema={[businessSchema, faqSchema]}
+      />
       <Header />
       
       <HeroSection 
@@ -107,7 +142,7 @@ const Dinners = () => {
           alt: "Elegant Dinner Events at Somerhaus"
         }]}
         title="Dinner Events at Somerhaus"
-        subtitle="Intimate Dining Experiences in Cincinnati's Most Distinctive Venue. From rehearsal dinners to anniversary celebrations, our 3,080 sq ft space in Over-the-Rhine provides the perfect atmosphere for memorable dinner gatherings."
+        subtitle="Intimate dining experiences in Cincinnati's most distinctive venue. From rehearsal dinners to anniversary celebrations, our 3,080 sq ft space sets the scene for memorable meals—book your date today."
       />
 
       <ImageGallerySection />
@@ -120,10 +155,19 @@ const Dinners = () => {
 
       <TestimonialsDemo />
 
-      <FAQSection 
+      <FAQSection
         title="Dinner Events FAQ"
         description="Everything you need to know about hosting your dinner event at Somerhaus"
         faqs={faqData}
+        postAccordionContent={
+          <p className="text-center mt-8 font-body text-muted-foreground">
+            Need more answers? Visit our{' '}
+            <a href="/faq" className="text-primary underline hover:text-primary/80">
+              full FAQ page
+            </a>
+            .
+          </p>
+        }
       />
 
       <CTA />

@@ -8,6 +8,23 @@ import FAQSection from '@/components/shared/FAQSection';
 import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
 import { CTA } from '@/components/ui/call-to-action/component';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
+import Seo from '@/components/seo/Seo';
+
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "EventVenue",
+  name: "Somerhaus",
+  url: "https://somerhaus.com",
+  telephone: "513-902-1415",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "1415 Republic St",
+    addressLocality: "Cincinnati",
+    addressRegion: "OH",
+    postalCode: "45202",
+    addressCountry: "US",
+  },
+};
 
 const Rehearsals = () => {
   const pricingPlans = [
@@ -96,8 +113,23 @@ const Rehearsals = () => {
     }
   ];
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map(faq => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
+
   return (
     <main className="min-h-screen relative" style={{ backgroundColor: '#F5F3F1' }}>
+      <Seo
+        title="Wedding Rehearsal Venue | Somerhaus"
+        description="Practice and celebrate in style at our historic Cincinnati space."
+        schema={[businessSchema, faqSchema]}
+      />
       <Header />
       
       <HeroSection 
@@ -107,7 +139,7 @@ const Rehearsals = () => {
           alt: "Wedding Rehearsals at Somerhaus"
         }]}
         title="Wedding Rehearsals at Somerhaus"
-        subtitle="Practice Perfect & Celebrate Together in Cincinnati's Most Elegant Venue. From ceremony run-throughs to rehearsal dinners, our 3,080 sq ft space in Over-the-Rhine provides the perfect setting for your wedding weekend celebrations."
+        subtitle="Practice perfectly and celebrate together in Cincinnati's most elegant venue. From run-throughs to rehearsal dinners, our 3,080 sq ft space is ready for your wedding weekend—secure your date now."
       />
 
       <ImageGallerySection />
@@ -120,10 +152,19 @@ const Rehearsals = () => {
 
       <TestimonialsDemo />
 
-      <FAQSection 
+      <FAQSection
         title="Wedding Rehearsals FAQ"
         description="Everything you need to know about hosting your wedding rehearsal at Somerhaus"
         faqs={faqData}
+        postAccordionContent={
+          <p className="text-center mt-8 font-body text-muted-foreground">
+            Need more answers? Visit our{' '}
+            <a href="/faq" className="text-primary underline hover:text-primary/80">
+              full FAQ page
+            </a>
+            .
+          </p>
+        }
       />
 
       <CTA />
