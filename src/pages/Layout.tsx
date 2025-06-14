@@ -6,8 +6,15 @@ import { Separator } from '@/components/ui/separator';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import usePageMetadata from '@/hooks/usePageMetadata';
 
 const LayoutPage = () => {
+  usePageMetadata({
+    title: 'Venue Layout - Somerhaus',
+    description:
+      'Get exact room dimensions and included furnishings to plan your perfect event layout.',
+    canonical: 'https://somerhaus.space/layout',
+  });
   const heroImages = [{ src: '/lovable-uploads/54dee81d-d7ea-49c7-8588-03e5db9ec8bd.png', alt: 'Somerhaus floor layout' }];
 
   return (

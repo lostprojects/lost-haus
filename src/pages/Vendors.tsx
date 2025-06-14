@@ -6,8 +6,15 @@ import { Separator } from '@/components/ui/separator';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import usePageMetadata from '@/hooks/usePageMetadata';
 
 const Vendors = () => {
+  usePageMetadata({
+    title: 'Preferred Vendors - Somerhaus',
+    description:
+      'Contact information for our recommended caterers, photographers and more.',
+    canonical: 'https://somerhaus.space/vendors',
+  });
   const heroImages = [{ src: '/lovable-uploads/9af23dea-0956-4cc4-a1c8-f2cee31084b2.png', alt: 'Event setup at Somerhaus' }];
 
   return (

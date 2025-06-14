@@ -6,8 +6,14 @@ import { Separator } from '@/components/ui/separator';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import usePageMetadata from '@/hooks/usePageMetadata';
 
 const PressPage = () => {
+  usePageMetadata({
+    title: 'Press & Media - Somerhaus',
+    description: 'Browse recent media coverage and get in touch for press inquiries.',
+    canonical: 'https://somerhaus.space/press',
+  });
   const heroImages = [{ src: '/lovable-uploads/8eb7ab37-08dc-43b9-9f7a-fa74ac9b112d.png', alt: 'Event at Somerhaus' }];
 
   return (

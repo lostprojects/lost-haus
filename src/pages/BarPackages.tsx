@@ -6,8 +6,15 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import usePageMetadata from '@/hooks/usePageMetadata';
 
 const BarPackages = () => {
+  usePageMetadata({
+    title: 'Bar Packages - Somerhaus',
+    description:
+      'Explore tiered beverage packages and custom drink options to elevate your event.',
+    canonical: 'https://somerhaus.space/bar-packages',
+  });
   const heroImages = [{
     src: '/lovable-uploads/31c22bc4-b41f-4ea7-84ca-97efc98eaef1.png',
     alt: 'Somerhaus bar setup'
