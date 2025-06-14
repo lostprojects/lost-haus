@@ -8,69 +8,37 @@ import { Download, Heart, Share2 } from 'lucide-react';
 import Seo from '@/components/seo/Seo';
 
 const Gallery = () => {
+
   const galleryCategories = [
     {
       title: "Weddings",
       images: [
-        {
-          src: "/lovable-uploads/5681976d-8810-4ced-9f69-628ef625593f.png",
-          alt: "Wedding ceremony setup with elegant decorations",
-          category: "Ceremony"
-        },
-        {
-          src: "/lovable-uploads/9af23dea-0956-4cc4-a1c8-f2cee31084b2.png",
-          alt: "Wedding reception with beautiful lighting",
-          category: "Reception"
-        },
-        {
-          src: "/lovable-uploads/de58a57e-3411-4a58-9d1a-64324adbb089.png",
-          alt: "Bridal party photo session",
-          category: "Portraits"
-        }
+        { src: "/lovable-uploads/5681976d-8810-4ced-9f69-628ef625593f.png", alt: "Wedding ceremony setup with elegant decorations", category: "Ceremony" },
+        { src: "/lovable-uploads/9af23dea-0956-4cc4-a1c8-f2cee31084b2.png", alt: "Wedding reception with beautiful lighting", category: "Reception" },
+        { src: "/lovable-uploads/de58a57e-3411-4a58-9d1a-64324adbb089.png", alt: "Bridal party photo session", category: "Portraits" },
+        { src: "https://images.squarespace-cdn.com/content/v1/64b6eccd5bb791630eca7b41/1709307334279-RZ62O6FVFT1QQLIKFU4I/Amy%26Joe1.jpg", alt: "Couple posing at Somerhaus", category: "Real Wedding" }
       ]
     },
     {
       title: "Corporate Events",
       images: [
-        {
-          src: "/lovable-uploads/54dee81d-d7ea-49c7-8588-03e5db9ec8bd.png",
-          alt: "Corporate meeting setup with professional lighting",
-          category: "Meetings"
-        },
-        {
-          src: "/lovable-uploads/f8a14efe-117f-4fea-8c12-b9371b4d3825.png",
-          alt: "Corporate event networking space",
-          category: "Networking"
-        },
-        {
-          src: "/lovable-uploads/41b903d4-d950-4e6e-839a-07c706d701b0.png",
-          alt: "Corporate presentation setup",
-          category: "Presentations"
-        }
+        { src: "/lovable-uploads/54dee81d-d7ea-49c7-8588-03e5db9ec8bd.png", alt: "Corporate meeting setup with professional lighting", category: "Meetings" },
+        { src: "/lovable-uploads/f8a14efe-117f-4fea-8c12-b9371b4d3825.png", alt: "Corporate event networking space", category: "Networking" },
+        { src: "/lovable-uploads/41b903d4-d950-4e6e-839a-07c706d701b0.png", alt: "Corporate presentation setup", category: "Presentations" },
+        { src: "https://images.squarespace-cdn.com/content/v1/64b6eccd5bb791630eca7b41/1709310404105-M64OVDTJ6NZCIDL2QCTC/HausMeetingPhoto.png", alt: "Team meeting at Somerhaus", category: "Meetings" },
+        { src: "https://images.squarespace-cdn.com/content/v1/64b6eccd5bb791630eca7b41/1709310517186-KB8ZL1PWD2LSDB2LS3YJ/em0zWjz2.jpg", alt: "Networking event", category: "Networking" }
       ]
     },
     {
       title: "Special Events",
       images: [
-        {
-          src: "/lovable-uploads/5681976d-8810-4ced-9f69-628ef625593f.png",
-          alt: "Birthday party celebration",
-          category: "Parties"
-        },
-        {
-          src: "/lovable-uploads/9af23dea-0956-4cc4-a1c8-f2cee31084b2.png",
-          alt: "Baby shower decorations",
-          category: "Showers"
-        },
-        {
-          src: "/lovable-uploads/de58a57e-3411-4a58-9d1a-64324adbb089.png",
-          alt: "Anniversary celebration",
-          category: "Celebrations"
-        }
+        { src: "/lovable-uploads/5681976d-8810-4ced-9f69-628ef625593f.png", alt: "Birthday party celebration", category: "Parties" },
+        { src: "/lovable-uploads/9af23dea-0956-4cc4-a1c8-f2cee31084b2.png", alt: "Baby shower decorations", category: "Showers" },
+        { src: "/lovable-uploads/de58a57e-3411-4a58-9d1a-64324adbb089.png", alt: "Anniversary celebration", category: "Celebrations" },
+        { src: "https://images.squarespace-cdn.com/content/v1/64b6eccd5bb791630eca7b41/1709310064431-T2UOZHJ7I9S776NL4X5I/YC98St8o.jpg", alt: "Special gathering at Somerhaus", category: "Gatherings" }
       ]
     }
   ];
-
   const [selectedCategory, setSelectedCategory] = React.useState("All");
   const [selectedImage, setSelectedImage] = React.useState<string | null>(null);
 
