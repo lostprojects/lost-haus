@@ -122,7 +122,7 @@ const SpecialEvents = () => {
   return (
     <main className="min-h-screen relative" style={{ backgroundColor: '#F5F3F1' }}>
       <Seo
-        title="Special Event Venue | Somerhaus"
+        title="Special Event Venue in Cincinnati | Somerhaus"
         description="Host milestone celebrations in our character-rich Cincinnati venue."
         schema={[businessSchema, faqSchema]}
       />

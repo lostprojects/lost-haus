@@ -38,7 +38,7 @@ const WeddingLGBTQ = () => {
   return (
     <main className="min-h-screen">
       <Seo
-        title="LGBTQ+ Wedding Venue | Somerhaus"
+        title="LGBTQ+ Wedding Venue in Cincinnati | Somerhaus"
         description="Celebrate your love at our inclusive Cincinnati venue, perfect for LGBTQ weddings."
         schema={businessSchema}
       />

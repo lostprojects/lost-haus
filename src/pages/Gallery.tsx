@@ -5,6 +5,7 @@ import { Footerdemo } from '@/components/ui/footer-section';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Download, Heart, Share2 } from 'lucide-react';
+import Seo from '@/components/seo/Seo';
 
 const Gallery = () => {
   const galleryCategories = [
@@ -85,6 +86,10 @@ const Gallery = () => {
 
   return (
     <main className="min-h-screen relative" style={{ backgroundColor: '#F5F3F1' }}>
+      <Seo
+        title="Event Gallery | Somerhaus Cincinnati"
+        description="View photos of weddings, corporate gatherings, and celebrations hosted at Somerhaus."
+      />
       <Header />
       
       {/* Hero Section */}

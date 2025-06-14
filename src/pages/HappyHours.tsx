@@ -126,7 +126,7 @@ const HappyHours = () => {
   return (
     <main className="min-h-screen relative" style={{ backgroundColor: '#F5F3F1' }}>
       <Seo
-        title="Happy Hour Venue | Somerhaus"
+        title="Happy Hour Venue in Cincinnati | Somerhaus"
         description="Plan networking mixers and team gatherings at our OTR event space."
         schema={[businessSchema, faqSchema]}
       />

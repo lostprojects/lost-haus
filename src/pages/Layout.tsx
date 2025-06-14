@@ -6,12 +6,17 @@ import { Separator } from '@/components/ui/separator';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import Seo from '@/components/seo/Seo';
 
 const LayoutPage = () => {
   const heroImages = [{ src: '/lovable-uploads/54dee81d-d7ea-49c7-8588-03e5db9ec8bd.png', alt: 'Somerhaus floor layout' }];
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
+      <Seo
+        title="Venue Layout | Somerhaus Cincinnati"
+        description="Explore our 3,080 sq ft floor plan and envision your event in Cincinnati's Over-the-Rhine neighborhood."
+      />
       <Header />
       <HeroSection
         backgroundType="static"

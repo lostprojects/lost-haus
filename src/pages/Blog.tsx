@@ -31,7 +31,7 @@ const Blog = () => {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Seo
-        title="Somerhaus Blog | Event Planning Inspiration"
+        title="Somerhaus Blog | Event Planning Inspiration in Cincinnati"
         description="Expert tips and inspiration for unforgettable events at Cincinnati's most enchanting venue."
         schema={businessSchema}
       />

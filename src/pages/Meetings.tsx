@@ -129,7 +129,7 @@ const Meetings = () => {
   return (
     <main className="min-h-screen relative" style={{ backgroundColor: '#F5F3F1' }}>
       <Seo
-        title="Meeting Venue | Somerhaus"
+        title="Meeting Venue in Cincinnati | Somerhaus"
         description="Hold productive corporate gatherings in our flexible Over-the-Rhine space."
         schema={[businessSchema, faqSchema]}
       />

@@ -34,7 +34,7 @@ const Showers = () => {
   return (
     <main className="min-h-screen">
       <Seo
-        title="Showers Venue | Somerhaus"
+        title="Showers Venue in Cincinnati | Somerhaus"
         description="Celebrate bridal and baby showers in our stylish Over-the-Rhine space."
         schema={businessSchema}
       />

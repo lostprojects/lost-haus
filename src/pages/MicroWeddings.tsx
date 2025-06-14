@@ -36,7 +36,7 @@ const MicroWeddings = () => {
   return (
     <main className="min-h-screen">
       <Seo
-        title="Micro Wedding Venue | Somerhaus"
+        title="Micro Wedding Venue in Cincinnati | Somerhaus"
         description="Host an intimate micro wedding in our stylish Over-the-Rhine space."
         schema={businessSchema}
       />

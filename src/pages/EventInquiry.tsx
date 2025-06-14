@@ -27,7 +27,7 @@ const EventInquiry = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Seo
-        title="Event Inquiry | Somerhaus"
+        title="Event Inquiry | Somerhaus Cincinnati"
         description="Tell us about your upcoming event and we'll craft a personalized proposal."
         schema={businessSchema}
       />
