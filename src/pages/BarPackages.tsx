@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import Seo from '@/components/seo/Seo';
 
 const BarPackages = () => {
   const heroImages = [{
@@ -14,6 +15,10 @@ const BarPackages = () => {
   }];
   return (
     <div className="flex flex-col min-h-screen bg-background">
+      <Seo
+        title="Event Bar Packages in Cincinnati | Somerhaus"
+        description="Choose from tiered bar packages for weddings and events at our Cincinnati venue."
+      />
       <Header />
       <HeroSection
         backgroundType="static"
@@ -67,6 +72,13 @@ const BarPackages = () => {
             </Card>
           </div>
         </section>
+          <div className="mb-12">
+            <h3 className="text-2xl font-header mb-4">Additional Offerings</h3>
+            <ul className="list-disc list-inside space-y-2 font-mono">
+              <li>$5/guest Custom Cocktail: Margarita Three Ways (Regular, Spicy, Ube)</li>
+              <li>Welcome Glass of Champagne/Champagne Toast <em>(included in Tier 1)</em></li>
+            </ul>
+          </div>
         <Separator />
         <section className="py-12 md:py-16 bg-muted/40">
           <div className="container mx-auto px-4 text-center">

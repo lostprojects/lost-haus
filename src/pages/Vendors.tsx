@@ -6,12 +6,17 @@ import { Separator } from '@/components/ui/separator';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import Seo from '@/components/seo/Seo';
 
 const Vendors = () => {
   const heroImages = [{ src: '/lovable-uploads/9af23dea-0956-4cc4-a1c8-f2cee31084b2.png', alt: 'Event setup at Somerhaus' }];
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
+      <Seo
+        title="Preferred Event Vendors | Somerhaus Cincinnati"
+        description="Browse trusted Cincinnati vendors for catering, photography, and more."
+      />
       <Header />
       <HeroSection
         backgroundType="static"

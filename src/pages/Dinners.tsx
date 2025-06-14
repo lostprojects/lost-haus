@@ -129,7 +129,7 @@ const Dinners = () => {
   return (
     <main className="min-h-screen relative" style={{ backgroundColor: '#F5F3F1' }}>
       <Seo
-        title="Dinner Event Venue | Somerhaus"
+        title="Dinner Event Venue in Cincinnati | Somerhaus"
         description="Host rehearsal dinners and celebrations in our industrial-chic Cincinnati venue."
         schema={[businessSchema, faqSchema]}
       />

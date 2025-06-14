@@ -90,7 +90,7 @@ const ContactPage = () => {
   
   return <div className="min-h-screen flex flex-col">
       <Seo
-        title="Contact Somerhaus"
+        title="Contact Somerhaus in Cincinnati"
         description="Get in touch with our team to book your event or schedule a tour at Cincinnati's most enchanting venue."
         schema={businessSchema}
       />

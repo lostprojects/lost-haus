@@ -35,7 +35,7 @@ const Corporate = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Seo
-        title="Corporate Event Venue | Somerhaus"
+        title="Corporate Event Venue in Cincinnati | Somerhaus"
         description="Host productive meetings and memorable company events in our stylish Over-the-Rhine space."
         schema={businessSchema}
       />

@@ -25,7 +25,7 @@ const CorporateEventTips = () => {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Seo
-        title="10 Expert Tips for Memorable Corporate Events"
+        title="10 Expert Tips for Memorable Corporate Events in Cincinnati"
         description="Plan engaging meetings and company celebrations with advice from the Somerhaus team."
         schema={articleSchema}
       />

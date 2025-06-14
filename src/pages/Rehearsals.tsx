@@ -126,7 +126,7 @@ const Rehearsals = () => {
   return (
     <main className="min-h-screen relative" style={{ backgroundColor: '#F5F3F1' }}>
       <Seo
-        title="Wedding Rehearsal Venue | Somerhaus"
+        title="Wedding Rehearsal Venue in Cincinnati | Somerhaus"
         description="Practice and celebrate in style at our historic Cincinnati space."
         schema={[businessSchema, faqSchema]}
       />

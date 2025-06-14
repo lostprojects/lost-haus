@@ -30,7 +30,7 @@ const PressPage = () => {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Seo
-        title="Somerhaus Press"
+        title="Somerhaus Press | Cincinnati Event Venue"
         description="News articles and media resources about Cincinnati's most enchanting event venue."
         schema={businessSchema}
       />

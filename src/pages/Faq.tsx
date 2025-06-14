@@ -42,7 +42,7 @@ const FAQ = () => {
   return (
     <main className="min-h-screen">
       <Seo
-        title="Somerhaus FAQ"
+        title="Somerhaus FAQ | Cincinnati Event Venue"
         description="Answers to common questions about our Cincinnati event venue."
         schema={[businessSchema, faqSchema]}
       />

@@ -36,7 +36,7 @@ const Elopements = () => {
   return (
     <main className="min-h-screen">
       <Seo
-        title="Elopement Venue | Somerhaus"
+        title="Elopement Venue in Cincinnati | Somerhaus"
         description="Plan an intimate elopement in our chic Cincinnati venue."
         schema={businessSchema}
       />
