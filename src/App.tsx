@@ -21,6 +21,10 @@ import Rehearsals from "./pages/Rehearsals";
 import Parties from "./pages/Parties";
 import Meetings from "./pages/Meetings";
 import Gallery from "./pages/Gallery";
+import BarPackages from "./pages/BarPackages";
+import Vendors from "./pages/Vendors";
+import LayoutPage from "./pages/Layout";
+import PressPage from "./pages/Press";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +51,10 @@ const App = () => (
           <Route path="/parties" element={<Parties />} />
           <Route path="/meetings" element={<Meetings />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/bar-packages" element={<BarPackages />} />
+          <Route path="/vendors" element={<Vendors />} />
+          <Route path="/layout" element={<LayoutPage />} />
+          <Route path="/press" element={<PressPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </TooltipProvider>
