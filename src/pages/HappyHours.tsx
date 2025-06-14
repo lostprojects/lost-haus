@@ -8,6 +8,7 @@ import FAQSection from '@/components/shared/FAQSection';
 import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
 import { CTA } from '@/components/ui/call-to-action/component';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
+import HoneyBookForm from '@/components/honeybook/HoneyBookForm';
 import Seo from '@/components/seo/Seo';
 
 const businessSchema = {
@@ -151,6 +152,13 @@ const HappyHours = () => {
       />
 
       <TestimonialsDemo />
+
+      {/* HoneyBook Inquiry Form */}
+      <div className="bg-white p-6 rounded-lg shadow-md border-none">
+        <h2 className="text-2xl font-bold mb-4 text-center">Plan Your Happy Hour</h2>
+        <p className="text-gray-600 mb-6 text-center">Fill out the form below to get started.</p>
+        <HoneyBookForm placementId="7" />
+      </div>
 
       <FAQSection
         title="Happy Hour Events FAQ"
