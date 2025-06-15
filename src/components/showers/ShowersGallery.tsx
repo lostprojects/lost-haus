@@ -6,29 +6,24 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 const ShowersGallery = () => {
   const galleryImages = [
     {
-      src: "/lovable-uploads/9af23dea-0956-4cc4-a1c8-f2cee31084b2.png",
+      src: "/photo/haus-wedding-main.png",
       alt: "Baby shower celebration setup with elegant decor",
       caption: "Baby Shower Celebration"
     },
     {
-      src: "/lovable-uploads/54dee81d-d7ea-49c7-8588-03e5db9ec8bd.png",
+      src: "/photo/haus-wedding-2.png",
       alt: "Bridal shower with floral arrangements and table settings",
       caption: "Bridal Shower Elegance"
     },
     {
-      src: "/lovable-uploads/41b903d4-d950-4e6e-839a-07c706d701b0.png",
+      src: "/photo/haus-meeting.png",
       alt: "Gender reveal party with colorful decorations",
       caption: "Gender Reveal Celebration"
     },
     {
-      src: "/lovable-uploads/5681976d-8810-4ced-9f69-628ef625593f.png",
+      src: "/photo/haus-party.png",
       alt: "Custom shower decorations and table setup",
       caption: "Custom Shower Decorations"
-    },
-    {
-      src: "/lovable-uploads/de58a57e-3411-4a58-9d1a-64324adbb089.png",
-      alt: "Modern baby shower buffet and refreshment setup",
-      caption: "Refreshment Station"
     }
   ];
 

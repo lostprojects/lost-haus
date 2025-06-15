@@ -135,7 +135,7 @@ const Rehearsals = () => {
       <HeroSection 
         backgroundType="static"
         backgroundSources={[{
-          src: "/lovable-uploads/c7a03617-c05f-49b7-8f75-c54010643961.png",
+          src: "/photo/haus-wedding-main.png",
           alt: "Wedding Rehearsals at Somerhaus"
         }]}
         title="Wedding Rehearsals at Somerhaus"

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 export const ImageGallerySection = () => {
-  const images = ["/lovable-uploads/5681976d-8810-4ced-9f69-628ef625593f.png", "/lovable-uploads/9af23dea-0956-4cc4-a1c8-f2cee31084b2.png", "/lovable-uploads/de58a57e-3411-4a58-9d1a-64324adbb089.png", "/lovable-uploads/f8a14efe-117f-4fea-8c12-b9371b4d3825.png"];
+  const images = ["/photo/haus-wedding-main.png", "/photo/haus-wedding-2.png", "/photo/haus-meeting.png", "/photo/haus-party.png"];
   const imageVariants = {
     whileHover: {
       scale: 1.1,
@@ -17,7 +17,7 @@ export const ImageGallerySection = () => {
   return <section className="bg-white py-[40px]">
       <div className="max-w-7xl mx-auto px-8">
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold md:text-5xl text-orange-600 font-header mb-4 my-[26px] py-0">
+          <h2 className="text-5xl font-bold md:text-5xl text-brand font-header mb-4 my-[26px] py-0">
             Our Venue Gallery
           </h2>
           <p className="text-lg text-neutral-500 font-body max-w-2xl mx-auto">

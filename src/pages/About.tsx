@@ -3,7 +3,7 @@ import React from 'react';
 import Header from '@/components/ui/header';
 import Seo from '@/components/seo/Seo';
 import { Footerdemo } from '@/components/ui/footer-section';
-// Removed HeroSection import as we'll create a simpler header structure
+import HeroSection from '@/components/shared/HeroSection';
 import { Separator } from '@/components/ui/separator';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from "@/components/ui/badge";
@@ -13,17 +13,24 @@ import HoneyBookForm from '@/components/honeybook/HoneyBookForm';
 const About: React.FC = () => {
   useHoneyBook();
 
+  const heroImages = [
+    { src: '/photo/haus-wedding-main.png', alt: 'Wedding at Somerhaus' },
+    { src: '/photo/haus-wedding-2.png', alt: 'Wedding reception at Somerhaus' },
+    { src: '/photo/haus-meeting.png', alt: 'Meeting at Somerhaus' },
+    { src: '/photo/haus-party.png', alt: 'Party at Somerhaus' }
+  ];
+
   const teamMembers = [
     {
       name: "Beth Smiley",
       role: "General Manager",
-      image: "/lovable-uploads/412228bd-5454-4f8e-8f8a-bee8380ea2ce.png",
+      image: "/team/beth-smiley.png",
       bio: "Beth brings over 15 years of hospitality and event management experience to Somerhaus. With her keen eye for detail and passion for creating memorable experiences, she ensures every event runs flawlessly."
     }, 
     {
       name: "Sara Hutslar",
       role: "Events Director",
-      image: "/lovable-uploads/f86e016f-2c41-4435-a165-edbc5f730d4b.png",
+      image: "/team/sara-hutslar.png",
       bio: "As our creative force, Sara transforms client visions into reality. Her background in design and event planning helps create unique, personalized experiences for every occasion at Somerhaus."
     }
   ];
@@ -32,26 +39,20 @@ const About: React.FC = () => {
     <div className="flex flex-col min-h-screen bg-background"> {/* Added bg-background */}
       <Seo title="About Somerhaus | Event Space in Cincinnati" description="Learn the story behind Somerhaus and meet the team that makes every event memorable." />
       <Header />
-      <main className="flex-grow"> {/* Removed container/padding from main */}
+      
+      <HeroSection
+        backgroundType="carousel"
+        backgroundSources={heroImages}
+        title="About Somerhaus"
+        subtitle="A design-driven canvas for unforgettable gatherings in the heart of Over-the-Rhine."
+      />
 
-        {/* Simple Header Section */}
-        <section className="py-16 md:py-24 text-center bg-muted/40"> {/* Added standard padding & bg */}
-          <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-6xl font-header tracking-tight mb-4 text-foreground">
-              About Somerhaus
-            </h1>
-            <p className="text-lg md:text-xl max-w-2xl mx-auto text-muted-foreground font-mono">
-              A design-driven canvas for unforgettable gatherings in the heart of Over-the-Rhine.
-            </p>
-          </div>
-        </section>
-
-        {/* Separator is now part of the section spacing */}
+      <main className="flex-grow">
 
         {/* Our Story Section */}
         <section className="py-12 md:py-16">
           <div className="container mx-auto px-4 max-w-3xl"> {/* Container with max-width */}
-            <h2 className="text-3xl md:text-4xl font-header font-semibold mb-6 text-center text-foreground">Our Story</h2>
+            <h2 className="text-3xl md:text-4xl font-header font-semibold mb-6 text-center">Our Story</h2>
             <div className="prose prose-lg max-w-none mx-auto text-foreground font-mono"> {/* Added prose for styling */}
               <p>
                 Somerhaus was born from the same spirit of adventure that powers our sister venue, Somerset Bar—an indoor/outdoor oasis pieced together from eight shipping containers and treasures collected on global expeditions, opened in 2021 to instant acclaim. Guests loved Somerset so much they kept asking to rent it for private events. Rather than close the bar, we transformed a nearby 1880s industrial loft at 1415 Republic Street into a purpose-built event space, keeping the maximalist, globally-sourced design language people fell for.
@@ -68,7 +69,7 @@ const About: React.FC = () => {
         {/* The Space Section */}
         <section className="py-12 md:py-16 bg-muted/40"> {/* Alternating background */}
           <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-header font-semibold mb-6 text-center text-foreground">The Space</h2>
+            <h2 className="text-3xl md:text-4xl font-header font-semibold mb-6 text-center">The Space</h2>
             <ul className="list-disc list-inside space-y-3 text-lg text-muted-foreground font-mono marker:text-primary"> {/* Styled list */}
               <li>3,000+ sq ft of uninterrupted floor-plan freedom—yours to configure for ceremonies, seated dinners up to 80, or cocktail receptions that flow past 150.</li>
               <li>Fully furnished lounges, dining tables, a built-in bar, and 70 extra folding chairs on-site—no rental scramble required.</li>
@@ -84,7 +85,7 @@ const About: React.FC = () => {
         {/* Events We Host Section */}
         <section className="py-12 md:py-16">
           <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-header font-semibold mb-6 text-center text-foreground">Events We Host</h2>
+            <h2 className="text-3xl md:text-4xl font-header font-semibold mb-6 text-center">Events We Host</h2>
             <p className="text-lg text-muted-foreground text-center font-mono">
               From weddings and showers to product launches, off-sites, art shows, and film shoots—if you can dream it, chances are we've flipped the room for it already. Our only hard rule: celebrations should elevate the people and the neighborhood we love.
             </p>
@@ -98,7 +99,7 @@ const About: React.FC = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <Badge variant="outline" className="mb-3">The People Behind Your Events</Badge>
-              <h2 className="text-3xl md:text-5xl font-header mb-4">Meet Our Team</h2>
+              <h2 className="text-3xl md:text-4xl font-header mb-4">Meet Our Team</h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto font-mono">
                 Our dedicated professionals work tirelessly to ensure your event exceeds expectations.
               </p>
@@ -143,7 +144,7 @@ const About: React.FC = () => {
         {/* The Team Section */}
         <section className="py-12 md:py-16">
           <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-header font-semibold mb-6 text-center text-foreground">The Team</h2>
+            <h2 className="text-3xl md:text-4xl font-header font-semibold mb-6 text-center">The Team</h2>
             <p className="text-lg text-muted-foreground text-center font-mono">
               Somerhaus operates under the Lost Hospitality umbrella, the Cincinnati-grown collective behind Somerset, Second Story, Alice, and the forthcoming Muse Hotel. Day-to-day magic is orchestrated by Beth Smiley and Sara Hutslar, our co-General Managers whose obsessive eye for detail (and deep OTR roots) ensures every client feels at home from the first walkthrough to the last dance.
             </p>
@@ -155,7 +156,7 @@ const About: React.FC = () => {
         {/* Why We're Different Section */}
         <section className="py-12 md:py-16">
           <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-header font-semibold mb-6 text-center text-foreground">Why We're Different</h2>
+            <h2 className="text-3xl md:text-4xl font-header font-semibold mb-6 text-center">Why We're Different</h2>
             <ul className="list-disc list-inside space-y-3 text-lg text-muted-foreground font-mono marker:text-primary">
               <li>Design without the white-box blandness. Your photos pop because the space already tells a story—yours just becomes the next chapter.</li>
               <li>Hospitality, not just venue rental. We cap events per week so our team can focus on service instead of churn.</li>

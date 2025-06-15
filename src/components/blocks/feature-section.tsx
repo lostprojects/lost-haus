@@ -37,7 +37,7 @@ export function FeatureSteps({
     return () => clearInterval(timer);
   }, [progress, features.length, autoPlayInterval]);
   return <div className={cn("py-0", className)}>
-      <h2 className="text-5xl font-bold md:text-5xl text-orange-600 font-header text-center pb-[40px]">
+      <h2 className="text-5xl font-bold md:text-5xl text-brand font-header text-center pb-[40px]">
         {title}
       </h2>
 

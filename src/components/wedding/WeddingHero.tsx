@@ -5,18 +5,10 @@ import { CalendarCheck, ArrowRight } from "lucide-react"; // Keep icon imports
 
 const WeddingHero = () => {
   const heroImages = [
-    {
-      src: "https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80",
-      alt: "Romantic wedding setup at Somerhaus"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80",
-      alt: "Elegant wedding reception at Somerhaus"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80",
-      alt: "Beautiful wedding ceremony at Somerhaus"
-    }
+    { src: '/photo/haus-wedding-main.png', alt: 'Wedding at Somerhaus' },
+    { src: '/photo/haus-wedding-2.png', alt: 'Wedding reception at Somerhaus' },
+    { src: '/photo/haus-meeting.png', alt: 'Meeting at Somerhaus' },
+    { src: '/photo/haus-party.png', alt: 'Party at Somerhaus' }
   ];
 
   const buttons = [

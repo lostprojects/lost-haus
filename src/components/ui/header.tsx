@@ -18,9 +18,16 @@ const Header = () => {
   }, []);
 
   const menuItems = [
-    { name: 'Weddings', href: '/wedding' },
     { name: 'Corporate Events', href: '/corporate' },
     { name: 'Somerset', href: 'https://somersetotr.com', external: true },
+  ];
+
+  const weddingItems = [
+    { name: 'Weddings Home', href: '/wedding', bold: true },
+    { name: 'Elopements', href: '/elopements' },
+    { name: 'LGBTQ Weddings', href: '/lgbtq-weddings' },
+    { name: 'Micro Weddings', href: '/micro-weddings' },
+    { name: 'Rehearsals', href: '/rehearsals' },
   ];
 
   const otherEventsItems = [
@@ -29,7 +36,6 @@ const Header = () => {
     { name: 'Dinners', href: '/dinners' },
     { name: 'Brunches', href: '/brunches' },
     { name: 'Happy Hours', href: '/happy-hours' },
-    { name: 'Rehearsals', href: '/rehearsals' },
     { name: 'Parties', href: '/parties' },
     { name: 'Meetings', href: '/meetings' },
   ];
@@ -53,7 +59,7 @@ const Header = () => {
           {/* Logo */}
           <a href="/" className="flex items-center">
             <img 
-              src="/lovable-uploads/41b903d4-d950-4e6e-839a-07c706d701b0.png" 
+              src="/haus-logo.png" 
               alt="Somerhaus Logo" 
               className="h-12 w-auto"
             />
@@ -61,6 +67,31 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
+            {/* Custom Weddings Dropdown Menu */}
+            <div className="relative group">
+              <a
+                href="/wedding"
+                className={`flex items-center text-sm font-body transition-colors ${isScrolled ? 'text-white hover:text-[#9b87f5]' : 'text-white hover:text-[#9b87f5]'}`}
+              >
+                Weddings
+                <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
+              </a>
+              
+              <div className="absolute left-0 mt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="py-2 bg-black/90 backdrop-blur-sm rounded-md">
+                  {weddingItems.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className={`block px-4 py-2 text-sm font-body text-white transition-colors hover:text-[#9b87f5] ${item.bold ? 'font-bold' : ''}`}
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             {menuItems.filter(item => item.name !== 'Somerset').map((item) => (
               <a
                 key={item.name}
@@ -152,13 +183,29 @@ const Header = () => {
                 <SheetHeader>
                   <SheetTitle>
                     <img 
-                      src="/lovable-uploads/41b903d4-d950-4e6e-839a-07c706d701b0.png" 
+                      src="/haus-logo.png" 
                       alt="Somerhaus Logo" 
                       className="h-8 w-auto"
                     />
                   </SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col gap-4 mt-8">
+                  {/* Weddings Section in Mobile Menu */}
+                  <div className="mt-2 mb-2">
+                    <h3 className="text-lg font-body font-medium mb-2">Weddings</h3>
+                    <div className="pl-2 border-l-2 border-gray-700">
+                      {weddingItems.map((item) => (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          className={`block text-lg font-body py-2 hover:text-[#9b87f5] transition-colors ${item.bold ? 'font-bold' : ''}`}
+                        >
+                          {item.name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+
                   {menuItems.map((item) => (
                     <a
                       key={item.name}

@@ -23,10 +23,12 @@ const businessSchema = {
 };
 
 const Blog = () => {
-  const heroImages = [{
-    src: '/lovable-uploads/de58a57e-3411-4a58-9d1a-64324adbb089.png',
-    alt: 'Blog at Somerhaus',
-  }];
+  const heroImages = [
+    { src: '/photo/haus-wedding-main.png', alt: 'Wedding at Somerhaus' },
+    { src: '/photo/haus-wedding-2.png', alt: 'Wedding reception at Somerhaus' },
+    { src: '/photo/haus-meeting.png', alt: 'Meeting at Somerhaus' },
+    { src: '/photo/haus-party.png', alt: 'Party at Somerhaus' }
+  ];
 
   return (
     <div className="flex flex-col min-h-screen bg-background">

@@ -9,7 +9,7 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   headline: "The Ultimate Cincinnati Wedding Planning Checklist",
-  image: "https://somerhaus.com/lovable-uploads/9af23dea-0956-4cc4-a1c8-f2cee31084b2.png",
+  image: "https://somerhaus.com/photo/haus-wedding-main.png",
   author: { "@type": "Organization", name: "Somerhaus" },
   publisher: { "@type": "Organization", name: "Somerhaus" },
   mainEntityOfPage: "https://somerhaus.com/blog/wedding-checklist",
@@ -17,10 +17,12 @@ const articleSchema = {
 };
 
 const WeddingChecklist = () => {
-  const heroImages = [{
-    src: '/lovable-uploads/9af23dea-0956-4cc4-a1c8-f2cee31084b2.png',
-    alt: 'Wedding setup at Somerhaus',
-  }];
+  const heroImages = [
+    { src: '/photo/haus-wedding-main.png', alt: 'Wedding at Somerhaus' },
+    { src: '/photo/haus-wedding-2.png', alt: 'Wedding reception at Somerhaus' },
+    { src: '/photo/haus-meeting.png', alt: 'Meeting at Somerhaus' },
+    { src: '/photo/haus-party.png', alt: 'Party at Somerhaus' }
+  ];
 
   return (
     <div className="flex flex-col min-h-screen bg-background">

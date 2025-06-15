@@ -34,7 +34,7 @@ const EventInquiry = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh] min-h-[400px] overflow-hidden">
+      <section className="relative w-full h-[60vh] min-h-[400px] overflow-hidden hero">
         <div className="absolute inset-0 bg-black/40 z-10" />
         <div 
           className="absolute inset-0 bg-cover bg-center"

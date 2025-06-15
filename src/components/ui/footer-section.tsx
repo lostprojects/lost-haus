@@ -8,12 +8,12 @@ import { ArrowUpRight, Send } from "lucide-react";
 // Updated social icons array - keeping only Instagram and Facebook
 const socialIcons = [{
   name: "Instagram",
-  image: "/lovable-uploads/c7a03617-c05f-49b7-8f75-c54010643961.png",
+  image: "/icons/haus-ig-icon.png",
   link: "https://www.instagram.com/somerhaus.space/?hl=en",
   tooltip: "Follow us on Instagram"
 }, {
   name: "Facebook",
-  image: "/lovable-uploads/db22bf39-d1f0-4405-9204-bff18b3eb5b1.png",
+  image: "/icons/haus-fb-icon.png",
   link: "https://www.facebook.com/Somerhaus.otr/",
   tooltip: "Follow us on Facebook"
 }];

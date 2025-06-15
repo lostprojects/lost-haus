@@ -6,9 +6,10 @@ import AvatarGroup from './AvatarGroup';
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const images = [
-    '/lovable-uploads/54dee81d-d7ea-49c7-8588-03e5db9ec8bd.png',
-    '/lovable-uploads/41b903d4-d950-4e6e-839a-07c706d701b0.png',
-    '/lovable-uploads/9af23dea-0956-4cc4-a1c8-f2cee31084b2.png'
+    '/photo/haus-wedding-main.png',
+    '/photo/haus-wedding-2.png',
+    '/photo/haus-meeting.png',
+    '/photo/haus-party.png'
   ];
 
   useEffect(() => {
@@ -20,7 +21,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <div className="relative h-screen w-full overflow-hidden hero">
       {images.map((img, index) => (
         <div 
           key={index} 
@@ -38,7 +39,7 @@ const Hero = () => {
 
       <div className="relative h-full flex flex-col items-center justify-center text-white px-4 md:px-8 max-w-7xl mx-auto">
         <AvatarGroup />
-        <h1 className="text-5xl text-center mb-4 font-header flex flex-col items-center gap-2 md:text-6xl">
+        <h1 className="text-5xl text-center mb-4 font-header flex flex-col items-center gap-2 md:text-6xl text-white">
           Somerhaus:
           <span>Cincinnati's Most Enchanting Event Space</span>
         </h1>

@@ -49,10 +49,10 @@ const FAQ = () => {
       <Header />
       
       {/* Hero section with background image */}
-      <section className="relative py-16 overflow-hidden">
+      <section className="relative py-16 overflow-hidden hero">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/lovable-uploads/9af23dea-0956-4cc4-a1c8-f2cee31084b2.png" 
+                          src="/photo/haus-wedding-main.png" 
             alt="Somerhaus event venue"
             className="w-full h-full object-cover object-center"
           />

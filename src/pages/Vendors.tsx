@@ -9,7 +9,12 @@ import { ArrowRight } from 'lucide-react';
 import Seo from '@/components/seo/Seo';
 
 const Vendors = () => {
-  const heroImages = [{ src: '/lovable-uploads/9af23dea-0956-4cc4-a1c8-f2cee31084b2.png', alt: 'Event setup at Somerhaus' }];
+  const heroImages = [
+  { src: '/photo/haus-wedding-main.png', alt: 'Wedding at Somerhaus' },
+  { src: '/photo/haus-wedding-2.png', alt: 'Wedding reception at Somerhaus' },
+  { src: '/photo/haus-meeting.png', alt: 'Meeting at Somerhaus' },
+  { src: '/photo/haus-party.png', alt: 'Party at Somerhaus' }
+];
 
   return (
     <div className="flex flex-col min-h-screen bg-background">

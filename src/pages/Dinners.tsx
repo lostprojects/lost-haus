@@ -138,7 +138,7 @@ const Dinners = () => {
       <HeroSection 
         backgroundType="static"
         backgroundSources={[{
-          src: "/lovable-uploads/de58a57e-3411-4a58-9d1a-64324adbb089.png",
+          src: "/photo/haus-party.png",
           alt: "Elegant Dinner Events at Somerhaus"
         }]}
         title="Dinner Events at Somerhaus"

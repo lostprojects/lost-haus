@@ -136,7 +136,7 @@ const HappyHours = () => {
       <HeroSection 
         backgroundType="static"
         backgroundSources={[{
-          src: "/lovable-uploads/8eb7ab37-08dc-43b9-9f7a-fa74ac9b112d.png",
+          src: "/photo/haus-meeting.png",
           alt: "Happy Hour Events at Somerhaus"
         }]}
         title="Happy Hour Events at Somerhaus"

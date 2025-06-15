@@ -6,10 +6,10 @@ import { CalendarCheck, Download } from 'lucide-react'; // Keep icon imports
 
 const CorporateHero = () => {
   const heroImage = [
-    {
-      src: "https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80",
-      alt: "Corporate event setup at Somerhaus" // Added alt text
-    }
+    { src: '/photo/haus-wedding-main.png', alt: 'Wedding at Somerhaus' },
+    { src: '/photo/haus-wedding-2.png', alt: 'Wedding reception at Somerhaus' },
+    { src: '/photo/haus-meeting.png', alt: 'Meeting at Somerhaus' },
+    { src: '/photo/haus-party.png', alt: 'Party at Somerhaus' }
   ];
 
   const buttons = [

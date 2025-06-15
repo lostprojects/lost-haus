@@ -9,7 +9,7 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   headline: "10 Expert Tips for Memorable Corporate Events",
-  image: "https://somerhaus.com/lovable-uploads/8eb7ab37-08dc-43b9-9f7a-fa74ac9b112d.png",
+  image: "https://somerhaus.com/photo/haus-meeting.png",
   author: { "@type": "Organization", name: "Somerhaus" },
   publisher: { "@type": "Organization", name: "Somerhaus" },
   mainEntityOfPage: "https://somerhaus.com/blog/corporate-event-tips",
@@ -17,10 +17,12 @@ const articleSchema = {
 };
 
 const CorporateEventTips = () => {
-  const heroImages = [{
-    src: '/lovable-uploads/8eb7ab37-08dc-43b9-9f7a-fa74ac9b112d.png',
-    alt: 'Corporate event at Somerhaus',
-  }];
+  const heroImages = [
+    { src: '/photo/haus-wedding-main.png', alt: 'Wedding at Somerhaus' },
+    { src: '/photo/haus-wedding-2.png', alt: 'Wedding reception at Somerhaus' },
+    { src: '/photo/haus-meeting.png', alt: 'Meeting at Somerhaus' },
+    { src: '/photo/haus-party.png', alt: 'Party at Somerhaus' }
+  ];
 
   return (
     <div className="flex flex-col min-h-screen bg-background">

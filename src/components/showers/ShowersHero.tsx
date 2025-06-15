@@ -5,18 +5,10 @@ import { CalendarCheck, ArrowRight } from "lucide-react"; // Keep icon imports
 
 const ShowersHero = () => {
   const heroImages = [
-    {
-      src: "/lovable-uploads/9af23dea-0956-4cc4-a1c8-f2cee31084b2.png",
-      alt: "Baby shower setup at Somerhaus"
-    },
-    {
-      src: "/lovable-uploads/54dee81d-d7ea-49c7-8588-03e5db9ec8bd.png",
-      alt: "Bridal shower celebration at Somerhaus"
-    },
-    {
-      src: "/lovable-uploads/41b903d4-d950-4e6e-839a-07c706d701b0.png",
-      alt: "Elegant shower party at Somerhaus"
-    }
+    { src: '/photo/haus-wedding-main.png', alt: 'Wedding at Somerhaus' },
+    { src: '/photo/haus-wedding-2.png', alt: 'Wedding reception at Somerhaus' },
+    { src: '/photo/haus-meeting.png', alt: 'Meeting at Somerhaus' },
+    { src: '/photo/haus-party.png', alt: 'Party at Somerhaus' }
   ];
 
   const buttons = [

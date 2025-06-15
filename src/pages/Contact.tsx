@@ -35,13 +35,13 @@ const ContactPage = () => {
     {
       name: "Beth Smiley",
       role: "General Manager",
-      image: "/lovable-uploads/412228bd-5454-4f8e-8f8a-bee8380ea2ce.png",
+      image: "/team/beth-smiley.png",
       bio: "Beth brings over 15 years of hospitality and event management experience to Somerhaus. With her keen eye for detail and passion for creating memorable experiences, she ensures every event runs flawlessly."
     }, 
     {
       name: "Sara Hutslar",
       role: "Events Director",
-      image: "/lovable-uploads/f86e016f-2c41-4435-a165-edbc5f730d4b.png",
+      image: "/team/sara-hutslar.png",
       bio: "As our creative force, Sara transforms client visions into reality. Her background in design and event planning helps create unique, personalized experiences for every occasion at Somerhaus."
     }
   ];
@@ -97,10 +97,10 @@ const ContactPage = () => {
       <Header />
       
       {/* Hero Section with updated background image */}
-      <section className="relative w-full h-[60vh] min-h-[400px] overflow-hidden">
+      <section className="relative w-full h-[60vh] min-h-[400px] overflow-hidden hero">
         <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="absolute inset-0 bg-cover bg-center" style={{
-        backgroundImage: "url('/lovable-uploads/3f1f8719-45bb-4740-b9d0-c55fe3e170ad.png')"
+                    backgroundImage: "url('/photo/haus-wedding-main.png')"
       }} />
         <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-header tracking-tight mb-4 text-white">

@@ -9,10 +9,12 @@ import { ArrowRight } from 'lucide-react';
 import Seo from '@/components/seo/Seo';
 
 const BarPackages = () => {
-  const heroImages = [{
-    src: '/lovable-uploads/31c22bc4-b41f-4ea7-84ca-97efc98eaef1.png',
-    alt: 'Somerhaus bar setup'
-  }];
+  const heroImages = [
+    { src: '/photo/haus-wedding-main.png', alt: 'Wedding at Somerhaus' },
+    { src: '/photo/haus-wedding-2.png', alt: 'Wedding reception at Somerhaus' },
+    { src: '/photo/haus-meeting.png', alt: 'Meeting at Somerhaus' },
+    { src: '/photo/haus-party.png', alt: 'Party at Somerhaus' }
+  ];
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Seo

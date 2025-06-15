@@ -9,7 +9,12 @@ import { ArrowRight } from 'lucide-react';
 import Seo from '@/components/seo/Seo';
 
 const LayoutPage = () => {
-  const heroImages = [{ src: '/lovable-uploads/54dee81d-d7ea-49c7-8588-03e5db9ec8bd.png', alt: 'Somerhaus floor layout' }];
+  const heroImages = [
+  { src: '/photo/haus-wedding-main.png', alt: 'Wedding at Somerhaus' },
+  { src: '/photo/haus-wedding-2.png', alt: 'Wedding reception at Somerhaus' },
+  { src: '/photo/haus-meeting.png', alt: 'Meeting at Somerhaus' },
+  { src: '/photo/haus-party.png', alt: 'Party at Somerhaus' }
+];
 
   return (
     <div className="flex flex-col min-h-screen bg-background">

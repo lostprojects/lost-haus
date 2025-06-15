@@ -128,7 +128,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
 
   return (
-    <section className={sectionClassName}>
+    <section className={cn("hero", sectionClassName)}>
       {overlayClassName && <div className={overlayClassName} />}
       {renderBackground()}
       <div className={contentContainerClassName}>
