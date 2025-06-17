@@ -369,13 +369,34 @@
   50% { transform: translateY(-10px); }
 }
 
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+.animate-scroll {
+  animation: scroll 60s linear infinite;
+}
+
 @layer base {
   * {
     @apply border-border;
   }
+  
+  /* Optimize scrolling performance */
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
     @apply bg-background text-foreground;
     font-family: "Nebulica", sans-serif;
     font-weight: 200;
+  }
+  
+  /* Improve parallax performance */
+  [data-parallax] {
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 }

@@ -25,9 +25,9 @@ export const ImageGallerySection = () => {
     "/photo/meeting-dinner-hero1-artworks-cincinnati-event-space-somerhaus.jpg"
   ];
 
-  // Subtle parallax transforms
-  const firstRowY = useTransform(scrollYProgress, [0, 1], [-30, 30]);
-  const secondRowY = useTransform(scrollYProgress, [0, 1], [30, -30]);
+  // More subtle parallax transforms for better performance
+  const firstRowY = useTransform(scrollYProgress, [0, 1], [-15, 15]);
+  const secondRowY = useTransform(scrollYProgress, [0, 1], [15, -15]);
 
   const imageVariants = {
     hidden: {
@@ -46,7 +46,7 @@ export const ImageGallerySection = () => {
       }
     }),
     whileHover: {
-      scale: 1.1,
+      scale: 1.08,
       rotate: 0,
       zIndex: 100,
       transition: { duration: 0.3 }

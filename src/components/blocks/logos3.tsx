@@ -20,33 +20,6 @@ const Logos3 = ({
   logos,
   className = ""
 }: Logos3Props) => {
-  const [scrollY, setScrollY] = useState(0);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (sectionRef.current) {
-        const rect = sectionRef.current.getBoundingClientRect();
-        const sectionTop = rect.top + window.scrollY;
-        const sectionHeight = rect.height;
-        const windowHeight = window.innerHeight;
-        
-        // Calculate scroll progress when section is in view
-        const scrollProgress = (window.scrollY - sectionTop + windowHeight) / (windowHeight + sectionHeight);
-        const clampedProgress = Math.max(0, Math.min(1, scrollProgress));
-        
-                 // Convert progress to horizontal scroll (negative for left movement)
-        const maxScroll = 600; // Reduced by 25% for slower movement
-        setScrollY(-clampedProgress * maxScroll);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initialize
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   // Duplicate logos for seamless infinite scroll effect
   const duplicatedLogos = [...logos, ...logos, ...logos];
 
@@ -56,7 +29,6 @@ const Logos3 = ({
   
   return (
     <section 
-      ref={sectionRef}
       className={`${hasTrustedByHeading ? 'pt-6 pb-3' : 'pt-0 pb-0'} bg-background overflow-hidden ${className}`}
     >
       {heading && hasTrustedByHeading && (
@@ -76,9 +48,8 @@ const Logos3 = ({
       
       <div className="relative w-full">
         <div 
-          className="flex items-center gap-12 transition-transform duration-75 ease-linear"
+          className="flex items-center gap-12 animate-scroll"
           style={{ 
-            transform: `translateX(${scrollY}px)`,
             width: 'max-content'
           }}
         >
