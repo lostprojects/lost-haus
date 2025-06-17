@@ -8,6 +8,8 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import Seo from '@/components/seo/Seo';
 import PricingSection from '@/components/shared/PricingSection';
+import BarCostCalculator from '@/components/bar/BarCostCalculator';
+import BarFaq from '@/components/bar/BarFaq';
 
 const BarPackages = () => {
   return (
@@ -75,6 +77,8 @@ const BarPackages = () => {
             </div>
           }
         />
+        <BarCostCalculator />
+        <BarFaq />
         <Separator />
         <section className="py-12 md:py-16 bg-muted/40">
           <div className="container mx-auto px-4 text-center">
