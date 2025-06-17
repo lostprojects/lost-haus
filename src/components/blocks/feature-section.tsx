@@ -17,7 +17,7 @@ interface FeatureStepsProps {
   features: Feature[];
   className?: string;
   title?: string;
-  subtitle?: string;
+  subtitle?: string | React.ReactNode;
   autoPlayInterval?: number;
   imageHeight?: string;
 }
@@ -76,7 +76,7 @@ export function FeatureSteps({
         </motion.div>
       </div>
 
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-xl mx-auto">
         <div className="space-y-12">
           {features.map((feature, index) => (
               <motion.div 

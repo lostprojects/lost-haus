@@ -1,4 +1,3 @@
-
 import { FeatureSteps } from "./feature-section"
 
 const features = [
@@ -14,7 +13,7 @@ const features = [
   },
   { 
     step: 'Step 3',
-    title: 'Celebrate Seamlessly',
+    title: 'Celebrate & Create Magic',
     content: 'Relax and be present while our dedicated professionals orchestrate every moment, ensuring your event flows effortlessly and creates unforgettable memories.'
   },
 ]
@@ -23,8 +22,12 @@ export function FeatureStepsDemo() {
   return (
     <FeatureSteps 
       features={features}
-      title="Your Event Starts Here"
-      subtitle="Our approachable, helpful team is here to make planning your perfect event effortless and enjoyable."
+      title="A Perfect Event in Three Steps"
+      subtitle={
+        <>
+          Our approachable, helpful <a href="/about" className="text-brand hover:text-brand/80 underline underline-offset-2">team</a> is here to make planning your perfect event effortless and enjoyable.
+        </>
+      }
       autoPlayInterval={4000}
       imageHeight="h-[500px]"
     />

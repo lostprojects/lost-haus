@@ -169,7 +169,7 @@ const Index = () => {
         <FeaturedQuote />
         {/* White container for FeatureStepsDemo section */}
         <div className="w-full py-10 lg:py-[40px]">
-          <div className="container">
+          <div className="max-w-4xl mx-auto px-4">
             <div className="bg-white rounded-md p-4 lg:p-14 py-[50px] px-[50px]">
               <FeatureStepsDemo />
             </div>
