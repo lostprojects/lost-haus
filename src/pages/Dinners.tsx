@@ -42,7 +42,6 @@ const Dinners = () => {
         "Bar setup included"
       ],
       popular: false,
-      buttonText: "Book This Package"
     },
     {
       name: "Elegant Dinner",
@@ -61,7 +60,6 @@ const Dinners = () => {
         "Photography coordination"
       ],
       popular: true,
-      buttonText: "Book This Package"
     },
     {
       name: "Grand Dinner Event",
@@ -81,7 +79,6 @@ const Dinners = () => {
         "Custom menu planning support"
       ],
       popular: false,
-      buttonText: "Book This Package"
     }
   ];
 

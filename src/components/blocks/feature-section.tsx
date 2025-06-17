@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { LucideIcon, ChevronDown } from "lucide-react";
-import { TiltCard } from "@/components/ui/tilt-card";
+import { BookNowButton } from "@/components/ui/book-now-button";
 
 interface Feature {
   step: string;
@@ -157,9 +157,7 @@ export function FeatureSteps({
           }}
           viewport={{ once: true }}
         >
-          <TiltCard href="/event-inquiry" className="group max-h-fit rounded-full bg-black p-2 px-6 shadow-[0_10px_25px_rgba(0,0,0,0.4)] hover:bg-[#D9FF8A]">
-            <span className="text-xl text-white group-hover:text-black font-body">Book Your Tour</span>
-          </TiltCard>
+          <BookNowButton className="shadow-[0_10px_25px_rgba(0,0,0,0.4)]" />
         </motion.div>
       </div>
     </div>;

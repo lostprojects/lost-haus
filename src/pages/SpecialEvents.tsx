@@ -41,7 +41,6 @@ const SpecialEvents = () => {
         "Event coordination"
       ],
       popular: false,
-      buttonText: "Book This Package"
     },
     {
       name: "Celebration Package",
@@ -59,7 +58,6 @@ const SpecialEvents = () => {
         "Vendor coordination"
       ],
       popular: true,
-      buttonText: "Book This Package"
     },
     {
       name: "Grand Celebration",
@@ -78,7 +76,6 @@ const SpecialEvents = () => {
         "Day-of event management"
       ],
       popular: false,
-      buttonText: "Book This Package"
     }
   ];
 

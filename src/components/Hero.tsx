@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Star } from "lucide-react";
-import { TiltCard } from "@/components/ui/tilt-card";
+import { BookNowButton } from "@/components/ui/book-now-button";
 import AvatarGroup from './AvatarGroup';
 
 const Hero = () => {
@@ -45,10 +45,9 @@ const Hero = () => {
           <span>Event Space</span>
         </h1>
 
-        <p className="text-xl text-center mb-6 max-w-2xl font-body font-extralight md:text-lg">
-          Book your tour today and see how our ivy-covered historic venue turns special moments into lasting memories.<br />
-          <span className="italic">*Limited dates available for 2025*</span>
-        </p>
+          <p className="text-xl text-center mb-6 max-w-2xl font-body font-extralight md:text-lg">
+            Book your tour today and see how our ivy-covered historic venue turns special moments into lasting memories.
+          </p>
 
         <div className="flex items-center gap-2 mb-8 font-body">
           <div className="flex">
@@ -67,9 +66,7 @@ const Hero = () => {
       </div>
 
       <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[16%]">
-        <TiltCard href="/event-inquiry" className="group max-h-fit rounded-full bg-black p-2 px-6 shadow-[0_20px_50px_rgba(0,0,0,0.8)] hover:bg-[#D9FF8A]">
-          <span className="text-xl text-white group-hover:text-black font-body">Book Your Tour</span>
-        </TiltCard>
+        <BookNowButton />
       </div>
     </div>
   );

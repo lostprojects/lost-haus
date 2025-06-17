@@ -43,7 +43,6 @@ const Parties = () => {
         "Event coordination"
       ],
       popular: false,
-      buttonText: "Book This Package"
     },
     {
       name: "Celebration Party",
@@ -63,7 +62,6 @@ const Parties = () => {
         "Welcome cocktail service"
       ],
       popular: true,
-      buttonText: "Book This Package"
     },
     {
       name: "Grand Celebration",
@@ -84,7 +82,6 @@ const Parties = () => {
         "Late night service"
       ],
       popular: false,
-      buttonText: "Book This Package"
     }
   ];
 

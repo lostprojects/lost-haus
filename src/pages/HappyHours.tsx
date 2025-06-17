@@ -121,7 +121,6 @@ const HappyHours = () => {
         "Event coordination"
       ],
       popular: false,
-      buttonText: "Book This Package"
     },
     {
       name: "Premium Happy Hour",
@@ -140,7 +139,6 @@ const HappyHours = () => {
         "Event management"
       ],
       popular: true,
-      buttonText: "Book This Package"
     },
     {
       name: "Corporate Celebration",
@@ -160,7 +158,6 @@ const HappyHours = () => {
         "Photography coordination"
       ],
       popular: false,
-      buttonText: "Book This Package"
     }
   ];
 

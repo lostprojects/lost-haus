@@ -23,7 +23,6 @@ const CorporatePricing = () => {
       preFeaturesContent: ( // Use preFeaturesContent for duration
         <p className="text-gray-500 font-body">4 hours</p>
       ),
-      buttonText: "Book This Package",
       buttonProps: { className: "font-body bg-black hover:bg-black/80" }, // Specific style for non-popular
       popular: false, // Map 'isPopular' to 'popular'
       cardClassName: "font-body", // Apply base font
@@ -43,7 +42,6 @@ const CorporatePricing = () => {
       preFeaturesContent: (
         <p className="text-gray-500 font-body">8 hours</p>
       ),
-      buttonText: "Book This Package",
       buttonProps: { className: "font-body" }, // Default style for popular
       popular: true,
       popularText: "Most Popular",
@@ -66,7 +64,6 @@ const CorporatePricing = () => {
       preFeaturesContent: (
         <p className="text-gray-500 font-body">Sunday-Thursday</p>
       ),
-      buttonText: "Book This Package",
       buttonProps: { className: "font-body bg-black hover:bg-black/80" },
       popular: false,
       cardClassName: "font-body",

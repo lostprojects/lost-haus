@@ -1,6 +1,6 @@
 import React from 'react';
 import HeroSection from '@/components/shared/HeroSection';
-import { TiltCard } from '@/components/ui/tilt-card';
+import { BookNowButton } from '@/components/ui/book-now-button';
 
 const PartiesHero: React.FC = () => {
   const heroImages = [
@@ -44,12 +44,7 @@ const PartiesHero: React.FC = () => {
 
       {/* CTA Button */}
       <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[16%] z-30">
-        <TiltCard
-          href="/event-inquiry"
-          className="group max-h-fit rounded-full bg-black p-2 px-6 shadow-[0_20px_50px_rgba(0,0,0,0.8)] hover:bg-[#D9FF8A]"
-        >
-          <span className="text-xl text-white group-hover:text-black font-body">Book Your Tour</span>
-        </TiltCard>
+        <BookNowButton />
       </div>
     </div>
   );

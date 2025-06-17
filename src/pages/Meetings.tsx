@@ -122,7 +122,6 @@ const Meetings = () => {
         "Meeting coordination"
       ],
       popular: false,
-      buttonText: "Book This Package"
     },
     {
       name: "Board Meeting",
@@ -142,7 +141,6 @@ const Meetings = () => {
         "Private breakout spaces"
       ],
       popular: true,
-      buttonText: "Book This Package"
     },
     {
       name: "Corporate Summit",
@@ -163,7 +161,6 @@ const Meetings = () => {
         "Executive hospitality suite"
       ],
       popular: false,
-      buttonText: "Book This Package"
     }
   ];
 

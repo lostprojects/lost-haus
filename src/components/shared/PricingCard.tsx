@@ -1,8 +1,9 @@
 import React from 'react';
 import { Badge } from "@/components/ui/badge";
-import { Button, ButtonProps } from "@/components/ui/button";
+import { BookNowButton } from "@/components/ui/book-now-button";
 import { Check } from "lucide-react";
 import { cn } from '@/lib/utils';
+import type { ButtonProps } from '@/components/ui/button';
 
 export interface PricingCardProps {
   name: string;
@@ -13,9 +14,8 @@ export interface PricingCardProps {
   features: string[];
   description?: string;
   preFeaturesContent?: React.ReactNode; // For content like 'Seasons'
-  buttonText: string;
-  buttonIcon?: React.ReactNode;
-  buttonProps?: Omit<ButtonProps, 'children'>; // Pass other button props like variant, onClick, etc.
+  // CTA handled via BookNowButton
+  buttonProps?: Omit<ButtonProps, 'children'>;
   cardClassName?: string;
   badgeClassName?: string;
 }
@@ -29,9 +29,6 @@ const PricingCard: React.FC<PricingCardProps> = ({
   features,
   description,
   preFeaturesContent,
-  buttonText,
-  buttonIcon,
-  buttonProps = {},
   cardClassName,
   badgeClassName,
 }) => {
@@ -66,9 +63,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
           ))}
         </ul>
 
-        <Button className="w-full gap-2" {...buttonProps}>
-          {buttonText} {buttonIcon}
-        </Button>
+        <BookNowButton className="w-full" />
       </div>
     </div>
   );
