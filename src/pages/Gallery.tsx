@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/ui/header';
 import { Footerdemo } from '@/components/ui/footer-section';
@@ -13,37 +12,63 @@ const Gallery = () => {
     {
       title: "Weddings",
       images: [
-        { src: "/photo/haus-wedding-main.png", alt: "Wedding ceremony setup with elegant decorations", category: "Ceremony" },
-        { src: "/photo/haus-wedding-2.png", alt: "Wedding reception with beautiful lighting", category: "Reception" },
-        { src: "/photo/haus-party.png", alt: "Bridal party photo session", category: "Portraits" },
-        { src: "https://images.squarespace-cdn.com/content/v1/64b6eccd5bb791630eca7b41/1709307334279-RZ62O6FVFT1QQLIKFU4I/Amy%26Joe1.jpg", alt: "Couple posing at Somerhaus", category: "Real Wedding" }
+        { src: "/photo/wedding-hero1-cincinnati-wedding-venue-somerhaus.jpg", alt: "Wedding ceremony setup with elegant decorations", category: "Ceremony" },
+        { src: "/photo/wedding-hero2-cincinnati-wedding-venue-somerhaus.jpeg", alt: "Wedding reception with beautiful lighting", category: "Reception" },
+        { src: "/photo/wedding-portrait1-cincinnati-wedding-venue-somerhaus.jpg", alt: "Bride and groom portrait", category: "Portrait" },
+        { src: "/photo/wedding-portrait2-cincinnati-wedding-venue-somerhaus.png", alt: "Bridal details", category: "Details" },
+        { src: "/photo/wedding-portrait3-cincinnati-wedding-venue-somerhaus.jpg", alt: "Emotional first look", category: "Moments" },
+        { src: "/photo/wedding-hero3-cincinnati-wedding-venue-somerhaus.jpg", alt: "Grand send-off", category: "Exit" },
+        { src: "/photo/wedding-hero4-cincinnati-wedding-venue-somerhaus.jpg", alt: "Reception speeches", category: "Reception" },
+        { src: "/photo/wedding-hero5-cincinnati-wedding-venue-somerhaus.jpg", alt: "Dance floor moment", category: "Dancing" },
+        { src: "/photo/wedding-portrait4-cincinnati-wedding-venue-somerhaus.jpg", alt: "Bridal party", category: "Portrait" },
+        { src: "/photo/wedding-portrait-somerhaus-wedding-venue-cincinnati.jpg", alt: "Couple portrait", category: "Portrait" }
       ]
     },
     {
       title: "Corporate Events",
       images: [
-        { src: "/photo/haus-meeting.png", alt: "Corporate meeting setup with professional lighting", category: "Meetings" },
-        { src: "/photo/haus-wedding-main.png", alt: "Corporate event networking space", category: "Networking" },
-        { src: "/photo/haus-wedding-2.png", alt: "Corporate presentation setup", category: "Presentations" },
-        { src: "https://images.squarespace-cdn.com/content/v1/64b6eccd5bb791630eca7b41/1709310404105-M64OVDTJ6NZCIDL2QCTC/HausMeetingPhoto.png", alt: "Team meeting at Somerhaus", category: "Meetings" },
-        { src: "https://images.squarespace-cdn.com/content/v1/64b6eccd5bb791630eca7b41/1709310517186-KB8ZL1PWD2LSDB2LS3YJ/em0zWjz2.jpg", alt: "Networking event", category: "Networking" }
+        { src: "/photo/meeting-hero1-cincinnati-event-venue-somerhaus.png", alt: "Conference style meeting", category: "Meetings" },
+        { src: "/photo/meeting-dinner-hero1-artworks-cincinnati-event-space-somerhaus.jpg", alt: "Team dinner in the atrium", category: "Dinners" },
+        { src: "/photo/meeting-portrait1-arttalk-cincinnati-event-space-somerhaus.jpg", alt: "Panel discussion portrait", category: "Panels" },
+        { src: "/photo/photoshoot-hero-1-somerset-somerhaus-event space.jpg", alt: "Brand shoot setup", category: "Photoshoot" },
+        { src: "/photo/dinner-hero-cincinnati-wedding-venue-somerhaus.jpg", alt: "Corporate dinner hero", category: "Dinners" },
+        { src: "/photo/dinner-portrait-somerhaus-event-space-cincinnati.jpg", alt: "Chef plating dinner", category: "Food" },
+        { src: "/photo/food-portrait-somerhaus-cincinnati-events.jpg", alt: "Gourmet canapé", category: "Food" },
+        { src: "/photo/food-portrait2-somerhaus-cincinnati-events.jpg", alt: "Signature cocktail", category: "Beverage" },
+        { src: "/photo/bar-package-hero-somerhaus-cincinnati-events.jpg", alt: "Bar package hero", category: "Bar" }
       ]
     },
     {
-      title: "Special Events",
+      title: "Parties",
       images: [
-        { src: "/photo/haus-party.png", alt: "Birthday party celebration", category: "Parties" },
-        { src: "/photo/haus-wedding-main.png", alt: "Baby shower decorations", category: "Showers" },
-        { src: "/photo/haus-wedding-2.png", alt: "Anniversary celebration", category: "Celebrations" },
-        { src: "https://images.squarespace-cdn.com/content/v1/64b6eccd5bb791630eca7b41/1709310064431-T2UOZHJ7I9S776NL4X5I/YC98St8o.jpg", alt: "Special gathering at Somerhaus", category: "Gatherings" }
+        { src: "/photo/party-hero1-cincinnati-event-venue-somerhaus.jpeg", alt: "Lively dance floor", category: "Dancing" },
+        { src: "/photo/party-dinner-hero1-cincinnati-event-space-somerhaus.jpg", alt: "Elegant dinner party", category: "Dinner" }
+      ]
+    },
+    {
+      title: "Showers & Brunches",
+      images: [
+        { src: "/photo/space-portrait1-cincinnati-event-space-somerhaus.jpg", alt: "Baby shower decor", category: "Showers" },
+        { src: "/photo/space-portrait2-cincinnati-event-space-somerhaus.jpg", alt: "Brunch place setting", category: "Brunch" }
+      ]
+    },
+    {
+      title: "Space",
+      images: [
+        { src: "/photo/space-portrait1-cincinnati-event-space-somerhaus.jpg", alt: "Atrium space portrait", category: "Space" },
+        { src: "/photo/space-portrait2-cincinnati-event-space-somerhaus.jpg", alt: "Loft space portrait", category: "Space" }
       ]
     }
   ];
   const [selectedCategory, setSelectedCategory] = React.useState("All");
   const [selectedImage, setSelectedImage] = React.useState<string | null>(null);
 
-  const allImages = galleryCategories.flatMap(category => 
+  // Flatten categories then deduplicate images by src so no duplicates render
+  const allImagesWithCat = galleryCategories.flatMap(category =>
     category.images.map(img => ({ ...img, categoryTitle: category.title }))
+  );
+  const allImages = Array.from(
+    new Map(allImagesWithCat.map(img => [img.src, img])).values()
   );
 
   const filteredImages = selectedCategory === "All" 
@@ -65,14 +90,14 @@ const Gallery = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
-            backgroundImage: `url(/photo/haus-wedding-main.png)`,
+            backgroundImage: `url(/photo/wedding-hero3-cincinnati-wedding-venue-somerhaus.jpg)`,
           }}
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
           <Badge className="mb-4 font-body">Photo Gallery</Badge>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-header tracking-tight mb-4">
-            Somerhaus Gallery
+            Photo Gallery
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-white/90 font-body">
             Explore the magic of past events at Cincinnati's premier venue. From intimate gatherings to grand celebrations, see how Somerhaus transforms for every occasion.

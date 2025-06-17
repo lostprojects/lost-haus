@@ -1,20 +1,15 @@
 import React from 'react';
 import Header from '@/components/ui/header';
 import { Footerdemo } from '@/components/ui/footer-section';
-import HeroSection from '@/components/shared/HeroSection';
+import BarPackagesHero from '@/components/bar/BarPackagesHero';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import Seo from '@/components/seo/Seo';
+import PricingSection from '@/components/shared/PricingSection';
 
 const BarPackages = () => {
-  const heroImages = [
-    { src: '/photo/haus-wedding-main.png', alt: 'Wedding at Somerhaus' },
-    { src: '/photo/haus-wedding-2.png', alt: 'Wedding reception at Somerhaus' },
-    { src: '/photo/haus-meeting.png', alt: 'Meeting at Somerhaus' },
-    { src: '/photo/haus-party.png', alt: 'Party at Somerhaus' }
-  ];
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Seo
@@ -22,65 +17,64 @@ const BarPackages = () => {
         description="Choose from tiered bar packages for weddings and events at our Cincinnati venue."
       />
       <Header />
-      <HeroSection
-        backgroundType="static"
-        backgroundSources={heroImages}
-        title="Bar Packages"
-        subtitle="Simplicity for your busy schedule – our tiered bar packages meet every need. Have something special in mind? We'll make it happen."
-      />
+      <BarPackagesHero />
       <main className="flex-grow">
-        <section className="py-12 md:py-16">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-header font-semibold mb-6 text-center text-foreground">Choose Your Package</h2>
-            <Card className="mb-8">
-              <CardHeader>
-                <CardTitle>Tier 1 – $45 per guest</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc list-inside space-y-2 font-mono">
-                  <li>3 beer selections, 3 wine selections, 1 seltzer</li>
-                  <li>8 spirits: Tito’s Vodka, Bombay Sapphire, Bacardi Rum, Hornitos Tequila, Maker’s Mark, Redemption Rye, Dewar’s Scotch, Jack Daniel’s</li>
-                  <li>Custom Cocktail: Margarita Three Ways</li>
-                  <li>Welcome Champagne toast</li>
-                  <li>Soft drinks, mixers and garnishes</li>
-                  <li>3 hours of service (extra hours $9/guest, max 2)</li>
-                </ul>
-              </CardContent>
-            </Card>
-            <Card className="mb-8">
-              <CardHeader>
-                <CardTitle>Tier 2 – $35 per guest</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc list-inside space-y-2 font-mono">
-                  <li>3 beer selections, 3 wine selections</li>
-                  <li>5 spirits: Finlandia Vodka, New Amsterdam Gin, Cruzan Rum, El Jimador Tequila, Kentucky Tavern Bourbon</li>
-                  <li>Soft drinks, mixers and garnishes</li>
-                  <li>3 hours of service (extra hours $7/guest, max 2)</li>
-                </ul>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Tier 3 – $25 per guest</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc list-inside space-y-2 font-mono">
-                  <li>3 beer selections, 3 wine selections</li>
-                  <li>Soft drinks included</li>
-                  <li>3 hours of service (extra hours $7/guest, max 2)</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-          <div className="mb-12">
-            <h3 className="text-2xl font-header mb-4">Additional Offerings</h3>
-            <ul className="list-disc list-inside space-y-2 font-mono">
-              <li>$5/guest Custom Cocktail: Margarita Three Ways (Regular, Spicy, Ube)</li>
-              <li>Welcome Glass of Champagne/Champagne Toast <em>(included in Tier 1)</em></li>
-            </ul>
-          </div>
+        <PricingSection
+          title="Choose Your Package"
+          description="Three tiers, one unforgettable bar experience—pick the level that matches your vibe, or ask us to craft something custom."
+          packages={[
+            {
+              name: 'Tier 1',
+              price: '$45',
+              priceSuffix: 'per guest',
+              popular: true,
+              features: [
+                '3 beer selections, 3 wine selections, 1 seltzer',
+                "8 premium spirits inc. Tito's & Maker's Mark",
+                'Custom Cocktail: Margarita Three Ways',
+                'Welcome Champagne toast',
+                'Soft drinks, mixers & garnishes',
+                '3 hours of service (add hrs $9/guest)' ,
+              ],
+              buttonText: 'Book Tier 1',
+              buttonProps: { } ,
+            },
+            {
+              name: 'Tier 2',
+              price: '$35',
+              priceSuffix: 'per guest',
+              features: [
+                '3 beer selections, 3 wine selections',
+                '5 spirits inc. Finlandia & Cruzan',
+                'Soft drinks, mixers & garnishes',
+                '3 hours of service (add hrs $7/guest)',
+              ],
+              buttonText: 'Book Tier 2',
+              buttonProps: { variant: 'outline' },
+            },
+            {
+              name: 'Tier 3',
+              price: '$25',
+              priceSuffix: 'per guest',
+              features: [
+                '3 beer selections, 3 wine selections',
+                'Soft drinks included',
+                '3 hours of service (add hrs $7/guest)',
+              ],
+              buttonText: 'Book Tier 3',
+              buttonProps: { variant: 'outline' },
+            },
+          ]}
+          footerContent={
+            <div className="mt-8">
+              <h3 className="text-2xl font-header mb-4">Additional Offerings</h3>
+              <ul className="list-disc list-inside space-y-2 font-mono">
+                <li>$5/guest Custom Cocktail: Margarita Three Ways (Regular, Spicy, Ube)</li>
+                <li>Welcome Glass of Champagne/Champagne Toast <em>(included in Tier 1)</em></li>
+              </ul>
+            </div>
+          }
+        />
         <Separator />
         <section className="py-12 md:py-16 bg-muted/40">
           <div className="container mx-auto px-4 text-center">

@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '@/components/ui/header';
 import { Footerdemo } from '@/components/ui/footer-section';
-import HeroSection from '@/components/shared/HeroSection';
+import VendorsHero from '@/components/vendors/VendorsHero';
 import { Separator } from '@/components/ui/separator';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -9,13 +9,6 @@ import { ArrowRight } from 'lucide-react';
 import Seo from '@/components/seo/Seo';
 
 const Vendors = () => {
-  const heroImages = [
-  { src: '/photo/haus-wedding-main.png', alt: 'Wedding at Somerhaus' },
-  { src: '/photo/haus-wedding-2.png', alt: 'Wedding reception at Somerhaus' },
-  { src: '/photo/haus-meeting.png', alt: 'Meeting at Somerhaus' },
-  { src: '/photo/haus-party.png', alt: 'Party at Somerhaus' }
-];
-
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Seo
@@ -23,12 +16,7 @@ const Vendors = () => {
         description="Browse trusted Cincinnati vendors for catering, photography, and more."
       />
       <Header />
-      <HeroSection
-        backgroundType="static"
-        backgroundSources={heroImages}
-        title="Preferred Vendors"
-        subtitle="From photographers to catering, we've curated a trusted list of partners to make your planning effortless."
-      />
+      <VendorsHero />
       <main className="flex-grow">
         <section className="py-12 md:py-16">
           <div className="container mx-auto px-4 max-w-3xl space-y-12">
@@ -38,8 +26,8 @@ const Vendors = () => {
               </CardHeader>
               <CardContent>
                 <ul className="list-disc list-inside space-y-2 font-mono">
-                  <li>Bee’s BBQ – (513) 561-2337</li>
-                  <li>Chef’s Choice Catering – info@chefschoicecatering.com</li>
+                  <li>Bee's BBQ – (513) 561-2337</li>
+                  <li>Chef's Choice Catering – info@chefschoicecatering.com</li>
                   <li>Crown Restaurant Group</li>
                   <li>Essen Kitchen – eat@essenkitchen.com</li>
                   <li>Findlay Market Merchants</li>
@@ -65,10 +53,10 @@ const Vendors = () => {
                   <li>Abby Girl Sweets – (513) 335-0898</li>
                   <li>Brown Bear Bakery – hello@brownbearbakery.com</li>
                   <li>Cafe Mochiko – (513) 559-1000</li>
-                  <li>Ilan’s Raw Chocolate</li>
+                  <li>Ilan's Raw Chocolate</li>
                   <li>North South Baking Company – kate@northsouthbaking.com</li>
                   <li>Sixteen Bricks Bakery – (513) 873-1426</li>
-                  <li>Mae’s Cookie Co. – (256) 520-7763</li>
+                  <li>Mae's Cookie Co. – (256) 520-7763</li>
                 </ul>
               </CardContent>
             </Card>

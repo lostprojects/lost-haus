@@ -131,7 +131,7 @@ const SpecialEvents = () => {
       <HeroSection 
         backgroundType="static"
         backgroundSources={[{
-          src: "/photo/haus-wedding-main.png",
+          src: "/photo/space-portrait2-cincinnati-event-space-somerhaus.jpg",
           alt: "Special Events at Somerhaus"
         }]}
         title="Special Events at Somerhaus"

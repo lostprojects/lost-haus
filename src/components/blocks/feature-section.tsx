@@ -3,16 +3,21 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { LucideIcon, ChevronDown } from "lucide-react";
+import { TiltCard } from "@/components/ui/tilt-card";
+
 interface Feature {
   step: string;
   title?: string;
   content: string;
-  image: string;
+  image?: string;
+  icon?: LucideIcon;
 }
 interface FeatureStepsProps {
   features: Feature[];
   className?: string;
   title?: string;
+  subtitle?: string;
   autoPlayInterval?: number;
   imageHeight?: string;
 }
@@ -20,7 +25,8 @@ export function FeatureSteps({
   features,
   className,
   title = "How to get Started",
-  autoPlayInterval = 3000,
+  subtitle,
+  autoPlayInterval = 6750,
   imageHeight = "h-[400px]"
 }: FeatureStepsProps) {
   const [currentFeature, setCurrentFeature] = useState(0);
@@ -36,58 +42,125 @@ export function FeatureSteps({
     }, 100);
     return () => clearInterval(timer);
   }, [progress, features.length, autoPlayInterval]);
-  return <div className={cn("py-0", className)}>
-      <h2 className="text-5xl font-bold md:text-5xl text-brand font-header text-center pb-[40px]">
-        {title}
-      </h2>
 
-      <div className="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-10">
-        <div className="order-2 md:order-1 space-y-8">
-          {features.map((feature, index) => <motion.div key={index} className="flex items-center gap-6 md:gap-8" initial={{
-          opacity: 0.3
-        }} animate={{
-          opacity: index === currentFeature ? 1 : 0.3
-        }} transition={{
-          duration: 0.5
-        }}>
-              <motion.div className={cn("w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center border-2", index === currentFeature ? "bg-primary border-primary text-primary-foreground scale-110" : "bg-muted border-muted-foreground")}>
-                {index <= currentFeature ? <span className="text-lg font-bold">✓</span> : <span className="text-lg font-semibold">{index + 1}</span>}
+  return <div className={cn("py-0 relative", className)}>
+      <div className="text-center mb-16">
+        <h2 className="text-5xl font-bold md:text-5xl text-brand font-header mb-6">
+          {title}
+        </h2>
+        {subtitle && (
+          <p className="text-lg text-black font-body max-w-3xl mx-auto">
+            {subtitle}
+          </p>
+        )}
+      </div>
+
+      {/* Arrow between body text and section 1 */}
+      <div className="flex justify-center mb-8 -mt-8">
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <motion.div
+            animate={{ y: [0, -3, 0] }}
+            transition={{ 
+              duration: 3, 
+              repeat: Infinity, 
+              ease: "easeInOut" 
+            }}
+          >
+            <ChevronDown className="w-6 h-6 text-brand/60" />
+          </motion.div>
+        </motion.div>
+      </div>
+
+      <div className="max-w-2xl mx-auto">
+        <div className="space-y-12">
+          {features.map((feature, index) => (
+              <motion.div 
+                key={index} 
+                className="text-center" 
+                initial={{
+                  opacity: 0.3,
+                  y: 20
+                }} 
+                animate={{
+                  opacity: index === currentFeature ? 1 : 0.3,
+                  y: index === currentFeature ? 0 : 20
+                }} 
+                transition={{
+                  duration: 0.75
+                }}
+              >
+                <div className="flex flex-col items-center">
+                  <motion.div 
+                    className={cn(
+                      "w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center border-2 mb-4",
+                      index === currentFeature 
+                        ? "bg-primary border-primary text-primary-foreground scale-110" 
+                        : "bg-muted border-muted-foreground"
+                    )}
+                  >
+                    {index <= currentFeature ? (
+                      <span className="text-lg font-bold">✓</span>
+                    ) : (
+                      <span className="text-lg font-semibold">{index + 1}</span>
+                    )}
+                  </motion.div>
+                  
+                  <h3 className="text-xl md:text-2xl font-header mb-3">
+                    {feature.title || feature.step}
+                  </h3>
+
+                  <p className="text-sm text-black font-body md:text-base max-w-lg">
+                    {feature.content}
+                  </p>
+                </div>
               </motion.div>
-
-              <div className="flex-1">
-                <h3 className="text-xl md:text-2xl font-header">
-                  {feature.title || feature.step}
-                </h3>
-                <p className="text-sm text-muted-foreground font-body md:text-base">
-                  {feature.content}
-                </p>
-              </div>
-            </motion.div>)}
+            ))}
         </div>
+      </div>
 
-        <div className={cn("order-1 md:order-2 relative h-[200px] md:h-[300px] lg:h-[400px] overflow-hidden rounded-lg")}>
-          <AnimatePresence mode="wait">
-            {features.map((feature, index) => index === currentFeature && <motion.div key={index} className="absolute inset-0 rounded-lg overflow-hidden" initial={{
-            y: 100,
-            opacity: 0,
-            rotateX: -20
-          }} animate={{
-            y: 0,
-            opacity: 1,
-            rotateX: 0
-          }} exit={{
-            y: -100,
-            opacity: 0,
-            rotateX: 20
-          }} transition={{
-            duration: 0.5,
-            ease: "easeInOut"
-          }}>
-                    <img src={feature.image} alt={feature.step} className="w-full h-full object-cover transition-transform transform" />
-                    <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-background via-background/50 to-transparent" />
-                  </motion.div>)}
-          </AnimatePresence>
-        </div>
+      {/* Arrow between section 3 and CTA */}
+      <div className="flex justify-center mt-12 mb-8">
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <motion.div
+            animate={{ y: [0, -3, 0] }}
+            transition={{ 
+              duration: 3, 
+              repeat: Infinity, 
+              ease: "easeInOut" 
+            }}
+          >
+            <ChevronDown className="w-6 h-6 text-brand/60" />
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* CTA Button - exact same as hero */}
+      <div className="flex justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ y: [0, -2.88, 0], scale: [1, 1.0144, 1] }}
+          transition={{ 
+            opacity: { duration: 0.6, delay: 1.0 },
+            y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+            scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+          }}
+          viewport={{ once: true }}
+        >
+          <TiltCard href="/event-inquiry" className="group max-h-fit rounded-full bg-black p-2 px-6 shadow-[0_10px_25px_rgba(0,0,0,0.4)] hover:bg-[#D9FF8A]">
+            <span className="text-xl text-white group-hover:text-black font-body">Book Your Tour</span>
+          </TiltCard>
+        </motion.div>
       </div>
     </div>;
 }

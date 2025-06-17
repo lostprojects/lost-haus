@@ -1,4 +1,3 @@
-
 import React from 'react';
 import HeroSection from '@/components/shared/HeroSection'; // Import shared component
 import { Button } from '@/components/ui/button'; // Keep Button import if needed elsewhere, or remove if only used via HeroSection
@@ -6,10 +5,7 @@ import { CalendarCheck, Download } from 'lucide-react'; // Keep icon imports
 
 const CorporateHero = () => {
   const heroImage = [
-    { src: '/photo/haus-wedding-main.png', alt: 'Wedding at Somerhaus' },
-    { src: '/photo/haus-wedding-2.png', alt: 'Wedding reception at Somerhaus' },
-    { src: '/photo/haus-meeting.png', alt: 'Meeting at Somerhaus' },
-    { src: '/photo/haus-party.png', alt: 'Party at Somerhaus' }
+    { src: '/photo/meeting-hero1-cincinnati-event-venue-somerhaus.png', alt: 'Corporate meeting at Somerhaus' }
   ];
 
   const buttons = [

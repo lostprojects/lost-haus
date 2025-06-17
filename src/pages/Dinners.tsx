@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/ui/header';
 import { Footerdemo } from '@/components/ui/footer-section';
@@ -138,8 +137,8 @@ const Dinners = () => {
       <HeroSection 
         backgroundType="static"
         backgroundSources={[{
-          src: "/photo/haus-party.png",
-          alt: "Elegant Dinner Events at Somerhaus"
+          src: "/photo/meeting-dinner-hero1-artworks-cincinnati-event-space-somerhaus.jpg",
+          alt: "Dinner event setup at Somerhaus"
         }]}
         title="Dinner Events at Somerhaus"
         subtitle="Intimate dining experiences in Cincinnati's most distinctive venue. From rehearsal dinners to anniversary celebrations, our 3,080 sq ft space sets the scene for memorable meals—book your date today."

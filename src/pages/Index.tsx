@@ -9,6 +9,7 @@ import { Logos3 } from '@/components/blocks/logos3';
 import { RevealImageListDemo } from '@/components/ui/reveal-images/demo';
 import { CTADemo } from '@/components/ui/call-to-action/demo';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
+import { FeaturedQuote } from '@/components/ui/featured-quote';
 
 const businessSchema = {
   "@context": "https://schema.org",
@@ -25,31 +26,123 @@ const businessSchema = {
     addressCountry: "US"
   }
 };
+const clientLogos = [{
+  id: "client-1",
+  description: "University of Cincinnati",
+  image: "/client-logos/University-of-Cincinnati-Logo.png",
+  className: "brightness-0 invert"
+}, {
+  id: "client-2",
+  description: "Procter & Gamble",
+  image: "/client-logos/P&G-logo.png",
+  className: "brightness-0 invert"
+}, {
+  id: "client-3",
+  description: "Fischer Homes",
+  image: "/client-logos/fischer-homes-logo.jpg",
+  className: "brightness-0 invert"
+}, {
+  id: "client-4",
+  description: "City of Cincinnati",
+  image: "/client-logos/cincinnati-logo.png",
+  className: "brightness-0 invert"
+}, {
+  id: "client-5",
+  description: "Instacart",
+  image: "/client-logos/instacart-logo.png",
+  className: "brightness-0 invert"
+}, {
+  id: "client-6",
+  description: "Artworks",
+  image: "/client-logos/artworks-logo.png",
+  className: "brightness-0 invert"
+}, {
+  id: "client-7",
+  description: "CincyTech",
+  image: "/client-logos/cincytech-logo.png",
+  className: "brightness-0 invert"
+}, {
+  id: "client-8",
+  description: "Black Tech Week",
+  image: "/client-logos/black-tech-week.png",
+  className: "brightness-0 invert"
+}, {
+  id: "client-9",
+  description: "Scripps",
+  image: "/client-logos/Scripps-logo.png",
+  className: "brightness-0 invert"
+}, {
+  id: "client-10",
+  description: "Xavier University",
+  image: "/client-logos/xavier-university-logo.png",
+  className: "brightness-0 invert"
+}, {
+  id: "client-11",
+  description: "North American Properties",
+  image: "/client-logos/north-american.png",
+  className: "brightness-0 invert"
+}, {
+  id: "client-12",
+  description: "Kroger",
+  image: "/client-logos/kroger-logo.png",
+  className: "brightness-0 invert"
+}, {
+  id: "client-13",
+  description: "Alzheimer's Foundation",
+  image: "/client-logos/Alzheimers-Foundation-logo.png",
+  className: "brightness-0 invert"
+}, {
+  id: "client-14",
+  description: "Cincinnati Chamber",
+  image: "/client-logos/cincinnati-chamber-logo.png",
+  className: "brightness-0 invert"
+}, {
+  id: "client-15",
+  description: "OTR Film Festival",
+  image: "/client-logos/otr-film-festival-logo.png",
+  className: "brightness-0 invert"
+}];
+
 const pressLogos = [{
   id: "press-1",
-  description: "TechCrunch",
-  image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=200&h=100&fit=crop",
-  className: "h-8 w-auto grayscale hover:grayscale-0 transition-all"
+  description: "Zola",
+  image: "/press-logos/zola-logo.svg",
+  className: "brightness-0 invert"
 }, {
   id: "press-2",
-  description: "Forbes",
-  image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=200&h=100&fit=crop",
-  className: "h-8 w-auto grayscale hover:grayscale-0 transition-all"
+  description: "Peerspace",
+  image: "/press-logos/peerspace-logo.svg",
+  className: "brightness-0 invert"
 }, {
   id: "press-3",
-  description: "Wall Street Journal",
-  image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop",
-  className: "h-8 w-auto grayscale hover:grayscale-0 transition-all"
+  description: "Business Courier",
+  image: "/press-logos/business-courier-logo.webp",
+  className: "grayscale invert contrast-200"
 }, {
   id: "press-4",
-  description: "New York Times",
-  image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200&h=100&fit=crop",
-  className: "h-8 w-auto grayscale hover:grayscale-0 transition-all"
+  description: "Cincinnati Magazine",
+  image: "/press-logos/Cincinnati-mag-logo.png",
+  className: "brightness-0 invert"
 }, {
   id: "press-5",
-  description: "Bloomberg",
-  image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=200&h=100&fit=crop",
-  className: "h-8 w-auto grayscale hover:grayscale-0 transition-all"
+  description: "The Knot",
+  image: "/press-logos/the-knot-logo.webp",
+  className: "brightness-0 invert"
+}, {
+  id: "press-6",
+  description: "Cincinnati Enquirer",
+  image: "/press-logos/Enquirer-logo.png",
+  className: "brightness-0 invert"
+}, {
+  id: "press-7",
+  description: "Cincinnati.com",
+  image: "/press-logos/cincinnati-com-logo.png",
+  className: "brightness-0 invert"
+}, {
+  id: "press-8",
+  description: "CityBeat",
+  image: "/press-logos/City-Beat-logo.png",
+  className: "brightness-0 invert"
 }];
 const Index = () => {
   return <>
@@ -63,21 +156,27 @@ const Index = () => {
   }}>
       <Header />
       <Hero />
-      <Logos3 heading="Featured In" logos={pressLogos} />
-      <RevealImageListDemo />
-      <FeaturesSectionWithBentoGrid />
-      <ImageGallerySection />
-      <TestimonialsDemo />
-      {/* White container for FeatureStepsDemo section */}
-      <div className="w-full py-10 lg:py-[40px]">
-        <div className="container">
-          <div className="bg-white rounded-md p-4 lg:p-14 py-[50px] px-[50px]">
-            <FeatureStepsDemo />
+      <Logos3 heading="" logos={pressLogos} className="bg-black" />
+      
+      {/* Background section */}
+      <div style={{ backgroundColor: '#F8F6F7' }}>
+        <RevealImageListDemo />
+        <TestimonialsDemo />
+        <CTADemo />
+        <ImageGallerySection />
+        <FeaturedQuote />
+        {/* White container for FeatureStepsDemo section */}
+        <div className="w-full py-10 lg:py-[40px]">
+          <div className="container">
+            <div className="bg-white rounded-md p-4 lg:p-14 py-[50px] px-[50px]">
+              <FeatureStepsDemo />
+            </div>
           </div>
         </div>
       </div>
-      <CTADemo />
-      <Footerdemo />
+      
+      <Logos3 heading="Trusted By" logos={clientLogos} className="bg-black" />
+              <Footerdemo noBorder />
     </main>
   </>;
 };

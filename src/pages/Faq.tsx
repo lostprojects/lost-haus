@@ -1,4 +1,3 @@
-
 import Header from '@/components/ui/header';
 import { Footerdemo } from '@/components/ui/footer-section';
 import { FaqCategories, faqItems } from '@/components/faq/FaqCategories';
@@ -52,7 +51,7 @@ const FAQ = () => {
       <section className="relative py-16 overflow-hidden hero">
         <div className="absolute inset-0 z-0">
           <img 
-                          src="/photo/haus-wedding-main.png" 
+                          src="/photo/space-portrait2-cincinnati-event-space-somerhaus.jpg" 
             alt="Somerhaus event venue"
             className="w-full h-full object-cover object-center"
           />

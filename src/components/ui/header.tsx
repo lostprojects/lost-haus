@@ -34,7 +34,7 @@ const Header = () => {
     { name: 'Special Events', href: '/special-events' },
     { name: 'Showers', href: '/showers' },
     { name: 'Dinners', href: '/dinners' },
-    { name: 'Brunches', href: '/brunches' },
+    { name: 'Photo Shoots', href: '/photo-shoots' },
     { name: 'Happy Hours', href: '/happy-hours' },
     { name: 'Parties', href: '/parties' },
     { name: 'Meetings', href: '/meetings' },
@@ -71,7 +71,7 @@ const Header = () => {
             <div className="relative group">
               <a
                 href="/wedding"
-                className={`flex items-center text-sm font-body transition-colors ${isScrolled ? 'text-white hover:text-[#9b87f5]' : 'text-white hover:text-[#9b87f5]'}`}
+                className={`flex items-center text-sm font-body transition-colors ${isScrolled ? 'text-white hover:text-[#D65B2F]' : 'text-white hover:text-[#D65B2F]'}`}
               >
                 Weddings
                 <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
@@ -83,7 +83,7 @@ const Header = () => {
                     <a
                       key={item.name}
                       href={item.href}
-                      className={`block px-4 py-2 text-sm font-body text-white transition-colors hover:text-[#9b87f5] ${item.bold ? 'font-bold' : ''}`}
+                      className={`block px-4 py-2 text-sm font-body text-white transition-colors hover:text-[#D65B2F] ${item.bold ? 'font-bold' : ''}`}
                     >
                       {item.name}
                     </a>
@@ -98,7 +98,7 @@ const Header = () => {
                 href={item.href}
                 target={item.external ? "_blank" : undefined}
                 rel={item.external ? "noopener noreferrer" : undefined}
-                className="text-sm font-body transition-colors text-white hover:text-[#9b87f5]"
+                className="text-sm font-body transition-colors text-white hover:text-[#D65B2F]"
               >
                 {item.name}
               </a>
@@ -106,7 +106,7 @@ const Header = () => {
             {/* Custom Other Events Dropdown Menu */}
             <div className="relative group">
               <button
-                className={`flex items-center text-sm font-body transition-colors ${isScrolled ? 'text-white hover:text-[#9b87f5]' : 'text-white hover:text-[#9b87f5]'}`}
+                className={`flex items-center text-sm font-body transition-colors ${isScrolled ? 'text-white hover:text-[#D65B2F]' : 'text-white hover:text-[#D65B2F]'}`}
               >
                 Other Events
                 <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
@@ -118,7 +118,7 @@ const Header = () => {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="block px-4 py-2 text-sm font-body text-white transition-colors hover:text-[#9b87f5]"
+                      className="block px-4 py-2 text-sm font-body text-white transition-colors hover:text-[#D65B2F]"
                     >
                       {item.name}
                     </a>
@@ -130,7 +130,7 @@ const Header = () => {
             {/* Custom Info Dropdown Menu */}
             <div className="relative group">
               <button
-                className={`flex items-center text-sm font-body transition-colors ${isScrolled ? 'text-white hover:text-[#9b87f5]' : 'text-white hover:text-[#9b87f5]'}`}
+                className={`flex items-center text-sm font-body transition-colors ${isScrolled ? 'text-white hover:text-[#D65B2F]' : 'text-white hover:text-[#D65B2F]'}`}
               >
                 Info
                 <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
@@ -142,7 +142,7 @@ const Header = () => {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="block px-4 py-2 text-sm font-body text-white transition-colors hover:text-[#9b87f5]"
+                      className="block px-4 py-2 text-sm font-body text-white transition-colors hover:text-[#D65B2F]"
                     >
                       {item.name}
                     </a>
@@ -157,7 +157,7 @@ const Header = () => {
               href="https://somersetotr.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-body transition-colors text-white hover:text-[#9b87f5]"
+              className="text-sm font-body transition-colors text-white hover:text-[#D65B2F]"
             >
               Somerset
             </a>
@@ -198,7 +198,7 @@ const Header = () => {
                         <a
                           key={item.name}
                           href={item.href}
-                          className={`block text-lg font-body py-2 hover:text-[#9b87f5] transition-colors ${item.bold ? 'font-bold' : ''}`}
+                          className={`block text-lg font-body py-2 hover:text-[#D65B2F] transition-colors ${item.bold ? 'font-bold' : ''}`}
                         >
                           {item.name}
                         </a>
@@ -223,7 +223,7 @@ const Header = () => {
                         <a
                           key={item.name}
                           href={item.href}
-                          className="block text-lg font-body py-2 hover:text-[#9b87f5] transition-colors"
+                          className="block text-lg font-body py-2 hover:text-[#D65B2F] transition-colors"
                         >
                           {item.name}
                         </a>
@@ -239,7 +239,7 @@ const Header = () => {
                         <a
                           key={item.name}
                           href={item.href}
-                          className="block text-lg font-body py-2 hover:text-[#9b87f5] transition-colors"
+                          className="block text-lg font-body py-2 hover:text-[#D65B2F] transition-colors"
                         >
                           {item.name}
                         </a>

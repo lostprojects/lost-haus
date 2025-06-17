@@ -1,8 +1,7 @@
-
 import React from 'react';
 import Header from '@/components/ui/header';
 import { Footerdemo } from '@/components/ui/footer-section';
-import HeroSection from '@/components/shared/HeroSection';
+import PartiesHero from '@/components/parties/PartiesHero';
 import PricingSection from '@/components/shared/PricingSection';
 import FAQSection from '@/components/shared/FAQSection';
 import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
@@ -135,15 +134,7 @@ const Parties = () => {
       />
       <Header />
       
-      <HeroSection 
-        backgroundType="static"
-        backgroundSources={[{
-          src: "/photo/haus-party.png",
-          alt: "Party Events at Somerhaus"
-        }]}
-        title="Party Events at Somerhaus"
-        subtitle="Celebrate life's biggest moments in Cincinnati's premier event space. From birthdays to anniversaries, our 3,080 sq ft venue delivers unforgettable parties—start planning yours today."
-      />
+      <PartiesHero />
 
       <ImageGallerySection />
 

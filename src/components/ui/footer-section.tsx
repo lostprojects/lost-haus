@@ -17,13 +17,17 @@ const socialIcons = [{
   link: "https://www.facebook.com/Somerhaus.otr/",
   tooltip: "Follow us on Facebook"
 }];
-function Footerdemo() {
-  return <footer className="relative border-t bg-[#1A1F2C] text-white font-mono">
+interface FooterdemoProps {
+  noBorder?: boolean;
+}
+
+function Footerdemo({ noBorder = false }: FooterdemoProps = {}) {
+  return <footer className={`relative ${noBorder ? '' : 'border-t'} bg-[#1A1F2C] text-white font-mono`}>
       <div className="container mx-auto px-4 py-16 md:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="relative">
-            <h2 className="mb-4 text-3xl font-header font-bold tracking-tight">Say Hello</h2>
-            <Link to="/contact" className="mb-6 flex items-center text-white hover:text-[#9b87f5] transition-colors text-sm">
+            <h3 className="mb-4 text-2xl font-header font-semibold">Say Hello</h3>
+            <Link to="/contact" className="mb-6 flex items-center text-white hover:text-[#D65B2F] transition-colors text-sm">
               Contact Us <ArrowUpRight className="ml-1 h-4 w-4" />
             </Link>
             
@@ -52,13 +56,13 @@ function Footerdemo() {
           <div>
             <h3 className="mb-4 font-header font-semibold text-2xl">Event Types</h3>
             <nav className="space-y-2 text-sm font-mono">
-              <Link to="/wedding" className="flex items-center transition-colors hover:text-[#9b87f5]">
+              <Link to="/wedding" className="flex items-center transition-colors hover:text-[#D65B2F]">
                 Weddings <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
-              <Link to="/showers" className="flex items-center transition-colors hover:text-[#9b87f5]">
+              <Link to="/showers" className="flex items-center transition-colors hover:text-[#D65B2F]">
                 Showers <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
-              <Link to="/corporate" className="flex items-center transition-colors hover:text-[#9b87f5]">
+              <Link to="/corporate" className="flex items-center transition-colors hover:text-[#D65B2F]">
                 Corporate Events <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
             </nav>
@@ -66,16 +70,16 @@ function Footerdemo() {
           <div>
             <h3 className="mb-4 font-header font-semibold text-2xl">Tools & Info</h3>
             <nav className="space-y-2 text-sm font-mono">
-              <Link to="/event-inquiry" className="flex items-center transition-colors hover:text-[#9b87f5]">
+              <Link to="/event-inquiry" className="flex items-center transition-colors hover:text-[#D65B2F]">
                 Event Inquiry <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
-              <Link to="#" className="flex items-center transition-colors hover:text-[#9b87f5]">
+              <Link to="#" className="flex items-center transition-colors hover:text-[#D65B2F]">
                 Guest Login <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
-              <Link to="/faq" className="flex items-center transition-colors hover:text-[#9b87f5]">
+              <Link to="/faq" className="flex items-center transition-colors hover:text-[#D65B2F]">
                 FAQ <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
-              <Link to="/blog" className="flex items-center transition-colors hover:text-[#9b87f5]">
+              <Link to="/blog" className="flex items-center transition-colors hover:text-[#D65B2F]">
                 Blog <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
             </nav>
@@ -87,7 +91,7 @@ function Footerdemo() {
             </p>
             <form className="relative">
               <Input type="email" placeholder="Enter your email" className="pr-12 bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
-              <Button type="submit" size="icon" className="absolute right-1 top-1 h-8 w-8 rounded-full bg-[#9b87f5] hover:bg-[#7E69AB] text-white transition-all duration-300 hover:scale-105">
+              <Button type="submit" size="icon" className="absolute right-1 top-1 h-8 w-8 rounded-full bg-[#5CA87E] hover:bg-[#4A8B66] text-white transition-all duration-300 hover:scale-105">
                 <Send className="h-4 w-4" />
                 <span className="sr-only">Subscribe</span>
               </Button>
@@ -100,20 +104,20 @@ function Footerdemo() {
               © 2024 Somerhaus. All rights reserved.
             </p>
             <div className="flex gap-2 text-gray-300">
-              <Link to="/privacy" className="transition-colors hover:text-[#9b87f5]">Privacy</Link>
+              <Link to="/privacy" className="transition-colors hover:text-[#D65B2F]">Privacy</Link>
               <span>|</span>
-              <Link to="/terms" className="transition-colors hover:text-[#9b87f5]">Terms</Link>
+              <Link to="/terms" className="transition-colors hover:text-[#D65B2F]">Terms</Link>
               <span>|</span>
-              <Link to="/cookies" className="transition-colors hover:text-[#9b87f5]">Cookies</Link>
+              <Link to="/cookies" className="transition-colors hover:text-[#D65B2F]">Cookies</Link>
             </div>
           </div>
 
           <nav className="flex flex-wrap justify-center gap-4 md:justify-end">
-            <a href="#" className="transition-colors hover:text-[#9b87f5] text-gray-300">Somerset</a>
-            <a href="#" className="transition-colors hover:text-[#9b87f5] text-gray-300">Alice</a>
-            <a href="#" className="transition-colors hover:text-[#9b87f5] text-gray-300">Somerhaus</a>
-            <a href="#" className="transition-colors hover:text-[#9b87f5] text-gray-300">Second Story</a>
-            <a href="#" className="transition-colors hover:text-[#9b87f5] text-gray-300">The Muse</a>
+            <a href="#" className="transition-colors hover:text-[#D65B2F] text-gray-300">Somerset</a>
+            <a href="#" className="transition-colors hover:text-[#D65B2F] text-gray-300">Alice</a>
+            <a href="#" className="transition-colors hover:text-[#D65B2F] text-gray-300">Somerhaus</a>
+            <a href="#" className="transition-colors hover:text-[#D65B2F] text-gray-300">Second Story</a>
+            <a href="#" className="transition-colors hover:text-[#D65B2F] text-gray-300">The Muse</a>
           </nav>
         </div>
       </div>

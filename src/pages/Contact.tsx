@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { MapPin, Phone, CalendarDays } from 'lucide-react';
 import Header from '@/components/ui/header';
@@ -100,8 +99,8 @@ const ContactPage = () => {
       <section className="relative w-full h-[60vh] min-h-[400px] overflow-hidden hero">
         <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="absolute inset-0 bg-cover bg-center" style={{
-                    backgroundImage: "url('/photo/haus-wedding-main.png')"
-      }} />
+                    backgroundImage: "url('/photo/space-portrait1-cincinnati-event-space-somerhaus.jpg')"
+        }} />
         <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-header tracking-tight mb-4 text-white">
             Let's Plan Something Magical Together
@@ -311,51 +310,8 @@ const ContactPage = () => {
             </div>
           </div>
           
-          {/* Value-Add Elements */}
-          <div className="space-y-16">
-            {/* Meet the Team Section - Redesigned with the real team members */}
-            <div>
-              <div className="text-center mb-12">
-                <Badge variant="outline" className="mb-3">The People Behind Your Events</Badge>
-                <h2 className="text-3xl md:text-5xl font-header mb-4">Meet Our Team</h2>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto font-mono">
-                  Our dedicated professionals work tirelessly to ensure your event exceeds expectations.
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
-                {teamMembers.map((member, index) => (
-                  <Card key={index} className="overflow-hidden transition-all hover:shadow-md">
-                    <div className="grid md:grid-cols-5 gap-4 p-0">
-                      <div className="md:col-span-2 h-full">
-                        <div className="h-full w-full relative overflow-hidden aspect-[3/4] md:aspect-auto">
-                          <img 
-                            src={member.image} 
-                            alt={member.name} 
-                            className="object-cover object-center w-full h-full transition-transform hover:scale-105 duration-700"
-                          />
-                        </div>
-                      </div>
-                      <div className="md:col-span-3 p-6">
-                        <div className="flex flex-col h-full justify-between">
-                          <div>
-                            <h3 className="text-2xl font-header mb-1">{member.name}</h3>
-                            <p className="text-primary font-medium mb-4">{member.role}</p>
-                            <p className="text-gray-600 font-mono">{member.bio}</p>
-                          </div>
-                          <div className="flex mt-6">
-                            <a href="#contact" className="text-primary hover:text-primary/80 font-medium">
-                              Contact →
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </div>
+          {/* Removed Meet Our Team section */}
+          
         </div>
       </main>
       
