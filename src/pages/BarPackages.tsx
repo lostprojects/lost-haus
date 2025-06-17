@@ -36,7 +36,6 @@ const BarPackages = () => {
                 'Soft drinks, mixers & garnishes',
                 '3 hours of service (add hrs $9/guest)' ,
               ],
-              buttonText: 'Book Tier 1',
               buttonProps: { } ,
             },
             {
@@ -49,7 +48,6 @@ const BarPackages = () => {
                 'Soft drinks, mixers & garnishes',
                 '3 hours of service (add hrs $7/guest)',
               ],
-              buttonText: 'Book Tier 2',
               buttonProps: { variant: 'outline' },
             },
             {
@@ -61,7 +59,6 @@ const BarPackages = () => {
                 'Soft drinks included',
                 '3 hours of service (add hrs $7/guest)',
               ],
-              buttonText: 'Book Tier 3',
               buttonProps: { variant: 'outline' },
             },
           ]}

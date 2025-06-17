@@ -27,7 +27,6 @@ const WeddingPackages = () => {
           <span>January, February, March, November</span>
         </div>
       ),
-      buttonText: "Check Available Dates",
       buttonIcon: <ArrowRight className="w-4 h-4" />,
     },
     {
@@ -51,7 +50,6 @@ const WeddingPackages = () => {
           <span>April through October, December</span>
         </div>
       ),
-      buttonText: "Check Available Dates",
       buttonIcon: <ArrowRight className="w-4 h-4" />,
     }
   ];

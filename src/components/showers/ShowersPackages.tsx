@@ -21,7 +21,6 @@ const ShowersPackages = () => {
         "Tables and chairs included",
         "On-site coordinator"
       ],
-      buttonText: "Choose Essential",
       buttonProps: { variant: "outline", className: "font-body" },
       popular: false, // Use 'popular' prop, map 'highlighted' to it
       cardClassName: "font-body", // Apply font-body to card if needed, or adjust PricingCard
@@ -41,7 +40,6 @@ const ShowersPackages = () => {
         "Beverage station setup",
         "Photo backdrop area"
       ],
-      buttonText: "Choose Premium",
       buttonProps: { variant: "default", className: "font-body" },
       popular: true, // Map 'highlighted' to 'popular'
       popularText: "Most Popular", // Or keep original badge text if different
@@ -63,7 +61,6 @@ const ShowersPackages = () => {
         "Photo booth with props",
         "Floral centerpieces"
       ],
-      buttonText: "Choose Luxe",
       buttonProps: { variant: "outline", className: "font-body" },
       popular: false,
       cardClassName: "font-body",

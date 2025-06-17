@@ -1,7 +1,6 @@
 
-import { ArrowRight, CalendarCheck } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { BookNowButton } from "@/components/ui/book-now-button";
 
 function WeddingCTA() {
   return (
@@ -20,17 +19,8 @@ function WeddingCTA() {
               Our calendar is filling up quickly for the upcoming season.
             </p>
           </div>
-          <div className="flex flex-row gap-4">
-            <Button className="gap-4" asChild>
-              <a href="/event-inquiry">
-                Reserve Your Wedding Date <ArrowRight className="w-4 h-4" />
-              </a>
-            </Button>
-            <Button variant="outline" className="gap-4" asChild>
-              <a href="/contact">
-                Schedule a Tour <CalendarCheck className="w-4 h-4" />
-              </a>
-            </Button>
+          <div>
+            <BookNowButton />
           </div>
         </div>
       </div>

@@ -43,7 +43,6 @@ const Rehearsals = () => {
         "Bridal suite access"
       ],
       popular: false,
-      buttonText: "Book This Package"
     },
     {
       name: "Complete Rehearsal",
@@ -62,7 +61,6 @@ const Rehearsals = () => {
         "Dedicated event coordinator"
       ],
       popular: true,
-      buttonText: "Book This Package"
     },
     {
       name: "Premium Rehearsal Event",
@@ -82,7 +80,6 @@ const Rehearsals = () => {
         "Welcome cocktail service"
       ],
       popular: false,
-      buttonText: "Book This Package"
     }
   ];
 
