@@ -21,15 +21,15 @@ export function getUrgencyFlags(): UrgencyFlag[] {
   const nextSeason = month < 5 ? 'Spring' : month < 8 ? 'Fall' : 'Holiday';
 
   return [
-    `Limited dates available for ${year} and ${nextYear}`,
-    `${weekendsLeft} prime weekend dates left in ${year}`,
-    `Now booking ${nextSeason} ${nextYear} events`,
-    `Last chance to secure ${year} pricing`,
-    `Peak ${nextSeason.toLowerCase()} slots filling fast`,
-    `${nextYear} calendar already booking up fast`,
-    `Only a few Friday evenings left this ${nextSeason.toLowerCase()}`,
-    `Demand surging—reserve before rates rise`,
-    `Popular dates vanish quickly—act now`
+    `Act Now: Limited dates available for ${year} and ${nextYear}`,
+    `Act Now: ${weekendsLeft} prime weekend dates left in ${year}`,
+    `Now booking ${nextSeason} ${nextYear} events, dates fill fast`,
+    `Act Now: Last chance to secure ${year} pricing`,
+    `Act Now: Peak ${nextSeason.toLowerCase()} slots filling fast`,
+    `Act Now: ${nextYear} calendar already booking up fast`,
+    `Act Now: Only a few Friday evenings left this ${nextSeason.toLowerCase()}`,
+    `Act Now: Demand surging—reserve before rates rise`,
+    `Act Now: Popular dates vanish quickly—act now`
   ];
 }
 
