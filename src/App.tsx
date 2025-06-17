@@ -24,6 +24,7 @@ import Parties from "./pages/Parties";
 import Meetings from "./pages/Meetings";
 import Gallery from "./pages/Gallery";
 import BarPackages from "./pages/BarPackages";
+import Pricing from "./pages/Pricing";
 import Vendors from "./pages/Vendors";
 import LayoutPage from "./pages/Layout";
 import PressPage from "./pages/Press";
@@ -60,6 +61,7 @@ const App = () => (
           <Route path="/meetings" element={<Meetings />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/bar-packages" element={<BarPackages />} />
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="/vendors" element={<Vendors />} />
           <Route path="/venue-layout" element={<LayoutPage />} />
           <Route path="/press" element={<PressPage />} />
