@@ -147,8 +147,10 @@ const pressLogos = [{
 const Index = () => {
   return <>
     <Seo
-      title="Somerhaus | Cincinnati Event Venue"
-      description="Host weddings, corporate events, and celebrations at Cincinnati's most enchanting event space."
+      title="Somerhaus - Cincinnati Event Venue | Weddings, Corporate Events & Celebrations"
+      description="Host unforgettable events at Cincinnati's most enchanting 3,080 sq ft venue. Perfect for weddings, corporate gatherings, parties, meetings, and special celebrations in Over-the-Rhine."
+      image="/photo/wedding-hero1-cincinnati-wedding-venue-somerhaus.jpg"
+      url="https://somerhaus.com"
       schema={businessSchema}
     />
     <main className="min-h-screen relative" style={{
