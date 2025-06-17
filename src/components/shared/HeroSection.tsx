@@ -49,7 +49,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   buttons = [],
   sectionClassName = "relative w-full h-[90vh] min-h-[600px] overflow-hidden",
   contentContainerClassName = "absolute inset-0 z-20 flex flex-col items-center justify-center text-white text-center px-4",
-  titleClassName = "text-4xl md:text-6xl lg:text-7xl font-header tracking-tight mb-4 text-white",
+  // Match the homepage hero size
+  titleClassName = "text-5xl md:text-6xl font-header tracking-tight mb-4 text-white",
   subtitleClassName = "text-lg md:text-xl max-w-2xl mx-auto mb-8 text-white/90 font-body",
   carouselOptions = { loop: true },
   autoplayOptions = { delay: 4000, stopOnInteraction: false, stopOnMouseEnter: false }
