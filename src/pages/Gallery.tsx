@@ -96,7 +96,8 @@ const Gallery = () => {
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
           <Badge className="mb-4 font-body">Photo Gallery</Badge>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-header tracking-tight mb-4">
+          {/* Match homepage hero sizing */}
+          <h1 className="text-5xl md:text-6xl font-header tracking-tight mb-4">
             Photo Gallery
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-white/90 font-body">

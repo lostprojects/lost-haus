@@ -14,7 +14,8 @@ const VendorsHero: React.FC = () => {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-header tracking-tight mb-4">Preferred Vendors</h1>
+        {/* Use the homepage hero heading size */}
+        <h1 className="text-5xl md:text-6xl font-header tracking-tight mb-4">Preferred Vendors</h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto font-body text-white/90">
           From photographers to catering, we've curated a trusted list of partners to make your planning effortless.
         </p>

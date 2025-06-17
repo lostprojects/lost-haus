@@ -102,7 +102,8 @@ const ContactPage = () => {
                     backgroundImage: "url('/photo/space-portrait1-cincinnati-event-space-somerhaus.jpg')"
         }} />
         <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-header tracking-tight mb-4 text-white">
+          {/* Use consistent hero heading size */}
+          <h1 className="text-5xl md:text-6xl font-header tracking-tight mb-4 text-white">
             Let's Plan Something Magical Together
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-white/90 font-mono">

@@ -3,6 +3,18 @@
 /* Apply brand color to all headings by default */
 h1, h2, h3, h4, h5, h6 {
   color: #ea580c !important;
+  font-family: 'FreshMango', serif;
+  font-weight: 700;
+}
+
+/* Consistent section heading sizes */
+h2 {
+  font-size: 3rem;
+  line-height: 1;
+}
+h3 {
+  font-size: 2.25rem;
+  line-height: 1.1;
 }
 
 /* Override for specific cases where headings should remain white */
