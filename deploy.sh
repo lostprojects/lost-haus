@@ -8,7 +8,7 @@ NC='\033[0m' # No Color
 
 # Configuration
 SERVER_USER="administrator"
-SERVER_HOST="v2202506279131350474"
+SERVER_HOST="152.53.169.200"
 PROJECT_PATH="/opt/somerhaus/lost-haus"
 
 echo -e "${BLUE}🚀 Starting deployment process...${NC}"
