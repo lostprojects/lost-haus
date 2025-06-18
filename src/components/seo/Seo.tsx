@@ -28,7 +28,7 @@ const Seo = ({
   const fullImageUrl = image.startsWith('http') ? image : `${siteUrl.replace(/\/$/, '')}${image}`;
 
   return (
-    <Helmet>
+    <Helmet htmlAttributes={{ lang: 'en' }}>
       {/* Basic Meta Tags */}
       <title>{title}</title>
       <meta name="description" content={description} />
