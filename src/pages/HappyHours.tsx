@@ -1,6 +1,5 @@
 import React from 'react';
-import Header from '@/components/ui/header';
-import { Footer } from "@/components/ui/footer-section";
+import PageLayout from '@/components/shared/PageLayout';
 import UniversalHero from '@/components/shared/UniversalHero';
 import PricingSection from '@/components/shared/PricingSection';
 import FAQSection from '@/components/shared/FAQSection';
@@ -12,66 +11,13 @@ import Seo from '@/components/seo/Seo';
 import { businessSchema, createFaqSchema } from '@/components/seo/seo-schemas';
 import { LogoTicker } from '@/components/blocks/LogoTicker';
 import { clientLogosGrayscale } from '@/data/clientLogos';
+import { happyHoursPricing } from '@/data/pricingPlans';
+import FaqMoreAnswers from '@/components/faq/FaqMoreAnswers';
 
 
 
 
 const HappyHours = () => {
-  const pricingPlans = [
-    {
-      name: "After-Work Social",
-      price: "$2,200",
-      period: "/event",
-      description: "Perfect for casual networking and team gatherings",
-      features: [
-        "Up to 40 guests",
-        "3-hour venue rental",
-        "Bar setup included",
-        "High-top cocktail tables",
-        "Ambient lighting",
-        "Sound system for background music",
-        "Event coordination"
-      ],
-      popular: false,
-    },
-    {
-      name: "Premium Happy Hour",
-      price: "$3,800",
-      period: "/event",
-      description: "Our most popular package for memorable happy hour events",
-      features: [
-        "Up to 70 guests",
-        "4-hour venue rental",
-        "Full bar service",
-        "Mix of seating options",
-        "Premium lighting package",
-        "Professional sound system",
-        "Appetizer station setup",
-        "Dedicated bartender",
-        "Event management"
-      ],
-      popular: true,
-    },
-    {
-      name: "Corporate Celebration",
-      price: "$5,500",
-      period: "/event",
-      description: "Ultimate happy hour experience for special company events",
-      features: [
-        "Up to 100 guests",
-        "5-hour venue rental",
-        "Premium bar package",
-        "Multiple bar stations",
-        "Custom lighting design",
-        "Live music accommodation",
-        "Full catering coordination",
-        "Multiple bartenders",
-        "Professional event management",
-        "Photography coordination"
-      ],
-      popular: false,
-    }
-  ];
 
   const faqData = [
     {
@@ -103,14 +49,13 @@ const HappyHours = () => {
   const happyhoursFaqSchema = createFaqSchema(faqData);
 
   return (
-    <main className="min-h-screen relative bg-background">
+    <PageLayout footerLogoType="press" mainClassName="relative">
       <Seo
         title="Happy Hour Venue in Cincinnati | Somerhaus"
         description="Plan networking mixers and team gatherings at our OTR event space."
         schema={[businessSchema, happyhoursFaqSchema]}
       />
-      <Header />
-      
+
       <UniversalHero pageKey="happyhours" />
 
       <LogoTicker heading="Trusted By" logos={clientLogosGrayscale} />
@@ -120,7 +65,7 @@ const HappyHours = () => {
       <PricingSection 
         title="Happy Hour Packages"
         description="Choose the perfect package for your after-work celebration"
-        packages={pricingPlans}
+        packages={happyHoursPricing}
       />
 
       <TestimonialsDemo />
@@ -136,21 +81,11 @@ const HappyHours = () => {
         title="Happy Hour Events FAQ"
         description="Everything you need to know about hosting your happy hour event at Somerhaus"
         faqs={faqData}
-        postAccordionContent={
-          <p className="text-center mt-8 font-body text-muted-foreground">
-            Need more answers? Visit our{' '}
-            <a href="/faq" className="text-primary underline hover:text-primary/80">
-              full FAQ page
-            </a>
-            .
-          </p>
-        }
+        postAccordionContent={<FaqMoreAnswers />}
       />
 
       <CTA />
-
-      <Footer logoType="press" />
-    </main>
+    </PageLayout>
   );
 };
 

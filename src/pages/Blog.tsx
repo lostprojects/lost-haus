@@ -1,6 +1,5 @@
 import React from 'react';
-import Header from '@/components/ui/header';
-import { Footer } from "@/components/ui/footer-section";
+import PageLayout from '@/components/shared/PageLayout';
 import UniversalHero from '@/components/shared/UniversalHero';
 import Seo from '@/components/seo/Seo';
 import { businessSchema } from '@/components/seo/seo-schemas';
@@ -9,20 +8,16 @@ import { Link } from 'react-router-dom';
 import { blogPosts } from '@/data/blogData';
 
 const Blog = () => {
-  const heroImages = [
-    { src: '/photo/dinner-hero-cincinnati-wedding-venue-somerhaus.webp', alt: 'Dinner setup at Somerhaus' }
-  ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <PageLayout footerLogoType="clients">
       <Seo
         title="Haus Journal | Inspiration & Tips"
         description="Ideas, stories, and resources to craft unforgettable gatherings at Somerhaus."
         schema={businessSchema}
       />
-      <Header />
       <UniversalHero pageKey="blog" />
-      <main className="flex-grow py-12 md:py-16">
+      <div className="flex-grow py-12 md:py-16">
         <div className="container mx-auto px-4 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post) => (
             <div key={post.slug} className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
@@ -47,9 +42,8 @@ const Blog = () => {
             </div>
           ))}
         </div>
-      </main>
-      <Footer logoType="clients" />
-    </div>
+      </div>
+    </PageLayout>
   );
 };
 

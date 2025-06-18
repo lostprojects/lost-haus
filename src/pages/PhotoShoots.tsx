@@ -1,29 +1,21 @@
 import React from 'react';
-import Header from '@/components/ui/header';
+import PageLayout from '@/components/shared/PageLayout';
 import UniversalHero from '@/components/shared/UniversalHero';
-import { Footer } from "@/components/ui/footer-section";
 import { CTA } from '@/components/ui/call-to-action/component';
 import Seo from '@/components/seo/Seo';
 import { businessSchema } from '@/components/seo/seo-schemas';
 
 
 const PhotoShoots: React.FC = () => {
-  const heroImages = [
-    {
-      src: '/photo/photoshoot-hero-1-somerset-somerhaus-event%20space.webp',
-      alt: 'Creative photo shoot at Somerhaus',
-    },
-  ];
 
   return (
-    <main className="min-h-screen relative bg-background">
+    <PageLayout footerLogoType="clients" mainClassName="relative">
       <Seo
         title="Photo & Film Shoots at Somerhaus | Cincinnati Studio Loft"
         description="Book Somerhaus or our sister venue Somerset Bar as your next backdrop for editorial, commercial, or lifestyle shoots."
         schema={businessSchema}
       />
-      <Header />
-
+      
       <UniversalHero pageKey="photoshoots" />
 
       {/* About Section */}
@@ -62,9 +54,7 @@ const PhotoShoots: React.FC = () => {
 
       {/* CTA */}
       <CTA />
-
-      <Footer logoType="clients" />
-    </main>
+    </PageLayout>
   );
 };
 

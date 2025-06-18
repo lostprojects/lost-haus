@@ -459,6 +459,9 @@ docker build -f Dockerfile .
 - **Logo centralization**: ~300 lines of duplicate code eliminated
 - **Schema centralization**: ~400 lines of duplicate schema definitions removed
 - **Maintainability**: Single source of truth for all shared data
+- **New shared data**: `teamMembers.ts` and `pricingPlans.ts` consolidate staff bios and event package pricing used across pages
+- **Layout component**: `PageLayout` handles the common header/footer wrapper
+- **FAQ helper**: `FaqMoreAnswers` provides a reusable "Need more answers?" link
 
 ### **📊 Reference Documentation**
 - **Complete optimization log**: See `PERFORMANCE_OPTIMIZATION_REPORT.md`

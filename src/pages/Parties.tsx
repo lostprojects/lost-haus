@@ -1,6 +1,5 @@
 import React from 'react';
-import Header from '@/components/ui/header';
-import { Footer } from "@/components/ui/footer-section";
+import PageLayout from '@/components/shared/PageLayout';
 import UniversalHero from '@/components/shared/UniversalHero';
 import PricingSection from '@/components/shared/PricingSection';
 import FAQSection from '@/components/shared/FAQSection';
@@ -9,67 +8,11 @@ import { CTA } from '@/components/ui/call-to-action/component';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
 import Seo from '@/components/seo/Seo';
 import { businessSchema, createFaqSchema } from '@/components/seo/seo-schemas';
+import { partiesPricing } from '@/data/pricingPlans';
+import FaqMoreAnswers from '@/components/faq/FaqMoreAnswers';
 
 
 const Parties = () => {
-  const pricingPlans = [
-    {
-      name: "Birthday Bash",
-      price: "$2,500",
-      period: "/event",
-      description: "Perfect for milestone birthday celebrations",
-      features: [
-        "Up to 50 guests",
-        "4-hour venue rental",
-        "Party lighting setup",
-        "Sound system for music",
-        "Mix of seating options",
-        "Bar setup available",
-        "Decoration coordination",
-        "Event coordination"
-      ],
-      popular: false,
-    },
-    {
-      name: "Celebration Party",
-      price: "$3,800",
-      period: "/event",
-      description: "Our most popular party package for special occasions",
-      features: [
-        "Up to 75 guests",
-        "5-hour venue rental",
-        "Custom lighting design",
-        "Professional sound system",
-        "Full bar service",
-        "Catering coordination",
-        "Dance floor setup",
-        "Photography space",
-        "Dedicated party coordinator",
-        "Welcome cocktail service"
-      ],
-      popular: true,
-    },
-    {
-      name: "Grand Celebration",
-      price: "$5,800",
-      period: "/event",
-      description: "Ultimate party experience for unforgettable celebrations",
-      features: [
-        "Up to 100 guests",
-        "6-hour venue rental",
-        "Premium lighting package",
-        "DJ booth accommodation",
-        "Full premium bar service",
-        "Multi-course catering",
-        "Live entertainment space",
-        "VIP lounge area",
-        "Professional event management",
-        "Custom decoration support",
-        "Late night service"
-      ],
-      popular: false,
-    }
-  ];
 
   const faqData = [
     {
@@ -101,14 +44,13 @@ const Parties = () => {
   const partiesFaqSchema = createFaqSchema(faqData);
 
   return (
-    <main className="min-h-screen relative bg-background">
+    <PageLayout footerLogoType="clients" mainClassName="relative">
       <Seo
         title="Party Venue in Cincinnati | Somerhaus"
         description="Throw unforgettable celebrations in our one-of-a-kind Cincinnati venue."
         schema={[businessSchema, partiesFaqSchema]}
       />
-      <Header />
-      
+
       <UniversalHero pageKey="parties" />
 
       <ImageGallerySection />
@@ -116,7 +58,7 @@ const Parties = () => {
       <PricingSection 
         title="Party Packages"
         description="Choose the perfect package for your celebration"
-        packages={pricingPlans}
+        packages={partiesPricing}
       />
 
       <TestimonialsDemo />
@@ -125,21 +67,11 @@ const Parties = () => {
         title="Party Events FAQ"
         description="Everything you need to know about hosting your party at Somerhaus"
         faqs={faqData}
-        postAccordionContent={
-          <p className="text-center mt-8 font-body text-muted-foreground">
-            Need more answers? Visit our{' '}
-            <a href="/faq" className="text-primary underline hover:text-primary/80">
-              full FAQ page
-            </a>
-            .
-          </p>
-        }
+        postAccordionContent={<FaqMoreAnswers />}
       />
 
       <CTA />
-
-      <Footer logoType="clients" />
-    </main>
+    </PageLayout>
   );
 };
 
