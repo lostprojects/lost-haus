@@ -29,6 +29,7 @@ const Pricing = lazy(() => import("./pages/Pricing"));
 const Vendors = lazy(() => import("./pages/Vendors"));
 const VenueLayout = lazy(() => import("./pages/VenueLayout"));
 const PressPage = lazy(() => import("./pages/Press"));
+const Resources = lazy(() => import("./pages/Resources"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 
@@ -60,6 +61,7 @@ const App = () => (
         <Route path="/vendors" element={<Vendors />} />
         <Route path="/venue-layout" element={<VenueLayout />} />
         <Route path="/press" element={<PressPage />} />
+        <Route path="/resources" element={<Resources />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="*" element={<NotFound />} />
