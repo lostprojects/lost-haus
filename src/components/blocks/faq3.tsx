@@ -98,15 +98,15 @@ const Faq3 = ({
         <div className="mx-auto flex max-w-4xl flex-col items-center rounded-lg bg-accent p-4 text-center md:rounded-xl md:p-6 lg:p-8">
           <div className="relative">
             <Avatar className="absolute mb-4 size-16 origin-bottom -translate-x-[60%] scale-[80%] border md:mb-5">
-              <AvatarImage src="/lovable-uploads/de58a57e-3411-4a58-9d1a-64324adbb089.png" />
+              <AvatarImage src="/placeholder.svg" />
               <AvatarFallback>EV</AvatarFallback>
             </Avatar>
             <Avatar className="absolute mb-4 size-16 origin-bottom translate-x-[60%] scale-[80%] border md:mb-5">
-              <AvatarImage src="/lovable-uploads/9af23dea-0956-4cc4-a1c8-f2cee31084b2.png" />
+              <AvatarImage src="/placeholder.svg" />
               <AvatarFallback>PL</AvatarFallback>
             </Avatar>
             <Avatar className="mb-4 size-16 border md:mb-5">
-              <AvatarImage src="/lovable-uploads/f8a14efe-117f-4fea-8c12-b9371b4d3825.png" />
+              <AvatarImage src="/placeholder.svg" />
               <AvatarFallback>CT</AvatarFallback>
             </Avatar>
           </div>

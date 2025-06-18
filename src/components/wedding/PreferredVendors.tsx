@@ -8,29 +8,29 @@ const PreferredVendors = () => {
     {
       name: "Catering",
       vendors: [
-        { name: "Eat Well Catering", image: "/lovable-uploads/54dee81d-d7ea-49c7-8588-03e5db9ec8bd.png" },
-        { name: "Conscious Kitchen", image: "/lovable-uploads/41b903d4-d950-4e6e-839a-07c706d701b0.png" },
+        { name: "Eat Well Catering", image: "/placeholder.svg" },
+        { name: "Conscious Kitchen", image: "/placeholder.svg" },
       ]
     },
     {
       name: "Photography",
       vendors: [
-        { name: "Capture Moments", image: "/lovable-uploads/54dee81d-d7ea-49c7-8588-03e5db9ec8bd.png" },
-        { name: "Forever Frames", image: "/lovable-uploads/41b903d4-d950-4e6e-839a-07c706d701b0.png" },
+        { name: "Capture Moments", image: "/placeholder.svg" },
+        { name: "Forever Frames", image: "/placeholder.svg" },
       ]
     },
     {
       name: "Florists",
       vendors: [
-        { name: "Blooming Beauty", image: "/lovable-uploads/54dee81d-d7ea-49c7-8588-03e5db9ec8bd.png" },
-        { name: "Green Love Florals", image: "/lovable-uploads/41b903d4-d950-4e6e-839a-07c706d701b0.png" },
+        { name: "Blooming Beauty", image: "/placeholder.svg" },
+        { name: "Green Love Florals", image: "/placeholder.svg" },
       ]
     },
     {
       name: "Music",
       vendors: [
-        { name: "Harmony DJs", image: "/lovable-uploads/54dee81d-d7ea-49c7-8588-03e5db9ec8bd.png" },
-        { name: "The String Quartet", image: "/lovable-uploads/41b903d4-d950-4e6e-839a-07c706d701b0.png" },
+        { name: "Harmony DJs", image: "/placeholder.svg" },
+        { name: "The String Quartet", image: "/placeholder.svg" },
       ]
     }
   ];
