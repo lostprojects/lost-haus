@@ -187,6 +187,15 @@ export const heroConfigs: Record<string, HeroConfig> = {
     logoType: 'press'
   },
 
+  resources: {
+    type: 'secondary',
+    title: 'Event Planning Resources',
+    subtitle: 'Helpful checklists and guides for your big day.',
+    images: ['/photo/space-portrait2-cincinnati-event-space-somerhaus.webp'],
+    backgroundStyle: 'static',
+    logoType: 'press'
+  },
+
   // Corporate event types
   meetings: {
     type: 'secondary',

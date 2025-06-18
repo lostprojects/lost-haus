@@ -92,6 +92,9 @@ function Footer({ noBorder = false, logoType = 'none' }: FooterProps = {}) {
               <Link to="/faq" className="flex items-center transition-colors hover:text-[#D65B2F]">
                 FAQ <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
+              <Link to="/resources" className="flex items-center transition-colors hover:text-[#D65B2F]">
+                Resources <ArrowUpRight className="ml-1 h-4 w-4" />
+              </Link>
               <Link to="/blog" className="flex items-center transition-colors hover:text-[#D65B2F]">
                 Blog <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
