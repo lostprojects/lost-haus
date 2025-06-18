@@ -8,7 +8,8 @@ import Seo from '@/components/seo/Seo';
 
 const Gallery = () => {
 
-  const galleryCategories = [
+  const galleryCategories = useMemo(
+    () => [
     {
       title: "Weddings",
       images: [
@@ -59,7 +60,9 @@ const Gallery = () => {
         { src: "/photo/space-portrait2-cincinnati-event-space-somerhaus.webp", alt: "Loft space portrait", category: "Space" }
       ]
     }
-  ];
+    ],
+    []
+  );
   const [selectedCategory, setSelectedCategory] = React.useState("All");
   const [selectedImage, setSelectedImage] = React.useState<string | null>(null);
 
