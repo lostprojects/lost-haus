@@ -55,6 +55,8 @@ lost-haus/
 │   ├── favicon.png                 # Site favicon
 │   ├── FreshMango-*.woff           # Header font files
 │   ├── Nebulica-*.woff             # Body font files
+│   ├── sitemap.xml                 # XML sitemap
+│   ├── site.webmanifest            # PWA manifest
 │   └── robots.txt                  # SEO directives
 ├── src/
 │   ├── components/                  # React components
