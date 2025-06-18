@@ -196,6 +196,24 @@ export const heroConfigs: Record<string, HeroConfig> = {
     logoType: 'press'
   },
 
+  emergencykit: {
+    type: 'secondary',
+    title: 'Wedding Day Emergency Kit',
+    subtitle: 'Essentials to handle any minor mishaps.',
+    images: ['/photo/wedding-portrait1-cincinnati-wedding-venue-somerhaus.webp'],
+    backgroundStyle: 'static',
+    logoType: 'press'
+  },
+
+  budgetchecklist: {
+    type: 'secondary',
+    title: 'Budget Checklist',
+    subtitle: 'Track every potential wedding expense.',
+    images: ['/photo/dinner-portrait-somerhaus-event-space-cincinnati.webp'],
+    backgroundStyle: 'static',
+    logoType: 'press'
+  },
+
   // Corporate event types
   meetings: {
     type: 'secondary',

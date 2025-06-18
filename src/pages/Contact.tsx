@@ -1,14 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { MapPin, Phone, CalendarDays } from 'lucide-react';
 import PageLayout from '@/components/shared/PageLayout';
 import Seo from '@/components/seo/Seo';
 import { businessSchema } from '@/components/seo/seo-schemas';
-import { teamMembers } from '@/data/teamMembers';
 import { Button } from '@/components/ui/button';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+
 import { useHoneyBook } from '@/hooks/use-honeybook';
 import HoneyBookForm from '@/components/honeybook/HoneyBookForm';
 import UniversalHero from '@/components/shared/UniversalHero';
@@ -16,29 +12,6 @@ import UniversalHero from '@/components/shared/UniversalHero';
 
 const ContactPage = () => {
   useHoneyBook();
-
-    answer: "We're currently booking for 2025 with some limited weekend dates still available. Weekdays offer more flexibility, especially for corporate events."
-  }, {
-    question: "What's included in your venue rental?",
-    answer: "Our standard venue rental includes exclusive use of the 3,080 sq ft space, tables and chairs for up to 150 guests, basic sound system, lighting, climate control, and on-site staff during your event."
-  }, {
-    question: "Do you have preferred vendors?",
-    answer: "While we have a list of recommended vendors who are familiar with our space, you're welcome to bring in your own. All vendors will need to provide proof of insurance prior to the event."
-  }, {
-    question: "What are your payment terms?",
-    answer: "We require a 50% deposit to secure your date, with the remainder due 30 days before your event. We accept all major credit cards, checks, and bank transfers."
-  }, {
-    question: "Is parking available?",
-    answer: "There are several public parking options within a 2-block radius. We can arrange valet service for an additional fee, and there's a loading zone directly in front of the building for vendors."
-  }];
-  
-  const businessHours = [{
-    day: "Note",
-    hours: "By Appointment/Booking Only"
-  }, {
-    day: "Event Venue",
-    hours: "No Regular Business Hours"
-  }];
   
   const testimonials = [{
     name: "Jennifer & David",
