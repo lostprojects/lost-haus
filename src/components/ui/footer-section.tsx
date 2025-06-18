@@ -37,7 +37,7 @@ function Footer({ noBorder = false, logoType = 'none' }: FooterProps = {}) {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="relative">
             <h3 className="mb-4 text-2xl font-header font-semibold">Say Hello</h3>
-            <Link to="/contact" className="mb-6 flex items-center text-white hover:text-[#D65B2F] transition-colors text-sm">
+            <Link to="/about/contact" className="mb-6 flex items-center text-white hover:text-[#D65B2F] transition-colors text-sm">
               Contact Us <ArrowUpRight className="ml-1 h-4 w-4" />
             </Link>
             
@@ -89,7 +89,7 @@ function Footer({ noBorder = false, logoType = 'none' }: FooterProps = {}) {
               <Link to="#" className="flex items-center transition-colors hover:text-[#D65B2F]">
                 Guest Login <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
-              <Link to="/faq" className="flex items-center transition-colors hover:text-[#D65B2F]">
+              <Link to="/about/faq" className="flex items-center transition-colors hover:text-[#D65B2F]">
                 FAQ <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
               <Link to="/resources" className="flex items-center transition-colors hover:text-[#D65B2F]">

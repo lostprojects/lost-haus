@@ -1,22 +1,40 @@
 import React from 'react';
-import Header from '@/components/ui/header';
-import { Footer } from "@/components/ui/footer-section";
-import UniversalHero from '@/components/shared/UniversalHero';
+import PageLayout from '@/components/shared/PageLayout';
+import Breadcrumb from '@/components/ui/breadcrumb';
 import { Separator } from '@/components/ui/separator';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import Seo from '@/components/seo/Seo';
+import { businessSchema } from '@/components/seo/seo-schemas';
 
 const VenueLayout = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <PageLayout footerLogoType="clients" hasHero={false}>
       <Seo
         title="Venue Layout | Somerhaus Cincinnati"
         description="Explore our 3,080 sq ft floor plan and envision your event in Cincinnati's Over-the-Rhine neighborhood."
+        schema={businessSchema}
       />
-      <Header />
-      <UniversalHero pageKey="layout" />
+      
+      <section className="pt-24 pb-12 md:pt-28 md:pb-16">
+        <div className="container mx-auto px-4 max-w-4xl space-y-8">
+          <Breadcrumb items={[
+            { label: 'About', href: '/about' },
+            { label: 'Venue Layout' }
+          ]} />
+          
+          <div>
+            <h1 className="text-3xl md:text-4xl font-header mb-4">
+              Venue Layout
+            </h1>
+            <p className="text-lg text-muted-foreground font-body">
+              Explore our 3,080 sq ft floor plan and envision your event in Cincinnati's Over-the-Rhine neighborhood.
+            </p>
+          </div>
+        </div>
+      </section>
+      
       <main className="flex-grow">
         <section className="py-12 md:py-16">
           <div className="container mx-auto px-4 max-w-3xl space-y-8">
@@ -67,8 +85,7 @@ const VenueLayout = () => {
           </div>
         </section>
       </main>
-      <Footer logoType="clients" />
-    </div>
+    </PageLayout>
   );
 };
 

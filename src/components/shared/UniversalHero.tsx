@@ -52,7 +52,7 @@ const UniversalHero: React.FC<UniversalHeroProps> = ({
   }
 
   // Use overrides if provided, otherwise use config values
-  const { type, backgroundStyle, logoType } = config;
+  const { type, backgroundStyle, logoType, titleLines } = config;
   const title = titleOverride || config.title;
   const subtitle = subtitleOverride || config.subtitle;
   const images = imagesOverride || config.images;
@@ -144,32 +144,17 @@ const UniversalHero: React.FC<UniversalHeroProps> = ({
           <div className={styles.content}>
             <AvatarGroup />
             <h1 className={styles.title}>
-              {title.includes('Experience') ? (
+              {titleLines && titleLines.length > 1 ? (
                 <>
-                  Experience Cincinnati's
-                  <span>Premier Event Venue</span>
-                </>
-              ) : title.includes('Love Stories') ? (
-                <>
-                  Where Cincinnati Love
-                  <span>Stories Begin</span>
-                </>
-              ) : title.includes('Corporate') ? (
-                <>
-                  Elevate Your Corporate
-                  <span>Events</span>
-                </>
-              ) : title.includes('Parties') ? (
-                <>
-                  Unforgettable Parties &
-                  <span>Celebrations</span>
+                  {titleLines[0]}
+                  <span>{titleLines[1]}</span>
                 </>
               ) : (
                 title
               )}
             </h1>
             <p className={styles.subtitle}>{subtitle}</p>
-            <div className="flex items-center gap-2 mb-8 font-body">
+            <div className="flex items-center gap-2 mb-8 font-body mt-4">
               <div className="flex">
                 {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />)}
               </div>

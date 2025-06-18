@@ -73,7 +73,7 @@ export const ImageGallerySection = () => {
         
         <div className="text-center mt-8 animate-fade-in-up">
           <Link 
-            to="/gallery" 
+            to="/about/gallery" 
             className="inline-flex items-center text-brand hover:text-brand/80 transition-colors font-body text-base"
           >
             See More <ArrowUpRight className="ml-1 h-4 w-4" />

@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '@/components/ui/header';
-import { Footer } from "@/components/ui/footer-section";
+import PageLayout from '@/components/shared/PageLayout';
+import Breadcrumb from '@/components/ui/breadcrumb';
 import PricingSection from '@/components/shared/PricingSection';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
@@ -9,22 +9,32 @@ import { businessSchema } from '@/components/seo/seo-schemas';
 
 const Pricing = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <PageLayout footerLogoType="clients" hasHero={false}>
       <Seo 
         title="Event Pricing | Somerhaus" 
         description="Transparent venue rental rates for events at Somerhaus" 
         schema={businessSchema}
       />
-      <Header />
-      <main className="flex-grow">
-        <section className="py-20 text-center bg-gradient-to-b from-orange-50 to-background">
-          <div className="container mx-auto px-4">
-            <h1 className="text-5xl font-header mb-6">Event Pricing</h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body">
+      
+      <section className="pt-24 pb-12 md:pt-28 md:pb-16">
+        <div className="container mx-auto px-4 max-w-4xl space-y-8">
+          <Breadcrumb items={[
+            { label: 'About', href: '/about' },
+            { label: 'Pricing' }
+          ]} />
+          
+          <div>
+            <h1 className="text-3xl md:text-4xl font-header mb-4">
+              Event Pricing
+            </h1>
+            <p className="text-lg text-muted-foreground font-body">
               Our straightforward packages make budgeting simple. Beverage minimums apply as listed.
             </p>
           </div>
-        </section>
+        </div>
+      </section>
+      
+      <main className="flex-grow">
         <PricingSection
           title="Venue Rental Rates"
           description="All rentals include tables and chairs for up to 80 guests, basic lighting, sound system, and setup/teardown assistance."
@@ -95,8 +105,7 @@ const Pricing = () => {
           </a>
         </section>
       </main>
-      <Footer logoType="clients" />
-    </div>
+    </PageLayout>
   );
 };
 

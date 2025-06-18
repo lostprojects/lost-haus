@@ -1,7 +1,6 @@
 import React from 'react';
-import Header from '@/components/ui/header';
-import UniversalHero from '@/components/shared/UniversalHero';
-import { Footer } from "@/components/ui/footer-section";
+import PageLayout from '@/components/shared/PageLayout';
+import Breadcrumb from '@/components/ui/breadcrumb';
 import { LogoTicker } from '@/components/blocks/LogoTicker';
 import { clientLogos } from '@/data/clientLogos';
 import Seo from '@/components/seo/Seo';
@@ -12,15 +11,30 @@ import BarFaq from '@/components/bar/BarFaq';
 
 const BarPackages = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <PageLayout footerLogoType="clients" hasHero={false}>
       <Seo
         title="Bar Packages | Somerhaus Cincinnati Event Venue"
         description="Signature cocktails, curated wine, beer. Choose a tier or let us customize your pour."
         schema={businessSchema}
       />
-      <Header />
       
-      <UniversalHero pageKey="barpackages" />
+      <section className="pt-24 pb-12 md:pt-28 md:pb-16">
+        <div className="container mx-auto px-4 max-w-4xl space-y-8">
+          <Breadcrumb items={[
+            { label: 'About', href: '/about' },
+            { label: 'Bar Packages' }
+          ]} />
+          
+          <div>
+            <h1 className="text-3xl md:text-4xl font-header mb-4">
+              Bar Packages
+            </h1>
+            <p className="text-lg text-muted-foreground font-body">
+              Signature cocktails, curated wine, beer. Choose a tier or let us customize your pour.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <main className="flex-grow">
         <PricingSection
@@ -78,11 +92,9 @@ const BarPackages = () => {
         />
         <BarCostCalculator />
         <BarFaq />
-        <LogoTicker heading="Trusted By" logos={clientLogos} className="bg-black" />
+        <LogoTicker type="clients" className="bg-black" />
       </main>
-      
-      <Footer logoType="clients" />
-    </div>
+    </PageLayout>
   );
 };
 

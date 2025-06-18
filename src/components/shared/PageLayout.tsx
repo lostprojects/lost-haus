@@ -7,6 +7,7 @@ interface PageLayoutProps {
   footerLogoType?: 'press' | 'clients' | 'none';
   noFooterBorder?: boolean;
   mainClassName?: string;
+  hasHero?: boolean;
 }
 
 const PageLayout: React.FC<PageLayoutProps> = ({
@@ -14,9 +15,10 @@ const PageLayout: React.FC<PageLayoutProps> = ({
   footerLogoType = 'none',
   noFooterBorder = false,
   mainClassName = '',
+  hasHero = true,
 }) => (
   <div className="flex flex-col min-h-screen bg-background">
-    <Header />
+    <Header hasHero={hasHero} />
     <main className={`flex-grow ${mainClassName}`}>{children}</main>
     <Footer logoType={footerLogoType} noBorder={noFooterBorder} />
   </div>

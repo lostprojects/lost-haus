@@ -1,10 +1,11 @@
 import React, { useMemo } from 'react';
-import Header from '@/components/ui/header';
-import { Footer } from "@/components/ui/footer-section";
+import PageLayout from '@/components/shared/PageLayout';
+import Breadcrumb from '@/components/ui/breadcrumb';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Download, Heart, Share2 } from 'lucide-react';
 import Seo from '@/components/seo/Seo';
+import { businessSchema } from '@/components/seo/seo-schemas';
 
 const Gallery = () => {
 
@@ -86,31 +87,28 @@ const Gallery = () => {
   );
 
   return (
-    <main className="min-h-screen relative bg-background">
+    <PageLayout footerLogoType="clients" hasHero={false}>
       <Seo
         title="Event Gallery | Somerhaus Cincinnati"
         description="View photos of weddings, corporate gatherings, and celebrations hosted at Somerhaus."
+        schema={businessSchema}
       />
-      <Header />
       
-      {/* Hero Section */}
-      <section className="relative pt-24 pb-12 bg-gradient-to-r from-black/70 to-black/50 hero">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ 
-            backgroundImage: `url(/photo/wedding-hero3-cincinnati-wedding-venue-somerhaus.webp)`,
-          }}
-        />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          <Badge className="mb-4 font-body">Photo Gallery</Badge>
-          {/* Match homepage hero sizing */}
-          <h1 className="text-5xl md:text-6xl font-header tracking-tight mb-4">
-            Photo Gallery
-          </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-white/90 font-body">
-            Explore the magic of past events at Cincinnati's premier venue. From intimate gatherings to grand celebrations, see how Somerhaus transforms for every occasion.
-          </p>
+      <section className="pt-24 pb-12 md:pt-28 md:pb-16">
+        <div className="container mx-auto px-4 max-w-4xl space-y-8">
+          <Breadcrumb items={[
+            { label: 'About', href: '/about' },
+            { label: 'Gallery' }
+          ]} />
+          
+          <div>
+            <h1 className="text-3xl md:text-4xl font-header mb-4">
+              Photo Gallery
+            </h1>
+            <p className="text-lg text-muted-foreground font-body">
+              Explore the magic of past events at Cincinnati's premier venue. From intimate gatherings to grand celebrations, see how Somerhaus transforms for every occasion.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -183,7 +181,7 @@ const Gallery = () => {
               <a href="/event-inquiry">Book Your Event</a>
             </Button>
             <Button size="lg" variant="outline" className="font-body" asChild>
-              <a href="/contact">Contact Us</a>
+              <a href="/about/contact">Contact Us</a>
             </Button>
           </div>
         </div>
@@ -215,9 +213,7 @@ const Gallery = () => {
           </div>
         </div>
       )}
-
-      <Footer logoType="clients" />
-    </main>
+    </PageLayout>
   );
 };
 

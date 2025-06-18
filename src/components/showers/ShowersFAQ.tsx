@@ -50,9 +50,9 @@ const ShowersFAQ = () => {
       postAccordionContent={ // Add the contact link after the accordion
         <div className="text-center mt-12">
           <p className="font-body text-muted-foreground">
-            Have more questions? Don't hesitate to <a href="#contact" className="text-primary underline hover:text-primary/80">contact us</a>.
+                          Have more questions? Don't hesitate to <a href="/about/contact" className="text-primary underline hover:text-primary/80">contact us</a>.
             {' '}You can also browse our{' '}
-            <a href="/faq" className="text-primary underline hover:text-primary/80">
+            <a href="/about/faq" className="text-primary underline hover:text-primary/80">
               full FAQ page
             </a>
             .

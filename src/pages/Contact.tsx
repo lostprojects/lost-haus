@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, CalendarDays } from 'lucide-react';
 import PageLayout from '@/components/shared/PageLayout';
+import Breadcrumb from '@/components/ui/breadcrumb';
 import Seo from '@/components/seo/Seo';
 import { businessSchema } from '@/components/seo/seo-schemas';
 import { Button } from '@/components/ui/button';
 
 import { useHoneyBook } from '@/hooks/use-honeybook';
 import HoneyBookForm from '@/components/honeybook/HoneyBookForm';
-import UniversalHero from '@/components/shared/UniversalHero';
 
 
 const ContactPage = () => {
@@ -30,16 +30,33 @@ const ContactPage = () => {
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const currentTestimonial = testimonials[currentTestimonialIndex];
   
-  return <PageLayout footerLogoType="clients">
+  return <PageLayout footerLogoType="clients" hasHero={false}>
       <Seo
         title="Contact Somerhaus in Cincinnati"
         description="Get in touch with our team to book your event or schedule a tour at Cincinnati's most enchanting venue."
         schema={businessSchema}
       />
-      <UniversalHero pageKey="contact" />
       
       <main className="flex-grow">
-        <div className="container mx-auto px-4 py-16">
+        <section className="pt-24 pb-12 md:pt-28 md:pb-16">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <Breadcrumb items={[
+              { label: 'About', href: '/about' },
+              { label: 'Contact' }
+            ]} />
+            
+            <div className="mt-8">
+              <h1 className="text-3xl md:text-4xl font-header mb-4">
+                Let's Plan Something Magical Together
+              </h1>
+              <p className="text-lg text-muted-foreground font-body mb-8">
+                We're excited to bring your vision to life in our unique space.
+              </p>
+            </div>
+          </div>
+        </section>
+        
+        <div className="container mx-auto px-4 pb-16">
           
           {/* Added items-start for top alignment */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 mb-16 items-start">

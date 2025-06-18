@@ -1,6 +1,7 @@
 export interface HeroConfig {
   type: 'mega' | 'secondary' | 'minimal';
   title: string;
+  titleLines?: string[]; // Optional: for multi-line titles in mega heroes
   subtitle: string;
   images: string[];
   backgroundStyle?: 'carousel' | 'static';
@@ -11,7 +12,8 @@ export const heroConfigs: Record<string, HeroConfig> = {
   // MEGA HEROES - Full homepage replicas with carousel, badges, etc.
   homepage: {
     type: 'mega',
-    title: "Experience Cincinnati's Premier Event Venue",
+    title: "ExperienceCincinnati's Most Vibrant Event Space",
+    titleLines: ["Experience Cincinnati's", "Most Vibrant Event Space"],
     subtitle: "Where unforgettable moments come to life in our stunning 3,080 sq ft industrial-chic space in Over-the-Rhine.",
     images: [
       '/photo/wedding-hero1-cincinnati-wedding-venue-somerhaus.webp',
@@ -27,6 +29,7 @@ export const heroConfigs: Record<string, HeroConfig> = {
   wedding: {
     type: 'mega',
     title: "Where Cincinnati Love Stories Begin",
+    titleLines: ["Where Cincinnati Love", "Stories Begin"],
     subtitle: "Create your perfect wedding day in our enchanting 3,080 sq ft venue—where industrial elegance meets romantic charm.",
     images: [
       '/photo/wedding-hero1-cincinnati-wedding-venue-somerhaus.webp',
@@ -42,6 +45,7 @@ export const heroConfigs: Record<string, HeroConfig> = {
   corporate: {
     type: 'mega',
     title: "Elevate Your Corporate Events",
+    titleLines: ["Elevate Your Corporate", "Events"],
     subtitle: "Host impactful meetings, conferences, and corporate celebrations in Cincinnati's most sophisticated industrial-chic venue.",
     images: [
       '/photo/meeting-hero1-cincinnati-event-venue-somerhaus.webp',
@@ -57,6 +61,7 @@ export const heroConfigs: Record<string, HeroConfig> = {
   parties: {
     type: 'mega',
     title: "Unforgettable Parties & Celebrations",
+    titleLines: ["Unforgettable Parties &", "Celebrations"],
     subtitle: "Host milestone birthdays, anniversaries, and unforgettable nights in our 3,080 sq ft industrial-chic venue. Limited prime dates available—book your tour today.",
     images: [
       '/photo/party-hero1-cincinnati-event-venue-somerhaus.webp',
@@ -193,7 +198,7 @@ export const heroConfigs: Record<string, HeroConfig> = {
     subtitle: 'Helpful checklists and guides for your big day.',
     images: ['/photo/space-portrait2-cincinnati-event-space-somerhaus.webp'],
     backgroundStyle: 'static',
-    logoType: 'press'
+    logoType: 'none'
   },
 
   emergencykit: {
@@ -202,7 +207,7 @@ export const heroConfigs: Record<string, HeroConfig> = {
     subtitle: 'Essentials to handle any minor mishaps.',
     images: ['/photo/wedding-portrait1-cincinnati-wedding-venue-somerhaus.webp'],
     backgroundStyle: 'static',
-    logoType: 'press'
+    logoType: 'none'
   },
 
   budgetchecklist: {
@@ -211,7 +216,7 @@ export const heroConfigs: Record<string, HeroConfig> = {
     subtitle: 'Track every potential wedding expense.',
     images: ['/photo/dinner-portrait-somerhaus-event-space-cincinnati.webp'],
     backgroundStyle: 'static',
-    logoType: 'press'
+    logoType: 'none'
   },
 
   // Corporate event types

@@ -45,11 +45,16 @@ const App = () => (
         <Route path="/micro-weddings" element={<MicroWeddings />} />
         <Route path="/elopements" element={<Elopements />} />
         <Route path="/showers" element={<Showers />} />
-        <Route path="/faq" element={<FAQ />} />
         <Route path="/corporate" element={<Corporate />} />
-        <Route path="/contact" element={<Contact />} />
         <Route path="/event-inquiry" element={<EventInquiry />} />
         <Route path="/about" element={<About />} />
+        <Route path="/about/faq" element={<FAQ />} />
+        <Route path="/about/contact" element={<Contact />} />
+        <Route path="/about/press" element={<PressPage />} />
+        <Route path="/about/venue-layout" element={<VenueLayout />} />
+        <Route path="/about/bar-packages" element={<BarPackages />} />
+        <Route path="/about/pricing" element={<Pricing />} />
+        <Route path="/about/gallery" element={<Gallery />} />
         <Route path="/special-events" element={<SpecialEvents />} />
         <Route path="/dinners" element={<Dinners />} />
         <Route path="/photo-shoots" element={<PhotoShoots />} />
@@ -57,12 +62,7 @@ const App = () => (
         <Route path="/rehearsals" element={<Rehearsals />} />
         <Route path="/parties" element={<Parties />} />
         <Route path="/meetings" element={<Meetings />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/bar-packages" element={<BarPackages />} />
-        <Route path="/pricing" element={<Pricing />} />
         <Route path="/vendors" element={<Vendors />} />
-        <Route path="/venue-layout" element={<VenueLayout />} />
-        <Route path="/press" element={<PressPage />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/resources/emergency-kit" element={<EmergencyKit />} />
         <Route path="/resources/budget-checklist" element={<BudgetChecklist />} />

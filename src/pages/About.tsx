@@ -104,7 +104,7 @@ const About: React.FC = () => {
                           <p className="text-gray-600 font-mono">{member.bio}</p>
                         </div>
                         <div className="flex mt-6">
-                          <a href="/contact" className="text-primary hover:text-primary/80 font-medium">
+                          <a href="/about/contact" className="text-primary hover:text-primary/80 font-medium">
                             Contact →
                           </a>
                         </div>

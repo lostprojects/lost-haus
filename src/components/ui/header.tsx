@@ -2,7 +2,11 @@ import { useEffect, useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, ChevronDown, X } from 'lucide-react';
 
-const Header = () => {
+interface HeaderProps {
+  hasHero?: boolean;
+}
+
+const Header = ({ hasHero = true }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -39,27 +43,35 @@ const Header = () => {
   ];
 
   const infoItems = [
-    { name: 'Gallery', href: '/gallery' },
-    { name: 'FAQ', href: '/faq' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'About', href: '/about' },
-    { name: 'Bar Packages', href: '/bar-packages' },
+    { name: 'Gallery', href: '/about/gallery' },
+    { name: 'FAQ', href: '/about/faq' },
+    { name: 'Contact', href: '/about/contact' },
+    { name: 'Bar Packages', href: '/about/bar-packages' },
+    { name: 'Pricing', href: '/about/pricing' },
+    { name: 'Venue Layout', href: '/about/venue-layout' },
+    { name: 'Press', href: '/about/press' },
     { name: 'Vendors', href: '/vendors' },
-    { name: 'Venue Layout', href: '/venue-layout' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Press', href: '/press' },
   ];
 
+  // Determine background based on hasHero prop and scroll state
+  const getHeaderBackground = () => {
+    if (!hasHero) {
+      return 'bg-black'; // Always black when no hero
+    }
+    return isScrolled ? 'bg-black/90 backdrop-blur-sm' : 'bg-transparent';
+  };
+
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${isScrolled ? 'bg-black/90 backdrop-blur-sm' : 'bg-transparent'}`}>
-      <div className="container mx-auto px-4">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${getHeaderBackground()}`}>
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}
           <a href="/" className="flex items-center">
             <img 
               src="/haus-logo.webp" 
               alt="Somerhaus Logo" 
-              className="h-12 w-auto"
+              className="h-10 w-auto"
             />
           </a>
 
@@ -127,15 +139,22 @@ const Header = () => {
 
             {/* Custom Info Dropdown Menu */}
             <div className="relative group">
-              <button
+              <a
+                href="/about"
                 className={`flex items-center text-sm font-body transition-colors ${isScrolled ? 'text-white hover:text-[#D65B2F]' : 'text-white hover:text-[#D65B2F]'}`}
               >
                 Info
                 <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
-              </button>
+              </a>
               
               <div className="absolute left-0 mt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <div className="py-2 bg-black/90 backdrop-blur-sm rounded-md">
+                  <a
+                    href="/about"
+                    className="block px-4 py-2 text-sm font-body text-white transition-colors hover:text-[#D65B2F] font-bold"
+                  >
+                    About
+                  </a>
                   {infoItems.map((item) => (
                     <a
                       key={item.name}
@@ -165,7 +184,7 @@ const Header = () => {
               className="inline-block transition-all duration-300 hover:scale-110 hover:-rotate-6 hover:shadow-[0_30px_70px_rgba(0,0,0,0.9)] active:scale-95 transform-gpu"
             >
               <Button
-                className={`font-body ${isScrolled ? 'bg-white text-black hover:bg-[#5CA87E] hover:text-white' : 'bg-white/10 text-white hover:bg-[#5CA87E] hover:text-white'}`}
+                className="font-body bg-white/20 text-white hover:bg-[#5CA87E] hover:text-black"
               >
                 Book Now
               </Button>
@@ -236,8 +255,21 @@ const Header = () => {
 
                     {/* Info Section */}
                     <div>
-                      <h3 className="text-xl font-body font-medium mb-4 text-white">Info</h3>
+                      <a
+                        href="/about"
+                        className="text-xl font-body font-medium mb-4 text-white hover:text-[#D65B2F] transition-colors block"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        Info
+                      </a>
                       <div className="pl-4 border-l-2 border-[#D65B2F]">
+                        <a
+                          href="/about"
+                          className="block text-lg font-body py-2 text-white hover:text-[#D65B2F] transition-colors font-bold"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          About
+                        </a>
                         {infoItems.map((item) => (
                           <a
                             key={item.name}
@@ -268,7 +300,7 @@ const Header = () => {
                       onClick={() => setIsMobileMenuOpen(false)}
                       className="inline-block transition-all duration-300 hover:scale-110 hover:-rotate-6 hover:shadow-[0_30px_70px_rgba(0,0,0,0.9)] active:scale-95 transform-gpu"
                     >
-                      <Button className="mt-4 w-full font-body bg-white text-black hover:bg-[#5CA87E] hover:text-white">
+                      <Button className="mt-4 w-full font-body bg-white/20 text-white hover:bg-[#5CA87E] hover:text-black">
                         Book Now
                       </Button>
                     </a>
