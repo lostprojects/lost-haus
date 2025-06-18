@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Accordion,
@@ -20,7 +20,7 @@ export type FaqItem = {
 export const SimpleFaqCategories = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const categories = [
+  const categories = useMemo(() => [
     { id: 'all', label: 'All Questions', icon: '🏢' },
     { id: 'venue', label: 'Venue & Space', icon: '🏛️' },
     { id: 'location', label: 'Location & Logistics', icon: '📍' },
@@ -34,20 +34,25 @@ export const SimpleFaqCategories = () => {
     { id: 'showers', label: 'Showers', icon: '🎊' },
     { id: 'bar', label: 'Bar Service', icon: '🍷' },
     { id: 'press', label: 'Media & Press', icon: '📰' },
-  ];
+  ], []);
 
-  const filteredItems = faqData.filter(item => {
-    const matchesSearch = searchTerm === '' || 
-      item.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      item.answer.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      (item.tags && item.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase())));
-    return matchesSearch;
-  });
+  const filteredItems = useMemo(() => {
+    const search = searchTerm.toLowerCase();
+    return faqData.filter(item =>
+      searchTerm === '' ||
+      item.question.toLowerCase().includes(search) ||
+      item.answer.toLowerCase().includes(search) ||
+      (item.tags && item.tags.some(tag => tag.toLowerCase().includes(search)))
+    );
+  }, [searchTerm]);
 
-  const getItemsByCategory = (categoryId: string) => {
-    if (categoryId === 'all') return filteredItems;
-    return filteredItems.filter(item => item.category === categoryId);
-  };
+  const getItemsByCategory = useCallback(
+    (categoryId: string) => {
+      if (categoryId === 'all') return filteredItems;
+      return filteredItems.filter(item => item.category === categoryId);
+    },
+    [filteredItems]
+  );
 
   return (
     <div className="container mx-auto px-4 py-16">

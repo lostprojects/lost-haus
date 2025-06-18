@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Header from '@/components/ui/header';
 import { Footer } from "@/components/ui/footer-section";
 import { Badge } from "@/components/ui/badge";
@@ -64,18 +64,23 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = React.useState<string | null>(null);
 
   // Flatten categories then deduplicate images by src so no duplicates render
-  const allImagesWithCat = galleryCategories.flatMap(category =>
-    category.images.map(img => ({ ...img, categoryTitle: category.title }))
-  );
-  const allImages = Array.from(
-    new Map(allImagesWithCat.map(img => [img.src, img])).values()
-  );
+  const allImages = useMemo(() => {
+    const allImagesWithCat = galleryCategories.flatMap(category =>
+      category.images.map(img => ({ ...img, categoryTitle: category.title }))
+    );
+    return Array.from(new Map(allImagesWithCat.map(img => [img.src, img])).values());
+  }, [galleryCategories]);
 
-  const filteredImages = selectedCategory === "All" 
-    ? allImages 
-    : allImages.filter(img => img.categoryTitle === selectedCategory);
+  const filteredImages = useMemo(() => {
+    return selectedCategory === "All"
+      ? allImages
+      : allImages.filter(img => img.categoryTitle === selectedCategory);
+  }, [allImages, selectedCategory]);
 
-  const categories = ["All", ...galleryCategories.map(cat => cat.title)];
+  const categories = useMemo(
+    () => ["All", ...galleryCategories.map(cat => cat.title)],
+    [galleryCategories]
+  );
 
   return (
     <main className="min-h-screen relative bg-background">
