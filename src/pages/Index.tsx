@@ -1,6 +1,7 @@
 import UniversalHero from '@/components/shared/UniversalHero';
 import Header from '@/components/ui/header';
-import Seo, { enhancedBusinessSchema, localBusinessSchema } from '@/components/seo/Seo';
+import Seo from '@/components/seo/Seo';
+import { enhancedBusinessSchema, localBusinessSchema } from '@/components/seo/seo-schemas';
 import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
 import { ThreeStepProcess } from '@/components/blocks/ThreeStepProcess';
 

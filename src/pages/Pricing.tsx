@@ -5,11 +5,16 @@ import PricingSection from '@/components/shared/PricingSection';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import Seo from '@/components/seo/Seo';
+import { businessSchema } from '@/components/seo/seo-schemas';
 
 const Pricing = () => {
   return (
     <div className="flex flex-col min-h-screen bg-background">
-      <Seo title="Event Pricing | Somerhaus" description="Transparent venue rental rates for events at Somerhaus" />
+      <Seo 
+        title="Event Pricing | Somerhaus" 
+        description="Transparent venue rental rates for events at Somerhaus" 
+        schema={businessSchema}
+      />
       <Header />
       <main className="flex-grow">
         <section className="py-20 text-center bg-gradient-to-b from-orange-50 to-background">

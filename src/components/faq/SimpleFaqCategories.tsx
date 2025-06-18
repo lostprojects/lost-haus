@@ -25,6 +25,15 @@ export const SimpleFaqCategories = () => {
     { id: 'venue', label: 'Venue & Space', icon: '🏛️' },
     { id: 'location', label: 'Location & Logistics', icon: '📍' },
     { id: 'planning', label: 'Planning & Booking', icon: '📅' },
+    { id: 'wedding', label: 'Weddings', icon: '💒' },
+    { id: 'corporate', label: 'Corporate Events', icon: '🏢' },
+    { id: 'meetings', label: 'Meetings', icon: '💼' },
+    { id: 'dinners', label: 'Dinner Events', icon: '🍽️' },
+    { id: 'happyhours', label: 'Happy Hours', icon: '🍸' },
+    { id: 'specialevents', label: 'Special Events', icon: '🎉' },
+    { id: 'showers', label: 'Showers', icon: '🎊' },
+    { id: 'bar', label: 'Bar Service', icon: '🍷' },
+    { id: 'press', label: 'Media & Press', icon: '📰' },
   ];
 
   const filteredItems = faqData.filter(item => {
@@ -58,11 +67,12 @@ export const SimpleFaqCategories = () => {
 
       {/* Categories */}
       <Tabs defaultValue="all" className="max-w-6xl mx-auto">
-        <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 mb-8">
+        <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 lg:grid-cols-6 mb-8 h-auto flex-wrap gap-2">
           {categories.map((category) => (
-            <TabsTrigger key={category.id} value={category.id} className="text-sm">
-              <span className="mr-2">{category.icon}</span>
-              {category.label}
+            <TabsTrigger key={category.id} value={category.id} className="text-xs md:text-sm flex-shrink-0">
+              <span className="mr-1 md:mr-2">{category.icon}</span>
+              <span className="hidden sm:inline">{category.label}</span>
+              <span className="sm:hidden">{category.label.split(' ')[0]}</span>
             </TabsTrigger>
           ))}
         </TabsList>

@@ -12,7 +12,8 @@ import { WeddingCTA } from '@/components/wedding/WeddingCTA';
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { useHoneyBook } from '@/hooks/use-honeybook';
 import HoneyBookForm from '@/components/honeybook/HoneyBookForm';
-import Seo, { businessSchema } from '@/components/seo/Seo';
+import Seo from '@/components/seo/Seo';
+import { businessSchema } from '@/components/seo/seo-schemas';
 
 
 const Elopements = () => {

@@ -11,7 +11,8 @@ import PreferredVendors from '@/components/showers/PreferredVendors';
 import ShowersFAQ from '@/components/showers/ShowersFAQ';
 import { ShowersCTA } from '@/components/showers/ShowersCTA';
 import ShowersContact from '@/components/showers/ShowersContact';
-import Seo, { businessSchema } from '@/components/seo/Seo';
+import Seo from '@/components/seo/Seo';
+import { businessSchema } from '@/components/seo/seo-schemas';
 
 const Showers: React.FC = () => {
   return (

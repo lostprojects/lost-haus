@@ -7,7 +7,9 @@ import FAQSection from '@/components/shared/FAQSection';
 import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
 import { CTA } from '@/components/ui/call-to-action/component';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
-import Seo, { businessSchema, createFaqSchema } from '@/components/seo/Seo';
+import Seo from '@/components/seo/Seo';
+import { businessSchema, createFaqSchema } from '@/components/seo/seo-schemas';
+import { getFAQsForPage } from '@/lib/faqUtils';
 
 
 const Dinners = () => {
@@ -67,32 +69,8 @@ const Dinners = () => {
     }
   ];
 
-  const faqData = [
-    {
-      question: "What types of dinner events work best at Somerhaus?",
-      answer: "Our space is perfect for rehearsal dinners, anniversary celebrations, birthday dinners, corporate dinner events, holiday parties, and intimate wedding receptions. The warm, industrial-chic atmosphere creates an elegant yet comfortable dining experience."
-    },
-    {
-      question: "Do you provide catering services for dinner events?",
-      answer: "We work with an exclusive list of preferred caterers who specialize in plated dinners and family-style service. Our caterers know the space intimately and can accommodate various dietary restrictions and menu preferences. We'll coordinate all catering logistics for you."
-    },
-    {
-      question: "What dining configurations are available?",
-      answer: "We can accommodate various seating arrangements including round tables for 6-8 guests, long family-style tables, U-shaped configurations, or a mix of seating styles. Our team will work with you to design the perfect layout for your dinner event."
-    },
-    {
-      question: "Can we host a cocktail hour before dinner?",
-      answer: "Absolutely! Most dinner packages include time for a cocktail reception before the seated portion. We can set up a separate bar area and configure the space to flow naturally from cocktails to dinner seating."
-    },
-    {
-      question: "What's included in the kitchen access?",
-      answer: "Our prep kitchen includes warming equipment, refrigeration, and basic prep space for caterers. While it's not a full commercial kitchen, it provides everything needed for professional catering teams to execute beautiful plated dinners."
-    },
-    {
-      question: "How far in advance should we book our dinner event?",
-      answer: "We recommend booking 4-6 months in advance for dinner events, especially for popular dates like Friday and Saturday evenings. However, we can often accommodate shorter notice depending on availability."
-    }
-  ];
+  // Get FAQs from centralized data
+  const faqData = getFAQsForPage('dinners', 6);
 
   const dinnersFaqSchema = createFaqSchema(faqData);
 

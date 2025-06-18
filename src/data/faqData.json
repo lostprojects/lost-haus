@@ -106,5 +106,281 @@
     "answer": "Our standard rental includes 2 hours of setup time before your event and 1 hour for teardown afterward. These times are built into your rental period. Additional setup or teardown time can be purchased at an hourly rate if needed and if the schedule permits. All vendors and personal items must be removed by the end of your contracted teardown period unless special arrangements have been made in advance.",
     "category": "planning",
     "tags": ["setup", "teardown", "timeline"]
+  },
+  {
+    "question": "What makes Somerhaus ideal for business meetings?",
+    "answer": "Our 3,080 sq ft space offers the perfect blend of professionalism and inspiration. The industrial-chic atmosphere creates an engaging environment that promotes creativity and productivity, while our flexible layout can accommodate everything from intimate team meetings to large corporate presentations.",
+    "category": "meetings",
+    "tags": ["business", "corporate", "professional", "meetings"]
+  },
+  {
+    "question": "What AV equipment and technology do you provide?",
+    "answer": "We offer high-speed WiFi, multiple HD displays with wireless connection capabilities, professional sound systems, video conferencing equipment, presentation clickers, and interactive whiteboard options. Our technical support team ensures everything runs smoothly throughout your meeting.",
+    "category": "meetings",
+    "tags": ["AV", "technology", "equipment", "meetings"]
+  },
+  {
+    "question": "Can you accommodate hybrid meetings with remote participants?",
+    "answer": "Absolutely! Our video conferencing setup supports seamless hybrid meetings. We have professional cameras, microphones, and display systems that ensure remote participants can fully engage with in-person attendees.",
+    "category": "meetings",
+    "tags": ["hybrid", "remote", "video conferencing", "meetings"]
+  },
+  {
+    "question": "Do you provide catering for meetings?",
+    "answer": "Yes! We work with preferred caterers to provide everything from simple coffee and pastries for morning meetings to full lunch spreads for day-long sessions. We can accommodate dietary restrictions and specific catering requests.",
+    "category": "meetings",
+    "tags": ["catering", "food", "meetings"]
+  },
+  {
+    "question": "What seating arrangements are available for meetings?",
+    "answer": "Our flexible space can be configured for various meeting styles including boardroom tables, theater seating, U-shape configurations, cocktail rounds for networking, and breakout pod areas. We'll work with you to create the ideal setup for your meeting objectives.",
+    "category": "meetings",
+    "tags": ["seating", "arrangements", "meetings"]
+  },
+  {
+    "question": "How far in advance should we book a meeting?",
+    "answer": "For regular business meetings, we recommend booking 3-4 weeks in advance. For larger corporate events or meetings during busy periods, 6-8 weeks advance notice ensures availability and allows time for proper planning and coordination.",
+    "category": "meetings",
+    "tags": ["booking", "advance", "meetings"]
+  },
+  {
+    "question": "What types of dinner events work best at Somerhaus?",
+    "answer": "Our space is perfect for rehearsal dinners, anniversary celebrations, birthday dinners, corporate dinner events, holiday parties, and intimate wedding receptions. The warm, industrial-chic atmosphere creates an elegant yet comfortable dining experience.",
+    "category": "dinners",
+    "tags": ["rehearsal", "anniversary", "birthday", "corporate", "dinners"]
+  },
+  {
+    "question": "Do you provide catering services for dinner events?",
+    "answer": "We work with an exclusive list of preferred caterers who specialize in plated dinners and family-style service. Our caterers know the space intimately and can accommodate various dietary restrictions and menu preferences. We'll coordinate all catering logistics for you.",
+    "category": "dinners",
+    "tags": ["catering", "plated", "family-style", "dinners"]
+  },
+  {
+    "question": "What dining configurations are available?",
+    "answer": "We can accommodate various seating arrangements including round tables for 6-8 guests, long family-style tables, U-shaped configurations, or a mix of seating styles. Our team will work with you to design the perfect layout for your dinner event.",
+    "category": "dinners",
+    "tags": ["seating", "configuration", "tables", "dinners"]
+  },
+  {
+    "question": "Can we host a cocktail hour before dinner?",
+    "answer": "Absolutely! Most dinner packages include time for a cocktail reception before the seated portion. We can set up a separate bar area and configure the space to flow naturally from cocktails to dinner seating.",
+    "category": "dinners",
+    "tags": ["cocktail hour", "reception", "bar", "dinners"]
+  },
+  {
+    "question": "What's included in the kitchen access for dinners?",
+    "answer": "Our prep kitchen includes warming equipment, refrigeration, and basic prep space for caterers. While it's not a full commercial kitchen, it provides everything needed for professional catering teams to execute beautiful plated dinners.",
+    "category": "dinners",
+    "tags": ["kitchen", "prep", "catering", "dinners"]
+  },
+  {
+    "question": "How far in advance should we book our dinner event?",
+    "answer": "We recommend booking 4-6 months in advance for dinner events, especially for popular dates like Friday and Saturday evenings. However, we can often accommodate shorter notice depending on availability.",
+    "category": "dinners",
+    "tags": ["booking", "advance", "dinners"]
+  },
+  {
+    "question": "What makes Somerhaus perfect for happy hour events?",
+    "answer": "Our industrial-chic atmosphere and flexible layout create the ideal setting for professional networking and casual social gatherings. We can accommodate both intimate team happy hours and large corporate networking events with seamless bar service and comfortable mingling spaces.",
+    "category": "happyhours",
+    "tags": ["networking", "social", "professional", "happy hour"]
+  },
+  {
+    "question": "What bar packages do you offer for happy hours?",
+    "answer": "We offer several options including premium open bar, beer and wine service, signature cocktail packages, and consumption-based pricing. All packages include professional bartenders, premium mixers, and non-alcoholic options. We can customize packages based on your group size and preferences.",
+    "category": "happyhours",
+    "tags": ["bar", "packages", "cocktails", "happy hour"]
+  },
+  {
+    "question": "Can you accommodate food service during happy hours?",
+    "answer": "Absolutely! We work with preferred caterers to provide appetizer packages ranging from simple passed hors d'oeuvres to elaborate grazing stations. Food pairings enhance the networking experience and help create a more substantial event.",
+    "category": "happyhours",
+    "tags": ["food", "appetizers", "catering", "happy hour"]
+  },
+  {
+    "question": "What's the ideal duration for a happy hour event?",
+    "answer": "Most happy hour events run 2-3 hours, typically from 5:00-7:00 PM or 6:00-8:00 PM. This timing works well for after-work networking while allowing guests to continue their evening plans. We can accommodate longer events if needed.",
+    "category": "happyhours",
+    "tags": ["duration", "timing", "scheduling", "happy hour"]
+  },
+  {
+    "question": "Do you have AV capabilities for presentations during happy hours?",
+    "answer": "Yes! Many corporate happy hours include brief presentations or announcements. We have wireless presentation capabilities, microphones, and display options that won't interfere with the social atmosphere of your event.",
+    "category": "happyhours",
+    "tags": ["AV", "presentations", "corporate", "happy hour"]
+  },
+  {
+    "question": "How far in advance should we book a happy hour event?",
+    "answer": "For corporate happy hours, we recommend booking 4-6 weeks in advance. For larger networking events or during busy seasons, 8-10 weeks advance notice ensures your preferred date and allows time for proper invitation and catering coordination.",
+    "category": "happyhours",
+    "tags": ["booking", "advance", "planning", "happy hour"]
+  },
+  {
+    "question": "What types of special events are perfect for Somerhaus?",
+    "answer": "Our versatile space is ideal for milestone celebrations, anniversary parties, retirement celebrations, graduation parties, holiday events, fundraisers, award ceremonies, and community gatherings. The sophisticated yet warm atmosphere adapts beautifully to any special occasion.",
+    "category": "specialevents",
+    "tags": ["milestone", "anniversary", "retirement", "special events"]
+  },
+  {
+    "question": "Can you accommodate both formal and casual special events?",
+    "answer": "Absolutely! Our space transforms beautifully for any style of event. From elegant cocktail receptions to casual family gatherings, we can adjust lighting, furniture arrangements, and decor to match the tone and formality level of your celebration.",
+    "category": "specialevents",
+    "tags": ["formal", "casual", "flexible", "special events"]
+  },
+  {
+    "question": "What's included in the venue rental for special events?",
+    "answer": "All packages include venue access, tables, chairs, basic lighting, sound system, bridal suite access, and event coordination. Premium packages include additional amenities like upgraded lighting, bar service, and extended access hours.",
+    "category": "specialevents",
+    "tags": ["included", "packages", "amenities", "special events"]
+  },
+  {
+    "question": "Do you offer payment plans for special events?",
+    "answer": "Yes, we offer flexible payment plans to make your special event more manageable. Typically, we require a deposit to secure your date, with the balance due closer to your event date. Contact us to discuss payment options.",
+    "category": "specialevents",
+    "tags": ["payment", "plans", "flexible", "special events"]
+  },
+  {
+    "question": "Can we bring our own decorations for special events?",
+    "answer": "Yes! We encourage personal touches that make your event unique. We have guidelines for decoration installation to protect the venue and ensure safety, and our team can help coordinate decoration setup and removal with your timeline.",
+    "category": "specialevents",
+    "tags": ["decorations", "personal", "setup", "special events"]
+  },
+  {
+    "question": "How far in advance should we book a special event?",
+    "answer": "For milestone celebrations and special events, we recommend booking 6-12 months in advance, especially for weekend dates. However, we understand special occasions sometimes require shorter notice, so please contact us even for near-term needs.",
+    "category": "specialevents",
+    "tags": ["booking", "advance", "milestone", "special events"]
+  },
+  {
+    "question": "How can I schedule a press tour of Somerhaus?",
+    "answer": "Contact our media relations team at hello@somerhaus.com or call (513) 381-3119. We're happy to arrange a personalized tour for journalists, bloggers, and content creators.",
+    "category": "press",
+    "tags": ["media", "tour", "journalists", "press"]
+  },
+  {
+    "question": "Do you have high-resolution photos available for press use?",
+    "answer": "Yes! We have a comprehensive media kit with high-resolution venue photos, event shots, and brand assets. Access our press kit below or request specific images from our team.",
+    "category": "press",
+    "tags": ["photos", "media kit", "high-resolution", "press"]
+  },
+  {
+    "question": "Can we film or photograph events at Somerhaus?",
+    "answer": "Absolutely! We welcome professional media coverage of events. Please coordinate with our events team in advance to ensure seamless coverage without disrupting the celebration.",
+    "category": "press",
+    "tags": ["filming", "photography", "media coverage", "press"]
+  },
+  {
+    "question": "What bar packages do you offer?",
+    "answer": "We provide several tiers to fit different budgets: Premium Open Bar: Top-shelf spirits, craft beers and curated wines ($45-55/person), Standard Open Bar: Quality spirits, domestic and imported beers, house wines ($35-45/person), Beer & Wine: Selection of beers with house wines ($25-35/person), Consumption Bar: Pay only for what's consumed (minimums apply), Cash Bar: Guests purchase their own drinks (setup fees apply). All packages include professional bartenders, standard mixers and non-alcoholic options. Custom packages and signature cocktails are available upon request.",
+    "category": "bar",
+    "tags": ["packages", "pricing", "open bar", "bar service"]
+  },
+  {
+    "question": "Can we bring our own alcohol?",
+    "answer": "Yes. Our BYOB option starts at $10 per guest which covers licensed bartenders, mixers, ice, glassware and insurance. Alcohol must be delivered during your rental and removed afterward. Only our staff may serve and all state liquor laws apply.",
+    "category": "bar",
+    "tags": ["BYOB", "bring your own", "bartenders", "bar service"]
+  },
+  {
+    "question": "What makes Somerhaus special for wedding celebrations?",
+    "answer": "Our industrial-chic warehouse setting in historic Over-the-Rhine provides a unique backdrop that's both sophisticated and intimate. The space combines original architectural details with modern amenities, creating a memorable atmosphere that feels authentically Cincinnati while being completely customizable to your vision.",
+    "category": "wedding",
+    "tags": ["unique", "industrial-chic", "customizable", "wedding"]
+  },
+  {
+    "question": "What's included in wedding packages?",
+    "answer": "Wedding packages include exclusive venue use, tables and chairs for up to 80 guests, bridal suite access, basic lighting package, sound system, setup and teardown assistance, and day-of venue coordination. We also provide access to our preferred vendor network for catering, photography, and other services.",
+    "category": "wedding",
+    "tags": ["packages", "included", "bridal suite", "wedding"]
+  },
+  {
+    "question": "Can you accommodate both ceremony and reception?",
+    "answer": "Yes! Our flexible space can be configured for both ceremony and reception. We can set up ceremony seating for up to 100 guests, then transition the space for dining and dancing. This allows your entire celebration to happen in one beautiful location.",
+    "category": "wedding",
+    "tags": ["ceremony", "reception", "flexible", "wedding"]
+  },
+  {
+    "question": "What wedding vendors do you recommend?",
+    "answer": "We maintain relationships with top Cincinnati wedding professionals including caterers, photographers, florists, and entertainment. Our preferred vendor list ensures quality service and seamless coordination, though you're welcome to bring your own vendors as well.",
+    "category": "wedding",
+    "tags": ["vendors", "preferred", "caterers", "wedding"]
+  },
+  {
+    "question": "How far in advance should we book for a wedding?",
+    "answer": "For wedding dates, especially Friday and Saturday evenings, we recommend booking 12-18 months in advance. Popular months like May, June, September, and October book earliest. However, we do have occasional availability for shorter-notice weddings.",
+    "category": "wedding",
+    "tags": ["booking", "advance", "popular dates", "wedding"]
+  },
+  {
+    "question": "What makes Somerhaus ideal for corporate events?",
+    "answer": "Our professional yet inspiring atmosphere creates the perfect environment for corporate gatherings. The space combines modern technology with unique character, helping facilitate productive meetings while making a memorable impression on clients and team members.",
+    "category": "corporate",
+    "tags": ["professional", "inspiring", "technology", "corporate"]
+  },
+  {
+    "question": "What corporate event types work best at Somerhaus?",
+    "answer": "We excel at hosting team meetings, board meetings, product launches, client appreciation events, corporate parties, training sessions, and networking mixers. Our flexible space adapts to both formal business needs and more relaxed team-building activities.",
+    "category": "corporate",
+    "tags": ["meetings", "launches", "networking", "corporate"]
+  },
+  {
+    "question": "Do you provide corporate catering options?",
+    "answer": "Yes! We work with preferred caterers who specialize in corporate events, offering everything from working lunch packages to elegant dinner presentations. We can accommodate dietary restrictions and provide various service styles to match your event needs.",
+    "category": "corporate",
+    "tags": ["catering", "lunch", "dinner", "corporate"]
+  },
+  {
+    "question": "What technology and AV support is available for corporate events?",
+    "answer": "We provide high-speed WiFi, wireless presentation capabilities, professional sound systems, multiple display options, video conferencing equipment, and on-site technical support. Our setup ensures your presentations and communications run smoothly.",
+    "category": "corporate",
+    "tags": ["technology", "AV", "presentations", "corporate"]
+  },
+  {
+    "question": "Can you accommodate multi-day corporate events?",
+    "answer": "Absolutely! We can arrange multi-day bookings for corporate retreats, conferences, or extended training sessions. Multi-day events receive special pricing consideration and dedicated coordination to ensure seamless execution throughout your program.",
+    "category": "corporate",
+    "tags": ["multi-day", "retreats", "conferences", "corporate"]
+  },
+  {
+    "question": "How far in advance should we book for a corporate event?",
+    "answer": "We recommend booking 2-3 months in advance for standard corporate events and 4-6 months for larger or more complex gatherings. However, we occasionally have last-minute availability, so please contact us even for near-term needs.",
+    "category": "corporate",
+    "tags": ["booking", "advance", "planning", "corporate"]
+  },
+  {
+    "question": "What makes Somerhaus perfect for shower celebrations?",
+    "answer": "Our warm, inviting atmosphere creates the ideal setting for intimate celebrations with your closest friends and family. The beautiful natural light, comfortable seating areas, and flexible layout accommodate everything from traditional seated brunches to modern cocktail-style showers.",
+    "category": "showers",
+    "tags": ["intimate", "natural light", "flexible", "showers"]
+  },
+  {
+    "question": "What shower formats work best in your space?",
+    "answer": "We can accommodate traditional seated brunch showers, cocktail-style celebrations, tea party formats, and modern mingling events. Our space adapts beautifully to any style, from elegant and formal to casual and fun.",
+    "category": "showers",
+    "tags": ["brunch", "cocktail", "tea party", "showers"]
+  },
+  {
+    "question": "Do you provide shower catering and bar service?",
+    "answer": "Yes! We work with caterers who specialize in shower celebrations, offering beautiful brunch spreads, elegant tea service, signature cocktails, and customized menus. We can coordinate all catering logistics to match your shower's style and timing.",
+    "category": "showers",
+    "tags": ["catering", "brunch", "cocktails", "showers"]
+  },
+  {
+    "question": "Can we decorate the space for our shower?",
+    "answer": "Absolutely! We love seeing personal touches that make your shower unique. We have guidelines for decoration installation and can help coordinate setup timing. Many hosts bring florals, balloons, and custom signage to personalize the space.",
+    "category": "showers",
+    "tags": ["decorations", "personal", "florals", "showers"]
+  },
+  {
+    "question": "What's the ideal capacity for shower events?",
+    "answer": "Most showers work beautifully with 20-60 guests. For intimate gatherings under 25 guests, we can create cozy seating arrangements. For larger groups up to 80, we can accommodate with a mix of seating and standing areas for mingling.",
+    "category": "showers",
+    "tags": ["capacity", "intimate", "seating", "showers"]
+  },
+  {
+    "question": "What is your cancellation policy for showers?",
+    "answer": "Our standard policy requires a non-refundable deposit to secure your date. If you need to cancel, we require written notice at least 60 days prior to your event for a partial refund of any additional payments made beyond the deposit.",
+    "category": "showers",
+    "tags": ["cancellation", "policy", "deposit", "showers"]
   }
 ] 

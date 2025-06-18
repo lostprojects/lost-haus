@@ -13,16 +13,8 @@ interface SeoProps {
   schema?: Record<string, unknown> | Record<string, unknown>[] | string;
 }
 
-// Re-export schemas for convenience
-export { 
-  businessSchema, 
-  enhancedBusinessSchema,
-  localBusinessSchema,
-  organizationSchema,
-  createFaqSchema, 
-  mainFaqSchema,
-  createArticleSchema 
-} from './seo-schemas';
+// Note: Schema imports have been moved to direct imports from './seo-schemas'
+// to fix Fast Refresh warnings. Import schemas directly from seo-schemas.ts
 
 const Seo = ({ 
   title, 

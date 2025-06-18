@@ -3,7 +3,8 @@ import Header from '@/components/ui/header';
 import UniversalHero from '@/components/shared/UniversalHero';
 import { Footer } from "@/components/ui/footer-section";
 import { CTA } from '@/components/ui/call-to-action/component';
-import Seo, { businessSchema } from '@/components/seo/Seo';
+import Seo from '@/components/seo/Seo';
+import { businessSchema } from '@/components/seo/seo-schemas';
 
 
 const PhotoShoots: React.FC = () => {
@@ -51,7 +52,7 @@ const PhotoShoots: React.FC = () => {
               href="https://somersetotr.com/photoshoots"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-black text-white px-6 py-3 rounded-full font-body hover:bg-[#C1FF41] hover:text-black transition-colors"
+              className="inline-block bg-black text-white px-6 py-3 rounded-full font-body hover:bg-[#5CA87E] hover:text-white transition-colors"
             >
               Explore Somerset Photo Shoots →
             </a>

@@ -38,7 +38,7 @@ export function ThreeStepProcess({
 
       {/* Decorative arrow */}
       <div className="flex justify-center mb-8 -mt-8">
-        <BouncingArrow color="#399892" />
+        <BouncingArrow color="#5CA87E" />
       </div>
 
       <div className="max-w-xl mx-auto">
@@ -79,7 +79,7 @@ export function ThreeStepProcess({
 
       {/* Final decorative arrow */}
       <div className="flex justify-center mt-12 mb-8">
-        <BouncingArrow color="#399892" />
+        <BouncingArrow color="#5CA87E" />
       </div>
 
       {/* CTA Button */}

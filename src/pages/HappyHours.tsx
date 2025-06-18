@@ -8,7 +8,8 @@ import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
 import { CTA } from '@/components/ui/call-to-action/component';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
 import HoneyBookForm from '@/components/honeybook/HoneyBookForm';
-import Seo, { businessSchema, createFaqSchema } from '@/components/seo/Seo';
+import Seo from '@/components/seo/Seo';
+import { businessSchema, createFaqSchema } from '@/components/seo/seo-schemas';
 import { LogoTicker } from '@/components/blocks/LogoTicker';
 import { clientLogosGrayscale } from '@/data/clientLogos';
 

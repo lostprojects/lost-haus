@@ -11,7 +11,8 @@ import CorporateTestimonials from '@/components/corporate/CorporateTestimonials'
 import CorporateFAQ from '@/components/corporate/CorporateFAQ';
 import { useHoneyBook } from '@/hooks/use-honeybook';
 import HoneyBookForm from '@/components/honeybook/HoneyBookForm';
-import Seo, { businessSchema, organizationSchema } from '@/components/seo/Seo';
+import Seo from '@/components/seo/Seo';
+import { businessSchema, organizationSchema } from '@/components/seo/seo-schemas';
 import { LogoTicker } from '@/components/blocks/LogoTicker';
 import { clientLogosGrayscale } from '@/data/clientLogos';
 

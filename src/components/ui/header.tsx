@@ -165,7 +165,7 @@ const Header = () => {
               className="inline-block transition-all duration-300 hover:scale-110 hover:-rotate-6 hover:shadow-[0_30px_70px_rgba(0,0,0,0.9)] active:scale-95 transform-gpu"
             >
               <Button
-                className={`font-body ${isScrolled ? 'bg-white text-black hover:bg-[#C1FF41] hover:text-black' : 'bg-white/10 text-white hover:bg-[#C1FF41] hover:text-black'}`}
+                className={`font-body ${isScrolled ? 'bg-white text-black hover:bg-[#5CA87E] hover:text-white' : 'bg-white/10 text-white hover:bg-[#5CA87E] hover:text-white'}`}
               >
                 Book Now
               </Button>
@@ -268,7 +268,7 @@ const Header = () => {
                       onClick={() => setIsMobileMenuOpen(false)}
                       className="inline-block transition-all duration-300 hover:scale-110 hover:-rotate-6 hover:shadow-[0_30px_70px_rgba(0,0,0,0.9)] active:scale-95 transform-gpu"
                     >
-                      <Button className="mt-4 w-full font-body bg-white text-black hover:bg-[#C1FF41] hover:text-black">
+                      <Button className="mt-4 w-full font-body bg-white text-black hover:bg-[#5CA87E] hover:text-white">
                         Book Now
                       </Button>
                     </a>

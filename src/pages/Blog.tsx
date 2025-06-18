@@ -2,7 +2,8 @@ import React from 'react';
 import Header from '@/components/ui/header';
 import { Footer } from "@/components/ui/footer-section";
 import UniversalHero from '@/components/shared/UniversalHero';
-import Seo, { businessSchema } from '@/components/seo/Seo';
+import Seo from '@/components/seo/Seo';
+import { businessSchema } from '@/components/seo/seo-schemas';
 import { ArrowUpRight, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { blogPosts } from '@/data/blogData';
@@ -29,17 +30,17 @@ const Blog = () => {
               <img src={post.image} alt={post.title} className="h-56 w-full object-cover group-hover:scale-105 transition-transform duration-500" />
               <div className="p-4 bg-white">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs uppercase tracking-wide text-[#399892] font-semibold">{post.category}</span>
+                  <span className="text-xs uppercase tracking-wide text-[#5CA87E] font-semibold">{post.category}</span>
                   <span className="text-xs text-muted-foreground flex items-center">
                     <Clock className="w-3 h-3 mr-1" />
                     {post.readTime}
                   </span>
                 </div>
-                <h3 className="mt-2 font-header text-lg group-hover:text-[#399892] transition-colors leading-snug">
+                <h3 className="mt-2 font-header text-lg group-hover:text-[#5CA87E] transition-colors leading-snug">
                   {post.title}
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground line-clamp-3 font-body">{post.excerpt}</p>
-                <div className="mt-3 inline-flex items-center text-[#399892] text-sm font-medium group-hover:underline">
+                <div className="mt-3 inline-flex items-center text-[#5CA87E] text-sm font-medium group-hover:underline">
                   Read Article <ArrowUpRight className="w-4 h-4 ml-1" />
                 </div>
               </div>

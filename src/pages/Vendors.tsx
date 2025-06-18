@@ -8,7 +8,8 @@ import { Button } from '@/components/ui/button';
 import { ExternalLink, Star, MapPin, Phone, Mail } from 'lucide-react';
 import { LogoTicker } from '@/components/blocks/LogoTicker';
 import { clientLogos } from '@/data/clientLogos';
-import Seo, { businessSchema } from '@/components/seo/Seo';
+import Seo from '@/components/seo/Seo';
+import { businessSchema } from '@/components/seo/seo-schemas';
 
 const Vendors: React.FC = () => {
   const vendorCategories = [

@@ -7,7 +7,9 @@ import FAQSection from '@/components/shared/FAQSection';
 import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
 import { CTA } from '@/components/ui/call-to-action/component';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
-import Seo, { businessSchema, createFaqSchema } from '@/components/seo/Seo';
+import Seo from '@/components/seo/Seo';
+import { businessSchema, createFaqSchema } from '@/components/seo/seo-schemas';
+import { getFAQsForPage } from '@/lib/faqUtils';
 
 
 const SpecialEvents = () => {
@@ -64,32 +66,8 @@ const SpecialEvents = () => {
     }
   ];
 
-  const faqData = [
-    {
-      question: "What types of special events do you host?",
-      answer: "We host a wide variety of special events including birthday celebrations, anniversaries, graduations, retirement parties, holiday gatherings, fundraisers, and other milestone celebrations. Our versatile space adapts beautifully to any occasion."
-    },
-    {
-      question: "How far in advance should I book my special event?",
-      answer: "We recommend booking 3-6 months in advance for popular dates, especially during peak seasons (spring and fall). However, we can often accommodate events with shorter notice depending on availability."
-    },
-    {
-      question: "Do you provide catering services?",
-      answer: "We work with a curated list of preferred caterers who know our space well, or you can choose your own licensed caterer. We'll coordinate with your chosen catering team to ensure everything runs smoothly on your event day."
-    },
-    {
-      question: "Can I decorate the venue for my special event?",
-      answer: "Absolutely! We encourage personalization to make your event unique. We have guidelines for decorating that our event coordinator will review with you. Most decorations are permitted, and we can help coordinate setup and breakdown."
-    },
-    {
-      question: "What's included in the venue rental?",
-      answer: "All packages include venue access, tables, chairs, basic lighting, sound system, bridal suite access, and event coordination. Premium packages include additional amenities like upgraded lighting, bar service, and extended access hours."
-    },
-    {
-      question: "Do you offer payment plans?",
-      answer: "Yes, we offer flexible payment plans to make your special event more manageable. Typically, we require a deposit to secure your date, with the balance due closer to your event date. Contact us to discuss payment options."
-    }
-  ];
+  // Get FAQs from centralized data
+  const faqData = getFAQsForPage('specialevents', 6);
 
   const specialeventsFaqSchema = createFaqSchema(faqData);
 

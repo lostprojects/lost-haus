@@ -8,9 +8,10 @@ import FAQSection from '@/components/shared/FAQSection';
 import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
 import { CTA } from '@/components/ui/call-to-action/component';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
-import Seo, { businessSchema, createFaqSchema } from '@/components/seo/Seo';
+import Seo from '@/components/seo/Seo';
+import { businessSchema, createFaqSchema } from '@/components/seo/seo-schemas';
 import { LogoTicker } from '@/components/blocks/LogoTicker';
-import { clientLogosGrayscale } from '@/data/clientLogos';
+import { getFAQsForPage } from '@/lib/faqUtils';
 
 
 
@@ -75,32 +76,8 @@ const Meetings = () => {
     }
   ];
 
-  const faqData = [
-    {
-      question: "What makes Somerhaus ideal for business meetings?",
-      answer: "Our 3,080 sq ft space offers the perfect blend of professionalism and inspiration. The industrial-chic atmosphere creates an engaging environment that promotes creativity and productivity, while our flexible layout can accommodate everything from intimate team meetings to large corporate presentations."
-    },
-    {
-      question: "What AV equipment and technology do you provide?",
-      answer: "We offer high-speed WiFi, multiple HD displays with wireless connection capabilities, professional sound systems, video conferencing equipment, presentation clickers, and interactive whiteboard options. Our technical support team ensures everything runs smoothly throughout your meeting."
-    },
-    {
-      question: "Can you accommodate hybrid meetings with remote participants?",
-      answer: "Absolutely! Our video conferencing setup supports seamless hybrid meetings. We have professional cameras, microphones, and display systems that ensure remote participants can fully engage with in-person attendees."
-    },
-    {
-      question: "Do you provide catering for meetings?",
-      answer: "Yes! We work with preferred caterers to provide everything from simple coffee and pastries for morning meetings to full lunch spreads for day-long sessions. We can accommodate dietary restrictions and specific catering requests."
-    },
-    {
-      question: "What seating arrangements are available?",
-      answer: "Our flexible space can be configured for various meeting styles including boardroom tables, theater seating, U-shape configurations, cocktail rounds for networking, and breakout pod areas. We'll work with you to create the ideal setup for your meeting objectives."
-    },
-    {
-      question: "How far in advance should we book a meeting?",
-      answer: "For regular business meetings, we recommend booking 3-4 weeks in advance. For larger corporate events or meetings during busy periods, 6-8 weeks advance notice ensures availability and allows time for proper planning and coordination."
-    }
-  ];
+  // Get FAQs from centralized data
+  const faqData = getFAQsForPage('meetings', 6);
 
   const meetingsFaqSchema = createFaqSchema(faqData);
 
@@ -115,7 +92,7 @@ const Meetings = () => {
       
       <UniversalHero pageKey="meetings" />
 
-              <LogoTicker heading="Trusted By" logos={clientLogosGrayscale} />
+              <LogoTicker type="clients" />
 
       <ImageGallerySection />
 

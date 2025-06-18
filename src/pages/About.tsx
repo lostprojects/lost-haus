@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from '@/components/ui/header';
-import Seo, { businessSchema } from '@/components/seo/Seo';
+import Seo from '@/components/seo/Seo';
+import { businessSchema } from '@/components/seo/seo-schemas';
 import { Footer } from "@/components/ui/footer-section";
 import UniversalHero from '@/components/shared/UniversalHero';
 import { Separator } from '@/components/ui/separator';
@@ -36,7 +37,11 @@ const About: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-background"> {/* Added bg-background */}
-      <Seo title="About Somerhaus | Event Space in Cincinnati" description="Learn the story behind Somerhaus and meet the team that makes every event memorable." />
+      <Seo 
+        title="About Somerhaus | Event Space in Cincinnati" 
+        description="Learn the story behind Somerhaus and meet the team that makes every event memorable." 
+        schema={businessSchema}
+      />
       <Header />
       
       <UniversalHero pageKey="about" />

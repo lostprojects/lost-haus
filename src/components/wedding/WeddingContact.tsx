@@ -101,7 +101,7 @@ const WeddingContact = () => {
               </div>
               
               {isSubmitted && (
-                <div className="flex items-center gap-2 p-3 bg-green-50 border border-green-200 rounded-md text-green-800">
+                <div className="flex items-center gap-2 p-3 bg-[#5CA87E]/10 border border-[#5CA87E]/30 rounded-md text-[#5CA87E]">
                   <CheckCircle className="w-4 h-4" />
                   <span className="text-sm">Message sent! We'll respond within 24 hours.</span>
                 </div>

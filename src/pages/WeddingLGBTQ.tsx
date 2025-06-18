@@ -11,7 +11,8 @@ import PreferredVendors from '@/components/wedding/PreferredVendors';
 import WeddingFAQ from '@/components/wedding/WeddingFAQ';
 import { WeddingCTA } from '@/components/wedding/WeddingCTA';
 import WeddingContact from '@/components/wedding/WeddingContact';
-import Seo, { businessSchema } from '@/components/seo/Seo';
+import Seo from '@/components/seo/Seo';
+import { businessSchema } from '@/components/seo/seo-schemas';
 
 const WeddingLGBTQ: React.FC = () => {
   return (

@@ -152,6 +152,9 @@
     --brand-700: #c2410c; /* Dark - Hover states and pressed buttons */
     --brand-800: #9a3412; /* Darker - Text on light backgrounds */
     --brand-900: #7c2d12; /* Darkest - High contrast text and borders */
+    
+    /* Brand Green */
+    --brand-green: #5CA87E; /* Primary brand green for secondary CTAs and accents */
 
     /* System Colors */
     --background: #F5F3F1;

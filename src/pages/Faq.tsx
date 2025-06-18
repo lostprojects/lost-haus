@@ -2,7 +2,8 @@ import Header from '@/components/ui/header';
 import { Footer } from "@/components/ui/footer-section";
 import { SimpleFaqCategories } from '@/components/faq/SimpleFaqCategories';
 import React from 'react';
-import Seo, { businessSchema, mainFaqSchema } from '@/components/seo/Seo';
+import Seo from '@/components/seo/Seo';
+import { businessSchema, mainFaqSchema } from '@/components/seo/seo-schemas';
 
 export default function FAQ() {
   return (
