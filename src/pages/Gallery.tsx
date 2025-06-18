@@ -6,60 +6,60 @@ import { Button } from "@/components/ui/button";
 import { Download, Heart, Share2 } from 'lucide-react';
 import Seo from '@/components/seo/Seo';
 
-const Gallery = () => {
+const galleryCategories = [
+  {
+    title: "Weddings",
+    images: [
+      { src: "/photo/wedding-hero1-cincinnati-wedding-venue-somerhaus.webp", alt: "Wedding ceremony setup with elegant decorations", category: "Ceremony" },
+      { src: "/photo/wedding-hero2-cincinnati-wedding-venue-somerhaus.webp", alt: "Wedding reception with beautiful lighting", category: "Reception" },
+      { src: "/photo/wedding-portrait1-cincinnati-wedding-venue-somerhaus.webp", alt: "Bride and groom portrait", category: "Portrait" },
+      { src: "/photo/wedding-portrait2-cincinnati-wedding-venue-somerhaus.webp", alt: "Bridal details", category: "Details" },
+      { src: "/photo/wedding-portrait3-cincinnati-wedding-venue-somerhaus.webp", alt: "Emotional first look", category: "Moments" },
+      { src: "/photo/wedding-hero3-cincinnati-wedding-venue-somerhaus.webp", alt: "Grand send-off", category: "Exit" },
+      { src: "/photo/wedding-hero4-cincinnati-wedding-venue-somerhaus.webp", alt: "Reception speeches", category: "Reception" },
+      { src: "/photo/wedding-hero5-cincinnati-wedding-venue-somerhaus.webp", alt: "Dance floor moment", category: "Dancing" },
+      { src: "/photo/wedding-portrait4-cincinnati-wedding-venue-somerhaus.webp", alt: "Bridal party", category: "Portrait" },
+      { src: "/photo/wedding-portrait-somerhaus-wedding-venue-cincinnati.webp", alt: "Couple portrait", category: "Portrait" }
+    ]
+  },
+  {
+    title: "Corporate Events",
+    images: [
+      { src: "/photo/meeting-hero1-cincinnati-event-venue-somerhaus.webp", alt: "Conference style meeting", category: "Meetings" },
+      { src: "/photo/meeting-dinner-hero1-artworks-cincinnati-event-space-somerhaus.webp", alt: "Team dinner in the atrium", category: "Dinners" },
+      { src: "/photo/meeting-portrait1-arttalk-cincinnati-event-space-somerhaus.webp", alt: "Panel discussion portrait", category: "Panels" },
+      { src: "/photo/photoshoot-hero-1-somerset-somerhaus-event space.webp", alt: "Brand shoot setup", category: "Photoshoot" },
+      { src: "/photo/dinner-hero-cincinnati-wedding-venue-somerhaus.webp", alt: "Corporate dinner hero", category: "Dinners" },
+      { src: "/photo/dinner-portrait-somerhaus-event-space-cincinnati.webp", alt: "Chef plating dinner", category: "Food" },
+      { src: "/photo/food-portrait-somerhaus-cincinnati-events.webp", alt: "Gourmet canapé", category: "Food" },
+      { src: "/photo/food-portrait2-somerhaus-cincinnati-events.webp", alt: "Signature cocktail", category: "Beverage" },
+      { src: "/photo/bar-package-hero-somerhaus-cincinnati-events.webp", alt: "Bar package hero", category: "Bar" }
+    ]
+  },
+  {
+    title: "Parties",
+    images: [
+      { src: "/photo/party-hero1-cincinnati-event-venue-somerhaus.webp", alt: "Lively dance floor", category: "Dancing" },
+      { src: "/photo/party-dinner-hero1-cincinnati-event-space-somerhaus.webp", alt: "Elegant dinner party", category: "Dinner" }
+    ]
+  },
+  {
+    title: "Showers & Brunches",
+    images: [
+      { src: "/photo/space-portrait1-cincinnati-event-space-somerhaus.webp", alt: "Baby shower decor", category: "Showers" },
+      { src: "/photo/space-portrait2-cincinnati-event-space-somerhaus.webp", alt: "Brunch place setting", category: "Brunch" }
+    ]
+  },
+  {
+    title: "Space",
+    images: [
+      { src: "/photo/space-portrait1-cincinnati-event-space-somerhaus.webp", alt: "Atrium space portrait", category: "Space" },
+      { src: "/photo/space-portrait2-cincinnati-event-space-somerhaus.webp", alt: "Loft space portrait", category: "Space" }
+    ]
+  }
+];
 
-  const galleryCategories = [
-    {
-      title: "Weddings",
-      images: [
-        { src: "/photo/wedding-hero1-cincinnati-wedding-venue-somerhaus.webp", alt: "Wedding ceremony setup with elegant decorations", category: "Ceremony" },
-        { src: "/photo/wedding-hero2-cincinnati-wedding-venue-somerhaus.webp", alt: "Wedding reception with beautiful lighting", category: "Reception" },
-        { src: "/photo/wedding-portrait1-cincinnati-wedding-venue-somerhaus.webp", alt: "Bride and groom portrait", category: "Portrait" },
-        { src: "/photo/wedding-portrait2-cincinnati-wedding-venue-somerhaus.webp", alt: "Bridal details", category: "Details" },
-        { src: "/photo/wedding-portrait3-cincinnati-wedding-venue-somerhaus.webp", alt: "Emotional first look", category: "Moments" },
-        { src: "/photo/wedding-hero3-cincinnati-wedding-venue-somerhaus.webp", alt: "Grand send-off", category: "Exit" },
-        { src: "/photo/wedding-hero4-cincinnati-wedding-venue-somerhaus.webp", alt: "Reception speeches", category: "Reception" },
-        { src: "/photo/wedding-hero5-cincinnati-wedding-venue-somerhaus.webp", alt: "Dance floor moment", category: "Dancing" },
-        { src: "/photo/wedding-portrait4-cincinnati-wedding-venue-somerhaus.webp", alt: "Bridal party", category: "Portrait" },
-        { src: "/photo/wedding-portrait-somerhaus-wedding-venue-cincinnati.webp", alt: "Couple portrait", category: "Portrait" }
-      ]
-    },
-    {
-      title: "Corporate Events",
-      images: [
-        { src: "/photo/meeting-hero1-cincinnati-event-venue-somerhaus.webp", alt: "Conference style meeting", category: "Meetings" },
-        { src: "/photo/meeting-dinner-hero1-artworks-cincinnati-event-space-somerhaus.webp", alt: "Team dinner in the atrium", category: "Dinners" },
-        { src: "/photo/meeting-portrait1-arttalk-cincinnati-event-space-somerhaus.webp", alt: "Panel discussion portrait", category: "Panels" },
-        { src: "/photo/photoshoot-hero-1-somerset-somerhaus-event space.webp", alt: "Brand shoot setup", category: "Photoshoot" },
-        { src: "/photo/dinner-hero-cincinnati-wedding-venue-somerhaus.webp", alt: "Corporate dinner hero", category: "Dinners" },
-        { src: "/photo/dinner-portrait-somerhaus-event-space-cincinnati.webp", alt: "Chef plating dinner", category: "Food" },
-        { src: "/photo/food-portrait-somerhaus-cincinnati-events.webp", alt: "Gourmet canapé", category: "Food" },
-        { src: "/photo/food-portrait2-somerhaus-cincinnati-events.webp", alt: "Signature cocktail", category: "Beverage" },
-        { src: "/photo/bar-package-hero-somerhaus-cincinnati-events.webp", alt: "Bar package hero", category: "Bar" }
-      ]
-    },
-    {
-      title: "Parties",
-      images: [
-        { src: "/photo/party-hero1-cincinnati-event-venue-somerhaus.webp", alt: "Lively dance floor", category: "Dancing" },
-        { src: "/photo/party-dinner-hero1-cincinnati-event-space-somerhaus.webp", alt: "Elegant dinner party", category: "Dinner" }
-      ]
-    },
-    {
-      title: "Showers & Brunches",
-      images: [
-        { src: "/photo/space-portrait1-cincinnati-event-space-somerhaus.webp", alt: "Baby shower decor", category: "Showers" },
-        { src: "/photo/space-portrait2-cincinnati-event-space-somerhaus.webp", alt: "Brunch place setting", category: "Brunch" }
-      ]
-    },
-    {
-      title: "Space",
-      images: [
-        { src: "/photo/space-portrait1-cincinnati-event-space-somerhaus.webp", alt: "Atrium space portrait", category: "Space" },
-        { src: "/photo/space-portrait2-cincinnati-event-space-somerhaus.webp", alt: "Loft space portrait", category: "Space" }
-      ]
-    }
-  ];
+const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = React.useState("All");
   const [selectedImage, setSelectedImage] = React.useState<string | null>(null);
 
@@ -69,7 +69,7 @@ const Gallery = () => {
       category.images.map(img => ({ ...img, categoryTitle: category.title }))
     );
     return Array.from(new Map(allImagesWithCat.map(img => [img.src, img])).values());
-  }, [galleryCategories]);
+  }, []);
 
   const filteredImages = useMemo(() => {
     return selectedCategory === "All"
@@ -79,7 +79,7 @@ const Gallery = () => {
 
   const categories = useMemo(
     () => ["All", ...galleryCategories.map(cat => cat.title)],
-    [galleryCategories]
+    []
   );
 
   return (

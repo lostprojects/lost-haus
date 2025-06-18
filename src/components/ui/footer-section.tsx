@@ -22,7 +22,7 @@ interface FooterProps {
   logoType?: 'press' | 'clients' | 'none';
 }
 
-function Footer({ noBorder = false, logoType = 'none' }: FooterdemoProps = {}) {
+function Footer({ noBorder = false, logoType = 'none' }: FooterProps = {}) {
   return (
     <>
       {/* Logos section on top of footer with black background */}
