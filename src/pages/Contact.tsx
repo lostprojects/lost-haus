@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MapPin, Phone, CalendarDays } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import Header from '@/components/ui/header';
-import Seo from '@/components/seo/Seo';
-import { Footerdemo } from '@/components/ui/footer-section';
+import Seo, { businessSchema } from '@/components/seo/Seo';
+import { Footer } from "@/components/ui/footer-section";
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,22 +11,8 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { useHoneyBook } from '@/hooks/use-honeybook';
 import HoneyBookForm from '@/components/honeybook/HoneyBookForm';
+import UniversalHero from '@/components/shared/UniversalHero';
 
-const businessSchema = {
-  "@context": "https://schema.org",
-  "@type": "EventVenue",
-  name: "Somerhaus",
-  url: "https://somerhaus.com",
-  telephone: "513-902-1415",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "1415 Republic St",
-    addressLocality: "Cincinnati",
-    addressRegion: "OH",
-    postalCode: "45202",
-    addressCountry: "US"
-  }
-};
 
 const ContactPage = () => {
   useHoneyBook();
@@ -95,22 +82,7 @@ const ContactPage = () => {
       />
       <Header />
       
-      {/* Hero Section with updated background image */}
-      <section className="relative w-full h-[60vh] min-h-[400px] overflow-hidden hero">
-        <div className="absolute inset-0 bg-black/40 z-10" />
-        <div className="absolute inset-0 bg-cover bg-center" style={{
-                    backgroundImage: "url('/photo/space-portrait1-cincinnati-event-space-somerhaus.jpg')"
-        }} />
-        <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center text-center">
-          {/* Use consistent hero heading size */}
-          <h1 className="text-5xl md:text-6xl font-header tracking-tight mb-4 text-white">
-            Let's Plan Something Magical Together
-          </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-white/90 font-mono">
-            We're excited to bring your vision to life in our unique space.
-          </p>
-        </div>
-      </section>
+             <UniversalHero pageKey="contact" />
       
       <main className="flex-grow">
         <div className="container mx-auto px-4 py-16">
@@ -316,7 +288,7 @@ const ContactPage = () => {
         </div>
       </main>
       
-      <Footerdemo />
+      <Footer logoType="clients" />
     </div>;
 };
 

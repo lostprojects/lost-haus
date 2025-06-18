@@ -16,7 +16,7 @@ const testimonials = [
     initials: "SS",
     stars: 5,
     tag: "Wedding",
-    thumbnail: "/review-thumbnails/sarah-s.png"
+    thumbnail: "/review-thumbnails/sarah-s.webp"
   },
   {
     title: "Dream Wedding Venue",

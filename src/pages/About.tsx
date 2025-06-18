@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '@/components/ui/header';
-import Seo from '@/components/seo/Seo';
-import { Footerdemo } from '@/components/ui/footer-section';
-import HeroSection from '@/components/shared/HeroSection';
+import Seo, { businessSchema } from '@/components/seo/Seo';
+import { Footer } from "@/components/ui/footer-section";
+import UniversalHero from '@/components/shared/UniversalHero';
 import { Separator } from '@/components/ui/separator';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from "@/components/ui/badge";
@@ -13,10 +13,10 @@ const About: React.FC = () => {
   useHoneyBook();
 
   const heroImages = [
-    { src: '/photo/haus-wedding-main.png', alt: 'Wedding at Somerhaus' },
-    { src: '/photo/haus-wedding-2.png', alt: 'Wedding reception at Somerhaus' },
-    { src: '/photo/haus-meeting.png', alt: 'Meeting at Somerhaus' },
-    { src: '/photo/haus-party.png', alt: 'Party at Somerhaus' }
+    { src: '/photo/haus-wedding-main.webp', alt: 'Wedding at Somerhaus' },
+    { src: '/photo/haus-wedding-2.webp', alt: 'Wedding reception at Somerhaus' },
+    { src: '/photo/haus-meeting.webp', alt: 'Meeting at Somerhaus' },
+    { src: '/photo/haus-party.webp', alt: 'Party at Somerhaus' }
   ];
 
   const teamMembers = [
@@ -39,12 +39,7 @@ const About: React.FC = () => {
       <Seo title="About Somerhaus | Event Space in Cincinnati" description="Learn the story behind Somerhaus and meet the team that makes every event memorable." />
       <Header />
       
-      <HeroSection
-        backgroundType="carousel"
-        backgroundSources={heroImages}
-        title="About Somerhaus"
-        subtitle="A design-driven canvas for unforgettable gatherings in the heart of Over-the-Rhine."
-      />
+      <UniversalHero pageKey="about" />
 
       <main className="flex-grow">
 
@@ -186,7 +181,7 @@ const About: React.FC = () => {
         </section>
 
       </main>
-      <Footerdemo />
+      <Footer logoType="clients" />
     </div>
   );
 };

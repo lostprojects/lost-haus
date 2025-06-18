@@ -1,25 +1,26 @@
 import React from 'react';
 import Header from '@/components/ui/header';
-import { Footerdemo } from '@/components/ui/footer-section';
-import BarPackagesHero from '@/components/bar/BarPackagesHero';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
-import Seo from '@/components/seo/Seo';
+import UniversalHero from '@/components/shared/UniversalHero';
+import { Footer } from "@/components/ui/footer-section";
+import { LogoTicker } from '@/components/blocks/LogoTicker';
+import { clientLogos } from '@/data/clientLogos';
+import Seo, { businessSchema } from '@/components/seo/Seo';
 import PricingSection from '@/components/shared/PricingSection';
 import BarCostCalculator from '@/components/bar/BarCostCalculator';
 import BarFaq from '@/components/bar/BarFaq';
 
 const BarPackages = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <div className="min-h-screen flex flex-col bg-background">
       <Seo
-        title="Event Bar Packages in Cincinnati | Somerhaus"
-        description="Choose from tiered bar packages for weddings and events at our Cincinnati venue."
+        title="Bar Packages | Somerhaus Cincinnati Event Venue"
+        description="Signature cocktails, curated wine, beer. Choose a tier or let us customize your pour."
+        schema={businessSchema}
       />
       <Header />
-      <BarPackagesHero />
+      
+      <UniversalHero pageKey="barpackages" />
+
       <main className="flex-grow">
         <PricingSection
           title="Choose Your Package"
@@ -76,18 +77,10 @@ const BarPackages = () => {
         />
         <BarCostCalculator />
         <BarFaq />
-        <Separator />
-        <section className="py-12 md:py-16 bg-muted/40">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-header mb-4">Ready to raise a glass?</h2>
-            <p className="text-lg text-muted-foreground mb-8 font-mono">Book Somerhaus and let our bar team craft something unforgettable.</p>
-            <a href="/event-inquiry">
-              <Button size="lg">Plan Your Event <ArrowRight className="ml-2 w-4 h-4" /></Button>
-            </a>
-          </div>
-        </section>
+        <LogoTicker heading="Trusted By" logos={clientLogos} className="bg-black" />
       </main>
-      <Footerdemo />
+      
+      <Footer logoType="clients" />
     </div>
   );
 };

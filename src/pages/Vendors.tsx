@@ -1,104 +1,209 @@
 import React from 'react';
 import Header from '@/components/ui/header';
-import { Footerdemo } from '@/components/ui/footer-section';
-import VendorsHero from '@/components/vendors/VendorsHero';
-import { Separator } from '@/components/ui/separator';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import UniversalHero from '@/components/shared/UniversalHero';
+import { Footer } from "@/components/ui/footer-section";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
-import Seo from '@/components/seo/Seo';
+import { ExternalLink, Star, MapPin, Phone, Mail } from 'lucide-react';
+import { LogoTicker } from '@/components/blocks/LogoTicker';
+import { clientLogos } from '@/data/clientLogos';
+import Seo, { businessSchema } from '@/components/seo/Seo';
 
-const Vendors = () => {
+const Vendors: React.FC = () => {
+  const vendorCategories = [
+    {
+      category: "Photography & Videography",
+      vendors: [
+        {
+          name: "Aperture Studios",
+          description: "Award-winning wedding and event photography",
+          specialty: "Wedding Photography",
+          location: "Cincinnati, OH",
+          contact: "aperturestudios@example.com"
+        },
+        {
+          name: "Motion Pictures Co.",
+          description: "Cinematic wedding and event videography",
+          specialty: "Event Videography",
+          location: "Cincinnati, OH", 
+          contact: "info@motionpictures.com"
+        }
+      ]
+    },
+    {
+      category: "Catering & Food Service",
+      vendors: [
+        {
+          name: "Culinary Creations",
+          description: "Gourmet catering with local ingredients",
+          specialty: "Wedding Catering",
+          location: "Cincinnati, OH",
+          contact: "hello@culinarycreations.com"
+        },
+        {
+          name: "Sweet Endings",
+          description: "Custom wedding cakes and desserts",
+          specialty: "Wedding Cakes",
+          location: "Cincinnati, OH",
+          contact: "orders@sweetendings.com"
+        }
+      ]
+    },
+    {
+      category: "Floral & Decor",
+      vendors: [
+        {
+          name: "Bloom & Co.",
+          description: "Modern floral design and event styling",
+          specialty: "Wedding Florals",
+          location: "Cincinnati, OH",
+          contact: "hello@bloomandco.com"
+        },
+        {
+          name: "Event Elements",
+          description: "Full-service event design and rental",
+          specialty: "Event Design",
+          location: "Cincinnati, OH",
+          contact: "info@eventelements.com"
+        }
+      ]
+    }
+  ];
+
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <div className="min-h-screen flex flex-col bg-background">
       <Seo
-        title="Preferred Event Vendors | Somerhaus Cincinnati"
-        description="Browse trusted Cincinnati vendors for catering, photography, and more."
+        title="Preferred Vendors | Somerhaus Cincinnati"
+        description="Our curated network of Cincinnati's finest event professionals for your perfect celebration."
+        schema={businessSchema}
       />
       <Header />
-      <VendorsHero />
+      
+      <UniversalHero pageKey="vendors" />
+
       <main className="flex-grow">
-        <section className="py-12 md:py-16">
-          <div className="container mx-auto px-4 max-w-3xl space-y-12">
-            <Card>
-              <CardHeader>
-                <CardTitle>Catering & Specialty</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc list-inside space-y-2 font-mono">
-                  <li>Bee's BBQ – (513) 561-2337</li>
-                  <li>Chef's Choice Catering – info@chefschoicecatering.com</li>
-                  <li>Crown Restaurant Group</li>
-                  <li>Essen Kitchen – eat@essenkitchen.com</li>
-                  <li>Findlay Market Merchants</li>
-                  <li>Garnish Catering</li>
-                  <li>Jeff Thomas Catering – events@jeffthomascatering.com</li>
-                  <li>Keystone Bar & Grill</li>
-                  <li>Mazunte – (513) 785-0000</li>
-                  <li>Share Cheesebar</li>
-                  <li>Southern Grace Catering – (513) 808-5819</li>
-                  <li>Taglio OTR – info@eattaglio.com</li>
-                  <li>The Rhined – (513) 655-5938</li>
-                  <li>Yee Mama</li>
-                </ul>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Desserts & Bakeries</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc list-inside space-y-2 font-mono">
-                  <li>Allez Bakery – (513) 381-6700</li>
-                  <li>Abby Girl Sweets – (513) 335-0898</li>
-                  <li>Brown Bear Bakery – hello@brownbearbakery.com</li>
-                  <li>Cafe Mochiko – (513) 559-1000</li>
-                  <li>Ilan's Raw Chocolate</li>
-                  <li>North South Baking Company – kate@northsouthbaking.com</li>
-                  <li>Sixteen Bricks Bakery – (513) 873-1426</li>
-                  <li>Mae's Cookie Co. – (256) 520-7763</li>
-                </ul>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Coffee Service</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc list-inside space-y-2 font-mono">
-                  <li>Deeper Roots Coffee</li>
-                  <li>Yield Coffee Roasters</li>
-                </ul>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Photographers</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc list-inside space-y-2 font-mono">
-                  <li>Bird and Rose Photography</li>
-                  <li>Blushing Finch Photography – blushingfinchphoto@gmail.com</li>
-                  <li>Catherine Grace Photography – catievox@gmail.com</li>
-                  <li>Eleven11 Photography – info@eleven11photo.com</li>
-                  <li>J. Carr Photography – jecarr.photos@gmail.com</li>
-                </ul>
-              </CardContent>
-            </Card>
+        {/* Vendor Categories */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-header tracking-tight mb-4">
+                Our Trusted Partner Network
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body">
+                We've carefully selected Cincinnati's finest vendors to ensure your event is flawless from start to finish.
+              </p>
+            </div>
+
+            <div className="space-y-12">
+              {vendorCategories.map((category, categoryIndex) => (
+                <div key={categoryIndex}>
+                  <h3 className="text-2xl font-header mb-6">{category.category}</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {category.vendors.map((vendor, vendorIndex) => (
+                      <Card key={vendorIndex} className="hover:shadow-lg transition-shadow">
+                        <CardHeader>
+                          <div className="flex justify-between items-start">
+                            <div>
+                              <CardTitle className="text-xl">{vendor.name}</CardTitle>
+                              <Badge variant="secondary" className="mt-2">
+                                {vendor.specialty}
+                              </Badge>
+                            </div>
+                            <div className="flex items-center">
+                              {[...Array(5)].map((_, i) => (
+                                <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                              ))}
+                            </div>
+                          </div>
+                          <CardDescription className="font-body">
+                            {vendor.description}
+                          </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="space-y-2">
+                            <div className="flex items-center text-sm text-gray-600">
+                              <MapPin className="h-4 w-4 mr-2" />
+                              {vendor.location}
+                            </div>
+                            <div className="flex items-center text-sm text-gray-600">
+                              <Mail className="h-4 w-4 mr-2" />
+                              {vendor.contact}
+                            </div>
+                          </div>
+                          <Button variant="outline" size="sm" className="mt-4">
+                            View Portfolio <ExternalLink className="h-4 w-4 ml-2" />
+                          </Button>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
-        <Separator />
-        <section className="py-12 md:py-16 bg-muted/40">
+
+        {/* Benefits Section */}
+        <section className="py-16 md:py-24 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-header tracking-tight mb-4">
+                Why Use Our Preferred Vendors
+              </h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Star className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-medium mb-3">Quality Assured</h3>
+                <p className="text-gray-600 font-body">
+                  Every vendor has been personally vetted for quality, professionalism, and excellence.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <MapPin className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-medium mb-3">Venue Familiar</h3>
+                <p className="text-gray-600 font-body">
+                  Our partners know Somerhaus inside and out, ensuring seamless coordination.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Phone className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-medium mb-3">Direct Support</h3>
+                <p className="text-gray-600 font-body">
+                  We facilitate introductions and coordinate logistics between all parties.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-header mb-4">Have your own vendor in mind?</h2>
-            <p className="text-lg text-muted-foreground mb-8 font-mono">You're welcome to work with anyone you love. A small service fee helps us coordinate logistics seamlessly.</p>
-            <a href="/contact">
-              <Button size="lg">Get in Touch <ArrowRight className="ml-2 w-4 h-4" /></Button>
-            </a>
+            <h2 className="text-3xl md:text-4xl font-header tracking-tight mb-4">
+              Need Vendor Recommendations?
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 font-body max-w-2xl mx-auto">
+              Our event team will connect you with the perfect vendors for your specific needs and budget.
+            </p>
+            <Button size="lg">
+              <a href="/event-inquiry">Get Vendor Recommendations</a>
+            </Button>
           </div>
         </section>
+
+        <LogoTicker heading="Trusted By" logos={clientLogos} className="bg-black" />
       </main>
-      <Footerdemo />
+      
+      <Footer logoType="clients" />
     </div>
   );
 };

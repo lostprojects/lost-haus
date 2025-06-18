@@ -1,8 +1,7 @@
-
 import React from 'react';
 import Header from '@/components/ui/header';
-import { Footerdemo } from '@/components/ui/footer-section';
-import ShowersHero from '@/components/showers/ShowersHero';
+import { Footer } from "@/components/ui/footer-section";
+import UniversalHero from '@/components/shared/UniversalHero';
 import VenueHighlights from '@/components/showers/VenueHighlights';
 import ShowersPackages from '@/components/showers/ShowersPackages';
 import ShowersGallery from '@/components/showers/ShowersGallery';
@@ -12,45 +11,34 @@ import PreferredVendors from '@/components/showers/PreferredVendors';
 import ShowersFAQ from '@/components/showers/ShowersFAQ';
 import { ShowersCTA } from '@/components/showers/ShowersCTA';
 import ShowersContact from '@/components/showers/ShowersContact';
-import Seo from '@/components/seo/Seo';
+import Seo, { businessSchema } from '@/components/seo/Seo';
 
-const businessSchema = {
-  "@context": "https://schema.org",
-  "@type": "EventVenue",
-  name: "Somerhaus",
-  url: "https://somerhaus.com",
-  telephone: "513-902-1415",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "1415 Republic St",
-    addressLocality: "Cincinnati",
-    addressRegion: "OH",
-    postalCode: "45202",
-    addressCountry: "US",
-  },
-};
-
-const Showers = () => {
+const Showers: React.FC = () => {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen flex flex-col bg-background">
       <Seo
-        title="Showers Venue in Cincinnati | Somerhaus"
-        description="Celebrate bridal and baby showers in our stylish Over-the-Rhine space."
+        title="Bridal & Baby Showers | Somerhaus Cincinnati"
+        description="Host your perfect bridal or baby shower in our enchanting 3,080 sq ft venue."
         schema={businessSchema}
       />
       <Header />
-      <ShowersHero />
-      <VenueHighlights />
-      <ShowersPackages />
-      <ShowersGallery />
-      <ShowersTestimonials />
-      <ShowersPlanning />
-      <PreferredVendors />
-      <ShowersFAQ />
-      <ShowersCTA />
-      <ShowersContact />
-      <Footerdemo />
-    </main>
+      
+      <UniversalHero pageKey="showers" />
+
+      <main className="flex-grow">
+        <VenueHighlights />
+        <ShowersPackages />
+        <ShowersGallery />
+        <ShowersPlanning />
+        <ShowersTestimonials />
+        <PreferredVendors />
+        <ShowersFAQ />
+        <ShowersContact />
+        <ShowersCTA />
+      </main>
+      
+      <Footer logoType="clients" />
+    </div>
   );
 };
 

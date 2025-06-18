@@ -6,22 +6,22 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 const ShowersGallery = () => {
   const galleryImages = [
     {
-      src: "/photo/haus-wedding-main.png",
+      src: "/photo/haus-wedding-main.webp",
       alt: "Baby shower celebration setup with elegant decor",
       caption: "Baby Shower Celebration"
     },
     {
-      src: "/photo/haus-wedding-2.png",
+      src: "/photo/haus-wedding-2.webp",
       alt: "Bridal shower with floral arrangements and table settings",
       caption: "Bridal Shower Elegance"
     },
     {
-      src: "/photo/haus-meeting.png",
+      src: "/photo/haus-meeting.webp",
       alt: "Gender reveal party with colorful decorations",
       caption: "Gender Reveal Celebration"
     },
     {
-      src: "/photo/haus-party.png",
+      src: "/photo/haus-party.webp",
       alt: "Custom shower decorations and table setup",
       caption: "Custom Shower Decorations"
     }

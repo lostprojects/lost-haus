@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { BookNowButton } from "@/components/ui/book-now-button";
 
-function CTA() {
+export function CTA() {
   return <div className="w-full py-10 lg:py-[40px]">
       <div className="container">
         <div className="flex flex-col text-center p-4 lg:p-14 gap-8 items-center">
@@ -25,4 +25,3 @@ function CTA() {
       </div>
     </div>;
 }
-export { CTA };

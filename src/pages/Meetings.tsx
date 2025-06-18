@@ -1,108 +1,19 @@
 
 import React from 'react';
 import Header from '@/components/ui/header';
-import { Footerdemo } from '@/components/ui/footer-section';
-import HeroSection from '@/components/shared/HeroSection';
+import { Footer } from "@/components/ui/footer-section";
+import UniversalHero from '@/components/shared/UniversalHero';
 import PricingSection from '@/components/shared/PricingSection';
 import FAQSection from '@/components/shared/FAQSection';
 import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
 import { CTA } from '@/components/ui/call-to-action/component';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
-import Seo from '@/components/seo/Seo';
-import { Logos3 } from '@/components/blocks/logos3';
+import Seo, { businessSchema, createFaqSchema } from '@/components/seo/Seo';
+import { LogoTicker } from '@/components/blocks/LogoTicker';
+import { clientLogosGrayscale } from '@/data/clientLogos';
 
-const businessSchema = {
-  "@context": "https://schema.org",
-  "@type": "EventVenue",
-  name: "Somerhaus",
-  url: "https://somerhaus.com",
-  telephone: "513-902-1415",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "1415 Republic St",
-    addressLocality: "Cincinnati",
-    addressRegion: "OH",
-    postalCode: "45202",
-    addressCountry: "US",
-  },
-};
 
-const clientLogos = [{
-  id: "client-1",
-  description: "University of Cincinnati",
-  image: "/client-logos/University-of-Cincinnati-Logo.png",
-  className: "grayscale"
-}, {
-  id: "client-2",
-  description: "Procter & Gamble",
-  image: "/client-logos/P&G-logo.png",
-  className: "grayscale"
-}, {
-  id: "client-3",
-  description: "Fischer Homes",
-  image: "/client-logos/fischer-homes-logo.jpg",
-  className: "grayscale"
-}, {
-  id: "client-4",
-  description: "City of Cincinnati",
-  image: "/client-logos/cincinnati-logo.png",
-  className: "grayscale"
-}, {
-  id: "client-5",
-  description: "Instacart",
-  image: "/client-logos/instacart-logo.png",
-  className: "grayscale"
-}, {
-  id: "client-6",
-  description: "Artworks",
-  image: "/client-logos/artworks-logo.png",
-  className: "grayscale"
-}, {
-  id: "client-7",
-  description: "CincyTech",
-  image: "/client-logos/cincytech-logo.png",
-  className: "grayscale"
-}, {
-  id: "client-8",
-  description: "Black Tech Week",
-  image: "/client-logos/black-tech-week.png",
-  className: "grayscale"
-}, {
-  id: "client-9",
-  description: "Scripps",
-  image: "/client-logos/Scripps-logo.png",
-  className: "grayscale"
-}, {
-  id: "client-10",
-  description: "Xavier University",
-  image: "/client-logos/xavier-university-logo.png",
-  className: "grayscale"
-}, {
-  id: "client-11",
-  description: "North American Properties",
-  image: "/client-logos/north-american.png",
-  className: "grayscale"
-}, {
-  id: "client-12",
-  description: "Kroger",
-  image: "/client-logos/kroger-logo.png",
-  className: "grayscale"
-}, {
-  id: "client-13",
-  description: "Alzheimer's Foundation",
-  image: "/client-logos/Alzheimers-Foundation-logo.png",
-  className: "grayscale"
-}, {
-  id: "client-14",
-  description: "Cincinnati Chamber",
-  image: "/client-logos/cincinnati-chamber-logo.png",
-  className: "grayscale"
-}, {
-  id: "client-15",
-  description: "OTR Film Festival",
-  image: "/client-logos/otr-film-festival-logo.png",
-  className: "grayscale"
-}];
+
 
 const Meetings = () => {
   const pricingPlans = [
@@ -191,36 +102,20 @@ const Meetings = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqData.map(faq => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: { "@type": "Answer", text: faq.answer },
-    })),
-  };
+  const meetingsFaqSchema = createFaqSchema(faqData);
 
   return (
-    <main className="min-h-screen relative" style={{ backgroundColor: '#F5F3F1' }}>
+    <main className="min-h-screen relative bg-background">
       <Seo
         title="Meeting Venue in Cincinnati | Somerhaus"
         description="Hold productive corporate gatherings in our flexible Over-the-Rhine space."
-        schema={[businessSchema, faqSchema]}
+        schema={[businessSchema, meetingsFaqSchema]}
       />
       <Header />
       
-      <HeroSection 
-        backgroundType="static"
-        backgroundSources={[{
-          src: "/photo/haus-meeting.png",
-          alt: "Business Meetings at Somerhaus"
-        }]}
-        title="Business Meetings at Somerhaus"
-        subtitle="Inspire innovation and drive results in Cincinnati's premier meeting space. From team sessions to corporate summits, our 3,080 sq ft venue fuels productivity—contact us to plan yours."
-      />
+      <UniversalHero pageKey="meetings" />
 
-      <Logos3 heading="Trusted By" logos={clientLogos} />
+              <LogoTicker heading="Trusted By" logos={clientLogosGrayscale} />
 
       <ImageGallerySection />
 
@@ -249,7 +144,7 @@ const Meetings = () => {
 
       <CTA />
 
-      <Footerdemo />
+      <Footer logoType="press" />
     </main>
   );
 };

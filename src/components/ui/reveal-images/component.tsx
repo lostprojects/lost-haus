@@ -67,10 +67,10 @@ function RevealImageList() {
   const items: ShowImageListItemProps[] = [{
     text: "Weddings",
     images: [{
-      src: "/photo/wedding-portrait3-cincinnati-wedding-venue-somerhaus.jpg",
+      src: "/photo/wedding-portrait3-cincinnati-wedding-venue-somerhaus.webp",
       alt: "Wedding ceremony at Somerhaus"
     }, {
-      src: "/photo/wedding-hero2-cincinnati-wedding-venue-somerhaus.jpeg",
+      src: "/photo/wedding-hero2-cincinnati-wedding-venue-somerhaus.webp",
       alt: "Wedding details and setup"
     }],
     topImageIndex: 0,
@@ -81,10 +81,10 @@ function RevealImageList() {
   }, {
     text: "Meetings",
     images: [{
-      src: "/photo/meeting-portrait1-arttalk-cincinnati-event-space-somerhaus.jpg",
+      src: "/photo/meeting-portrait1-arttalk-cincinnati-event-space-somerhaus.webp",
       alt: "Corporate meeting at Somerhaus"
     }, {
-      src: "/photo/space-portrait2-cincinnati-event-space-somerhaus.jpg",
+      src: "/photo/space-portrait2-cincinnati-event-space-somerhaus.webp",
       alt: "Professional event discussion"
     }],
     topImageIndex: 1,
@@ -95,10 +95,10 @@ function RevealImageList() {
   }, {
     text: "Showers",
     images: [{
-      src: "/photo/wedding-hero1-cincinnati-wedding-venue-somerhaus.jpg",
+      src: "/photo/wedding-hero1-cincinnati-wedding-venue-somerhaus.webp",
       alt: "Elegant shower celebration"
     }, {
-      src: "/photo/wedding-portrait2-cincinnati-wedding-venue-somerhaus.png",
+      src: "/photo/wedding-portrait2-cincinnati-wedding-venue-somerhaus.webp",
       alt: "Intimate shower gathering"
     }],
     topImageIndex: 0,
@@ -109,10 +109,10 @@ function RevealImageList() {
   }, {
     text: "Dinners",
     images: [{
-      src: "/photo/party-dinner-hero1-cincinnati-event-space-somerhaus.jpg",
+      src: "/photo/party-dinner-hero1-cincinnati-event-space-somerhaus.webp",
       alt: "Elegant dinner event"
     }, {
-      src: "/photo/meeting-dinner-hero1-artworks-cincinnati-event-space-somerhaus.jpg",
+      src: "/photo/meeting-dinner-hero1-artworks-cincinnati-event-space-somerhaus.webp",
       alt: "Dinner party at Somerhaus"
     }],
     topImageIndex: 1,
@@ -123,10 +123,10 @@ function RevealImageList() {
   }, {
     text: "Parties",
     images: [{
-      src: "/photo/space-portrait1-cincinnati-event-space-somerhaus.jpg",
+      src: "/photo/space-portrait1-cincinnati-event-space-somerhaus.webp",
       alt: "Party celebration"
     }, {
-      src: "/photo/party-hero1-cincinnati-event-venue-somerhaus.jpeg",
+      src: "/photo/party-hero1-cincinnati-event-venue-somerhaus.webp",
       alt: "Party venue setup"
     }],
     topImageIndex: 0,
@@ -137,10 +137,10 @@ function RevealImageList() {
   }, {
     text: "Rehearsals",
     images: [{
-      src: "/photo/meeting-hero1-cincinnati-event-venue-somerhaus.png",
+      src: "/photo/meeting-hero1-cincinnati-event-venue-somerhaus.webp",
       alt: "Rehearsal dinner celebration"
     }, {
-      src: "/photo/wedding-portrait1-cincinnati-wedding-venue-somerhaus.jpg",
+      src: "/photo/wedding-portrait1-cincinnati-wedding-venue-somerhaus.webp",
       alt: "Rehearsal venue space"
     }],
     topImageIndex: 1,

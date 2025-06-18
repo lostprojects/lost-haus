@@ -1,30 +1,15 @@
 
 import React from 'react';
 import Header from '@/components/ui/header';
-import { Footerdemo } from '@/components/ui/footer-section';
-import HeroSection from '@/components/shared/HeroSection';
+import { Footer } from "@/components/ui/footer-section";
+import UniversalHero from '@/components/shared/UniversalHero';
 import PricingSection from '@/components/shared/PricingSection';
 import FAQSection from '@/components/shared/FAQSection';
 import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
 import { CTA } from '@/components/ui/call-to-action/component';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
-import Seo from '@/components/seo/Seo';
+import Seo, { businessSchema, createFaqSchema } from '@/components/seo/Seo';
 
-const businessSchema = {
-  "@context": "https://schema.org",
-  "@type": "EventVenue",
-  name: "Somerhaus",
-  url: "https://somerhaus.com",
-  telephone: "513-902-1415",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "1415 Republic St",
-    addressLocality: "Cincinnati",
-    addressRegion: "OH",
-    postalCode: "45202",
-    addressCountry: "US",
-  },
-};
 
 const Rehearsals = () => {
   const pricingPlans = [
@@ -110,34 +95,18 @@ const Rehearsals = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqData.map(faq => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: { "@type": "Answer", text: faq.answer },
-    })),
-  };
+  const rehearsalsFaqSchema = createFaqSchema(faqData);
 
   return (
-    <main className="min-h-screen relative" style={{ backgroundColor: '#F5F3F1' }}>
+    <main className="min-h-screen relative bg-background">
       <Seo
         title="Wedding Rehearsal Venue in Cincinnati | Somerhaus"
         description="Practice and celebrate in style at our historic Cincinnati space."
-        schema={[businessSchema, faqSchema]}
+        schema={[businessSchema, rehearsalsFaqSchema]}
       />
       <Header />
       
-      <HeroSection 
-        backgroundType="static"
-        backgroundSources={[{
-          src: "/photo/haus-wedding-main.png",
-          alt: "Wedding Rehearsals at Somerhaus"
-        }]}
-        title="Wedding Rehearsals at Somerhaus"
-        subtitle="Practice perfectly and celebrate together in Cincinnati's most elegant venue. From run-throughs to rehearsal dinners, our 3,080 sq ft space is ready for your wedding weekend—secure your date now."
-      />
+      <UniversalHero pageKey="rehearsals" />
 
       <ImageGallerySection />
 
@@ -166,7 +135,7 @@ const Rehearsals = () => {
 
       <CTA />
 
-      <Footerdemo />
+      <Footer logoType="clients" />
     </main>
   );
 };

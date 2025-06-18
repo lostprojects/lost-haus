@@ -1,28 +1,38 @@
 import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Send } from "lucide-react";
+import { ArrowUpRight, Send, Instagram, Facebook } from "lucide-react";
+import { LogoTicker } from "@/components/blocks/LogoTicker";
 
-// Updated social icons array - keeping only Instagram and Facebook
+// Updated social icons array - using lucide-react icons
 const socialIcons = [{
   name: "Instagram",
-  image: "/icons/haus-ig-icon.png",
+  icon: Instagram,
   link: "https://www.instagram.com/somerhaus.space/?hl=en",
-  tooltip: "Follow us on Instagram"
+  title: "Follow us on Instagram"
 }, {
   name: "Facebook",
-  image: "/icons/haus-fb-icon.png",
+  icon: Facebook,
   link: "https://www.facebook.com/Somerhaus.otr/",
-  tooltip: "Follow us on Facebook"
+  title: "Follow us on Facebook"
 }];
-interface FooterdemoProps {
+interface FooterProps {
   noBorder?: boolean;
+  logoType?: 'press' | 'clients' | 'none';
 }
 
-function Footerdemo({ noBorder = false }: FooterdemoProps = {}) {
-  return <footer className={`relative ${noBorder ? '' : 'border-t'} bg-[#1A1F2C] text-white font-mono`}>
+function Footer({ noBorder = false, logoType = 'none' }: FooterdemoProps = {}) {
+  return (
+    <>
+      {/* Logos section on top of footer with black background */}
+      {logoType && logoType !== 'none' && (
+        <LogoTicker 
+          type={logoType} 
+          className="bg-black" 
+        />
+      )}
+      <footer className={`relative ${noBorder ? '' : 'border-t'} bg-[#1A1F2C] text-white font-mono`}>
       <div className="container mx-auto px-4 py-16 md:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="relative">
@@ -38,18 +48,21 @@ function Footerdemo({ noBorder = false }: FooterdemoProps = {}) {
               <p>Cincinnati, OH 45202</p>
             </address>
             <div className="mt-6 flex space-x-4">
-              {socialIcons.map(social => <TooltipProvider key={social.name}>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <a href={social.link} target="_blank" rel="noopener noreferrer" className="block transition-transform hover:scale-110">
-                        <img src={social.image} alt={social.name} className="h-10 w-10" />
-                      </a>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>{social.tooltip}</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>)}
+              {socialIcons.map(social => {
+                const IconComponent = social.icon;
+                return (
+                  <a 
+                    key={social.name}
+                    href={social.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    title={social.title}
+                    className="block transition-transform hover:scale-110 text-white hover:text-[#D65B2F]"
+                  >
+                    <IconComponent className="h-10 w-10" />
+                  </a>
+                );
+              })}
             </div>
             <div className="absolute -right-4 top-0 h-24 w-24 rounded-full bg-[#9b87f5]/10 blur-2xl" />
           </div>
@@ -121,6 +134,8 @@ function Footerdemo({ noBorder = false }: FooterdemoProps = {}) {
           </nav>
         </div>
       </div>
-    </footer>;
+      </footer>
+    </>
+  );
 }
-export { Footerdemo };
+export { Footer };

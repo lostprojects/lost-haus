@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '@/components/ui/header';
-import { Footerdemo } from '@/components/ui/footer-section';
-import WeddingHero from '@/components/wedding/WeddingHero';
+import { Footer } from "@/components/ui/footer-section";
+import UniversalHero from '@/components/shared/UniversalHero';
 import WeddingPackages from '@/components/wedding/WeddingPackages';
 import WeddingGallery from '@/components/wedding/WeddingGallery';
 import WeddingTestimonials from '@/components/wedding/WeddingTestimonials';
@@ -12,23 +12,8 @@ import { WeddingCTA } from '@/components/wedding/WeddingCTA';
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { useHoneyBook } from '@/hooks/use-honeybook';
 import HoneyBookForm from '@/components/honeybook/HoneyBookForm';
-import Seo from '@/components/seo/Seo';
+import Seo, { businessSchema } from '@/components/seo/Seo';
 
-const businessSchema = {
-  "@context": "https://schema.org",
-  "@type": "EventVenue",
-  name: "Somerhaus",
-  url: "https://somerhaus.com",
-  telephone: "513-902-1415",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "1415 Republic St",
-    addressLocality: "Cincinnati",
-    addressRegion: "OH",
-    postalCode: "45202",
-    addressCountry: "US"
-  }
-};
 
 const Elopements = () => {
   useHoneyBook();
@@ -41,7 +26,7 @@ const Elopements = () => {
         schema={businessSchema}
       />
       <Header />
-      <WeddingHero />
+              <UniversalHero pageKey="elopements" />
       <section className="py-8 text-center bg-white">
         <p className="font-body text-muted-foreground max-w-2xl mx-auto">
           Our flexible space provides a romantic backdrop for small elopements and private ceremonies.
@@ -66,7 +51,7 @@ const Elopements = () => {
         </div>
       </section>
       <WeddingCTA />
-      <Footerdemo />
+      <Footer logoType="clients" />
     </main>
   );
 };

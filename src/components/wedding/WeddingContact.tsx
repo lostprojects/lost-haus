@@ -1,20 +1,18 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Phone, Mail, Send } from "lucide-react";
-import { useToast } from '@/components/ui/use-toast';
+import { MapPin, Phone, Mail, Send, CheckCircle } from "lucide-react";
 
 const WeddingContact = () => {
-  const { toast } = useToast();
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "We'll respond to your inquiry within 24 hours.",
-    });
+    setIsSubmitted(true);
+    // Reset after 5 seconds
+    setTimeout(() => setIsSubmitted(false), 5000);
   };
 
   return (
@@ -102,8 +100,15 @@ const WeddingContact = () => {
                 <Textarea id="message" placeholder="Tell us about your wedding vision..." className="min-h-[120px]" />
               </div>
               
-              <Button type="submit" className="w-full gap-2">
-                Send Message <Send className="w-4 h-4" />
+              {isSubmitted && (
+                <div className="flex items-center gap-2 p-3 bg-green-50 border border-green-200 rounded-md text-green-800">
+                  <CheckCircle className="w-4 h-4" />
+                  <span className="text-sm">Message sent! We'll respond within 24 hours.</span>
+                </div>
+              )}
+              
+              <Button type="submit" className="w-full gap-2" disabled={isSubmitted}>
+                {isSubmitted ? 'Message Sent!' : 'Send Message'} <Send className="w-4 h-4" />
               </Button>
             </form>
           </div>

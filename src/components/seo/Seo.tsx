@@ -13,10 +13,21 @@ interface SeoProps {
   schema?: Record<string, unknown> | Record<string, unknown>[] | string;
 }
 
+// Re-export schemas for convenience
+export { 
+  businessSchema, 
+  enhancedBusinessSchema,
+  localBusinessSchema,
+  organizationSchema,
+  createFaqSchema, 
+  mainFaqSchema,
+  createArticleSchema 
+} from './seo-schemas';
+
 const Seo = ({ 
   title, 
   description = "Host unforgettable events at Cincinnati's most enchanting venue. Perfect for weddings, corporate gatherings, parties, meetings, and special celebrations. Discover Somerhaus - where timeless elegance meets modern sophistication.",
-  image = "/photo/wedding-hero1-cincinnati-wedding-venue-somerhaus.jpg",
+  image = "/photo/wedding-hero1-cincinnati-wedding-venue-somerhaus.webp",
   url,
   type = 'website',
   schema 

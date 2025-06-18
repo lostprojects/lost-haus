@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss"
 import animate from "tailwindcss-animate"
 
@@ -24,7 +23,7 @@ export default {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
+        background: 'var(--background)',
         foreground: 'hsl(var(--foreground))',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
@@ -55,9 +54,9 @@ export default {
           foreground: 'hsl(var(--card-foreground))'
         },
         brand: {
-          DEFAULT: '#ea580c', // orange-600
+          DEFAULT: '#ea580c',
           50: '#fff7ed',
-          100: '#ffedd5',
+          100: '#ffedd5', 
           200: '#fed7aa',
           300: '#fdba74',
           400: '#fb923c',

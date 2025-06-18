@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '@/components/ui/header';
-import { Footerdemo } from '@/components/ui/footer-section';
+import { Footer } from "@/components/ui/footer-section";
 import PricingSection from '@/components/shared/PricingSection';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
@@ -90,7 +90,7 @@ const Pricing = () => {
           </a>
         </section>
       </main>
-      <Footerdemo />
+      <Footer logoType="clients" />
     </div>
   );
 };

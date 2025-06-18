@@ -1,49 +1,16 @@
 import Header from '@/components/ui/header';
-import { Footerdemo } from '@/components/ui/footer-section';
-import { FaqCategories, faqItems } from '@/components/faq/FaqCategories';
-import { renderToStaticMarkup } from 'react-dom/server';
+import { Footer } from "@/components/ui/footer-section";
+import { SimpleFaqCategories } from '@/components/faq/SimpleFaqCategories';
 import React from 'react';
-import Seo from '@/components/seo/Seo';
+import Seo, { businessSchema, mainFaqSchema } from '@/components/seo/Seo';
 
-const businessSchema = {
-  "@context": "https://schema.org",
-  "@type": "EventVenue",
-  name: "Somerhaus",
-  url: "https://somerhaus.com",
-  telephone: "513-902-1415",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "1415 Republic St",
-    addressLocality: "Cincinnati",
-    addressRegion: "OH",
-    postalCode: "45202",
-  addressCountry: "US",
-  },
-};
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqItems.map(item => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text:
-        typeof item.answer === 'string'
-          ? item.answer
-          : renderToStaticMarkup(item.answer as React.ReactElement),
-    },
-  })),
-};
-
-const FAQ = () => {
+export default function FAQ() {
   return (
     <main className="min-h-screen">
       <Seo
         title="Somerhaus FAQ | Cincinnati Event Venue"
         description="Answers to common questions about our Cincinnati event venue."
-        schema={[businessSchema, faqSchema]}
+        schema={[businessSchema, mainFaqSchema]}
       />
       <Header />
       
@@ -51,7 +18,7 @@ const FAQ = () => {
       <section className="relative py-16 overflow-hidden hero">
         <div className="absolute inset-0 z-0">
           <img 
-                          src="/photo/space-portrait2-cincinnati-event-space-somerhaus.jpg" 
+                          src="/photo/space-portrait2-cincinnati-event-space-somerhaus.webp" 
             alt="Somerhaus event venue"
             className="w-full h-full object-cover object-center"
           />
@@ -69,7 +36,7 @@ const FAQ = () => {
         </div>
       </section>
       
-      <FaqCategories />
+      <SimpleFaqCategories />
       <div className="text-center py-12">
         <p className="text-lg font-body text-muted-foreground">
           Still have questions?{' '}
@@ -79,10 +46,8 @@ const FAQ = () => {
           and we'll be happy to help.
         </p>
       </div>
-      <Footerdemo />
+      <Footer logoType="clients" />
     </main>
   );
-};
-
-export default FAQ;
+}
 

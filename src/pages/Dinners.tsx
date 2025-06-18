@@ -1,29 +1,14 @@
 import React from 'react';
 import Header from '@/components/ui/header';
-import { Footerdemo } from '@/components/ui/footer-section';
-import HeroSection from '@/components/shared/HeroSection';
+import { Footer } from "@/components/ui/footer-section";
+import UniversalHero from '@/components/shared/UniversalHero';
 import PricingSection from '@/components/shared/PricingSection';
 import FAQSection from '@/components/shared/FAQSection';
 import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
 import { CTA } from '@/components/ui/call-to-action/component';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
-import Seo from '@/components/seo/Seo';
+import Seo, { businessSchema, createFaqSchema } from '@/components/seo/Seo';
 
-const businessSchema = {
-  "@context": "https://schema.org",
-  "@type": "EventVenue",
-  name: "Somerhaus",
-  url: "https://somerhaus.com",
-  telephone: "513-902-1415",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "1415 Republic St",
-    addressLocality: "Cincinnati",
-    addressRegion: "OH",
-    postalCode: "45202",
-    addressCountry: "US",
-  },
-};
 
 const Dinners = () => {
   const pricingPlans = [
@@ -109,37 +94,18 @@ const Dinners = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqData.map(faq => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  };
+  const dinnersFaqSchema = createFaqSchema(faqData);
 
   return (
-    <main className="min-h-screen relative" style={{ backgroundColor: '#F5F3F1' }}>
+    <main className="min-h-screen relative bg-background">
       <Seo
         title="Dinner Event Venue in Cincinnati | Somerhaus"
         description="Host rehearsal dinners and celebrations in our industrial-chic Cincinnati venue."
-        schema={[businessSchema, faqSchema]}
+        schema={[businessSchema, dinnersFaqSchema]}
       />
       <Header />
       
-      <HeroSection 
-        backgroundType="static"
-        backgroundSources={[{
-          src: "/photo/meeting-dinner-hero1-artworks-cincinnati-event-space-somerhaus.jpg",
-          alt: "Dinner event setup at Somerhaus"
-        }]}
-        title="Dinner Events at Somerhaus"
-        subtitle="Intimate dining experiences in Cincinnati's most distinctive venue. From rehearsal dinners to anniversary celebrations, our 3,080 sq ft space sets the scene for memorable meals—book your date today."
-      />
+      <UniversalHero pageKey="dinners" />
 
       <ImageGallerySection />
 
@@ -168,7 +134,7 @@ const Dinners = () => {
 
       <CTA />
 
-      <Footerdemo />
+      <Footer logoType="press" />
     </main>
   );
 };

@@ -1,78 +1,71 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import Wedding from "./pages/Wedding";
-import WeddingLGBTQ from "./pages/WeddingLGBTQ";
-import MicroWeddings from "./pages/MicroWeddings";
-import Elopements from "./pages/Elopements";
-import FAQ from "./pages/Faq";
-import NotFound from "./pages/NotFound";
-import Corporate from "./pages/Corporate";
-import Contact from "./pages/Contact";
-import Showers from "./pages/Showers";
-import EventInquiry from "./pages/EventInquiry";
-import About from "./pages/About";
-import SpecialEvents from "./pages/SpecialEvents";
-import Dinners from "./pages/Dinners";
-import PhotoShoots from "./pages/PhotoShoots";
-import HappyHours from "./pages/HappyHours";
-import Rehearsals from "./pages/Rehearsals";
-import Parties from "./pages/Parties";
-import Meetings from "./pages/Meetings";
-import Gallery from "./pages/Gallery";
-import BarPackages from "./pages/BarPackages";
-import Pricing from "./pages/Pricing";
-import Vendors from "./pages/Vendors";
-import LayoutPage from "./pages/Layout";
-import PressPage from "./pages/Press";
-import Blog from "./pages/Blog";
-import WeddingChecklist from "./pages/blog/WeddingChecklist";
-import CorporateEventTips from "./pages/blog/CorporateEventTips";
+import { lazy, Suspense } from "react";
 
-const queryClient = new QueryClient();
+// Critical pages loaded immediately
+import Index from "./pages/Index";
+import NotFound from "./pages/NotFound";
+
+// Lazy load other pages
+const Wedding = lazy(() => import("./pages/Wedding"));
+const WeddingLGBTQ = lazy(() => import("./pages/WeddingLGBTQ"));
+const MicroWeddings = lazy(() => import("./pages/MicroWeddings"));
+const Elopements = lazy(() => import("./pages/Elopements"));
+const FAQ = lazy(() => import("./pages/Faq"));
+const Corporate = lazy(() => import("./pages/Corporate"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Showers = lazy(() => import("./pages/Showers"));
+const EventInquiry = lazy(() => import("./pages/EventInquiry"));
+const About = lazy(() => import("./pages/About"));
+const SpecialEvents = lazy(() => import("./pages/SpecialEvents"));
+const Dinners = lazy(() => import("./pages/Dinners"));
+const PhotoShoots = lazy(() => import("./pages/PhotoShoots"));
+const HappyHours = lazy(() => import("./pages/HappyHours"));
+const Rehearsals = lazy(() => import("./pages/Rehearsals"));
+const Parties = lazy(() => import("./pages/Parties"));
+const Meetings = lazy(() => import("./pages/Meetings"));
+const Gallery = lazy(() => import("./pages/Gallery"));
+const BarPackages = lazy(() => import("./pages/BarPackages"));
+const Pricing = lazy(() => import("./pages/Pricing"));
+const Vendors = lazy(() => import("./pages/Vendors"));
+const VenueLayout = lazy(() => import("./pages/VenueLayout"));
+const PressPage = lazy(() => import("./pages/Press"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <BrowserRouter>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/wedding" element={<Wedding />} />
-          <Route path="/lgbtq-weddings" element={<WeddingLGBTQ />} />
-          <Route path="/micro-weddings" element={<MicroWeddings />} />
-          <Route path="/elopements" element={<Elopements />} />
-          <Route path="/showers" element={<Showers />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/corporate" element={<Corporate />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/event-inquiry" element={<EventInquiry />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/special-events" element={<SpecialEvents />} />
-          <Route path="/dinners" element={<Dinners />} />
-          <Route path="/photo-shoots" element={<PhotoShoots />} />
-          <Route path="/happy-hours" element={<HappyHours />} />
-          <Route path="/rehearsals" element={<Rehearsals />} />
-          <Route path="/parties" element={<Parties />} />
-          <Route path="/meetings" element={<Meetings />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/bar-packages" element={<BarPackages />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/vendors" element={<Vendors />} />
-          <Route path="/venue-layout" element={<LayoutPage />} />
-          <Route path="/press" element={<PressPage />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/wedding-checklist" element={<WeddingChecklist />} />
-          <Route path="/blog/corporate-event-tips" element={<CorporateEventTips />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </TooltipProvider>
-    </BrowserRouter>
-  </QueryClientProvider>
+  <BrowserRouter>
+    <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/wedding" element={<Wedding />} />
+        <Route path="/lgbtq-weddings" element={<WeddingLGBTQ />} />
+        <Route path="/micro-weddings" element={<MicroWeddings />} />
+        <Route path="/elopements" element={<Elopements />} />
+        <Route path="/showers" element={<Showers />} />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/corporate" element={<Corporate />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/event-inquiry" element={<EventInquiry />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/special-events" element={<SpecialEvents />} />
+        <Route path="/dinners" element={<Dinners />} />
+        <Route path="/photo-shoots" element={<PhotoShoots />} />
+        <Route path="/happy-hours" element={<HappyHours />} />
+        <Route path="/rehearsals" element={<Rehearsals />} />
+        <Route path="/parties" element={<Parties />} />
+        <Route path="/meetings" element={<Meetings />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/bar-packages" element={<BarPackages />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/vendors" element={<Vendors />} />
+        <Route path="/venue-layout" element={<VenueLayout />} />
+        <Route path="/press" element={<PressPage />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Suspense>
+  </BrowserRouter>
 );
 
 export default App;

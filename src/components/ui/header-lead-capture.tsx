@@ -6,7 +6,7 @@ const HeaderLeadCapture = () => {
           {/* Logo */}
           <a href="/" className="flex items-center">
             <img 
-              src="/haus-logo.png" 
+              src="/haus-logo.webp" 
               alt="Somerhaus Logo" 
               className="h-12 w-auto"
             />

@@ -1,12 +1,10 @@
-import { TiltCard } from '@/components/ui/tilt-card';
-
 import { useEffect, useState, useRef } from 'react';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
-import { Menu, ChevronDown } from 'lucide-react';
+import { Menu, ChevronDown, X } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,7 +57,7 @@ const Header = () => {
           {/* Logo */}
           <a href="/" className="flex items-center">
             <img 
-              src="/haus-logo.png" 
+              src="/haus-logo.webp" 
               alt="Somerhaus Logo" 
               className="h-12 w-auto"
             />
@@ -162,97 +160,122 @@ const Header = () => {
               Somerset
             </a>
 
-            <TiltCard href="/event-inquiry">
+            <a 
+              href="/event-inquiry"
+              className="inline-block transition-all duration-300 hover:scale-110 hover:-rotate-6 hover:shadow-[0_30px_70px_rgba(0,0,0,0.9)] active:scale-95 transform-gpu"
+            >
               <Button
-                className={`font-body group-hover:text-black ${isScrolled ? 'bg-white text-black hover:bg-[#C1FF41]' : 'bg-white/10 text-white hover:bg-[#C1FF41]'}`}
+                className={`font-body ${isScrolled ? 'bg-white text-black hover:bg-[#C1FF41] hover:text-black' : 'bg-white/10 text-white hover:bg-[#C1FF41] hover:text-black'}`}
               >
                 Book Now
               </Button>
-            </TiltCard>
+            </a>
           </div>
 
           {/* Mobile Navigation */}
           <div className="md:hidden">
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className={`${isScrolled ? 'border-white/20 text-white' : 'border-white/10 text-white'}`}>
-                  <Menu className="h-6 w-6" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent>
-                <SheetHeader>
-                  <SheetTitle>
-                    <img 
-                      src="/haus-logo.png" 
-                      alt="Somerhaus Logo" 
-                      className="h-8 w-auto"
-                    />
-                  </SheetTitle>
-                </SheetHeader>
-                <div className="flex flex-col gap-4 mt-8">
-                  {/* Weddings Section in Mobile Menu */}
-                  <div className="mt-2 mb-2">
-                    <h3 className="text-lg font-body font-medium mb-2">Weddings</h3>
-                    <div className="pl-2 border-l-2 border-gray-700">
-                      {weddingItems.map((item) => (
-                        <a
-                          key={item.name}
-                          href={item.href}
-                          className={`block text-lg font-body py-2 hover:text-[#D65B2F] transition-colors ${item.bold ? 'font-bold' : ''}`}
-                        >
-                          {item.name}
-                        </a>
-                      ))}
+            <Button 
+              variant="outline" 
+              size="icon" 
+              className={`${isScrolled ? 'border-white/20 text-white' : 'border-white/10 text-white'}`}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
+            
+            {/* Mobile Menu Overlay */}
+            {isMobileMenuOpen && (
+              <div className="fixed inset-0 top-[80px] bg-black/95 backdrop-blur-sm z-40">
+                <div className="container mx-auto px-4 py-8">
+                  <div className="flex flex-col gap-6">
+                    {/* Weddings Section */}
+                    <div>
+                      <h3 className="text-xl font-body font-medium mb-4 text-white">Weddings</h3>
+                      <div className="pl-4 border-l-2 border-[#D65B2F]">
+                        {weddingItems.map((item) => (
+                          <a
+                            key={item.name}
+                            href={item.href}
+                            className={`block text-lg font-body py-2 text-white hover:text-[#D65B2F] transition-colors ${item.bold ? 'font-bold' : ''}`}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            {item.name}
+                          </a>
+                        ))}
+                      </div>
                     </div>
-                  </div>
 
-                  {menuItems.map((item) => (
+                    {/* Corporate Events */}
+                    {menuItems.filter(item => item.name !== 'Somerset').map((item) => (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        className="text-xl font-body py-2 text-white hover:text-[#D65B2F] transition-colors"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {item.name}
+                      </a>
+                    ))}
+
+                    {/* Other Events Section */}
+                    <div>
+                      <h3 className="text-xl font-body font-medium mb-4 text-white">Other Events</h3>
+                      <div className="pl-4 border-l-2 border-[#D65B2F]">
+                        {otherEventsItems.map((item) => (
+                          <a
+                            key={item.name}
+                            href={item.href}
+                            className="block text-lg font-body py-2 text-white hover:text-[#D65B2F] transition-colors"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            {item.name}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Info Section */}
+                    <div>
+                      <h3 className="text-xl font-body font-medium mb-4 text-white">Info</h3>
+                      <div className="pl-4 border-l-2 border-[#D65B2F]">
+                        {infoItems.map((item) => (
+                          <a
+                            key={item.name}
+                            href={item.href}
+                            className="block text-lg font-body py-2 text-white hover:text-[#D65B2F] transition-colors"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            {item.name}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Somerset */}
                     <a
-                      key={item.name}
-                      href={item.href}
-                      className="text-lg font-body py-2 hover:text-gray-500 transition-colors"
+                      href="https://somersetotr.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xl font-body py-2 text-white hover:text-[#D65B2F] transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      {item.name}
+                      Somerset
                     </a>
-                  ))}
-                  {/* Other Events Section in Mobile Menu */}
-                  <div className="mt-2 mb-2">
-                    <h3 className="text-lg font-body font-medium mb-2">Other Events</h3>
-                    <div className="pl-2 border-l-2 border-gray-700">
-                      {otherEventsItems.map((item) => (
-                        <a
-                          key={item.name}
-                          href={item.href}
-                          className="block text-lg font-body py-2 hover:text-[#D65B2F] transition-colors"
-                        >
-                          {item.name}
-                        </a>
-                      ))}
-                    </div>
+                    
+                    {/* Book Now Button */}
+                    <a 
+                      href="/event-inquiry" 
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="inline-block transition-all duration-300 hover:scale-110 hover:-rotate-6 hover:shadow-[0_30px_70px_rgba(0,0,0,0.9)] active:scale-95 transform-gpu"
+                    >
+                      <Button className="mt-4 w-full font-body bg-white text-black hover:bg-[#C1FF41] hover:text-black">
+                        Book Now
+                      </Button>
+                    </a>
                   </div>
-
-                  {/* Info Section in Mobile Menu */}
-                  <div className="mt-2 mb-2">
-                    <h3 className="text-lg font-body font-medium mb-2">Info</h3>
-                    <div className="pl-2 border-l-2 border-gray-700">
-                      {infoItems.map((item) => (
-                        <a
-                          key={item.name}
-                          href={item.href}
-                          className="block text-lg font-body py-2 hover:text-[#D65B2F] transition-colors"
-                        >
-                          {item.name}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <TiltCard href="/event-inquiry">
-                    <Button className="mt-4 w-full font-body hover:bg-[#C1FF41] group-hover:text-black">Book Now</Button>
-                  </TiltCard>
                 </div>
-              </SheetContent>
-            </Sheet>
+              </div>
+            )}
           </div>
         </nav>
       </div>
