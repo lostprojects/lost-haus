@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { MapPin, Phone, CalendarDays } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
-import Header from '@/components/ui/header';
+import PageLayout from '@/components/shared/PageLayout';
 import Seo from '@/components/seo/Seo';
 import { businessSchema } from '@/components/seo/seo-schemas';
-import { Footer } from "@/components/ui/footer-section";
+import { teamMembers } from '@/data/teamMembers';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent } from "@/components/ui/card";
@@ -18,23 +17,6 @@ import UniversalHero from '@/components/shared/UniversalHero';
 const ContactPage = () => {
   useHoneyBook();
 
-  const teamMembers = [
-    {
-      name: "Beth Smiley",
-      role: "General Manager",
-      image: "/team/beth-smiley.png",
-      bio: "Beth brings over 15 years of hospitality and event management experience to Somerhaus. With her keen eye for detail and passion for creating memorable experiences, she ensures every event runs flawlessly."
-    }, 
-    {
-      name: "Sara Hutslar",
-      role: "Events Director",
-      image: "/team/sara-hutslar.png",
-      bio: "As our creative force, Sara transforms client visions into reality. Her background in design and event planning helps create unique, personalized experiences for every occasion at Somerhaus."
-    }
-  ];
-  
-  const faqs = [{
-    question: "What is your availability for 2025?",
     answer: "We're currently booking for 2025 with some limited weekend dates still available. Weekdays offer more flexibility, especially for corporate events."
   }, {
     question: "What's included in your venue rental?",
@@ -75,15 +57,13 @@ const ContactPage = () => {
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const currentTestimonial = testimonials[currentTestimonialIndex];
   
-  return <div className="min-h-screen flex flex-col">
+  return <PageLayout footerLogoType="clients">
       <Seo
         title="Contact Somerhaus in Cincinnati"
         description="Get in touch with our team to book your event or schedule a tour at Cincinnati's most enchanting venue."
         schema={businessSchema}
       />
-      <Header />
-      
-             <UniversalHero pageKey="contact" />
+      <UniversalHero pageKey="contact" />
       
       <main className="flex-grow">
         <div className="container mx-auto px-4 py-16">
@@ -289,8 +269,7 @@ const ContactPage = () => {
         </div>
       </main>
       
-      <Footer logoType="clients" />
-    </div>;
+    </PageLayout>;
 };
 
 export default ContactPage;

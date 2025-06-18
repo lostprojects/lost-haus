@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Header from '@/components/ui/header';
+import PageLayout from '@/components/shared/PageLayout';
 import Seo from '@/components/seo/Seo';
 import { businessSchema } from '@/components/seo/seo-schemas';
-import { Footer } from "@/components/ui/footer-section";
+import { teamMembers } from '@/data/teamMembers';
 import UniversalHero from '@/components/shared/UniversalHero';
 import { Separator } from '@/components/ui/separator';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -13,40 +13,19 @@ import HoneyBookForm from '@/components/honeybook/HoneyBookForm';
 const About: React.FC = () => {
   useHoneyBook();
 
-  const heroImages = [
-    { src: '/photo/haus-wedding-main.webp', alt: 'Wedding at Somerhaus' },
-    { src: '/photo/haus-wedding-2.webp', alt: 'Wedding reception at Somerhaus' },
-    { src: '/photo/haus-meeting.webp', alt: 'Meeting at Somerhaus' },
-    { src: '/photo/haus-party.webp', alt: 'Party at Somerhaus' }
-  ];
 
-  const teamMembers = [
-    {
-      name: "Beth Smiley",
-      role: "General Manager",
-      image: "/placeholder.svg",
-      bio: "Beth brings over 15 years of hospitality and event management experience to Somerhaus. With her keen eye for detail and passion for creating memorable experiences, she ensures every event runs flawlessly."
-    }, 
-    {
-      name: "Sara Hutslar",
-      role: "Events Director",
-      image: "/placeholder.svg",
-      bio: "As our creative force, Sara transforms client visions into reality. Her background in design and event planning helps create unique, personalized experiences for every occasion at Somerhaus."
-    }
-  ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-background"> {/* Added bg-background */}
-      <Seo 
-        title="About Somerhaus | Event Space in Cincinnati" 
-        description="Learn the story behind Somerhaus and meet the team that makes every event memorable." 
+    <PageLayout footerLogoType="clients">
+      <Seo
+        title="About Somerhaus | Event Space in Cincinnati"
+        description="Learn the story behind Somerhaus and meet the team that makes every event memorable."
         schema={businessSchema}
       />
-      <Header />
-      
+
       <UniversalHero pageKey="about" />
 
-      <main className="flex-grow">
+      <div>
 
         {/* Our Story Section */}
         <section className="py-12 md:py-16">
@@ -185,9 +164,8 @@ const About: React.FC = () => {
           </div>
         </section>
 
-      </main>
-      <Footer logoType="clients" />
-    </div>
+      </div>
+    </PageLayout>
   );
 };
 

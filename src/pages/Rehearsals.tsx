@@ -1,7 +1,6 @@
 
 import React from 'react';
-import Header from '@/components/ui/header';
-import { Footer } from "@/components/ui/footer-section";
+import PageLayout from '@/components/shared/PageLayout';
 import UniversalHero from '@/components/shared/UniversalHero';
 import PricingSection from '@/components/shared/PricingSection';
 import FAQSection from '@/components/shared/FAQSection';
@@ -10,64 +9,11 @@ import { CTA } from '@/components/ui/call-to-action/component';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
 import Seo from '@/components/seo/Seo';
 import { businessSchema, createFaqSchema } from '@/components/seo/seo-schemas';
+import { rehearsalsPricing } from '@/data/pricingPlans';
+import FaqMoreAnswers from '@/components/faq/FaqMoreAnswers';
 
 
 const Rehearsals = () => {
-  const pricingPlans = [
-    {
-      name: "Simple Rehearsal",
-      price: "$1,800",
-      period: "/event",
-      description: "Perfect for intimate wedding rehearsals and run-throughs",
-      features: [
-        "Up to 25 guests",
-        "3-hour venue rental",
-        "Basic seating arrangement",
-        "Sound system for ceremony",
-        "Processional area setup",
-        "Event coordination",
-        "Bridal suite access"
-      ],
-      popular: false,
-    },
-    {
-      name: "Complete Rehearsal",
-      price: "$2,800",
-      period: "/event",
-      description: "Our most popular rehearsal package with dinner coordination",
-      features: [
-        "Up to 40 guests",
-        "4-hour venue rental",
-        "Full ceremony setup",
-        "Professional sound system",
-        "Seating for rehearsal dinner",
-        "Bar setup available",
-        "Catering coordination",
-        "Photography space",
-        "Dedicated event coordinator"
-      ],
-      popular: true,
-    },
-    {
-      name: "Premium Rehearsal Event",
-      price: "$4,200",
-      period: "/event",
-      description: "Ultimate rehearsal experience with full dinner service",
-      features: [
-        "Up to 60 guests",
-        "6-hour venue rental",
-        "Complete ceremony rehearsal",
-        "Full rehearsal dinner setup",
-        "Premium bar service",
-        "Multi-course dinner coordination",
-        "Live music accommodation",
-        "Professional lighting",
-        "Full event management",
-        "Welcome cocktail service"
-      ],
-      popular: false,
-    }
-  ];
 
   const faqData = [
     {
@@ -99,14 +45,12 @@ const Rehearsals = () => {
   const rehearsalsFaqSchema = createFaqSchema(faqData);
 
   return (
-    <main className="min-h-screen relative bg-background">
+    <PageLayout footerLogoType="clients" mainClassName="relative">
       <Seo
         title="Wedding Rehearsal Venue in Cincinnati | Somerhaus"
         description="Practice and celebrate in style at our historic Cincinnati space."
         schema={[businessSchema, rehearsalsFaqSchema]}
       />
-      <Header />
-      
       <UniversalHero pageKey="rehearsals" />
 
       <ImageGallerySection />
@@ -114,7 +58,7 @@ const Rehearsals = () => {
       <PricingSection 
         title="Rehearsal Packages"
         description="Choose the perfect package for your wedding rehearsal and dinner"
-        packages={pricingPlans}
+        packages={rehearsalsPricing}
       />
 
       <TestimonialsDemo />
@@ -123,21 +67,11 @@ const Rehearsals = () => {
         title="Wedding Rehearsals FAQ"
         description="Everything you need to know about hosting your wedding rehearsal at Somerhaus"
         faqs={faqData}
-        postAccordionContent={
-          <p className="text-center mt-8 font-body text-muted-foreground">
-            Need more answers? Visit our{' '}
-            <a href="/faq" className="text-primary underline hover:text-primary/80">
-              full FAQ page
-            </a>
-            .
-          </p>
-        }
+        postAccordionContent={<FaqMoreAnswers />}
       />
 
       <CTA />
-
-      <Footer logoType="clients" />
-    </main>
+    </PageLayout>
   );
 };
 
