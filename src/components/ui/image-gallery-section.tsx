@@ -80,12 +80,21 @@ export const ImageGallerySection: React.FC<ImageGallerySectionProps> = ({
         </div>
         
         <div className="text-center mt-8 animate-fade-in-up">
-          <Link 
-            to="/about/gallery" 
-            className="inline-flex items-center text-brand hover:text-brand/80 transition-colors font-body text-base"
-          >
-            See More <ArrowUpRight className="ml-1 h-4 w-4" />
-          </Link>
+          <div className="flex items-center justify-center gap-2 text-base font-body">
+            <Link 
+              to="/gallery" 
+              className="inline-flex items-center text-brand hover:text-brand/80 transition-colors"
+            >
+              See more photos <ArrowUpRight className="ml-1 h-4 w-4" />
+            </Link>
+            <span className="text-gray-400">|</span>
+            <Link 
+              to="/venue-layout" 
+              className="inline-flex items-center text-brand hover:text-brand/80 transition-colors"
+            >
+              Explore potential layouts <ArrowUpRight className="ml-1 h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>

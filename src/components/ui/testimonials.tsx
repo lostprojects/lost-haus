@@ -97,8 +97,8 @@ function Testimonials() {
   return <div className="w-full py-20 lg:py-[50px]">
       <div className="flex flex-col gap-10">
         <div className="container mx-auto text-center">
-          <Badge className="mb-4 font-body">Guest Experience</Badge>
-          <h2 className="font-bold text-brand font-header py-[19px]">Hundreds of Perfect Moments</h2>
+          <Badge className="mb-4 font-body">Word on the Street</Badge>
+          <h2 className="font-bold text-brand font-header py-[19px]">What Our Guests Are Saying</h2>
           <p className="text-base font-body text-black">Over 200 amazing events in 3 years</p>
         </div>
         <div className="w-full">

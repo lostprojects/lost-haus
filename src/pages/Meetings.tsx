@@ -8,7 +8,6 @@ import { CTA } from '@/components/CTASection';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
 import Seo from '@/components/seo/Seo';
 import { businessSchema, createFaqSchema } from '@/components/seo/seo-schemas';
-import { LogoTicker } from '@/components/LogoTicker';
 import { getFAQsForPage } from '@/lib/faqUtils';
 import { meetingsPricing } from '@/data/pricingPlans';
 import FaqMoreAnswers from '@/components/faq/FaqMoreAnswers';

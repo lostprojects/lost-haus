@@ -3,9 +3,10 @@ import Seo from '@/components/seo/Seo';
 import { enhancedBusinessSchema, localBusinessSchema } from '@/components/seo/seo-schemas';
 import { Testimonials } from '@/components/ui/testimonials';
 import { ThreeStepProcess } from '@/components/ThreeStepProcess';
-import { RevealImageListDemo } from '@/components/ui/reveal-images/demo';
+
+import EventTypesGallery from '@/components/EventTypesGallery';
 import { CTA } from '@/components/CTASection';
-import { ImageGallerySection } from '@/components/ui/image-gallery-section';
+import { ImprovedGallerySection } from '@/components/ui/improved-gallery-section';
 import { FeaturedQuote } from '@/components/ui/featured-quote';
 
 const Index = () => {
@@ -20,39 +21,35 @@ const Index = () => {
       />
       
       {/* Creative Somerhaus Description */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-background to-white">
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-4 max-w-5xl text-center">
-          <h2 className="font-header mb-8 text-brand leading-tight">
-              Industrial Elegance Meets Timeless Celebration
-          </h2>
           <div className="space-y-6 text-lg font-body text-gray-700 leading-relaxed max-w-4xl mx-auto">
             <p>
-              Step into <span className="font-semibold text-brand">Somerhaus</span>, where the soul of Cincinnati's historic Over-the-Rhine 
-              neighborhood comes alive in every exposed brick wall and soaring ceiling. Our 3,080 square feet of meticulously curated space 
-              tells a story of transformation—from industrial heritage to contemporary sanctuary.
+              Tucked into an old Over-the-Rhine garage, <span className="font-semibold text-brand">Somerhaus</span> is Cincinnati's green-lined playground for people who like their gatherings a little less ordinary. Concrete floors meet climbing vines, daylight pours through the long skylight & roll-up door. The space hums with the energy of artists, makers, and neighbors who've already tested the limits of what a "venue" can do.
             </p>
             <p>
-              Here, beneath the glow of our signature lighting and surrounded by the warm embrace of reclaimed materials, 
-              your most precious moments find their perfect stage. Whether you're saying "I do" under our dramatic ceiling beams, 
-              celebrating a corporate milestone with Cincinnati's skyline as your backdrop, or gathering loved ones for an intimate dinner, 
-              <span className="font-semibold text-brand"> Somerhaus doesn't just host events—we craft experiences that linger in memory long after the last guest departs</span>.
+              We hand-made it this way on purpose—to be open, flexible, and ready for whatever you're dreaming up. Pop in for a long-table dinner, a pop-up market, a micro-wedding, or a late-night idea sprint; our room adapts without losing its character.
             </p>
-            <p className="text-xl font-semibold text-brand italic">
-              This is more than a venue. This is where your story becomes legendary.
+            <p>
+              If you want a space that feels alive, rooted in the neighborhood, and wide-open to creativity, you're in the right spot.
+            </p>
+            <p className="text-xl font-semibold text-black"> 
+              Welcome to Somerhaus.
             </p>
           </div>
         </div>
       </section>
       
-      <RevealImageListDemo />
+      {/* Event Types Gallery - 3x2 grid layout using full page width */}
+      <EventTypesGallery />
       <Testimonials />
-      <CTA />
-      <ImageGallerySection />
       <FeaturedQuote />
+      <CTA />
+      <ImprovedGallerySection />
       {/* White container for Three Step Process section */}
-      <div className="w-full py-10 lg:py-[40px]">
+      <div className="w-full py-8 lg:py-[10px]">
         <div className="max-w-4xl mx-auto px-4">
-          <div className="bg-white rounded-md p-4 lg:p-14 py-[50px] px-[50px]">
+          <div className="bg-white rounded-md p-4 lg:p-14 py-[20px] px-[20px]">
             <ThreeStepProcess 
               steps={[
                 { 
