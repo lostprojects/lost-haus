@@ -18,8 +18,6 @@
   font-display: swap;
 }
 
-
-
 @font-face {
   font-family: 'Nebulica';
   src: url('/Nebulica-Thin.woff') format('woff');
@@ -152,7 +150,7 @@
     --brand-700: #c2410c; /* Dark - Hover states and pressed buttons */
     --brand-800: #9a3412; /* Darker - Text on light backgrounds */
     --brand-900: #7c2d12; /* Darkest - High contrast text and borders */
-    
+
     /* Brand Green */
     --brand-green: #5CA87E; /* Primary brand green for secondary CTAs and accents */
 
@@ -195,6 +193,11 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --color-1: 0 100% 63%;
+    --color-2: 270 100% 63%;
+    --color-3: 210 100% 63%;
+    --color-4: 195 100% 63%;
+    --color-5: 90 100% 63%;
   }
 
   .dark {
@@ -364,6 +367,9 @@
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), 0 15px 12px rgba(0, 0, 0, 0.5);
     transform: translateY(-6px);
   }
+  .theme {
+    --animate-rainbow: rainbow var(--speed, 2s) infinite linear;
+  }
 }
 
 @keyframes bounce {
@@ -384,18 +390,18 @@
   * {
     @apply border-border;
   }
-  
+
   /* Optimize scrolling performance */
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     @apply bg-background text-foreground;
     font-family: "Nebulica", sans-serif;
     font-weight: 200;
   }
-  
+
   /* Global Typography & Brand Colors */
   h1, h2, h3, h4, h5, h6 {
     color: var(--brand) !important;
@@ -403,14 +409,30 @@
     font-weight: 700;
   }
 
-  /* Consistent section heading sizes */
-  h2 {
-    font-size: 3rem;
+  /* Tailwind-based heading hierarchy */
+  h1 {
+    font-size: 3.75rem; /* text-6xl - major page titles */
     line-height: 1;
   }
-  h3 {
-    font-size: 2.25rem;
+  h2 {
+    font-size: 2.25rem; /* text-4xl - section headings */
     line-height: 1.1;
+  }
+  h3 {
+    font-size: 1.5rem; /* text-2xl - subsection headings */
+    line-height: 1.2;
+  }
+  h4 {
+    font-size: 1.25rem; /* text-xl - smaller headings */
+    line-height: 1.3;
+  }
+  h5 {
+    font-size: 1.125rem; /* text-lg - minor headings */
+    line-height: 1.4;
+  }
+  h6 {
+    font-size: 1rem; /* text-base - smallest headings */
+    line-height: 1.5;
   }
 
   /* Override for specific cases where headings should remain white */
@@ -418,6 +440,11 @@
   .text-white h1, .text-white h2, .text-white h3, .text-white h4, .text-white h5, .text-white h6,
   h1.text-white, h2.text-white, h3.text-white, h4.text-white, h5.text-white, h6.text-white {
     color: white !important;
+  }
+
+  /* Override for FAQ headings to be black */
+  button[data-state] h4 {
+    color: black !important;
   }
 
   /* Global Link Hover States */
@@ -429,7 +456,7 @@
   .btn:hover, .button:hover, button:hover, [role="button"]:hover, .nav-link:hover {
     /* Let these keep their existing hover styles */
   }
-  
+
   /* Improve parallax performance */
   [data-parallax] {
     transform: translateZ(0);
@@ -469,6 +496,17 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+}
+
+@theme inline {
+  @keyframes rainbow {
+  0% {
+    background-position: 0%;
+    }
+  100% {
+    background-position: 200%;
     }
   }
 }

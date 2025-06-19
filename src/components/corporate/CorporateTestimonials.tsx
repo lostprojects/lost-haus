@@ -1,9 +1,16 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Badge } from "@/components/ui/badge";
+import { Star } from 'lucide-react';
 
-const CorporateTestimonials = () => {
+interface CorporateTestimonialsProps {
+  badgeText?: string;
+}
+
+const CorporateTestimonials: React.FC<CorporateTestimonialsProps> = ({ 
+  badgeText = "Client Stories"
+}) => {
   const testimonials = [
     {
       quote: "Somerhaus transformed our annual strategy meeting from a standard corporate event into a truly inspiring experience. The space fostered creativity and the team still talks about it.",
@@ -32,10 +39,11 @@ const CorporateTestimonials = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-header mb-4">What Businesses Say</h2>
+          <Badge className="mb-4 font-body">{badgeText}</Badge>
+          <h2 className="font-header mb-4">What Businesses Say</h2>
           <p className="max-w-2xl mx-auto text-lg text-gray-600 font-body">
             Don't take our word for it—hear from corporate clients who've hosted successful events at Somerhaus.
           </p>

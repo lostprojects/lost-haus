@@ -31,7 +31,7 @@ const ShowersTestimonials = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <Badge className="mb-4 font-body">Client Stories</Badge>
-          <h2 className="text-3xl md:text-5xl font-header tracking-tight mb-4">What Our Clients Say</h2>
+          <h2 className="font-header tracking-tight mb-4">What Our Clients Say</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body">
             Hear from families who celebrated their special moments with us.
           </p>

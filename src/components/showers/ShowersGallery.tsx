@@ -32,7 +32,7 @@ const ShowersGallery = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <Badge className="mb-4 font-body">Photo Gallery</Badge>
-          <h2 className="text-3xl md:text-5xl font-header tracking-tight mb-4">Shower Celebrations</h2>
+          <h2 className="font-header tracking-tight mb-4">Shower Celebrations</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body">
             Browse our gallery of past baby showers, bridal showers, and celebrations.
           </p>

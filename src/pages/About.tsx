@@ -1,19 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import PageLayout from '@/components/shared/PageLayout';
+import PageLayout, { STANDARD_CONTAINER_CLASSES } from '@/components/PageLayout';
 import Seo from '@/components/seo/Seo';
 import { businessSchema } from '@/components/seo/seo-schemas';
 import { teamMembers } from '@/data/teamMembers';
-import UniversalHero from '@/components/shared/UniversalHero';
 import { Separator } from '@/components/ui/separator';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from "@/components/ui/badge";
 import { useHoneyBook } from '@/hooks/use-honeybook';
-import HoneyBookForm from '@/components/honeybook/HoneyBookForm';
+import HoneyBookForm from '@/components/HoneyBookForm';
 
 const About: React.FC = () => {
   useHoneyBook();
-
-
 
   return (
     <PageLayout footerLogoType="clients">
@@ -23,15 +20,26 @@ const About: React.FC = () => {
         schema={businessSchema}
       />
 
-      <UniversalHero pageKey="about" />
+      <section className="pt-8 pb-12 md:pt-12 md:pb-16">
+        <div className={`${STANDARD_CONTAINER_CLASSES} space-y-8`}>
+          <div>
+            <h1 className="font-header mb-4">
+              About Somerhaus
+            </h1>
+            <p className="text-lg text-muted-foreground font-body">
+              Learn the story behind Somerhaus and meet the team that makes every event memorable.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <div>
 
         {/* Our Story Section */}
         <section className="py-12 md:py-16">
-          <div className="container mx-auto px-4 max-w-3xl"> {/* Container with max-width */}
-            <h2 className="text-3xl md:text-4xl font-header font-semibold mb-6 text-center">Our Story</h2>
-            <div className="prose prose-lg max-w-none mx-auto text-foreground font-mono"> {/* Added prose for styling */}
+          <div className={`${STANDARD_CONTAINER_CLASSES} max-w-3xl`}>
+            <h2 className="font-header font-semibold mb-6 text-center">Our Story</h2>
+            <div className="prose prose-lg max-w-none mx-auto text-foreground font-mono">
               <p>
                 Somerhaus was born from the same spirit of adventure that powers our sister venue, Somerset Bar—an indoor/outdoor oasis pieced together from eight shipping containers and treasures collected on global expeditions, opened in 2021 to instant acclaim. Guests loved Somerset so much they kept asking to rent it for private events. Rather than close the bar, we transformed a nearby 1880s industrial loft at 1415 Republic Street into a purpose-built event space, keeping the maximalist, globally-sourced design language people fell for.
               </p>
@@ -42,13 +50,13 @@ const About: React.FC = () => {
           </div>
         </section>
 
-        <Separator className="my-0" /> {/* Separator between sections */}
+        <Separator className="my-0" />
 
         {/* The Space Section */}
-        <section className="py-12 md:py-16 bg-muted/40"> {/* Alternating background */}
-          <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-header font-semibold mb-6 text-center">The Space</h2>
-            <ul className="list-disc list-inside space-y-3 text-lg text-muted-foreground font-mono marker:text-primary"> {/* Styled list */}
+        <section className="py-12 md:py-16 bg-muted/40">
+          <div className={`${STANDARD_CONTAINER_CLASSES} max-w-3xl`}>
+            <h2 className="font-header font-semibold mb-6 text-center">The Space</h2>
+            <ul className="list-disc list-inside space-y-3 text-lg text-muted-foreground font-mono marker:text-primary">
               <li>3,000+ sq ft of uninterrupted floor-plan freedom—yours to configure for ceremonies, seated dinners up to 80, or cocktail receptions that flow past 150.</li>
               <li>Fully furnished lounges, dining tables, a built-in bar, and 70 extra folding chairs on-site—no rental scramble required.</li>
               <li>House A/V: blazing-fast Wi-Fi, integrated sound, wireless mics, and four 65-inch displays with AirPlay & Chromecast for plug-and-play presentations or photo loops.</li>
@@ -62,8 +70,8 @@ const About: React.FC = () => {
 
         {/* Events We Host Section */}
         <section className="py-12 md:py-16">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-header font-semibold mb-6 text-center">Events We Host</h2>
+          <div className={`${STANDARD_CONTAINER_CLASSES} max-w-3xl`}>
+            <h2 className="font-header font-semibold mb-6 text-center">Events We Host</h2>
             <p className="text-lg text-muted-foreground text-center font-mono">
               From weddings and showers to product launches, off-sites, art shows, and film shoots—if you can dream it, chances are we've flipped the room for it already. Our only hard rule: celebrations should elevate the people and the neighborhood we love.
             </p>
@@ -74,10 +82,10 @@ const About: React.FC = () => {
 
         {/* Meet the Team Section - Added from Contact page */}
         <section className="py-12 md:py-16 bg-muted/40">
-          <div className="container mx-auto px-4">
+          <div className={STANDARD_CONTAINER_CLASSES}>
             <div className="text-center mb-12">
               <Badge variant="outline" className="mb-3">The People Behind Your Events</Badge>
-              <h2 className="text-3xl md:text-4xl font-header mb-4">Meet Our Team</h2>
+              <h2 className="font-header mb-4">Meet Our Team</h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto font-mono">
                 Our dedicated professionals work tirelessly to ensure your event exceeds expectations.
               </p>
@@ -99,7 +107,7 @@ const About: React.FC = () => {
                     <div className="md:col-span-3 p-6">
                       <div className="flex flex-col h-full justify-between">
                         <div>
-                          <h3 className="text-2xl font-header mb-1">{member.name}</h3>
+                          <h3 className="font-header mb-1">{member.name}</h3>
                           <p className="text-primary font-medium mb-4">{member.role}</p>
                           <p className="text-gray-600 font-mono">{member.bio}</p>
                         </div>
@@ -121,8 +129,8 @@ const About: React.FC = () => {
 
         {/* The Team Section */}
         <section className="py-12 md:py-16">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-header font-semibold mb-6 text-center">The Team</h2>
+          <div className={`${STANDARD_CONTAINER_CLASSES} max-w-3xl`}>
+            <h2 className="font-header font-semibold mb-6 text-center">The Team</h2>
             <p className="text-lg text-muted-foreground text-center font-mono">
               Somerhaus operates under the Lost Hospitality umbrella, the Cincinnati-grown collective behind Somerset, Second Story, Alice, and the forthcoming Muse Hotel. Day-to-day magic is orchestrated by Beth Smiley and Sara Hutslar, our co-General Managers whose obsessive eye for detail (and deep OTR roots) ensures every client feels at home from the first walkthrough to the last dance.
             </p>
@@ -133,8 +141,8 @@ const About: React.FC = () => {
 
         {/* Why We're Different Section */}
         <section className="py-12 md:py-16">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-header font-semibold mb-6 text-center">Why We're Different</h2>
+          <div className={`${STANDARD_CONTAINER_CLASSES} max-w-3xl`}>
+            <h2 className="font-header font-semibold mb-6 text-center">Why We're Different</h2>
             <ul className="list-disc list-inside space-y-3 text-lg text-muted-foreground font-mono marker:text-primary">
               <li>Design without the white-box blandness. Your photos pop because the space already tells a story—yours just becomes the next chapter.</li>
               <li>Hospitality, not just venue rental. We cap events per week so our team can focus on service instead of churn.</li>
@@ -145,14 +153,14 @@ const About: React.FC = () => {
         <Separator className="my-0" />
 
         {/* HoneyBook Form Section */}
-        <section className="py-12 md:py-16 bg-muted/40"> {/* Added standard padding & bg */}
-           <div className="container mx-auto px-4 max-w-2xl"> {/* Container with max-width for form */}
-            <Card className="shadow-md border"> {/* Added shadow and border like Wedding page */}
-              <CardHeader className="text-center"> {/* Centered header */}
-                <CardTitle className="text-2xl md:text-3xl font-header">Ready to see it in person?</CardTitle> {/* Use font-header */}
+        <section className="py-12 md:py-16 bg-muted/40">
+           <div className={`${STANDARD_CONTAINER_CLASSES} max-w-2xl`}>
+            <Card className="shadow-md border">
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl md:text-3xl font-header">Ready to see it in person?</CardTitle>
               </CardHeader>
               <CardContent className="text-center">
-                <p className="text-lg text-muted-foreground mb-6 font-mono"> {/* Use font-body */}
+                <p className="text-lg text-muted-foreground mb-6 font-mono">
                   Schedule a visit to experience Somerhaus firsthand. Use the form below to book your tour.
                 </p>
                 {/* HoneyBook Embed Code */}

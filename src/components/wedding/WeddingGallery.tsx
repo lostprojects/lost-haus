@@ -1,10 +1,16 @@
-
 import React from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Image } from "lucide-react";
 
-const WeddingGallery = () => {
+interface WeddingGalleryProps {
+  badgeText?: string;
+}
+
+const WeddingGallery: React.FC<WeddingGalleryProps> = ({ 
+  badgeText = "Photo Gallery"
+}) => {
   const galleryImages = [
     {
       src: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80",
@@ -32,7 +38,8 @@ const WeddingGallery = () => {
     <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-header tracking-tight mb-4">Wedding Gallery</h2>
+          <Badge className="mb-4 font-body">{badgeText}</Badge>
+          <h2 className="font-header tracking-tight mb-4">Wedding Gallery</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body">
             Browse through magical moments captured at Somerhaus weddings.
           </p>

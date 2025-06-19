@@ -1,8 +1,16 @@
-
 import React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from "@/components/ui/badge";
+import { Users, Lightbulb, Presentation, Coffee } from 'lucide-react';
 
-const CorporateLayouts = () => {
+interface CorporateLayoutsProps {
+  badgeText?: string;
+}
+
+const CorporateLayouts: React.FC<CorporateLayoutsProps> = ({ 
+  badgeText = "Space Configurations"
+}) => {
   const layouts = [
     {
       id: "boardroom",
@@ -35,10 +43,11 @@ const CorporateLayouts = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-header mb-4">Versatile Meeting Configurations</h2>
+          <Badge className="mb-4 font-body">{badgeText}</Badge>
+          <h2 className="font-header mb-4">Versatile Meeting Configurations</h2>
           <p className="max-w-2xl mx-auto text-lg text-gray-600 font-body">
             Our flexible space adapts to your specific business needs with multiple setup options.
           </p>
@@ -64,7 +73,7 @@ const CorporateLayouts = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-header mb-2">{layout.name} Setup</h3>
+                  <h3 className="font-header mb-2">{layout.name} Setup</h3>
                   <div className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full mb-4 font-body">
                     {layout.capacity}
                   </div>

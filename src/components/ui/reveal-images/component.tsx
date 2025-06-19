@@ -31,9 +31,9 @@ function RevealImageListItem({
   
   const content = (
     <div className="group relative h-fit w-fit overflow-visible py-8">
-                  <h1 className="text-4xl font-black text-foreground transition-all duration-500 font-body md:text-5xl cursor-pointer" style={{'--hover-color': '#FFD764'} as React.CSSProperties} onMouseEnter={(e) => e.currentTarget.style.color = '#FFD764'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
+                  <h2 className="font-black text-foreground transition-all duration-500 font-body cursor-pointer" style={{'--hover-color': '#FFD764'} as React.CSSProperties} onMouseEnter={(e) => e.currentTarget.style.color = '#FFD764'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
         {text}
-      </h1>
+      </h2>
       <div className={container}>
         <div className={effect}>
           <img alt={bottomImage.alt} src={bottomImage.src} className="h-full w-full object-cover" />
@@ -147,11 +147,11 @@ function RevealImageList() {
     rotation: -10,
     translateX: 10,
     translateY: 6,
-    url: "/rehearsals"
+          url: "/wedding/rehearsals"
   }];
   return <div className="flex flex-col gap-8 rounded-sm bg-transparent px-4 md:px-8 py-4 max-w-7xl mx-auto">
       <div className="text-center">
-                    <h3 className="text-5xl font-bold md:text-5xl font-header mb-4" style={{color: '#FFD764'}}>Event Types</h3>
+                    <h2 className="font-bold font-header mb-4" style={{color: '#FFD764'}}>Event Types</h2>
                   <p className="text-lg font-body text-black max-w-4xl mx-auto leading-relaxed">
           From intimate celebrations to grand corporate gatherings, our 3,000+ sq ft venue transforms to match your vision. 
           Located in the heart of Cincinnati's historic Over-the-Rhine, we've mastered the art of creating unforgettable experiences 

@@ -1,15 +1,14 @@
 
 import React from 'react';
-import PageLayout from '@/components/shared/PageLayout';
-import UniversalHero from '@/components/shared/UniversalHero';
-import PricingSection from '@/components/shared/PricingSection';
-import FAQSection from '@/components/shared/FAQSection';
-import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
-import { CTA } from '@/components/ui/call-to-action/component';
+import PageLayout from '@/components/PageLayout';
+import PricingSection from '@/components/PricingSection';
+import FAQSection from '@/components/FAQSection';
+import { Testimonials } from '@/components/ui/testimonials';
+import { CTA } from '@/components/CTASection';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
 import Seo from '@/components/seo/Seo';
 import { businessSchema, createFaqSchema } from '@/components/seo/seo-schemas';
-import { LogoTicker } from '@/components/blocks/LogoTicker';
+import { LogoTicker } from '@/components/LogoTicker';
 import { getFAQsForPage } from '@/lib/faqUtils';
 import { meetingsPricing } from '@/data/pricingPlans';
 import FaqMoreAnswers from '@/components/faq/FaqMoreAnswers';
@@ -25,16 +24,12 @@ const Meetings = () => {
   const meetingsFaqSchema = createFaqSchema(faqData);
 
   return (
-    <PageLayout footerLogoType="press" mainClassName="relative">
+    <PageLayout heroKey="meetings" footerLogoType="press" mainClassName="relative">
       <Seo
         title="Meeting Venue in Cincinnati | Somerhaus"
         description="Hold productive corporate gatherings in our flexible Over-the-Rhine space."
         schema={[businessSchema, meetingsFaqSchema]}
       />
-
-      <UniversalHero pageKey="meetings" />
-
-              <LogoTicker type="clients" />
 
       <ImageGallerySection />
 
@@ -44,7 +39,7 @@ const Meetings = () => {
         packages={meetingsPricing}
       />
 
-      <TestimonialsDemo />
+      <Testimonials />
 
       <FAQSection
         title="Business Meetings FAQ"

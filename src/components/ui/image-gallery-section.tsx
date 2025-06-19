@@ -1,8 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Badge } from "@/components/ui/badge";
 import { ArrowUpRight } from "lucide-react";
 
-export const ImageGallerySection = () => {
+interface ImageGallerySectionProps {
+  badgeText?: string;
+}
+
+export const ImageGallerySection: React.FC<ImageGallerySectionProps> = ({ 
+  badgeText = "Photo Gallery"
+}) => {
   const firstRowImages = [
     "/photo/wedding-hero1-cincinnati-wedding-venue-somerhaus.webp",
     "/photo/wedding-portrait1-cincinnati-wedding-venue-somerhaus.webp", 
@@ -23,7 +30,8 @@ export const ImageGallerySection = () => {
     <section className="bg-transparent py-[40px]">
       <div className="max-w-none mx-auto px-8">
         <div className="text-center mb-6 animate-fade-in-up">
-          <h2 className="text-5xl font-bold md:text-5xl text-brand font-header mb-4 my-[26px] py-0">
+          <Badge className="mb-4 font-body">{badgeText}</Badge>
+          <h2 className="font-bold text-brand font-header mb-4 my-[26px] py-0">
             Gallery
           </h2>
           <p className="text-lg text-black font-body max-w-2xl mx-auto">

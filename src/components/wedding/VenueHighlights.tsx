@@ -1,9 +1,15 @@
-
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { MapPin, Users, Heart, Star } from "lucide-react";
 
-const VenueHighlights = () => {
+interface VenueHighlightsProps {
+  badgeText?: string;
+}
+
+const VenueHighlights: React.FC<VenueHighlightsProps> = ({ 
+  badgeText = "Venue Features"
+}) => {
   const highlights = [
     {
       icon: <MapPin className="h-8 w-8 text-primary" />,
@@ -31,7 +37,8 @@ const VenueHighlights = () => {
     <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-header tracking-tight mb-4">Venue Highlights</h2>
+          <Badge className="mb-4 font-body">{badgeText}</Badge>
+          <h2 className="font-header tracking-tight mb-4">Venue Highlights</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body">
             Discover what makes Somerhaus the most enchanting wedding venue in Cincinnati.
           </p>
@@ -44,7 +51,7 @@ const VenueHighlights = () => {
                 <div className="mb-4 p-3 bg-primary/10 rounded-full">
                   {highlight.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{highlight.title}</h3>
+                <h3 className="font-semibold mb-2">{highlight.title}</h3>
                 <p className="text-muted-foreground">{highlight.description}</p>
               </CardContent>
             </Card>

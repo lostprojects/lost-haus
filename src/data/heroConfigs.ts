@@ -111,14 +111,7 @@ export const heroConfigs: Record<string, HeroConfig> = {
     logoType: 'press'
   },
   
-  weddinglgbtq: {
-    type: 'secondary',
-    title: "LGBTQ+ Weddings",
-    subtitle: "Celebrating love in all its forms in Cincinnati's most inclusive venue space.",
-    images: ['/photo/wedding-portrait2-cincinnati-wedding-venue-somerhaus.webp'],
-    backgroundStyle: 'static',
-    logoType: 'press'
-  },
+
   
   press: {
     type: 'secondary',

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import FAQSection from '@/components/shared/FAQSection'; // Import the shared component
+import FAQSection from '@/components/FAQSection'; // Import the shared component
 import { Badge } from "@/components/ui/badge"; // Keep Badge import
 
 const ShowersFAQ = () => {

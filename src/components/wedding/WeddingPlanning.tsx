@@ -1,9 +1,16 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
-const WeddingPlanning = () => {
+interface WeddingPlanningProps {
+  badgeText?: string;
+}
+
+const WeddingPlanning: React.FC<WeddingPlanningProps> = ({ 
+  badgeText = "Planning Process"
+}) => {
   const steps = [
     {
       image: "/placeholder.svg",
@@ -26,7 +33,8 @@ const WeddingPlanning = () => {
     <section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-header font-bold tracking-tight mb-6 text-brand-orange">Your Event Starts Here</h2>
+          <Badge className="mb-4 font-body">{badgeText}</Badge>
+          <h2 className="font-header font-bold tracking-tight mb-6 text-brand-orange">Your Event Starts Here</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body">
             From your first vision to your final celebration, we make the journey seamless and magical.
           </p>
@@ -59,7 +67,7 @@ const WeddingPlanning = () => {
                 </div>
                 
                 <div className="space-y-4">
-                  <h3 className="text-2xl md:text-3xl font-header font-semibold text-foreground">{step.title}</h3>
+                  <h3 className="font-header font-semibold text-foreground">{step.title}</h3>
                   <p className="text-muted-foreground font-body leading-relaxed">{step.description}</p>
                 </div>
               </div>

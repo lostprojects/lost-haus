@@ -1,7 +1,7 @@
 
 import React from 'react';
-import PricingSection from '@/components/shared/PricingSection'; // Import shared section
-import { PricingCardProps } from '@/components/shared/PricingCard'; // Import card props type
+import PricingSection from '@/components/PricingSection'; // Import shared section
+import { PricingCardProps } from '@/components/PricingCard'; // Import card props type
 import { ArrowRight, Calendar } from "lucide-react"; // Keep icon imports
 
 const WeddingPackages = () => {

@@ -1,8 +1,15 @@
-
 import React from 'react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from "@/components/ui/badge";
 import { Wifi, Monitor, Headphones, Video, Presentation, Server } from 'lucide-react';
 
-const CorporateAmenities = () => {
+interface CorporateAmenitiesProps {
+  badgeText?: string;
+}
+
+const CorporateAmenities: React.FC<CorporateAmenitiesProps> = ({ 
+  badgeText = "Amenities"
+}) => {
   const amenities = [
     {
       icon: <Wifi className="h-8 w-8" />,
@@ -37,10 +44,11 @@ const CorporateAmenities = () => {
   ];
 
   return (
-    <section className="py-20">
+    <section className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-header mb-4">Professional-Grade Amenities</h2>
+          <Badge className="mb-4 font-body">{badgeText}</Badge>
+          <h2 className="font-header mb-4">Professional-Grade Amenities</h2>
           <p className="max-w-2xl mx-auto text-lg text-gray-600 font-body">
             Equipped with cutting-edge technology to power your most important business gatherings.
           </p>
@@ -53,7 +61,7 @@ const CorporateAmenities = () => {
                 {amenity.icon}
               </div>
               <div>
-                <h3 className="text-xl font-header mb-2">{amenity.title}</h3>
+                <h3 className="font-header mb-2">{amenity.title}</h3>
                 <p className="text-gray-600 font-body">{amenity.description}</p>
               </div>
             </div>

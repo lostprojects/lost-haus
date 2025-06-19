@@ -1,6 +1,5 @@
 import React from 'react';
-import PageLayout from '@/components/shared/PageLayout';
-import UniversalHero from '@/components/shared/UniversalHero';
+import PageLayout from '@/components/PageLayout';
 import Seo from '@/components/seo/Seo';
 import { businessSchema } from '@/components/seo/seo-schemas';
 import { ArrowUpRight, Clock } from 'lucide-react';
@@ -10,13 +9,12 @@ import { blogPosts } from '@/data/blogData';
 const Blog = () => {
 
   return (
-    <PageLayout footerLogoType="clients">
+    <PageLayout heroKey="blog" footerLogoType="clients">
       <Seo
         title="Haus Journal | Inspiration & Tips"
         description="Ideas, stories, and resources to craft unforgettable gatherings at Somerhaus."
         schema={businessSchema}
       />
-      <UniversalHero pageKey="blog" />
       <div className="flex-grow py-12 md:py-16">
         <div className="container mx-auto px-4 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post) => (
@@ -31,7 +29,7 @@ const Blog = () => {
                     {post.readTime}
                   </span>
                 </div>
-                <h3 className="mt-2 font-header text-lg group-hover:text-[#5CA87E] transition-colors leading-snug">
+                <h3 className="mt-2 font-header group-hover:text-[#5CA87E] transition-colors leading-snug">
                   {post.title}
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground line-clamp-3 font-body">{post.excerpt}</p>

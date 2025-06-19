@@ -1,7 +1,5 @@
 import React from 'react';
-import Header from '@/components/ui/header';
-import UniversalHero from '@/components/shared/UniversalHero';
-import { Footer } from "@/components/ui/footer-section";
+import PageLayout from '@/components/PageLayout';
 import VenueHighlights from '@/components/wedding/VenueHighlights';
 import WeddingPackages from '@/components/wedding/WeddingPackages';
 import WeddingGallery from '@/components/wedding/WeddingGallery';
@@ -16,15 +14,12 @@ import { businessSchema } from '@/components/seo/seo-schemas';
 
 const MicroWeddings: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <PageLayout heroKey="microweddings" footerLogoType="clients">
       <Seo
         title="Micro Weddings | Somerhaus Cincinnati"
         description="Perfect intimate celebrations with your closest family and friends in our stunning Cincinnati venue."
         schema={businessSchema}
       />
-      <Header />
-      
-      <UniversalHero pageKey="microweddings" />
 
       <main className="flex-grow">
         <VenueHighlights />
@@ -37,9 +32,7 @@ const MicroWeddings: React.FC = () => {
         <WeddingContact />
         <WeddingCTA />
       </main>
-      
-      <Footer logoType="clients" />
-    </div>
+    </PageLayout>
   );
 };
 

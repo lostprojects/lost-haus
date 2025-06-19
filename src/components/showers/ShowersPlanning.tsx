@@ -48,7 +48,7 @@ const ShowersPlanning = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <Badge className="mb-4 font-body">Planning Process</Badge>
-          <h2 className="text-3xl md:text-5xl font-header tracking-tight mb-4">How It Works</h2>
+          <h2 className="font-header tracking-tight mb-4">How It Works</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body">
             Our streamlined planning process makes organizing your perfect shower stress-free.
           </p>
@@ -62,7 +62,7 @@ const ShowersPlanning = () => {
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold mr-3">
                     {step.step}
                   </div>
-                  <h3 className="text-xl font-medium font-header">{step.title}</h3>
+                  <h3 className="font-medium font-header">{step.title}</h3>
                 </div>
                 <p className="text-muted-foreground font-body">{step.description}</p>
                 <div className="text-2xl mt-4">{step.icon}</div>

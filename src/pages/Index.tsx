@@ -1,32 +1,52 @@
-import UniversalHero from '@/components/shared/UniversalHero';
-import Header from '@/components/ui/header';
+import PageLayout from '@/components/PageLayout';
 import Seo from '@/components/seo/Seo';
 import { enhancedBusinessSchema, localBusinessSchema } from '@/components/seo/seo-schemas';
-import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
-import { ThreeStepProcess } from '@/components/blocks/ThreeStepProcess';
-
-import { Footer } from "@/components/ui/footer-section";
+import { Testimonials } from '@/components/ui/testimonials';
+import { ThreeStepProcess } from '@/components/ThreeStepProcess';
 import { RevealImageListDemo } from '@/components/ui/reveal-images/demo';
-import { CTADemo } from '@/components/ui/call-to-action/demo';
+import { CTA } from '@/components/CTASection';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
 import { FeaturedQuote } from '@/components/ui/featured-quote';
 
 const Index = () => {
-  return <>
-    <Seo
-      title="Somerhaus - Cincinnati Event Venue | Weddings, Corporate Events & Celebrations"
-      description="Host unforgettable events at Cincinnati's most enchanting 3,080 sq ft venue. Perfect for weddings, corporate gatherings, parties, meetings, and special celebrations in Over-the-Rhine."
-      image="/photo/wedding-hero1-cincinnati-wedding-venue-somerhaus.webp"
-      url="https://somerhaus.com"
-              schema={[enhancedBusinessSchema, localBusinessSchema]}
-    />
-    <main className="min-h-screen relative bg-background">
-      <Header />
-      <UniversalHero pageKey="homepage" />
+  return (
+    <PageLayout heroKey="homepage" footerLogoType="clients">
+      <Seo
+        title="Somerhaus - Cincinnati Event Venue | Weddings, Corporate Events & Celebrations"
+        description="Host unforgettable events at Cincinnati's most enchanting 3,080 sq ft venue. Perfect for weddings, corporate gatherings, parties, meetings, and special celebrations in Over-the-Rhine."
+        image="/photo/wedding-hero1-cincinnati-wedding-venue-somerhaus.webp"
+        url="https://somerhaus.com"
+        schema={[enhancedBusinessSchema, localBusinessSchema]}
+      />
+      
+      {/* Creative Somerhaus Description */}
+      <section className="py-16 md:py-20 bg-gradient-to-b from-background to-white">
+        <div className="container mx-auto px-4 max-w-5xl text-center">
+          <h2 className="font-header mb-8 text-brand leading-tight">
+              Industrial Elegance Meets Timeless Celebration
+          </h2>
+          <div className="space-y-6 text-lg font-body text-gray-700 leading-relaxed max-w-4xl mx-auto">
+            <p>
+              Step into <span className="font-semibold text-brand">Somerhaus</span>, where the soul of Cincinnati's historic Over-the-Rhine 
+              neighborhood comes alive in every exposed brick wall and soaring ceiling. Our 3,080 square feet of meticulously curated space 
+              tells a story of transformation—from industrial heritage to contemporary sanctuary.
+            </p>
+            <p>
+              Here, beneath the glow of our signature lighting and surrounded by the warm embrace of reclaimed materials, 
+              your most precious moments find their perfect stage. Whether you're saying "I do" under our dramatic ceiling beams, 
+              celebrating a corporate milestone with Cincinnati's skyline as your backdrop, or gathering loved ones for an intimate dinner, 
+              <span className="font-semibold text-brand"> Somerhaus doesn't just host events—we craft experiences that linger in memory long after the last guest departs</span>.
+            </p>
+            <p className="text-xl font-semibold text-brand italic">
+              This is more than a venue. This is where your story becomes legendary.
+            </p>
+          </div>
+        </div>
+      </section>
       
       <RevealImageListDemo />
-      <TestimonialsDemo />
-      <CTADemo />
+      <Testimonials />
+      <CTA />
       <ImageGallerySection />
       <FeaturedQuote />
       {/* White container for Three Step Process section */}
@@ -61,9 +81,7 @@ const Index = () => {
           </div>
         </div>
       </div>
-      
-      <Footer noBorder logoType="clients" />
-    </main>
-  </>;
+    </PageLayout>
+  );
 };
 export default Index;

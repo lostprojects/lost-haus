@@ -7,7 +7,7 @@ import NotFound from "./pages/NotFound";
 
 // Lazy load other pages
 const Wedding = lazy(() => import("./pages/Wedding"));
-const WeddingLGBTQ = lazy(() => import("./pages/WeddingLGBTQ"));
+
 const MicroWeddings = lazy(() => import("./pages/MicroWeddings"));
 const Elopements = lazy(() => import("./pages/Elopements"));
 const FAQ = lazy(() => import("./pages/Faq"));
@@ -41,9 +41,9 @@ const App = () => (
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/wedding" element={<Wedding />} />
-        <Route path="/lgbtq-weddings" element={<WeddingLGBTQ />} />
-        <Route path="/micro-weddings" element={<MicroWeddings />} />
-        <Route path="/elopements" element={<Elopements />} />
+        <Route path="/wedding/micro-weddings" element={<MicroWeddings />} />
+        <Route path="/wedding/elopements" element={<Elopements />} />
+        <Route path="/wedding/rehearsals" element={<Rehearsals />} />
         <Route path="/showers" element={<Showers />} />
         <Route path="/corporate" element={<Corporate />} />
         <Route path="/event-inquiry" element={<EventInquiry />} />
@@ -59,7 +59,6 @@ const App = () => (
         <Route path="/dinners" element={<Dinners />} />
         <Route path="/photo-shoots" element={<PhotoShoots />} />
         <Route path="/happy-hours" element={<HappyHours />} />
-        <Route path="/rehearsals" element={<Rehearsals />} />
         <Route path="/parties" element={<Parties />} />
         <Route path="/meetings" element={<Meetings />} />
         <Route path="/vendors" element={<Vendors />} />

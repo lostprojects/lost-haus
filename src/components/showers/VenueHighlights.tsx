@@ -42,7 +42,7 @@ const VenueHighlights = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <Badge className="mb-4 font-body">Venue Features</Badge>
-          <h2 className="text-3xl md:text-5xl font-header tracking-tight mb-4">Shower Venue Highlights</h2>
+          <h2 className="font-header tracking-tight mb-4">Shower Venue Highlights</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body">
             Our meticulously designed space offers the perfect setting for your special celebration.
           </p>
@@ -53,7 +53,7 @@ const VenueHighlights = () => {
             <Card key={index} className="border-none shadow-md hover:shadow-lg transition-shadow bg-white">
               <CardContent className="pt-6">
                 <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-xl font-medium mb-2 font-header">{item.title}</h3>
+                <h3 className="font-medium mb-2 font-header">{item.title}</h3>
                 <p className="text-muted-foreground font-body">{item.description}</p>
               </CardContent>
             </Card>

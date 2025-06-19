@@ -1,6 +1,6 @@
 
 import React from 'react';
-import FAQSection from '@/components/shared/FAQSection'; // Import shared component
+import FAQSection from '@/components/FAQSection'; // Import shared component
 import { Button } from "@/components/ui/button"; // Keep Button import
 
 const CorporateFAQ = () => {

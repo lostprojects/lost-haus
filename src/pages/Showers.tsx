@@ -1,7 +1,5 @@
 import React from 'react';
-import Header from '@/components/ui/header';
-import { Footer } from "@/components/ui/footer-section";
-import UniversalHero from '@/components/shared/UniversalHero';
+import PageLayout from '@/components/PageLayout';
 import VenueHighlights from '@/components/showers/VenueHighlights';
 import ShowersPackages from '@/components/showers/ShowersPackages';
 import ShowersGallery from '@/components/showers/ShowersGallery';
@@ -16,17 +14,12 @@ import { businessSchema } from '@/components/seo/seo-schemas';
 
 const Showers: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <PageLayout heroKey="showers" footerLogoType="clients">
       <Seo
         title="Bridal & Baby Showers | Somerhaus Cincinnati"
         description="Host your perfect bridal or baby shower in our enchanting 3,080 sq ft venue."
         schema={businessSchema}
       />
-      <Header />
-      
-      <UniversalHero pageKey="showers" />
-
-      <main className="flex-grow">
         <VenueHighlights />
         <ShowersPackages />
         <ShowersGallery />
@@ -36,10 +29,7 @@ const Showers: React.FC = () => {
         <ShowersFAQ />
         <ShowersContact />
         <ShowersCTA />
-      </main>
-      
-      <Footer logoType="clients" />
-    </div>
+    </PageLayout>
   );
 };
 

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Send, Instagram, Facebook } from "lucide-react";
-import { LogoTicker } from "@/components/blocks/LogoTicker";
+import { LogoTicker } from "@/components/LogoTicker";
 
 // Updated social icons array - using lucide-react icons
 const socialIcons = [{
@@ -18,11 +18,10 @@ const socialIcons = [{
   title: "Follow us on Facebook"
 }];
 interface FooterProps {
-  noBorder?: boolean;
   logoType?: 'press' | 'clients' | 'none';
 }
 
-function Footer({ noBorder = false, logoType = 'none' }: FooterProps = {}) {
+function Footer({ logoType = 'none' }: FooterProps = {}) {
   return (
     <>
       {/* Logos section on top of footer with black background */}
@@ -32,11 +31,11 @@ function Footer({ noBorder = false, logoType = 'none' }: FooterProps = {}) {
           className="bg-black" 
         />
       )}
-      <footer className={`relative ${noBorder ? '' : 'border-t'} bg-[#1A1F2C] text-white font-mono`}>
+      <footer className="relative bg-[#1A1F2C] text-white font-mono">
       <div className="container mx-auto px-4 py-16 md:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="relative">
-            <h3 className="mb-4 text-2xl font-header font-semibold">Say Hello</h3>
+            <h3 className="mb-4 font-header font-semibold">Say Hello</h3>
             <Link to="/about/contact" className="mb-6 flex items-center text-white hover:text-[#D65B2F] transition-colors text-sm">
               Contact Us <ArrowUpRight className="ml-1 h-4 w-4" />
             </Link>
@@ -67,7 +66,7 @@ function Footer({ noBorder = false, logoType = 'none' }: FooterProps = {}) {
             <div className="absolute -right-4 top-0 h-24 w-24 rounded-full bg-[#9b87f5]/10 blur-2xl" />
           </div>
           <div>
-            <h3 className="mb-4 font-header font-semibold text-2xl">Event Types</h3>
+            <h3 className="mb-4 font-header font-semibold">Event Types</h3>
             <nav className="space-y-2 text-sm font-mono">
               <Link to="/wedding" className="flex items-center transition-colors hover:text-[#D65B2F]">
                 Weddings <ArrowUpRight className="ml-1 h-4 w-4" />
@@ -81,7 +80,7 @@ function Footer({ noBorder = false, logoType = 'none' }: FooterProps = {}) {
             </nav>
           </div>
           <div>
-            <h3 className="mb-4 font-header font-semibold text-2xl">Tools & Info</h3>
+            <h3 className="mb-4 font-header font-semibold">Tools & Info</h3>
             <nav className="space-y-2 text-sm font-mono">
               <Link to="/event-inquiry" className="flex items-center transition-colors hover:text-[#D65B2F]">
                 Event Inquiry <ArrowUpRight className="ml-1 h-4 w-4" />
@@ -101,7 +100,7 @@ function Footer({ noBorder = false, logoType = 'none' }: FooterProps = {}) {
             </nav>
           </div>
           <div className="relative">
-            <h3 className="mb-4 font-header font-semibold text-2xl">Newsletter</h3>
+            <h3 className="mb-4 font-header font-semibold">Newsletter</h3>
             <p className="mb-6 text-sm text-gray-300 font-mono">
               Join our newsletter for exclusive updates and offers.
             </p>

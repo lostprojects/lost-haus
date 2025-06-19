@@ -1,10 +1,16 @@
-
 import React from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Star } from "lucide-react";
 
-const WeddingTestimonials = () => {
+interface WeddingTestimonialsProps {
+  badgeText?: string;
+}
+
+const WeddingTestimonials: React.FC<WeddingTestimonialsProps> = ({ 
+  badgeText = "Client Stories"
+}) => {
   const testimonials = [
     {
       name: "Jennifer & Michael",
@@ -30,7 +36,8 @@ const WeddingTestimonials = () => {
     <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-header tracking-tight mb-4">Love Stories at Somerhaus</h2>
+          <Badge className="mb-4 font-body">{badgeText}</Badge>
+          <h2 className="font-header tracking-tight mb-4">Love Stories at Somerhaus</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body">
             Hear from couples who celebrated their special day with us.
           </p>

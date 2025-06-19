@@ -1,11 +1,10 @@
 
 import React from 'react';
-import PageLayout from '@/components/shared/PageLayout';
-import UniversalHero from '@/components/shared/UniversalHero';
-import PricingSection from '@/components/shared/PricingSection';
-import FAQSection from '@/components/shared/FAQSection';
+import PageLayout from '@/components/PageLayout';
+import PricingSection from '@/components/PricingSection';
+import FAQSection from '@/components/FAQSection';
 import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
-import { CTA } from '@/components/ui/call-to-action/component';
+import { CTA } from '@/components/CTASection';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
 import Seo from '@/components/seo/Seo';
 import { businessSchema, createFaqSchema } from '@/components/seo/seo-schemas';
@@ -45,13 +44,12 @@ const Rehearsals = () => {
   const rehearsalsFaqSchema = createFaqSchema(faqData);
 
   return (
-    <PageLayout footerLogoType="clients" mainClassName="relative">
+    <PageLayout heroKey="rehearsals" footerLogoType="clients" mainClassName="relative">
       <Seo
         title="Wedding Rehearsal Venue in Cincinnati | Somerhaus"
         description="Practice and celebrate in style at our historic Cincinnati space."
         schema={[businessSchema, rehearsalsFaqSchema]}
       />
-      <UniversalHero pageKey="rehearsals" />
 
       <ImageGallerySection />
 

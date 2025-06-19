@@ -9,6 +9,7 @@ import {
 import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import faqData from '@/data/faqData.json';
+import { STANDARD_CONTAINER_CLASSES } from '@/components/PageLayout';
 
 export type FaqItem = {
   question: string;
@@ -21,19 +22,12 @@ export const SimpleFaqCategories = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const categories = useMemo(() => [
-    { id: 'all', label: 'All Questions', icon: '🏢' },
-    { id: 'venue', label: 'Venue & Space', icon: '🏛️' },
-    { id: 'location', label: 'Location & Logistics', icon: '📍' },
-    { id: 'planning', label: 'Planning & Booking', icon: '📅' },
-    { id: 'wedding', label: 'Weddings', icon: '💒' },
-    { id: 'corporate', label: 'Corporate Events', icon: '🏢' },
-    { id: 'meetings', label: 'Meetings', icon: '💼' },
-    { id: 'dinners', label: 'Dinner Events', icon: '🍽️' },
-    { id: 'happyhours', label: 'Happy Hours', icon: '🍸' },
-    { id: 'specialevents', label: 'Special Events', icon: '🎉' },
-    { id: 'showers', label: 'Showers', icon: '🎊' },
-    { id: 'bar', label: 'Bar Service', icon: '🍷' },
-    { id: 'press', label: 'Media & Press', icon: '📰' },
+    { id: 'all', label: 'All' },
+    { id: 'venue', label: 'Venue & Space' },
+    { id: 'planning', label: 'Planning' },
+    { id: 'wedding', label: 'Weddings' },
+    { id: 'corporate', label: 'Corporate' },
+    { id: 'bar', label: 'Bar' },
   ], []);
 
   const filteredItems = useMemo(() => {
@@ -49,13 +43,24 @@ export const SimpleFaqCategories = () => {
   const getItemsByCategory = useCallback(
     (categoryId: string) => {
       if (categoryId === 'all') return filteredItems;
-      return filteredItems.filter(item => item.category === categoryId);
+      
+      // Map consolidated categories
+      const categoryMappings: { [key: string]: string[] } = {
+        'venue': ['venue', 'location'],
+        'planning': ['planning'],
+        'wedding': ['wedding'],
+        'corporate': ['corporate', 'meetings', 'dinners', 'happyhours', 'specialevents', 'showers'],
+        'bar': ['bar'],
+      };
+      
+      const mappedCategories = categoryMappings[categoryId] || [categoryId];
+      return filteredItems.filter(item => mappedCategories.includes(item.category));
     },
     [filteredItems]
   );
 
   return (
-    <div className="container mx-auto px-4 py-16">
+    <div className={`${STANDARD_CONTAINER_CLASSES} pt-8 pb-16`}>
       {/* Search */}
       <div className="max-w-2xl mx-auto mb-12">
         <div className="relative">
@@ -65,17 +70,16 @@ export const SimpleFaqCategories = () => {
             placeholder="Search questions..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="pl-10 h-12 text-base"
+            className="pl-10 h-12 text-base bg-white"
           />
         </div>
       </div>
 
       {/* Categories */}
-      <Tabs defaultValue="all" className="max-w-6xl mx-auto">
-        <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 lg:grid-cols-6 mb-8 h-auto flex-wrap gap-2">
+      <Tabs defaultValue="all" className="max-w-3xl mx-auto">
+        <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-6 mb-8 bg-transparent">
           {categories.map((category) => (
-            <TabsTrigger key={category.id} value={category.id} className="text-xs md:text-sm flex-shrink-0">
-              <span className="mr-1 md:mr-2">{category.icon}</span>
+            <TabsTrigger key={category.id} value={category.id} className="text-sm data-[state=active]:bg-white data-[state=active]:text-orange-500">
               <span className="hidden sm:inline">{category.label}</span>
               <span className="sm:hidden">{category.label.split(' ')[0]}</span>
             </TabsTrigger>
@@ -100,9 +104,9 @@ export const SimpleFaqCategories = () => {
                       className="border rounded-lg px-6 py-2 bg-card"
                     >
                       <AccordionTrigger className="text-left hover:no-underline">
-                        <span className="font-medium text-foreground pr-4">
+                        <h5 className="font-medium pr-4">
                           {item.question}
-                        </span>
+                        </h5>
                       </AccordionTrigger>
                       <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
                         {item.answer}

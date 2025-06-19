@@ -19,7 +19,7 @@ const ShowersContact = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <Badge className="mb-4 font-body">Get In Touch</Badge>
-          <h2 className="text-3xl md:text-5xl font-header tracking-tight mb-4">Contact Us</h2>
+          <h2 className="font-header tracking-tight mb-4">Contact Us</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body">
             Ready to start planning your perfect shower or celebration? Reach out to our team.
           </p>
@@ -27,7 +27,7 @@ const ShowersContact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-2xl font-header mb-6">Inquiry Form</h3>
+            <h3 className="font-header mb-6">Inquiry Form</h3>
             <form className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
@@ -91,7 +91,7 @@ const ShowersContact = () => {
           </div>
           
           <div>
-            <h3 className="text-2xl font-header mb-6">Contact Information</h3>
+            <h3 className="font-header mb-6">Contact Information</h3>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <MapPin className="w-6 h-6 text-primary mt-1" />

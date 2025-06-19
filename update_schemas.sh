@@ -22,8 +22,7 @@ pages=(
   "src/pages/Rehearsals.tsx"
   "src/pages/Showers.tsx"
   "src/pages/SpecialEvents.tsx"
-  "src/pages/Wedding.tsx"
-  "src/pages/WeddingLGBTQ.tsx"
+src/pages/Wedding.tsx
 )
 
 # Function to update imports and remove duplicate businessSchema

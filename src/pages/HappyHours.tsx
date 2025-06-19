@@ -1,15 +1,14 @@
 import React from 'react';
-import PageLayout from '@/components/shared/PageLayout';
-import UniversalHero from '@/components/shared/UniversalHero';
-import PricingSection from '@/components/shared/PricingSection';
-import FAQSection from '@/components/shared/FAQSection';
-import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
-import { CTA } from '@/components/ui/call-to-action/component';
+import PageLayout from '@/components/PageLayout';
+import PricingSection from '@/components/PricingSection';
+import FAQSection from '@/components/FAQSection';
+import { Testimonials } from '@/components/ui/testimonials';
+import { CTA } from '@/components/CTASection';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
-import HoneyBookForm from '@/components/honeybook/HoneyBookForm';
+import HoneyBookForm from '@/components/HoneyBookForm';
 import Seo from '@/components/seo/Seo';
 import { businessSchema, createFaqSchema } from '@/components/seo/seo-schemas';
-import { LogoTicker } from '@/components/blocks/LogoTicker';
+import { LogoTicker } from '@/components/LogoTicker';
 import { clientLogosGrayscale } from '@/data/clientLogos';
 import { happyHoursPricing } from '@/data/pricingPlans';
 import FaqMoreAnswers from '@/components/faq/FaqMoreAnswers';
@@ -49,16 +48,12 @@ const HappyHours = () => {
   const happyhoursFaqSchema = createFaqSchema(faqData);
 
   return (
-    <PageLayout footerLogoType="press" mainClassName="relative">
+    <PageLayout heroKey="happyhours" footerLogoType="press" mainClassName="relative">
       <Seo
         title="Happy Hour Venue in Cincinnati | Somerhaus"
         description="Plan networking mixers and team gatherings at our OTR event space."
         schema={[businessSchema, happyhoursFaqSchema]}
       />
-
-      <UniversalHero pageKey="happyhours" />
-
-      <LogoTicker heading="Trusted By" logos={clientLogosGrayscale} />
 
       <ImageGallerySection />
 
@@ -68,11 +63,11 @@ const HappyHours = () => {
         packages={happyHoursPricing}
       />
 
-      <TestimonialsDemo />
+      <Testimonials />
 
       {/* HoneyBook Inquiry Form */}
       <div className="bg-white p-6 rounded-lg shadow-md border-none">
-        <h2 className="text-2xl font-bold mb-4 text-center">Plan Your Happy Hour</h2>
+        <h2 className="font-bold mb-4 text-center">Plan Your Happy Hour</h2>
         <p className="text-gray-600 mb-6 text-center">Fill out the form below to get started.</p>
         <HoneyBookForm placementId="7" />
       </div>

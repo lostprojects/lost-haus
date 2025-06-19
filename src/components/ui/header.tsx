@@ -1,6 +1,8 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, ChevronDown, X } from 'lucide-react';
+import { Menu, ChevronDown } from 'lucide-react';
+import MobileMenu from '@/components/ui/mobile-menu';
+import BookNowButton from '@/components/ui/book-now-button';
 
 interface HeaderProps {
   hasHero?: boolean;
@@ -20,16 +22,20 @@ const Header = ({ hasHero = true }: HeaderProps) => {
   }, []);
 
   const menuItems = [
-    { name: 'Corporate Events', href: '/corporate' },
     { name: 'Somerset', href: 'https://somersetotr.com', external: true },
   ];
 
   const weddingItems = [
     { name: 'Weddings Home', href: '/wedding', bold: true },
-    { name: 'Elopements', href: '/elopements' },
-    { name: 'LGBTQ Weddings', href: '/lgbtq-weddings' },
-    { name: 'Micro Weddings', href: '/micro-weddings' },
-    { name: 'Rehearsals', href: '/rehearsals' },
+    { name: 'Elopements', href: '/wedding/elopements' },
+    { name: 'Micro Weddings', href: '/wedding/micro-weddings' },
+    { name: 'Rehearsals', href: '/wedding/rehearsals' },
+  ];
+
+  const workEventsItems = [
+    { name: 'Corporate Events', href: '/corporate', bold: true },
+    { name: 'Meetings', href: '/meetings' },
+    { name: 'Happy Hours', href: '/happy-hours' },
   ];
 
   const otherEventsItems = [
@@ -37,9 +43,7 @@ const Header = ({ hasHero = true }: HeaderProps) => {
     { name: 'Showers', href: '/showers' },
     { name: 'Dinners', href: '/dinners' },
     { name: 'Photo Shoots', href: '/photo-shoots' },
-    { name: 'Happy Hours', href: '/happy-hours' },
     { name: 'Parties', href: '/parties' },
-    { name: 'Meetings', href: '/meetings' },
   ];
 
   const infoItems = [
@@ -81,7 +85,7 @@ const Header = ({ hasHero = true }: HeaderProps) => {
             <div className="relative group">
               <a
                 href="/wedding"
-                className={`flex items-center text-sm font-body transition-colors ${isScrolled ? 'text-white hover:text-[#D65B2F]' : 'text-white hover:text-[#D65B2F]'}`}
+                className={`flex items-center text-sm font-body transition-colors ${isScrolled ? 'text-white hover:text-[#ea580c]' : 'text-white hover:text-[#ea580c]'}`}
               >
                 Weddings
                 <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
@@ -93,7 +97,32 @@ const Header = ({ hasHero = true }: HeaderProps) => {
                     <a
                       key={item.name}
                       href={item.href}
-                      className={`block px-4 py-2 text-sm font-body text-white transition-colors hover:text-[#D65B2F] ${item.bold ? 'font-bold' : ''}`}
+                      className={`block px-4 py-2 text-sm font-body text-white transition-colors hover:text-[#ea580c] ${item.bold ? 'font-bold' : ''}`}
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Custom Work Events Dropdown Menu */}
+            <div className="relative group">
+              <a
+                href="/corporate"
+                className={`flex items-center text-sm font-body transition-colors ${isScrolled ? 'text-white hover:text-[#ea580c]' : 'text-white hover:text-[#ea580c]'}`}
+              >
+                Work Events
+                <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
+              </a>
+              
+              <div className="absolute left-0 mt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="py-2 bg-black/90 backdrop-blur-sm rounded-md">
+                  {workEventsItems.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className={`block px-4 py-2 text-sm font-body text-white transition-colors hover:text-[#ea580c] ${item.bold ? 'font-bold' : ''}`}
                     >
                       {item.name}
                     </a>
@@ -108,7 +137,7 @@ const Header = ({ hasHero = true }: HeaderProps) => {
                 href={item.href}
                 target={item.external ? "_blank" : undefined}
                 rel={item.external ? "noopener noreferrer" : undefined}
-                className="text-sm font-body transition-colors text-white hover:text-[#D65B2F]"
+                className="text-sm font-body transition-colors text-white hover:text-[#ea580c]"
               >
                 {item.name}
               </a>
@@ -116,7 +145,7 @@ const Header = ({ hasHero = true }: HeaderProps) => {
             {/* Custom Other Events Dropdown Menu */}
             <div className="relative group">
               <button
-                className={`flex items-center text-sm font-body transition-colors ${isScrolled ? 'text-white hover:text-[#D65B2F]' : 'text-white hover:text-[#D65B2F]'}`}
+                className={`flex items-center text-sm font-body transition-colors ${isScrolled ? 'text-white hover:text-[#ea580c]' : 'text-white hover:text-[#ea580c]'}`}
               >
                 Other Events
                 <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
@@ -128,7 +157,7 @@ const Header = ({ hasHero = true }: HeaderProps) => {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="block px-4 py-2 text-sm font-body text-white transition-colors hover:text-[#D65B2F]"
+                      className="block px-4 py-2 text-sm font-body text-white transition-colors hover:text-[#ea580c]"
                     >
                       {item.name}
                     </a>
@@ -141,7 +170,7 @@ const Header = ({ hasHero = true }: HeaderProps) => {
             <div className="relative group">
               <a
                 href="/about"
-                className={`flex items-center text-sm font-body transition-colors ${isScrolled ? 'text-white hover:text-[#D65B2F]' : 'text-white hover:text-[#D65B2F]'}`}
+                className={`flex items-center text-sm font-body transition-colors ${isScrolled ? 'text-white hover:text-[#ea580c]' : 'text-white hover:text-[#ea580c]'}`}
               >
                 Info
                 <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
@@ -151,7 +180,7 @@ const Header = ({ hasHero = true }: HeaderProps) => {
                 <div className="py-2 bg-black/90 backdrop-blur-sm rounded-md">
                   <a
                     href="/about"
-                    className="block px-4 py-2 text-sm font-body text-white transition-colors hover:text-[#D65B2F] font-bold"
+                    className="block px-4 py-2 text-sm font-body text-white transition-colors hover:text-[#ea580c] font-bold"
                   >
                     About
                   </a>
@@ -159,7 +188,7 @@ const Header = ({ hasHero = true }: HeaderProps) => {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="block px-4 py-2 text-sm font-body text-white transition-colors hover:text-[#D65B2F]"
+                      className="block px-4 py-2 text-sm font-body text-white transition-colors hover:text-[#ea580c]"
                     >
                       {item.name}
                     </a>
@@ -174,143 +203,37 @@ const Header = ({ hasHero = true }: HeaderProps) => {
               href="https://somersetotr.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-body transition-colors text-white hover:text-[#D65B2F]"
+              className="text-sm font-body transition-colors text-white hover:text-[#ea580c]"
             >
               Somerset
             </a>
 
-            <a 
-              href="/event-inquiry"
-              className="inline-block transition-all duration-300 hover:scale-110 hover:-rotate-6 hover:shadow-[0_30px_70px_rgba(0,0,0,0.9)] active:scale-95 transform-gpu"
-            >
-              <Button
-                className="font-body bg-white/20 text-white hover:bg-[#5CA87E] hover:text-black"
-              >
-                Book Now
-              </Button>
-            </a>
+            <BookNowButton href="/event-inquiry" size="small" />
           </div>
 
           {/* Mobile Navigation */}
           <div className="md:hidden">
             <Button 
-              variant="outline" 
+              variant="ghost" 
               size="icon" 
-              className={`${isScrolled ? 'border-white/20 text-white' : 'border-white/10 text-white'}`}
+              className="text-white hover:text-[#ea580c] hover:bg-white/10"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              <Menu className="h-6 w-6" />
             </Button>
-            
-            {/* Mobile Menu Overlay */}
-            {isMobileMenuOpen && (
-              <div className="fixed inset-0 top-[80px] bg-black/95 backdrop-blur-sm z-40">
-                <div className="container mx-auto px-4 py-8">
-                  <div className="flex flex-col gap-6">
-                    {/* Weddings Section */}
-                    <div>
-                      <h3 className="text-xl font-body font-medium mb-4 text-white">Weddings</h3>
-                      <div className="pl-4 border-l-2 border-[#D65B2F]">
-                        {weddingItems.map((item) => (
-                          <a
-                            key={item.name}
-                            href={item.href}
-                            className={`block text-lg font-body py-2 text-white hover:text-[#D65B2F] transition-colors ${item.bold ? 'font-bold' : ''}`}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            {item.name}
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Corporate Events */}
-                    {menuItems.filter(item => item.name !== 'Somerset').map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className="text-xl font-body py-2 text-white hover:text-[#D65B2F] transition-colors"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
-
-                    {/* Other Events Section */}
-                    <div>
-                      <h3 className="text-xl font-body font-medium mb-4 text-white">Other Events</h3>
-                      <div className="pl-4 border-l-2 border-[#D65B2F]">
-                        {otherEventsItems.map((item) => (
-                          <a
-                            key={item.name}
-                            href={item.href}
-                            className="block text-lg font-body py-2 text-white hover:text-[#D65B2F] transition-colors"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            {item.name}
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Info Section */}
-                    <div>
-                      <a
-                        href="/about"
-                        className="text-xl font-body font-medium mb-4 text-white hover:text-[#D65B2F] transition-colors block"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        Info
-                      </a>
-                      <div className="pl-4 border-l-2 border-[#D65B2F]">
-                        <a
-                          href="/about"
-                          className="block text-lg font-body py-2 text-white hover:text-[#D65B2F] transition-colors font-bold"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          About
-                        </a>
-                        {infoItems.map((item) => (
-                          <a
-                            key={item.name}
-                            href={item.href}
-                            className="block text-lg font-body py-2 text-white hover:text-[#D65B2F] transition-colors"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            {item.name}
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Somerset */}
-                    <a
-                      href="https://somersetotr.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xl font-body py-2 text-white hover:text-[#D65B2F] transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Somerset
-                    </a>
-                    
-                    {/* Book Now Button */}
-                    <a 
-                      href="/event-inquiry" 
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="inline-block transition-all duration-300 hover:scale-110 hover:-rotate-6 hover:shadow-[0_30px_70px_rgba(0,0,0,0.9)] active:scale-95 transform-gpu"
-                    >
-                      <Button className="mt-4 w-full font-body bg-white/20 text-white hover:bg-[#5CA87E] hover:text-black">
-                        Book Now
-                      </Button>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            )}
           </div>
         </nav>
       </div>
+
+      {/* Mobile Menu Component */}
+      <MobileMenu
+        isOpen={isMobileMenuOpen}
+        onClose={() => setIsMobileMenuOpen(false)}
+        weddingItems={weddingItems}
+        workEventsItems={workEventsItems}
+        otherEventsItems={otherEventsItems}
+        infoItems={infoItems}
+      />
     </header>
   );
 };

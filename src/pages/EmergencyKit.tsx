@@ -1,6 +1,5 @@
 import React from 'react';
-import PageLayout from '@/components/shared/PageLayout';
-import Breadcrumb from '@/components/ui/breadcrumb';
+import PageLayout from '@/components/PageLayout';
 import PrintButton from '@/components/ui/print-button';
 import ShareButton from '@/components/ui/share-button';
 import Seo from '@/components/seo/Seo';
@@ -15,13 +14,9 @@ const EmergencyKit: React.FC = () => {
         description="Pack these essentials to solve any minor mishaps on your big day."
         schema={businessSchema}
       />
-      <section className="pt-24 pb-12 md:pt-28 md:pb-16">
+      <section className="pt-8 pb-12 md:pt-12 md:pb-16">
         <div className="container mx-auto px-4 max-w-4xl space-y-8">
-          <div className="flex items-center justify-between">
-            <Breadcrumb items={[
-              { label: 'Resources', href: '/resources' },
-              { label: 'Emergency Kit' }
-            ]} />
+          <div className="flex items-center justify-end">
             <div className="flex items-center gap-2">
               <PrintButton />
               <ShareButton 
@@ -31,7 +26,7 @@ const EmergencyKit: React.FC = () => {
             </div>
           </div>
           
-          <h1 className="text-3xl md:text-4xl font-header">
+          <h1 className="font-header">
             Wedding Day Emergency Kit Checklist
           </h1>
           <p className="font-body text-lg text-muted-foreground leading-relaxed">

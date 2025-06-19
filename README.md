@@ -151,9 +151,9 @@ lost-haus/
 - **Home** (`/`) - Hero, testimonials, features, gallery
 - **About** (`/about`) - Venue information, team, location
 - **Events** - Multiple event type pages:
-  - Weddings (`/wedding`, `/lgbtq-weddings`, `/micro-weddings`, `/elopements`)
+  - Weddings (`/wedding`, `/wedding/micro-weddings`, `/wedding/elopements`, `/wedding/rehearsals`)
   - Corporate (`/corporate`, `/meetings`)
-  - Social (`/parties`, `/dinners`, `/brunches`, `/happy-hours`, `/rehearsals`)
+      - Social (`/parties`, `/dinners`, `/brunches`, `/happy-hours`)
   - Special (`/special-events`, `/showers`)
 - **Gallery** (`/gallery`) - Event photography showcase
 - **Info Pages**:
@@ -190,6 +190,98 @@ lost-haus/
 - **Blocks**: Composed sections in `src/components/blocks/`
 - **Page-Specific**: Event-type specific components organized by folder
 - **Shared**: Reusable components across multiple pages
+
+## 🎨 Header Styling Architecture
+
+### **Centralized Design System Approach**
+The header component (`src/components/ui/header.tsx`) exemplifies the site's centralized Tailwind approach with minimal custom overrides. All styling is achieved through **configuration-driven design tokens** rather than scattered CSS overrides.
+
+#### **Core Styling Principles**
+- **Tailwind-First**: 95%+ of header styles use standard Tailwind utilities
+- **Zero Custom CSS**: No component-specific stylesheets required
+- **Design Token Driven**: Colors, fonts, and spacing from centralized configuration
+- **Minimal Overrides**: Only performance-critical animations use custom CSS
+
+#### **Typography System**
+```typescript
+// Centralized in tailwind.config.ts
+fontFamily: {
+  header: ['FreshMango', 'serif'],     // Headers & branding
+  body: ['Nebulica', 'sans-serif']     // Navigation & body text
+}
+```
+
+**Header Usage**: `font-body` class for all navigation text
+- **Desktop Navigation**: `text-sm font-body` (14px Nebulica)
+- **Mobile Navigation**: `text-base font-body` (16px Nebulica)
+- **Logo**: Image-based, no font dependencies
+
+#### **Color System**
+```typescript
+// Centralized brand color scale in tailwind.config.ts
+brand: {
+  DEFAULT: '#ea580c',  // Primary orange
+  50-900: [/* full scale */]
+}
+```
+
+**Header Color Usage**:
+- **Text Color**: `text-white` (default) → `hover:text-[#ea580c]` (brand primary)
+- **Background**: Conditional via `getHeaderBackground()` function
+- **Dropdowns**: `bg-black/90 backdrop-blur-sm` (consistent transparency)
+
+#### **Layout & Spacing**
+```typescript
+// All spacing uses Tailwind defaults - no custom overrides
+<nav className="flex items-center justify-between py-4">  // Standard padding
+<div className="space-x-6">                              // Standard gap
+<div className="px-4 py-2">                             // Standard dropdown spacing
+```
+
+#### **Responsive Behavior**
+- **Mobile Breakpoint**: `md:hidden` / `hidden md:flex` (standard Tailwind breakpoints)
+- **Container**: `container mx-auto px-4 md:px-6 lg:px-8` (responsive padding scale)
+- **No Custom Media Queries**: All responsive behavior through Tailwind utilities
+
+#### **State Management**
+```typescript
+// Conditional styling based on scroll state and hero presence
+const getHeaderBackground = () => {
+  if (!hasHero) return 'bg-black';                    // Static pages
+  return isScrolled ? 'bg-black/90 backdrop-blur-sm' : 'bg-transparent';  // Hero pages
+}
+```
+
+**Performance Benefits**:
+- **No CSS-in-JS Runtime**: All styles compile-time generated
+- **Minimal Bundle**: Only used Tailwind utilities included in final CSS
+- **Zero Style Conflicts**: No component-specific CSS to override
+- **Fast Paint**: Browser-optimized utility classes
+
+#### **Dropdown System**
+```html
+<!-- Pure Tailwind hover states - no JavaScript required -->
+<div className="group">
+  <div className="opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+```
+
+**Animation Strategy**:
+- **Tailwind Transitions**: `transition-colors`, `transition-all duration-200`
+- **CSS-Only Hovers**: No JavaScript hover state management
+- **Performance Optimized**: Hardware-accelerated transforms only
+
+#### **Key Design Decisions**
+1. **Configuration Over Customization**: Extend Tailwind config rather than write custom CSS
+2. **Utility-First**: Compose styles from atomic utilities rather than component classes
+3. **Design Token Consistency**: All colors, fonts, spacing from centralized tokens
+4. **Minimal Specificity**: Avoid `!important` and high-specificity selectors
+5. **Standard Patterns**: Use Tailwind's recommended patterns for hover, focus, responsive states
+
+This approach ensures:
+- **Maintainability**: All header styling changes happen in one place (Tailwind config)
+- **Consistency**: Impossible to have visual drift between header and other components
+- **Performance**: Minimal CSS bundle size and optimal browser parsing
+- **Developer Experience**: IntelliSense support and compile-time style validation
 
 ## 🛠 Development Workflow
 
@@ -438,6 +530,55 @@ docker build -f Dockerfile .
 - **Press logos**: Centralized in `src/data/pressLogos.ts` 
 - **Usage**: Import from centralized files to avoid 300+ lines of duplicate code
 
+### **Vendor Data Management**
+- **Location**: `src/data/vendorData.ts` - Complete vendor directory with filtering capabilities
+- **Data Structure**: 
+  - Typed interfaces (`Vendor`, `VendorCategory`, `VendorEventType`)
+  - Event type filtering (`wedding`, `shower`, `corporate`, `party`, `meeting`, `all`)
+  - Featured vendor flagging for highlighting premium partners
+  - Consistent vendor properties (name, description, website, specialty, image)
+- **Helper Functions**:
+  - `getVendorsByEventType()` - Filter vendors by event type
+  - `getFeaturedVendors()` - Get all featured vendors across categories
+  - `getVendorsByCategory()` - Get vendors in specific category
+  - `getAllVendors()` - Get complete vendor list
+- **Reusable Component**: `VendorSection` handles all vendor display patterns
+  - **Layouts**: Grid (full details) vs Compact (image-based) 
+  - **Customization**: Title, subtitle, benefits section, contact CTA toggles
+  - **Responsive**: 2-3 column grids with mobile-first approach
+- **Usage**: `<VendorSection eventType="wedding" layout="compact" maxColumns={2} />`
+
+### **PageLayout Architecture - Centralized Page Structure**
+- **Location**: `src/components/shared/PageLayout.tsx` - Universal page wrapper with automatic hero and breadcrumb management
+- **Hero Centralization**: 
+  - Heroes managed by PageLayout via `heroKey` prop, not individual pages
+  - Automatic `hasHero` detection for proper header styling
+  - Consistent hero positioning across all pages
+- **Breadcrumb Management**:
+  - Automatic breadcrumb positioning based on hero presence
+  - `afterHero={true}` for pages with heroes (positioned after hero)
+  - `afterHero={false}` for pages without heroes (positioned after header)
+  - Default `showBreadcrumbs={true}` - breadcrumbs on all pages unless explicitly disabled
+- **Standard Container Classes**: 
+  - `STANDARD_CONTAINER_CLASSES` exported for consistent page width
+  - `"container mx-auto px-4 md:px-6 lg:px-8"` - responsive padding scale
+- **Usage Examples**:
+```typescript
+// Page with hero (automatic breadcrumb positioning)
+<PageLayout heroKey="vendors" footerLogoType="clients">
+  <VendorSection />
+</PageLayout>
+
+// Page without hero (breadcrumbs after header)
+<PageLayout footerLogoType="clients">
+  <ContactForm />
+</PageLayout>
+
+// Using standard container classes in components
+import { STANDARD_CONTAINER_CLASSES } from '@/components/shared/PageLayout';
+<div className={STANDARD_CONTAINER_CLASSES}>
+```
+
 ### **SEO & Schema Centralization**
 - **Location**: `src/components/seo/` (co-located with SEO component)
 - **Files**: 
@@ -457,11 +598,25 @@ docker build -f Dockerfile .
 
 ### **Performance Impact**
 - **Logo centralization**: ~300 lines of duplicate code eliminated
+- **Vendor centralization**: ~400 lines of duplicate vendor definitions removed across 3 files
 - **Schema centralization**: ~400 lines of duplicate schema definitions removed
-- **Maintainability**: Single source of truth for all shared data
+- **PageLayout architecture**: ~100 lines per page eliminated (Header/Footer imports + manual structure)
+- **Hero management**: Pages no longer import UniversalHero directly - handled automatically by PageLayout
+- **Breadcrumb logic**: Centralized positioning eliminates conditional breadcrumb code across pages
+- **Maintainability**: Single source of truth for all shared data and page structure
 - **New shared data**: `teamMembers.ts` and `pricingPlans.ts` consolidate staff bios and event package pricing used across pages
-- **Layout component**: `PageLayout` handles the common header/footer wrapper
-- **FAQ helper**: `FaqMoreAnswers` provides a reusable "Need more answers?" link
+- **Standard container classes**: Consistent width/padding across all pages via exported constant
+
+### **Code Elimination Examples**
+Before centralization:
+- `src/pages/Vendors.tsx`: 150+ lines of hardcoded vendor data
+- `src/components/showers/PreferredVendors.tsx`: 100+ lines duplicate vendor data  
+- `src/components/wedding/PreferredVendors.tsx`: 80+ lines different structure
+
+After centralization:
+- `src/data/vendorData.ts`: 200 lines centralized data + helper functions
+- All components: `<VendorSection eventType="..." />` (single line usage)
+- **Result**: 63% code reduction + consistent vendor experience across all pages
 
 ### **📊 Reference Documentation**
 - **Complete optimization log**: See `PERFORMANCE_OPTIMIZATION_REPORT.md`

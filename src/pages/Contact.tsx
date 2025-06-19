@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, CalendarDays } from 'lucide-react';
-import PageLayout from '@/components/shared/PageLayout';
-import Breadcrumb from '@/components/ui/breadcrumb';
+import PageLayout, { STANDARD_CONTAINER_CLASSES } from '@/components/PageLayout';
 import Seo from '@/components/seo/Seo';
 import { businessSchema } from '@/components/seo/seo-schemas';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Link } from 'react-router-dom';
+import BookNowButton from '@/components/ui/book-now-button';
 
-import { useHoneyBook } from '@/hooks/use-honeybook';
-import HoneyBookForm from '@/components/honeybook/HoneyBookForm';
+import HoneyBookForm from '@/components/HoneyBookForm';
 
 
 const ContactPage = () => {
-  useHoneyBook();
   
   const testimonials = [{
     name: "Jennifer & David",
@@ -30,33 +30,28 @@ const ContactPage = () => {
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const currentTestimonial = testimonials[currentTestimonialIndex];
   
-  return <PageLayout footerLogoType="clients" hasHero={false}>
+  return <PageLayout footerLogoType="clients">
       <Seo
         title="Contact Somerhaus in Cincinnati"
         description="Get in touch with our team to book your event or schedule a tour at Cincinnati's most enchanting venue."
         schema={businessSchema}
       />
       
-      <main className="flex-grow">
-        <section className="pt-24 pb-12 md:pt-28 md:pb-16">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <Breadcrumb items={[
-              { label: 'About', href: '/about' },
-              { label: 'Contact' }
-            ]} />
-            
-            <div className="mt-8">
-              <h1 className="text-3xl md:text-4xl font-header mb-4">
-                Let's Plan Something Magical Together
-              </h1>
-              <p className="text-lg text-muted-foreground font-body mb-8">
-                We're excited to bring your vision to life in our unique space.
-              </p>
-            </div>
+      <section className="pt-8 pb-12 md:pt-12 md:pb-16">
+        <div className={STANDARD_CONTAINER_CLASSES}>
+          <div>
+            <h1 className="font-header mb-4">
+              Let's Plan Something Magical<br/>Together
+            </h1>
+            <p className="text-lg text-muted-foreground font-body">
+              We're excited to bring your vision to life in our unique space.
+            </p>
           </div>
-        </section>
+        </div>
+      </section>
         
-        <div className="container mx-auto px-4 pb-16">
+        <section className="pb-16">
+        <div className={STANDARD_CONTAINER_CLASSES}>
           
           {/* Added items-start for top alignment */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 mb-16 items-start">
@@ -66,11 +61,12 @@ const ContactPage = () => {
               
               {/* Find Us Section (Moved inside new container) */}
               <div>
-                <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-6 md:p-8">
+                <Card className="bg-white">
+                  <CardContent className="p-6 md:p-8">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div className="md:col-span-1">
-                      <h2 className="text-2xl md:text-3xl font-header mb-6">Find Us</h2>
-                      <h3 className="text-xl font-medium mb-4">Our Location</h3>
+                                          <div className="md:col-span-1">
+                        <h2 className="font-header mb-6">Find Us</h2>
+                        <h4 className="font-bold mb-4 !text-black font-mono">Our Location</h4>
                       <address className="not-italic text-gray-700 font-mono mb-6">
                         1415 Republic St<br />
                         Over-the-Rhine<br />
@@ -87,177 +83,114 @@ const ContactPage = () => {
                     }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                   </div>
-                </div>
+                  </CardContent>
+                </Card>
               </div>
 
               {/* Honeybook Form Section (Moved inside new container) */}
               <div>
                 {/* Honeybook Form Embed */}
-                <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-6 md:p-8">
-                  <h2 className="text-2xl md:text-3xl font-header mb-6">Contact Form</h2>
-                  <p className="text-gray-600 mb-8 font-mono">
-                    Use this form to get in touch with us about general inquiries.
-                  </p>
-                  <HoneyBookForm placementId="2" />
-                </div>
+                <Card className="bg-white">
+                  <CardContent className="p-6 md:p-8">
+                    <h2 className="font-header mb-6">Contact Form</h2>
+                    <p className="text-gray-600 mb-8 font-mono">
+                      Use this form to get in touch with general inquiries.
+                    </p>
+                    <HoneyBookForm placementId="2" />
+                  </CardContent>
+                </Card>
                 
                 {/* Event Inquiry Link */}
-                <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-6 md:p-8 mt-8"> {/* Added mt-8 for spacing */}
-                  <div className="flex flex-col items-center text-center">
-                    <h3 className="text-2xl font-medium mb-4">Planning an Event?</h3>
-                    <p className="text-gray-600 mb-6 font-mono">
-                      If you're looking to host an event at our venue, please visit our dedicated Event Inquiry page.
-                    </p>
-                    <a href="/event-inquiry" className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-medium rounded-md hover:bg-primary/90 transition-colors">
-                      <CalendarDays className="mr-2 h-5 w-5" />
-                      Plan Your Event
-                    </a>
-                  </div>
-                </div>
+                <Card className="bg-white mt-8">
+                  <CardContent className="p-6 md:p-8">
+                    <div className="flex flex-col items-center text-center">
+                      <h3 className="font-medium mb-4">Planning an Event?</h3>
+                      <p className="text-gray-600 mb-6 font-mono">
+                        If you're looking to host an event at our venue, please visit our dedicated Event Inquiry page.
+                      </p>
+                      <BookNowButton 
+                        href="/event-inquiry" 
+                        variant="black" 
+                        size="medium"
+                      >
+                        Plan Your Event
+                      </BookNowButton>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </div> {/* End of NEW container */}
             
             {/* Sidebar Content (Removed order class) */}
             <div className="lg:col-span-1 space-y-8">
               {/* Hours Information */}
-              <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-6">
-                <h3 className="text-xl font-medium mb-4">Hours</h3>
-                <p className="text-sm font-mono mb-4">
-                  We are available by appointment only, but we'd love to show you around!
-                </p>
-                <p className="text-sm font-mono">
-                  Please use the contact form to reach out and schedule a visit.
-                </p>
-              </div>
-              {/* Venue Information (Removed mb-8) */}
-              <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-6">
-                <h3 className="text-xl font-medium mb-4">Venue Information</h3>
-                <ul className="space-y-3 text-sm font-mono">
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">•</span>
-                    <span>Private event space (sister space to Somerset Bar)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">•</span>
-                    <span>Located in the heart of the Over The Rhine Neighborhood in downtown Cincinnati</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">•</span>
-                    <span>3000+ square feet of event space</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">•</span>
-                    <span>Capacity: Up to 80 guests for formal seated dinner or up to 130 for cocktail-style events</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">•</span>
-                    <span>Venue fee starts from $1,500 + fees (regular pricing, excluding non-profit rates)</span>
-                  </li>
-                </ul>
-              </div>
+              <Card className="bg-white">
+                <CardContent className="p-6">
+                  <h3 className="font-medium mb-4">Hours</h3>
+                  <p className="text-sm font-mono mb-4">
+                    We are available by appointment only, but we'd love to show you around!
+                  </p>
+                  <p className="text-sm font-mono">
+                    Please use the contact form to reach out and schedule a visit.
+                  </p>
+                </CardContent>
+              </Card>
 
-              {/* Parking Information (Removed mb-8) */}
-              <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-6">
-                <h3 className="text-xl font-medium mb-4">Parking Information</h3>
-                <ul className="space-y-3 text-sm font-mono">
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">•</span>
-                    <span>Washington Park underground parking lot (one block away, 2-minute walk from northeastern elevator)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">•</span>
-                    <span>New open air 3CDC lot on Vine St & 15th</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">•</span>
-                    <span>Mercer Commons garage (two blocks or 4-minute walk)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">•</span>
-                    <span className="font-medium">Note: Republic Street is permit parking only (visitors may be ticketed or towed)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">•</span>
-                    <span>Street parking may be available on northern streets, but garage/lot parking is recommended</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">•</span>
-                    <span>Alternative transportation: Streetcar or Uber recommended</span>
-                  </li>
-                </ul>
-              </div>
 
-              {/* Related Venues (Removed mb-8) */}
-              <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-6">
-                <h3 className="text-xl font-medium mb-4">Related Venues</h3>
-                <ul className="space-y-3 text-sm font-mono">
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">•</span>
-                    <span>Somerset Bar</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">•</span>
-                    <span>Second Story Bar & Patio</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">•</span>
-                    <span>The Muse Hotel & Bar (coming soon)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">•</span>
-                    <span>Alice Bar & Disco</span>
-                  </li>
-                </ul>
-              </div>
-              
-              {/* Testimonials (Removed mb-8) */}
-              <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-6">
-                <h3 className="text-xl font-medium mb-6">What People Are Saying</h3>
-                <div className="relative min-h-[180px]">
-                  <div className="mb-4">
-                    <p className="text-gray-700 italic mb-4 font-mono">"{currentTestimonial.text}"</p>
-                    <p className="text-sm font-medium font-mono">{currentTestimonial.name}</p>
-                    <p className="text-xs text-gray-500 font-mono">{currentTestimonial.event}</p>
+              {/* Parking Information */}
+              <Card className="bg-white">
+                <CardContent className="p-6">
+                  <h3 className="font-medium mb-4">Parking Information</h3>
+                  <div className="space-y-4 text-sm font-mono">
+                    <div>
+                      <p className="font-bold">Washington Park Underground Parking</p>
+                      <p>One block away, a 2-minute walk from northeastern elevator</p>
+                    </div>
+                    <div>
+                      <p className="font-bold">Open Air 3CDC Lot (Vine St)</p>
+                      <p>Located on Vine St & 15th. 3-mintue walk</p>
+                    </div>
+                    <div>
+                      <p className="font-bold">Mercer Commons Garage</p>
+                      <p>Two blocks or a 4-minute walk</p>
+                    </div>
+                    <p className="font-medium">Note: Republic Street is permit parking only (visitors may be ticketed or towed)</p>
+                    <p>Street parking may be available on northern streets, but garage/lot parking is recommended</p>
+                    <p>Alternative transportation: Streetcar or Uber recommended</p>
                   </div>
-                  <div className="flex justify-center space-x-1 mt-6">
-                    {testimonials.map((_, idx) => <button key={idx} className={`w-2 h-2 rounded-full ${idx === currentTestimonialIndex ? 'bg-primary' : 'bg-gray-300'}`} onClick={() => setCurrentTestimonialIndex(idx)} />)}
-                  </div>
-                </div>
-              </div>
-              
-              {/* Quick Links (Removed mb-8) */}
-              <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-6">
-                <h3 className="text-xl font-medium mb-4">Explore More</h3>
-                <div className="space-y-3 font-mono">
-                  <a href="/wedding" className="flex items-center text-primary hover:underline">
-                    <span className="mr-2">→</span> Wedding Packages
-                  </a>
-                  <a href="/corporate" className="flex items-center text-primary hover:underline">
-                    <span className="mr-2">→</span> Corporate Events
-                  </a>
-                  <a href="/faq" className="flex items-center text-primary hover:underline">
-                    <span className="mr-2">→</span> Frequently Asked Questions
-                  </a>
-                </div>
-              </div>
-              
-              {/* Phone Contact (No mb-8 as it's the last item) */}
-              <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-6">
-                <h3 className="text-xl font-medium mb-4">Call Us</h3>
-                <div className="flex items-center">
-                  <Phone className="h-5 w-5 text-primary mr-2" />
-                  <a href="tel:+15139021415" className="text-primary hover:underline font-medium">
-                    (513) 902-1415
-                  </a>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
+
+              {/* Related Venues */}
+              <Card className="bg-white">
+                <CardContent className="p-6">
+                  <h3 className="font-medium mb-4">Related Venues</h3>
+                  <ul className="space-y-3 text-sm font-mono">
+                    <li className="flex items-start">
+                      <Link to="https://somersetotr.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Somerset Bar</Link>
+                    </li>
+                    <li className="flex items-start">
+                      <Link to="https://secondstorybar.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Second Story Bar & Patio</Link>
+                    </li>
+                    <li className="flex items-start">
+                      <span>The Muse Hotel & Bar (coming soon)</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Link to="https://alicebar.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Alice Bar & Disco</Link>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+
+
             </div>
           </div>
           
           {/* Removed Meet Our Team section */}
           
         </div>
-      </main>
+      </section>
       
     </PageLayout>;
 };

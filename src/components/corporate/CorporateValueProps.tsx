@@ -1,9 +1,15 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from "@/components/ui/badge";
 import { Building, Users, Lightbulb, MapPin } from 'lucide-react';
 
-const CorporateValueProps = () => {
+interface CorporateValuePropsProps {
+  badgeText?: string;
+}
+
+const CorporateValueProps: React.FC<CorporateValuePropsProps> = ({ 
+  badgeText = "Why Choose Us"
+}) => {
   const valueProps = [
     {
       icon: <Building className="h-8 w-8 text-primary" />,
@@ -31,7 +37,8 @@ const CorporateValueProps = () => {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-header mb-4">Where Business Meets Distinction</h2>
+          <Badge className="mb-4 font-body">{badgeText}</Badge>
+          <h2 className="font-header mb-4">Where Business Meets Distinction</h2>
           <p className="max-w-2xl mx-auto text-lg text-gray-600 font-body">
             Somerhaus creates a perfect balance between professional functionality and inspiring ambiance for your corporate events.
           </p>
@@ -42,7 +49,7 @@ const CorporateValueProps = () => {
             <Card key={index} className="border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
               <CardContent className="pt-6">
                 <div className="mb-4">{prop.icon}</div>
-                <h3 className="text-xl font-header mb-2">{prop.title}</h3>
+                <h3 className="font-header mb-2">{prop.title}</h3>
                 <p className="text-gray-600 font-body">{prop.description}</p>
               </CardContent>
             </Card>

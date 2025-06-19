@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
-import PageLayout from '@/components/shared/PageLayout';
-import Breadcrumb from '@/components/ui/breadcrumb';
+import PageLayout, { STANDARD_CONTAINER_CLASSES } from '@/components/PageLayout';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Download, Heart, Share2 } from 'lucide-react';
@@ -87,22 +86,17 @@ const Gallery = () => {
   );
 
   return (
-    <PageLayout footerLogoType="clients" hasHero={false}>
+    <PageLayout footerLogoType="clients">
       <Seo
         title="Event Gallery | Somerhaus Cincinnati"
         description="View photos of weddings, corporate gatherings, and celebrations hosted at Somerhaus."
         schema={businessSchema}
       />
       
-      <section className="pt-24 pb-12 md:pt-28 md:pb-16">
-        <div className="container mx-auto px-4 max-w-4xl space-y-8">
-          <Breadcrumb items={[
-            { label: 'About', href: '/about' },
-            { label: 'Gallery' }
-          ]} />
-          
+      <section className="pt-8 pb-12 md:pt-12 md:pb-16">
+        <div className={`${STANDARD_CONTAINER_CLASSES} space-y-8`}>
           <div>
-            <h1 className="text-3xl md:text-4xl font-header mb-4">
+            <h1 className="font-header mb-4">
               Photo Gallery
             </h1>
             <p className="text-lg text-muted-foreground font-body">
@@ -114,7 +108,7 @@ const Gallery = () => {
 
       {/* Gallery Filters */}
       <section className="py-8 bg-white">
-        <div className="container mx-auto px-4">
+        <div className={STANDARD_CONTAINER_CLASSES}>
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
               <Button
@@ -132,7 +126,7 @@ const Gallery = () => {
 
       {/* Gallery Grid */}
       <section className="py-12 bg-white">
-        <div className="container mx-auto px-4">
+        <div className={STANDARD_CONTAINER_CLASSES}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredImages.map((image, index) => (
               <div key={index} className="group relative overflow-hidden rounded-lg bg-white shadow-sm hover:shadow-lg transition-all duration-300">
@@ -169,8 +163,8 @@ const Gallery = () => {
 
       {/* Call to Action */}
       <section className="py-16 bg-[#F5F3F1]">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-header tracking-tight mb-4">
+        <div className={`${STANDARD_CONTAINER_CLASSES} text-center`}>
+          <h2 className="font-header tracking-tight mb-4">
             Ready to Create Your Own Memories?
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8 font-body">

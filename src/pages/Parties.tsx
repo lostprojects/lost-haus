@@ -1,10 +1,9 @@
 import React from 'react';
-import PageLayout from '@/components/shared/PageLayout';
-import UniversalHero from '@/components/shared/UniversalHero';
-import PricingSection from '@/components/shared/PricingSection';
-import FAQSection from '@/components/shared/FAQSection';
-import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
-import { CTA } from '@/components/ui/call-to-action/component';
+import PageLayout from '@/components/PageLayout';
+import PricingSection from '@/components/PricingSection';
+import FAQSection from '@/components/FAQSection';
+import { Testimonials } from '@/components/ui/testimonials';
+import { CTA } from '@/components/CTASection';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
 import Seo from '@/components/seo/Seo';
 import { businessSchema, createFaqSchema } from '@/components/seo/seo-schemas';
@@ -44,14 +43,12 @@ const Parties = () => {
   const partiesFaqSchema = createFaqSchema(faqData);
 
   return (
-    <PageLayout footerLogoType="clients" mainClassName="relative">
+    <PageLayout heroKey="parties" footerLogoType="clients" mainClassName="relative">
       <Seo
         title="Party Venue in Cincinnati | Somerhaus"
         description="Throw unforgettable celebrations in our one-of-a-kind Cincinnati venue."
         schema={[businessSchema, partiesFaqSchema]}
       />
-
-      <UniversalHero pageKey="parties" />
 
       <ImageGallerySection />
 
@@ -61,7 +58,7 @@ const Parties = () => {
         packages={partiesPricing}
       />
 
-      <TestimonialsDemo />
+      <Testimonials />
 
       <FAQSection
         title="Party Events FAQ"

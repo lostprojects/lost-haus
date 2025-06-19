@@ -1,6 +1,6 @@
 
 import React from 'react';
-import FAQSection from '@/components/shared/FAQSection'; // Import the new component
+import FAQSection from '@/components/FAQSection'; // Import the new component
 
 const WeddingFAQ = () => {
   const faqs = [

@@ -2,16 +2,16 @@ import React from 'react';
 import HeaderLeadCapture from '@/components/ui/header-lead-capture';
 import { Footer } from "@/components/ui/footer-section";
 import { useHoneyBook } from '@/hooks/use-honeybook';
-import HoneyBookForm from '@/components/honeybook/HoneyBookForm';
+import HoneyBookForm from '@/components/HoneyBookForm';
 import Seo from '@/components/seo/Seo';
 import { businessSchema } from '@/components/seo/seo-schemas';
-import { LogoTicker } from '@/components/blocks/LogoTicker';
-import UrgencyFlagBanner from '@/components/ui/urgency-flag';
+import { LogoTicker } from '@/components/LogoTicker';
+import UrgencyFlagBanner from '@/components/ui/UrgencyFlag';
 import { Star } from 'lucide-react';
 import BouncingArrow from '@/components/ui/bouncing-arrow';
 import { clientLogos } from '@/data/clientLogos';
 import { pressLogos } from '@/data/pressLogos';
-import UniversalHero from '@/components/shared/UniversalHero';
+import UniversalHero from '@/components/UniversalHero';
 
 const EventInquiry = () => {
   useHoneyBook();
@@ -50,7 +50,7 @@ const EventInquiry = () => {
         <div className="flex-grow flex items-center justify-center px-4 pb-16">
           <div className="w-full max-w-4xl">
             <div className="bg-white rounded-lg border border-gray-200 shadow-2xl shadow-black/40 p-6 md:p-8">
-              <h2 className="pt-5 text-4xl md:text-5xl font-header mb-6 text-center text-[#5CA87E]">Let's Make It Happen!</h2>
+              <h2 className="pt-5 font-header mb-6 text-center text-[#5CA87E]">Let's Make It Happen!</h2>
               <p className="text-gray-600 mb-6 text-center">
                 <strong>We'd love to host you at Somerhaus!</strong> <br />
                 Please fill out the short form and we'll get back to you in 24 hours or less.

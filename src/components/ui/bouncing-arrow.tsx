@@ -14,11 +14,7 @@ interface BouncingArrowProps {
    */
   color?: string;
   
-  /**
-   * Animation duration in seconds
-   * @default 3.5
-   */
-  duration?: number;
+
   
   /**
    * Additional CSS classes
@@ -35,7 +31,6 @@ interface BouncingArrowProps {
 const BouncingArrow: React.FC<BouncingArrowProps> = ({
   size = 24,
   color = "white",
-  duration = 3.5,
   className,
   strokeWidth = 2
 }) => {
@@ -43,7 +38,7 @@ const BouncingArrow: React.FC<BouncingArrowProps> = ({
     <div 
       className={cn("animate-bounce", className)}
       style={{ 
-        animationDuration: `${duration}s`,
+        animationDuration: '5s',
         animationIterationCount: 'infinite'
       }}
     >

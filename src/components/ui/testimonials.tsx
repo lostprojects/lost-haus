@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { Carousel, CarouselApi, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Star, ExternalLink } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 // Testimonial data with variety
@@ -98,7 +97,8 @@ function Testimonials() {
   return <div className="w-full py-20 lg:py-[50px]">
       <div className="flex flex-col gap-10">
         <div className="container mx-auto text-center">
-          <h2 className="text-5xl font-bold md:text-5xl text-brand font-header py-[19px]">Hundreds of Perfect Moments</h2>
+          <Badge className="mb-4 font-body">Guest Experience</Badge>
+          <h2 className="font-bold text-brand font-header py-[19px]">Hundreds of Perfect Moments</h2>
           <p className="text-base font-body text-black">Over 200 amazing events in 3 years</p>
         </div>
         <div className="w-full">
@@ -109,7 +109,7 @@ function Testimonials() {
                     <div className="flex flex-col gap-4">
                       <div className="flex flex-col">
                         <div className="flex items-center justify-between mb-2">
-                          <h3 className="text-xl tracking-tight font-header">
+                          <h3 className="tracking-tight font-header">
                             {testimonial.title}
                           </h3>
                           <Badge variant="secondary" className="text-xs">

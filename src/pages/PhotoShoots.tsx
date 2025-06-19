@@ -1,7 +1,6 @@
 import React from 'react';
-import PageLayout from '@/components/shared/PageLayout';
-import UniversalHero from '@/components/shared/UniversalHero';
-import { CTA } from '@/components/ui/call-to-action/component';
+import PageLayout from '@/components/PageLayout';
+import { CTA } from '@/components/CTASection';
 import Seo from '@/components/seo/Seo';
 import { businessSchema } from '@/components/seo/seo-schemas';
 
@@ -9,19 +8,17 @@ import { businessSchema } from '@/components/seo/seo-schemas';
 const PhotoShoots: React.FC = () => {
 
   return (
-    <PageLayout footerLogoType="clients" mainClassName="relative">
+    <PageLayout heroKey="photoshoots" footerLogoType="clients" mainClassName="relative">
       <Seo
         title="Photo & Film Shoots at Somerhaus | Cincinnati Studio Loft"
         description="Book Somerhaus or our sister venue Somerset Bar as your next backdrop for editorial, commercial, or lifestyle shoots."
         schema={businessSchema}
       />
-      
-      <UniversalHero pageKey="photoshoots" />
 
       {/* About Section */}
       <section className="py-16 bg-muted/40">
         <div className="container mx-auto px-4 max-w-3xl text-center">
-          <h2 className="text-3xl md:text-4xl font-header mb-6">Why Shoot at Somerhaus?</h2>
+          <h2 className="font-header mb-6">Why Shoot at Somerhaus?</h2>
           <p className="text-lg text-muted-foreground font-mono mb-4">
             Massive skylights, 18-ft ceilings, and layered textures give photographers and filmmakers a versatile canvas with minimal need for additional set dressing. From fashion editorials to product look-books, the space adapts to your vision.
           </p>
@@ -36,7 +33,7 @@ const PhotoShoots: React.FC = () => {
         <div className="container mx-auto px-4 max-w-5xl grid md:grid-cols-2 gap-8 items-center">
           <div className="w-full h-64 md:h-96 bg-cover bg-center rounded-md shadow-md" style={{ backgroundImage: "url('/photo/party-hero1-cincinnati-event-venue-somerhaus.webp')" }} />
           <div>
-            <h3 className="text-3xl font-header mb-4">Need an Outdoor Jungle Set?</h3>
+            <h3 className="font-header mb-4">Need an Outdoor Jungle Set?</h3>
             <p className="text-lg text-muted-foreground font-mono mb-6">
               Step across the street to <a href="https://somersetotr.com" className="text-primary underline hover:text-primary/80" target="_blank" rel="noopener noreferrer">Somerset Bar</a>, our sister venue featured in Vogue and Architectural Digest for its lush, globe-trotting aesthetic. Outside of service hours, the gardens and shipping-container lounges are available for styled shoots, music videos, and branded content.
             </p>

@@ -1,10 +1,9 @@
 import React from 'react';
-import PageLayout from '@/components/shared/PageLayout';
-import UniversalHero from '@/components/shared/UniversalHero';
-import PricingSection from '@/components/shared/PricingSection';
-import FAQSection from '@/components/shared/FAQSection';
-import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
-import { CTA } from '@/components/ui/call-to-action/component';
+import PageLayout from '@/components/PageLayout';
+import PricingSection from '@/components/PricingSection';
+import FAQSection from '@/components/FAQSection';
+import { Testimonials } from '@/components/ui/testimonials';
+import { CTA } from '@/components/CTASection';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
 import Seo from '@/components/seo/Seo';
 import { businessSchema, createFaqSchema } from '@/components/seo/seo-schemas';
@@ -21,14 +20,12 @@ const Dinners = () => {
   const dinnersFaqSchema = createFaqSchema(faqData);
 
   return (
-    <PageLayout footerLogoType="press" mainClassName="relative">
+    <PageLayout heroKey="dinners" footerLogoType="press" mainClassName="relative">
       <Seo
         title="Dinner Event Venue in Cincinnati | Somerhaus"
         description="Host rehearsal dinners and celebrations in our industrial-chic Cincinnati venue."
         schema={[businessSchema, dinnersFaqSchema]}
       />
-
-      <UniversalHero pageKey="dinners" />
 
       <ImageGallerySection />
 
@@ -38,7 +35,7 @@ const Dinners = () => {
         packages={dinnersPricing}
       />
 
-      <TestimonialsDemo />
+      <Testimonials />
 
       <FAQSection
         title="Dinner Events FAQ"

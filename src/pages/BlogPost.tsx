@@ -2,10 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import Header from '@/components/ui/header';
-import { Footer } from "@/components/ui/footer-section";
-import UniversalHero from '@/components/shared/UniversalHero';
-import { CTA } from '@/components/ui/call-to-action/component';
+import PageLayout from '@/components/PageLayout';
+import { CTA } from '@/components/CTASection';
 import Seo from '@/components/seo/Seo';
 import { createArticleSchema } from '@/components/seo/seo-schemas';
 import { getPostBySlug } from '@/data/blogData';
@@ -45,16 +43,14 @@ const BlogPost = () => {
   
   if (loading) {
     return (
-      <div className="flex flex-col min-h-screen bg-background">
-        <Header />
+      <PageLayout footerLogoType="clients">
         <main className="flex-grow flex items-center justify-center">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
             <p className="text-muted-foreground">Loading article...</p>
           </div>
         </main>
-        <Footer logoType="clients" />
-      </div>
+      </PageLayout>
     );
   }
   
@@ -78,19 +74,25 @@ const BlogPost = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <PageLayout 
+      footerLogoType="clients" 
+      blogHero={
+        <section className="relative h-[50vh] flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-700 text-white">
+          <div 
+            className="absolute inset-0 bg-cover bg-center opacity-30"
+            style={{ backgroundImage: `url(${postData.image})` }}
+          />
+          <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
+            <h1 className="font-header mb-4 text-white">{postData.title}</h1>
+            <p className="text-xl text-gray-200 font-body">{postData.excerpt}</p>
+          </div>
+        </section>
+      }
+    >
       <Seo
         title={postData.title}
         description={postData.description}
         schema={articleSchema}
-      />
-      <Header />
-      
-      <UniversalHero 
-        pageKey="blogpost"
-        title={postData.title}
-        subtitle={postData.excerpt}
-        images={[postData.image]}
       />
       
       <main className="flex-grow py-12 md:py-16">
@@ -168,7 +170,7 @@ const BlogPost = () => {
           {/* Keywords/Tags */}
           {postData.keywords && postData.keywords.length > 0 && (
             <div className="mt-12 pt-8 border-t border-border">
-              <h3 className="text-sm font-semibold text-foreground mb-3">Tags</h3>
+              <h3 className="font-semibold text-foreground mb-3">Tags</h3>
               <div className="flex flex-wrap gap-2">
                 {postData.keywords.map((keyword, index) => (
                   <span 
@@ -185,8 +187,7 @@ const BlogPost = () => {
       </main>
       
       <CTA />
-      <Footer logoType="clients" />
-    </div>
+    </PageLayout>
   );
 };
 

@@ -1,6 +1,6 @@
 
 import { Badge } from "@/components/ui/badge";
-import { BookNowButton } from "@/components/ui/book-now-button";
+import BookNowButton from "@/components/ui/book-now-button";
 
 function WeddingCTA() {
   return (
@@ -11,7 +11,7 @@ function WeddingCTA() {
             <Badge className="font-body">Limited Dates Available</Badge>
           </div>
           <div className="flex flex-col gap-2">
-            <h3 className="text-3xl md:text-5xl tracking-tighter max-w-xl font-header text-foreground">
+            <h3 className="tracking-tighter max-w-xl font-header text-foreground">
               Create Unforgettable Moments
             </h3>
             <p className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-xl font-body">
@@ -20,7 +20,7 @@ function WeddingCTA() {
             </p>
           </div>
           <div>
-            <BookNowButton />
+                            <BookNowButton href="/event-inquiry" />
           </div>
         </div>
       </div>

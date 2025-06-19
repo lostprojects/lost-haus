@@ -1,11 +1,18 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Send, CheckCircle } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
-const WeddingContact = () => {
+interface WeddingContactProps {
+  badgeText?: string;
+}
+
+const WeddingContact: React.FC<WeddingContactProps> = ({ 
+  badgeText = "Get In Touch"
+}) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -19,7 +26,8 @@ const WeddingContact = () => {
     <section id="contact" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-header tracking-tight mb-4">Contact Us</h2>
+          <Badge className="mb-4 font-body">{badgeText}</Badge>
+          <h2 className="font-header tracking-tight mb-4">Contact Us</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body">
             Ready to start planning your dream wedding? Reach out to our team today.
           </p>
@@ -27,7 +35,7 @@ const WeddingContact = () => {
         
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <div className="bg-gray-50 p-8 rounded-lg">
-            <h3 className="text-xl font-semibold mb-6">Venue Information</h3>
+            <h3 className="font-semibold mb-6">Venue Information</h3>
             
             <div className="space-y-6">
               <div className="flex items-start gap-4">
@@ -65,7 +73,7 @@ const WeddingContact = () => {
           </div>
           
           <div className="bg-white p-8 rounded-lg shadow-sm border">
-            <h3 className="text-xl font-semibold mb-6">Send Us a Message</h3>
+            <h3 className="font-semibold mb-6">Send Us a Message</h3>
             
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
