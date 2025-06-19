@@ -3,7 +3,7 @@ import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import PricingSection from '@/components/PricingSection';
 import FAQSection from '@/components/FAQSection';
-import { TestimonialsDemo } from '@/components/ui/testimonials-demo';
+import { Testimonials } from '@/components/ui/testimonials';
 import { CTA } from '@/components/CTASection';
 import { ImageGallerySection } from '@/components/ui/image-gallery-section';
 import Seo from '@/components/seo/Seo';
@@ -59,7 +59,7 @@ const Rehearsals = () => {
         packages={rehearsalsPricing}
       />
 
-      <TestimonialsDemo />
+      <Testimonials />
 
       <FAQSection
         title="Wedding Rehearsals FAQ"
