@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import OptimizedImage from '@/components/ui/OptimizedImage';
 
 interface ResponsiveImageProps {
   /**
@@ -114,15 +117,14 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
   ].join(', ');
 
   return (
-    <img
+    <OptimizedImage
       src={fallbackSrc}
       srcSet={srcSet}
       sizes={sizes}
       alt={alt}
       className={className}
       loading={loading}
-      {...props}
-    />
+      {...props} />
   );
 };
 

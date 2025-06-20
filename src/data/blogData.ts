@@ -78,4 +78,8 @@ export const getRecentPosts = (limit: number = 5): BlogPost[] => {
   return [...blogPosts]
     .sort((a, b) => new Date(b.datePublished).getTime() - new Date(a.datePublished).getTime())
     .slice(0, limit);
-}; 
+};
+
+export const getAllPosts = (): BlogPost[] => {
+  return blogPosts;
+};

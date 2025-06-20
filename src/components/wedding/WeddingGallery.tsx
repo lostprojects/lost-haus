@@ -3,6 +3,9 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Image } from "lucide-react";
+import OptimizedImage from '@/components/ui/OptimizedImage';
+
+'use client';
 
 interface WeddingGalleryProps {
   badgeText?: string;
@@ -58,11 +61,10 @@ const WeddingGallery: React.FC<WeddingGalleryProps> = ({
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-1">
                     <div className="overflow-hidden rounded-lg group relative">
-                      <img 
+                      <OptimizedImage 
                         src={image.src} 
                         alt={image.caption} 
-                        className="w-full aspect-[3/4] object-cover transform transition-transform duration-500 group-hover:scale-110" 
-                      />
+                        className="w-full aspect-[3/4] object-cover transform transition-transform duration-500 group-hover:scale-110" />
                       <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-start p-4">
                         <p className="text-white text-sm">{image.caption}</p>
                       </div>

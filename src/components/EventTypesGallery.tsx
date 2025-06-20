@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import OptimizedImage from '@/components/ui/OptimizedImage';
 
 export interface EventTypeCard {
   id: string;
@@ -84,15 +85,14 @@ const EventTypesGallery: React.FC<EventTypesGalleryProps> = ({
           {items.map((item) => (
             <Link
               key={item.id}
-              to={item.href}
+              href={item.href}
               className="group rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-lg transition-all duration-300"
             >
               <div className="relative h-64 md:h-72 overflow-hidden">
-                <img
+                <OptimizedImage
                   src={item.image}
                   alt={item.title}
-                  className="absolute h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
-                />
+                  className="absolute h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6 text-white">
                   <h3 className="text-xl font-semibold font-header mb-2">

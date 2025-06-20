@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect } from 'react';
 import { Printer } from 'lucide-react';
 import { Button } from '@/components/ui/button';

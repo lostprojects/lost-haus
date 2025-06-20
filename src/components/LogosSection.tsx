@@ -14,10 +14,9 @@ const LogosSection: React.FC<LogosSectionProps> = ({ type, className = "bg-black
   }
 
   return (
-    <LogoTicker 
-      heading={type === 'press' ? '' : 'Trusted By'} 
-      logos={type === 'press' ? pressLogos : clientLogos} 
-      className={className} 
+    <LogoTicker
+      type={type}
+      className={className}
     />
   );
 };

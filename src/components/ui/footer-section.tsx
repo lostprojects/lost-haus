@@ -1,7 +1,9 @@
+'use client';
+
 import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 import { ArrowUpRight, Send, Instagram, Facebook } from "lucide-react";
 import { LogoTicker } from "@/components/LogoTicker";
 
@@ -36,7 +38,7 @@ function Footer({ logoType = 'none' }: FooterProps = {}) {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="relative">
             <h3 className="mb-4 font-header font-semibold">Say Hello</h3>
-            <Link to="/about/contact" className="mb-6 flex items-center text-white hover:text-[#D65B2F] transition-colors text-sm">
+            <Link href="/about/contact" className="mb-6 flex items-center text-white hover:text-[#D65B2F] transition-colors text-sm">
               Contact Us <ArrowUpRight className="ml-1 h-4 w-4" />
             </Link>
             
@@ -68,13 +70,13 @@ function Footer({ logoType = 'none' }: FooterProps = {}) {
           <div>
             <h3 className="mb-4 font-header font-semibold">Event Types</h3>
             <nav className="space-y-2 text-sm font-mono">
-              <Link to="/wedding" className="flex items-center transition-colors hover:text-[#D65B2F]">
+              <Link href="/wedding" className="flex items-center transition-colors hover:text-[#D65B2F]">
                 Weddings <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
-              <Link to="/showers" className="flex items-center transition-colors hover:text-[#D65B2F]">
+              <Link href="/showers" className="flex items-center transition-colors hover:text-[#D65B2F]">
                 Showers <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
-              <Link to="/corporate" className="flex items-center transition-colors hover:text-[#D65B2F]">
+              <Link href="/corporate" className="flex items-center transition-colors hover:text-[#D65B2F]">
                 Corporate Events <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
             </nav>
@@ -82,19 +84,19 @@ function Footer({ logoType = 'none' }: FooterProps = {}) {
           <div>
             <h3 className="mb-4 font-header font-semibold">Tools & Info</h3>
             <nav className="space-y-2 text-sm font-mono">
-              <Link to="/event-inquiry" className="flex items-center transition-colors hover:text-[#D65B2F]">
+              <Link href="/event-inquiry" className="flex items-center transition-colors hover:text-[#D65B2F]">
                 Event Inquiry <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
-              <Link to="#" className="flex items-center transition-colors hover:text-[#D65B2F]">
+              <Link href="#" className="flex items-center transition-colors hover:text-[#D65B2F]">
                 Guest Login <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
-              <Link to="/about/faq" className="flex items-center transition-colors hover:text-[#D65B2F]">
+              <Link href="/about/faq" className="flex items-center transition-colors hover:text-[#D65B2F]">
                 FAQ <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
-              <Link to="/resources" className="flex items-center transition-colors hover:text-[#D65B2F]">
+              <Link href="/resources" className="flex items-center transition-colors hover:text-[#D65B2F]">
                 Resources <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
-              <Link to="/blog" className="flex items-center transition-colors hover:text-[#D65B2F]">
+              <Link href="/blog" className="flex items-center transition-colors hover:text-[#D65B2F]">
                 Blog <ArrowUpRight className="ml-1 h-4 w-4" />
               </Link>
             </nav>
@@ -119,11 +121,11 @@ function Footer({ logoType = 'none' }: FooterProps = {}) {
               © 2024 Somerhaus. All rights reserved.
             </p>
             <div className="flex gap-2 text-gray-300">
-              <Link to="/privacy" className="transition-colors hover:text-[#D65B2F]">Privacy</Link>
+              <Link href="/privacy" className="transition-colors hover:text-[#D65B2F]">Privacy</Link>
               <span>|</span>
-              <Link to="/terms" className="transition-colors hover:text-[#D65B2F]">Terms</Link>
+              <Link href="/terms" className="transition-colors hover:text-[#D65B2F]">Terms</Link>
               <span>|</span>
-              <Link to="/cookies" className="transition-colors hover:text-[#D65B2F]">Cookies</Link>
+              <Link href="/cookies" className="transition-colors hover:text-[#D65B2F]">Cookies</Link>
             </div>
           </div>
 

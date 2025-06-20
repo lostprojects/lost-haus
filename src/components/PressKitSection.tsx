@@ -1,6 +1,9 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Download } from 'lucide-react';
+import OptimizedImage from '@/components/ui/OptimizedImage';
+
+'use client';
 
 const PressKitSection: React.FC = () => {
   return (
@@ -13,7 +16,7 @@ const PressKitSection: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col items-center">
-            <img src="/photo/space-portrait2-cincinnati-event-space-somerhaus.webp" alt="Press Images" className="h-28 w-auto object-cover rounded mb-4" />
+            <OptimizedImage src="/photo/space-portrait2-cincinnati-event-space-somerhaus.webp" alt="Press Images" className="h-28 w-auto object-cover rounded mb-4" />
             <h3 className="font-header mb-2">High-Res Images</h3>
             <p className="text-sm text-muted-foreground font-mono mb-4">Professional event photos</p>
             <p className="text-xs text-center text-muted-foreground mb-4">Contact us for high-resolution image pack</p>
@@ -26,7 +29,7 @@ const PressKitSection: React.FC = () => {
           </div>
 
           <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col items-center">
-            <img src="/haus-logo.webp" alt="Somerhaus Logo" className="h-24 w-auto object-contain mb-4" />
+            <OptimizedImage src="/haus-logo.webp" alt="Somerhaus Logo" className="h-24 w-auto object-contain mb-4" />
             <h3 className="font-header mb-2">Logo Assets</h3>
             <p className="text-sm text-muted-foreground font-mono mb-4">Brand logos & variations</p>
             <p className="text-xs text-center text-muted-foreground mb-4">Available in PNG, SVG, light & dark versions</p>

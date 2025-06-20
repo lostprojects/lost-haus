@@ -3,6 +3,9 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star } from "lucide-react";
+import OptimizedImage from '@/components/ui/OptimizedImage';
+
+'use client';
 
 interface WeddingTestimonialsProps {
   badgeText?: string;
@@ -71,11 +74,10 @@ const WeddingTestimonials: React.FC<WeddingTestimonialsProps> = ({
                           </div>
                         </div>
                         <div className="order-1 md:order-2">
-                          <img 
+                          <OptimizedImage 
                             src={testimonial.image} 
                             alt={testimonial.name} 
-                            className="w-full aspect-[4/3] object-cover rounded-lg shadow-md" 
-                          />
+                            className="w-full aspect-[4/3] object-cover rounded-lg shadow-md" />
                         </div>
                       </div>
                     </CardContent>

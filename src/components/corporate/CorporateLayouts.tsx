@@ -3,6 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from "@/components/ui/badge";
 import { Users, Lightbulb, Presentation, Coffee } from 'lucide-react';
+import OptimizedImage from '@/components/ui/OptimizedImage';
 
 interface CorporateLayoutsProps {
   badgeText?: string;
@@ -66,11 +67,10 @@ const CorporateLayouts: React.FC<CorporateLayoutsProps> = ({
             <TabsContent key={layout.id} value={layout.id}>
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div className="aspect-video overflow-hidden rounded-lg">
-                  <img 
+                  <OptimizedImage 
                     src={layout.image} 
                     alt={`${layout.name} layout`} 
-                    className="w-full h-full object-cover"
-                  />
+                    className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <h3 className="font-header mb-2">{layout.name} Setup</h3>

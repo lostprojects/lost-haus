@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import PricingCard, { PricingCardProps } from './PricingCard'; // Import the card component and its props type
 import { cn } from '@/lib/utils';

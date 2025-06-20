@@ -1,4 +1,5 @@
 import React from 'react'
+import OptimizedImage from '@/components/ui/OptimizedImage'
 import { useHoneyBook } from '@/hooks/use-honeybook'
 
 export interface HoneyBookFormProps {
@@ -16,12 +17,12 @@ export const HoneyBookForm: React.FC<HoneyBookFormProps> = ({ placementId, pid =
   return (
     <div className={className}>
       <div className={placeholder}></div>
-      <img
-        height="1"
-        width="1"
+      <OptimizedImage
+        height={1}
+        width={1}
         style={{ display: 'none' }}
         src={`https://www.honeybook.com/p.png?pid=${pid}`}
-        alt=""
+        alt="HoneyBook pixel"
       />
     </div>
   )

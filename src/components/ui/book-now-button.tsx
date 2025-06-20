@@ -1,6 +1,9 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { CalendarDays } from 'lucide-react';
+import Link from 'next/link';
 
 interface BookNowButtonProps {
   href: string;
@@ -70,7 +73,7 @@ const BookNowButton = ({
   }
 
   return (
-    <a 
+    <Link
       href={href}
       className={cn(
         "inline-block",
@@ -78,7 +81,7 @@ const BookNowButton = ({
       )}
     >
       {content}
-    </a>
+    </Link>
   );
 };
 

@@ -1,4 +1,7 @@
+'use client';
+
 import React, { useState, useRef, useEffect } from 'react';
+import OptimizedImage from '@/components/ui/OptimizedImage';
 
 interface LazyImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
@@ -41,7 +44,7 @@ const LazyImage: React.FC<LazyImageProps> = ({
   };
 
   return (
-    <img
+    <OptimizedImage
       ref={imgRef}
       src={isInView ? src : placeholder}
       alt={alt}
@@ -49,8 +52,7 @@ const LazyImage: React.FC<LazyImageProps> = ({
         isLoaded ? 'opacity-100' : 'opacity-0'
       } ${className}`}
       onLoad={handleLoad}
-      {...props}
-    />
+      {...props} />
   );
 };
 

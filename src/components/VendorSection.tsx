@@ -4,7 +4,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import { STANDARD_CONTAINER_CLASSES } from '@/components/PageLayout';
+import OptimizedImage from '@/components/ui/OptimizedImage';
 import { 
+
+'use client';
   getVendorsByEventType, 
   vendorNetworkBenefits, 
   type VendorEventType,
@@ -93,11 +96,10 @@ const VendorSection: React.FC<VendorSectionProps> = ({
                       {layout === 'compact' && vendor.image ? (
                         <div className="flex flex-col items-center text-center">
                           <div className="mb-3 w-24 h-24 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden">
-                            <img 
+                            <OptimizedImage 
                               src={vendor.image} 
                               alt={vendor.name} 
-                              className="h-12 w-auto object-contain" 
-                            />
+                              className="h-12 w-auto object-contain" />
                           </div>
                           <h4 className="font-medium font-header text-black">{vendor.name}</h4>
                           {vendor.description && (

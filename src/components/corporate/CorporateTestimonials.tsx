@@ -4,6 +4,8 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Badge } from "@/components/ui/badge";
 import { Star } from 'lucide-react';
 
+'use client';
+
 interface CorporateTestimonialsProps {
   badgeText?: string;
 }

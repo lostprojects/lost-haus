@@ -27,7 +27,6 @@ const WeddingPackages = () => {
           <span>January, February, March, November</span>
         </div>
       ),
-      buttonIcon: <ArrowRight className="w-4 h-4" />,
     },
     {
       name: "Peak Season",
@@ -50,7 +49,6 @@ const WeddingPackages = () => {
           <span>April through October, December</span>
         </div>
       ),
-      buttonIcon: <ArrowRight className="w-4 h-4" />,
     }
   ];
 

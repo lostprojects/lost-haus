@@ -5,6 +5,8 @@ import { Check } from "lucide-react";
 import { cn } from '@/lib/utils';
 import type { ButtonProps } from '@/components/ui/button';
 
+'use client';
+
 export interface PricingCardProps {
   name: string;
   price: string;

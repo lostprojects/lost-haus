@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { usePathname } from 'next/navigation';
 import Breadcrumb from './breadcrumb';
 import { generateBreadcrumbs } from '@/lib/breadcrumbUtils';
 
@@ -14,11 +16,11 @@ export const BreadcrumbContainer: React.FC<BreadcrumbContainerProps> = ({
   afterHero = false,
   className
 }) => {
-  const location = useLocation();
-  const breadcrumbs = generateBreadcrumbs(location.pathname);
+  const pathname = usePathname();
+  const breadcrumbs = generateBreadcrumbs(pathname);
 
   // Don't show breadcrumbs on homepage
-  if (location.pathname === '/') {
+  if (pathname === '/') {
     return null;
   }
 

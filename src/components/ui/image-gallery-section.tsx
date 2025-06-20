@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 import { Badge } from "@/components/ui/badge";
 import { ArrowUpRight } from "lucide-react";
+import OptimizedImage from '@/components/ui/OptimizedImage';
 
 interface ImageGallerySectionProps {
   badgeText?: string;
@@ -49,11 +50,10 @@ export const ImageGallerySection: React.FC<ImageGallerySectionProps> = ({
                   style={{ transform: `rotate(${randomRotation}deg)` }}
                   className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 flex-shrink-0 overflow-hidden hover:scale-105 hover:z-50 transition-all duration-300 animate-fade-in-up"
                 >
-                  <img 
+                  <OptimizedImage 
                     src={image} 
                     alt="Somerhaus venue" 
-                    className="rounded-lg h-32 w-32 md:h-60 md:w-60 object-cover flex-shrink-0" 
-                  />
+                    className="rounded-lg h-32 w-32 md:h-60 md:w-60 object-cover flex-shrink-0" />
                 </div>
               );
             })}
@@ -68,11 +68,10 @@ export const ImageGallerySection: React.FC<ImageGallerySectionProps> = ({
                   style={{ transform: `rotate(${randomRotation}deg)` }}
                   className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 flex-shrink-0 overflow-hidden hover:scale-105 hover:z-50 transition-all duration-300 animate-fade-in-up"
                 >
-                  <img 
+                  <OptimizedImage 
                     src={image} 
                     alt="Somerhaus venue" 
-                    className="rounded-lg h-32 w-32 md:h-60 md:w-60 object-cover flex-shrink-0" 
-                  />
+                    className="rounded-lg h-32 w-32 md:h-60 md:w-60 object-cover flex-shrink-0" />
                 </div>
               );
             })}
@@ -82,14 +81,14 @@ export const ImageGallerySection: React.FC<ImageGallerySectionProps> = ({
         <div className="text-center mt-8 animate-fade-in-up">
           <div className="flex items-center justify-center gap-2 text-base font-body">
             <Link 
-              to="/gallery" 
+              href="/gallery" 
               className="inline-flex items-center text-brand hover:text-brand/80 transition-colors"
             >
               See more photos <ArrowUpRight className="ml-1 h-4 w-4" />
             </Link>
             <span className="text-gray-400">|</span>
             <Link 
-              to="/venue-layout" 
+              href="/venue-layout" 
               className="inline-flex items-center text-brand hover:text-brand/80 transition-colors"
             >
               Explore potential layouts <ArrowUpRight className="ml-1 h-4 w-4" />

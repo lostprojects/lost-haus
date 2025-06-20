@@ -22,14 +22,14 @@ export function getUrgencyFlags(): UrgencyFlag[] {
 
   return [
     `Act Now: Limited dates available for ${year} and ${nextYear}`,
-    `Act Now: ${weekendsLeft} prime weekend dates left in ${year}`,
+    `Act Now-${weekendsLeft} prime weekend dates left in ${year}`,
     `Now booking ${nextSeason} ${nextYear} events, dates fill fast`,
-    `Act Now: Last chance to secure ${year} pricing`,
+    `Act Now-Last chance to secure ${year} pricing`,
     `Act Now: Peak ${nextSeason.toLowerCase()} slots filling fast`,
     `Act Now: ${nextYear} calendar already booking up fast`,
     `Act Now: Only a few Friday evenings left this ${nextSeason.toLowerCase()}`,
-    `Act Now: Demand surging—reserve before rates rise`,
-    `Act Now: Popular dates vanish quickly—act now`
+    `Act Now-Demand surging—reserve before rates rise`,
+    `Act Now-Popular dates vanish quickly`
   ];
 }
 

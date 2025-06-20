@@ -1,3 +1,5 @@
+'use client';
+
 import React from "react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
@@ -16,6 +18,11 @@ interface ThreeStepProcessProps {
   title?: string;
   subtitle?: string | React.ReactNode;
   badgeText?: string;
+  /**
+   * Label text for the CTA button at the bottom.
+   * @default "Book Now"
+   */
+  buttonLabel?: string;
 }
 
 export function ThreeStepProcess({
@@ -24,6 +31,7 @@ export function ThreeStepProcess({
   title = "How to get Started",
   subtitle,
   badgeText = "Simple Steps",
+  buttonLabel = "Book Now",
 }: ThreeStepProcessProps) {
   return (
     <div className={cn("py-0 relative", className)}>
@@ -88,7 +96,9 @@ export function ThreeStepProcess({
       {/* CTA Button */}
       <div className="flex justify-center">
         <div className="animate-fade-in-up-delay-2 hover:scale-105 transition-transform duration-300">
-          <BookNowButton href="/event-inquiry" variant="black" className="shadow-[0_10px_25px_rgba(0,0,0,0.4)]" />
+          <BookNowButton href="/event-inquiry" variant="black" className="shadow-[0_10px_25px_rgba(0,0,0,0.4)]">
+            {buttonLabel}
+          </BookNowButton>
         </div>
       </div>
     </div>

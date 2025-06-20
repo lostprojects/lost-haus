@@ -1,8 +1,11 @@
+'use client';
+
 "use client";
 
 import { useEffect, useState, useRef } from "react";
 import { pressLogos } from '@/data/pressLogos';
 import { clientLogos } from '@/data/clientLogos';
+import OptimizedImage from '@/components/ui/OptimizedImage';
 
 interface Logo {
   id: string;
@@ -61,11 +64,10 @@ const LogoTicker = ({
               key={`${logo.id}-${index}`}
               className="flex items-center justify-center h-16 px-6 flex-shrink-0"
             >
-              <img 
+              <OptimizedImage 
                 src={logo.image} 
                 alt={logo.description} 
-                className={`h-[72px] w-[96px] object-contain ${logo.className || ''}`}
-              />
+                className={`h-[72px] w-[96px] object-contain ${logo.className || ''}`} />
             </div>
           ))}
         </div>

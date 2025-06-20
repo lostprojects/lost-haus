@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import { AlertTriangle } from 'lucide-react';
 import { getRandomUrgencyFlag } from '@/lib/urgencyFlags';

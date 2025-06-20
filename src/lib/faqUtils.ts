@@ -61,7 +61,7 @@ export const searchFAQs = (keyword: string, limit?: number): FAQItem[] => {
  * @returns Array of unique category names
  */
 export const getAllCategories = (): string[] => {
-  return [...new Set(faqData.map(faq => faq.category))];
+  return Array.from(new Set(faqData.map(faq => faq.category)));
 };
 
 /**
@@ -70,7 +70,7 @@ export const getAllCategories = (): string[] => {
  */
 export const getAllTags = (): string[] => {
   const allTags = faqData.flatMap(faq => faq.tags || []);
-  return [...new Set(allTags)];
+  return Array.from(new Set(allTags));
 };
 
 // Pre-defined category mappings for common page types

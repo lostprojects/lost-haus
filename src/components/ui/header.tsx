@@ -1,8 +1,12 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, ChevronDown } from 'lucide-react';
+import Link from 'next/link';
 import MobileMenu from '@/components/ui/mobile-menu';
 import BookNowButton from '@/components/ui/book-now-button';
+import OptimizedImage from '@/components/ui/OptimizedImage';
 
 interface HeaderProps {
   hasHero?: boolean;
@@ -71,36 +75,35 @@ const Header = ({ hasHero = true }: HeaderProps) => {
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}
-          <a href="/" className="flex items-center">
-            <img 
-              src="/haus-logo.webp" 
-              alt="Somerhaus Logo" 
-              className="h-10 w-auto"
-            />
-          </a>
+          <Link href="/" className="flex items-center">
+            <OptimizedImage
+              src="/haus-logo.webp"
+              alt="Somerhaus Logo"
+              className="h-10 w-auto" />
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
             {/* Custom Weddings Dropdown Menu */}
             <div className="relative group">
-              <a
+              <Link
                 href="/wedding"
                 className={`flex items-center text-sm font-body transition-colors ${isScrolled ? 'text-white hover:text-[#ea580c]' : 'text-white hover:text-[#ea580c]'}`}
               >
                 Weddings
                 <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
-              </a>
+              </Link>
               
               <div className="absolute left-0 mt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <div className="py-2 bg-black/90 backdrop-blur-sm rounded-md">
                   {weddingItems.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
                       href={item.href}
                       className={`block px-4 py-2 text-sm font-body text-white transition-colors hover:text-[#ea580c] ${item.bold ? 'font-bold' : ''}`}
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -108,24 +111,24 @@ const Header = ({ hasHero = true }: HeaderProps) => {
 
             {/* Custom Work Events Dropdown Menu */}
             <div className="relative group">
-              <a
+              <Link
                 href="/corporate"
                 className={`flex items-center text-sm font-body transition-colors ${isScrolled ? 'text-white hover:text-[#ea580c]' : 'text-white hover:text-[#ea580c]'}`}
               >
                 Work Events
                 <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
-              </a>
+              </Link>
               
               <div className="absolute left-0 mt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <div className="py-2 bg-black/90 backdrop-blur-sm rounded-md">
                   {workEventsItems.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
                       href={item.href}
                       className={`block px-4 py-2 text-sm font-body text-white transition-colors hover:text-[#ea580c] ${item.bold ? 'font-bold' : ''}`}
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -154,13 +157,13 @@ const Header = ({ hasHero = true }: HeaderProps) => {
               <div className="absolute left-0 mt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <div className="py-2 bg-black/90 backdrop-blur-sm rounded-md">
                   {otherEventsItems.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
                       href={item.href}
                       className="block px-4 py-2 text-sm font-body text-white transition-colors hover:text-[#ea580c]"
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -168,30 +171,30 @@ const Header = ({ hasHero = true }: HeaderProps) => {
 
             {/* Custom Info Dropdown Menu */}
             <div className="relative group">
-              <a
+              <Link
                 href="/about"
                 className={`flex items-center text-sm font-body transition-colors ${isScrolled ? 'text-white hover:text-[#ea580c]' : 'text-white hover:text-[#ea580c]'}`}
               >
                 Info
                 <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
-              </a>
+              </Link>
               
               <div className="absolute left-0 mt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <div className="py-2 bg-black/90 backdrop-blur-sm rounded-md">
-                  <a
+                  <Link
                     href="/about"
                     className="block px-4 py-2 text-sm font-body text-white transition-colors hover:text-[#ea580c] font-bold"
                   >
                     About
-                  </a>
+                  </Link>
                   {infoItems.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
                       href={item.href}
                       className="block px-4 py-2 text-sm font-body text-white transition-colors hover:text-[#ea580c]"
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -217,7 +220,7 @@ const Header = ({ hasHero = true }: HeaderProps) => {
               variant="ghost" 
               size="icon" 
               className="text-white hover:text-[#ea580c] hover:bg-white/10"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={useCallback(() => setIsMobileMenuOpen(!isMobileMenuOpen), [])}
             >
               <Menu className="h-6 w-6" />
             </Button>

@@ -1,8 +1,11 @@
+'use client';
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import Image from 'next/image';
 
 interface WeddingPlanningProps {
   badgeText?: string;
@@ -48,16 +51,6 @@ const WeddingPlanning: React.FC<WeddingPlanningProps> = ({
                 className={`text-center group ${index === 0 ? 'animate-fade-in-up-stagger-1' : index === 1 ? 'animate-fade-in-up-stagger-2' : 'animate-fade-in-up-stagger-3'}`}
               >
                 <div className="relative mb-8 overflow-hidden rounded-2xl bg-gray-100 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:scale-105 min-h-64 md:min-h-72 flex items-center justify-center">
-                  <img 
-                    src={step.image} 
-                    alt={step.title}
-                    className="w-full h-64 md:h-72 object-cover transition-transform duration-300 group-hover:scale-110 absolute inset-0"
-                    onError={(e) => {
-                      console.log('Image failed to load:', step.image);
-                      e.currentTarget.style.display = 'none';
-                    }}
-                    onLoad={() => console.log('Image loaded successfully:', step.image)}
-                  />
                   {/* Fallback content */}
                   <div className="text-center p-8">
                     <div className="text-4xl mb-4">{index === 0 ? '👁️' : index === 1 ? '📋' : '🎉'}</div>

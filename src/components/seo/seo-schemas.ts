@@ -1,3 +1,5 @@
+'use client';
+
 // Centralized SEO schemas to eliminate duplication across pages
 
 /**
@@ -84,10 +86,17 @@ export const localBusinessSchema = {
   "@type": "LocalBusiness",
   "@id": "https://somerhaus.com",
   name: "Somerhaus",
+  description: "Cincinnati's premier event venue located in historic Over-the-Rhine. Perfect for weddings, corporate events, parties, and special celebrations.",
+  url: "https://somerhaus.com",
+  telephone: "513-902-1415",
+  email: "info@somerhaus.com",
+  image: "https://somerhaus.com/photo/wedding-hero1-cincinnati-wedding-venue-somerhaus.webp",
+  logo: "https://somerhaus.com/haus-logo.webp",
+  priceRange: "$$$$",
   address: {
     "@type": "PostalAddress",
     streetAddress: "1415 Republic St",
-    addressLocality: "Cincinnati", 
+    addressLocality: "Cincinnati",
     addressRegion: "OH",
     postalCode: "45202",
     addressCountry: "US"
@@ -97,11 +106,63 @@ export const localBusinessSchema = {
     latitude: "39.1612",
     longitude: "-84.4557"
   },
-  telephone: "513-902-1415",
-  url: "https://somerhaus.com",
-  priceRange: "$$$$",
-  servesCuisine: "Event Catering",
-  hasMap: "https://maps.google.com/?q=1415+Republic+St,+Cincinnati,+OH+45202"
+  areaServed: {
+    "@type": "GeoCircle",
+    geoMidpoint: {
+      "@type": "GeoCoordinates",
+      latitude: "39.1612",
+      longitude: "-84.4557"
+    },
+    geoRadius: "50",
+    description: "Greater Cincinnati Area including Over-the-Rhine, Downtown, Mount Adams, and surrounding neighborhoods"
+  },
+  hasMap: "https://maps.google.com/?q=1415+Republic+St,+Cincinnati,+OH+45202",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Saturday", "Sunday"],
+      opens: "10:00",
+      closes: "22:00"
+    }
+  ],
+  sameAs: [
+    "https://www.facebook.com/somerhaus",
+    "https://www.instagram.com/somerhaus",
+    "https://www.yelp.com/biz/somerhaus-cincinnati",
+    "https://g.page/somerhaus"
+  ],
+  makesOffer: [
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Wedding Venue Rentals",
+        description: "Full-service wedding venue with customizable packages"
+      }
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Corporate Event Space",
+        description: "Professional venue for corporate meetings and events"
+      }
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Private Party Venue",
+        description: "Elegant space for special celebrations and private events"
+      }
+    }
+  ]
 };
 
 /**

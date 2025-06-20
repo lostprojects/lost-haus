@@ -1,0 +1,75 @@
+[
+  {
+    "title": "Perfect Wedding Welcome Party",
+    "content": "Somerhaus was the perfect place for our wedding welcome party in Nov 2024. We loved the plant vibes and that the event space needed very little decor to look complete. Beth was great to work with and Emma and Dusty took great care of us during the event...",
+    "author": "Sarah S",
+    "initials": "SS",
+    "stars": 5,
+    "tag": "Wedding",
+    "thumbnail": "/review-thumbnails/sarah-s.webp",
+    "type": "Google Review"
+  },
+  {
+    "title": "Dream Wedding Venue",
+    "content": "From the historic charm to the modern amenities, Somerhaus provided the perfect backdrop for our celebration. Couldn't have asked for more!",
+    "author": "Jessica & David",
+    "initials": "JD",
+    "stars": 5,
+    "tag": "Wedding",
+    "type": "Testimonial"
+  },
+  {
+    "title": "Exceptional Service",
+    "content": "The team at Somerhaus made planning our corporate event seamless. The space is versatile and the attention to detail was outstanding.",
+    "author": "Amanda Chen",
+    "initials": "AC",
+    "stars": 5,
+    "tag": "Corporate",
+    "type": "Testimonial"
+  },
+  {
+    "title": "Magical Evening",
+    "content": "Our anniversary party was unforgettable. The intimate atmosphere and beautiful decor created exactly the ambiance we wanted.",
+    "author": "Robert & Maria",
+    "initials": "RM",
+    "stars": 5,
+    "tag": "Anniversary",
+    "type": "Testimonial"
+  },
+  {
+    "title": "Perfect Location",
+    "content": "Located in the heart of Over-the-Rhine, Somerhaus offered our guests easy access and the historic neighborhood added to the charm.",
+    "author": "Taylor Johnson",
+    "initials": "TJ",
+    "stars": 5,
+    "tag": "Party",
+    "type": "Testimonial"
+  },
+  {
+    "title": "Outstanding Experience",
+    "content": "Every detail was handled with care. The venue coordinator was amazing and helped bring our vision to life perfectly.",
+    "author": "Emily & James",
+    "initials": "EJ",
+    "stars": 5,
+    "tag": "Wedding",
+    "type": "Testimonial"
+  },
+  {
+    "title": "Highly Recommend",
+    "content": "Beautiful space, professional staff, and reasonable pricing. Our baby shower was everything we hoped for and more!",
+    "author": "Lisa Rodriguez",
+    "initials": "LR",
+    "stars": 5,
+    "tag": "Shower",
+    "type": "Testimonial"
+  },
+  {
+    "title": "Incredible Venue",
+    "content": "The natural light, exposed brick, and modern touches make Somerhaus truly unique. Our guests are still talking about it!",
+    "author": "Kevin & Nicole",
+    "initials": "KN",
+    "stars": 5,
+    "tag": "Reception",
+    "type": "Testimonial"
+  }
+] 

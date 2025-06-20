@@ -1,5 +1,9 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { X } from 'lucide-react';
+import Link from 'next/link';
+import OptimizedImage from '@/components/ui/OptimizedImage';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -32,11 +36,10 @@ const MobileMenu = ({
       <div className="fixed inset-y-0 right-0 w-80 max-w-[85vw] bg-black z-50 md:hidden transform transition-transform duration-300 ease-in-out">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-white/10">
-          <img 
+          <OptimizedImage 
             src="/haus-logo.webp" 
             alt="Somerhaus Logo" 
-            className="h-8 w-auto"
-          />
+            className="h-8 w-auto" />
           <Button 
             variant="ghost" 
             size="icon"
@@ -57,14 +60,14 @@ const MobileMenu = ({
               </h3>
               <div className="space-y-3">
                 {weddingItems.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
                     className={`block text-base font-body text-white/90 hover:text-[#ea580c] transition-colors ${item.bold ? 'font-semibold text-white' : ''}`}
                     onClick={onClose}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -76,14 +79,14 @@ const MobileMenu = ({
               </h3>
               <div className="space-y-3">
                 {workEventsItems.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
                     className={`block text-base font-body text-white/90 hover:text-[#ea580c] transition-colors ${item.bold ? 'font-semibold text-white' : ''}`}
                     onClick={onClose}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -95,14 +98,14 @@ const MobileMenu = ({
               </h3>
               <div className="space-y-3">
                 {otherEventsItems.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
                     className="block text-base font-body text-white/90 hover:text-[#ea580c] transition-colors"
                     onClick={onClose}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -113,22 +116,22 @@ const MobileMenu = ({
                 Info
               </h3>
               <div className="space-y-3">
-                <a
+                <Link
                   href="/about"
                   className="block text-base font-body font-semibold text-white hover:text-[#ea580c] transition-colors"
                   onClick={onClose}
                 >
                   About
-                </a>
+                </Link>
                 {infoItems.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
                     className="block text-base font-body text-white/90 hover:text-[#ea580c] transition-colors"
                     onClick={onClose}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -149,11 +152,11 @@ const MobileMenu = ({
 
           {/* Book Now Button - Fixed at bottom */}
           <div className="mt-auto p-6 border-t border-white/10">
-            <a href="/event-inquiry" onClick={onClose}>
+            <Link href="/event-inquiry" onClick={onClose}>
               <Button className="w-full font-body bg-[#ea580c] text-white hover:bg-[#ea580c]/90 py-3">
                 Book Now
               </Button>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,4 +1,6 @@
-import React, { useState, useMemo, useCallback } from 'react';
+'use client';
+
+import React, { useCallback }, { useState, useMemo, useCallback } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Accordion,

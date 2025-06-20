@@ -12,7 +12,6 @@ interface PageLayoutProps {
   heroKey?: string;
   blogHero?: React.ReactNode;
   footerLogoType?: 'press' | 'clients' | 'none';
-  noFooterBorder?: boolean;
   mainClassName?: string;
   showBreadcrumbs?: boolean;
 }
@@ -22,7 +21,6 @@ const PageLayout: React.FC<PageLayoutProps> = ({
   heroKey,
   blogHero,
   footerLogoType = 'none',
-  noFooterBorder = false,
   mainClassName = '',
   showBreadcrumbs = true,
 }) => {
@@ -40,7 +38,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({
         <BreadcrumbContainer afterHero={hasHero} />
       )}
       <main className={`flex-grow ${mainClassName}`}>{children}</main>
-      <Footer logoType={footerLogoType} noBorder={noFooterBorder} />
+      <Footer logoType={footerLogoType} />
     </div>
   );
 };

@@ -13,6 +13,8 @@ import {
 } from "@/components/ui/select";
 import { Calendar, Mail, MapPin, Phone } from "lucide-react";
 
+'use client';
+
 const ShowersContact = () => {
   return (
     <section id="contact" className="py-16 bg-white">

@@ -2,6 +2,9 @@
 import React from 'react';
 import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import OptimizedImage from '@/components/ui/OptimizedImage';
+
+'use client';
 
 const ShowersGallery = () => {
   const galleryImages = [
@@ -51,11 +54,10 @@ const ShowersGallery = () => {
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-1">
                     <div className="overflow-hidden rounded-md group">
-                      <img
+                      <OptimizedImage
                         src={image.src}
                         alt={image.alt}
-                        className="h-[250px] w-full object-cover transition-transform group-hover:scale-105 duration-500"
-                      />
+                        className="h-[250px] w-full object-cover transition-transform group-hover:scale-105 duration-500" />
                       <div className="p-3 bg-white">
                         <p className="font-medium text-sm font-body">{image.caption}</p>
                       </div>
